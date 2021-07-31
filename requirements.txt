@@ -1,0 +1,6 @@
+nose
+sphinx
+networkx
+lxml
+slugify
+more_itertools
