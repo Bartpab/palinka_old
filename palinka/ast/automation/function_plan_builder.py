@@ -5,7 +5,7 @@ from ...model import ast
 
 from . import function_block_builder
 
-def build(fp: FunctionPlan) -> ast.automation.FunctionBlockDefinition:
+def build_source(fp: FunctionPlan) -> ast.automation.FunctionBlockDefinition:
     fb_name = f"fp_{fp.get_id()}"
     
     fb_declarator: ast.Declarator = ast.Declarator.create(

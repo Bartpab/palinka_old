@@ -12,6 +12,7 @@ from . import cast_expression
 from . import compound_statement
 from . import conditional_expression
 from . import constant_expression
+from . import char
 from . import declaration_specifier
 from . import declaration
 from . import declarator
@@ -40,6 +41,7 @@ from . import postfix_expression
 from . import postfix_expression_binop
 from . import postfix_expression_single_op
 from . import primary_expression
+from . import preprocessor
 from . import relational_expression
 from . import relational_expression_binop
 from . import shift_expression
@@ -49,6 +51,7 @@ from . import statement
 from . import labeled_statement
 from . import expression_statement
 from . import if_
+from . import include
 from . import switch
 from . import selection_statement
 from . import iteration_statement
@@ -63,6 +66,7 @@ from . import struct_declaration
 from . import struct_declarator
 from . import struct_or_union_specifier
 from . import struct
+from . import sizeof
 from . import union
 from . import translation_unit
 from . import typedef_name
@@ -88,6 +92,7 @@ MODULE_DISPATCHER_MAP = [
     (ast.Constant,                  constant),
     (ast.ConditionalExpression,     conditional_expression),
     (ast.ConstantExpression,        constant_expression),
+    (ast.Char,                      char),
     (ast.DeclarationSpecifier,      declaration_specifier),
     (ast.Declaration,               declaration),
     (ast.Declarator,                declarator),
@@ -116,6 +121,7 @@ MODULE_DISPATCHER_MAP = [
     (ast.PostfixExpressionBinaryOp, postfix_expression_binop),
     (ast.PostfixExpressionSingleOp, postfix_expression_single_op),
     (ast.PrimaryExpression,         primary_expression),
+    (ast.Preprocessor,              preprocessor),
     (ast.RelationalExpression,      relational_expression),
     (ast.RelationalExpressionBinop, relational_expression_binop),
     (ast.ShiftExpression,           shift_expression),
@@ -125,6 +131,7 @@ MODULE_DISPATCHER_MAP = [
     (ast.LabeledStatement,          labeled_statement),
     (ast.ExpressionStatement,       expression_statement),
     (ast.If,                        if_),
+    (ast.Include,                   include),
     (ast.Switch,                    switch),
     (ast.SelectionStatement,        selection_statement),
     (ast.IterationStatement,        iteration_statement),
@@ -139,6 +146,7 @@ MODULE_DISPATCHER_MAP = [
     (ast.StructDeclarator,          struct_declarator),
     (ast.StructOrUnionSpecifier,    struct_or_union_specifier),
     (ast.Struct,                    struct),
+    (ast.SizeOf,                    sizeof),
     (ast.Union,                     union),
     (ast.TranslationUnit,           translation_unit),
     (ast.TypedefName,               typedef_name),

@@ -19,6 +19,9 @@ class DataModelEntry:
 
   def get_id(self):
     return self.data.get_id()
+  
+  def __str__(self):
+    return f"<DAMO>: {self.get_system()}, {self.get_data()}, {'producer' if DataModelFlags.PRODUCER == self.flag else 'consumer'}"
 
 class DataModelFlags:
   CONSUMER: int = 0b0
@@ -38,14 +41,19 @@ class DataModel:
       return self.entries.get_indexer('id').get_indexes()
 
   def get_producer(self, data_id: str) -> Optional[DataModelEntry]:
-    return self.entries.query()\
-      .by_index("composite_data_pc", lambda idx: idx == (data_id, DataModelFlags.PRODUCER))\
-      .find_one()
+    for entry in self.entries:
+      if entry.get_id() == data_id and entry.flag == DataModelFlags.PRODUCER:
+        return entry
     
+    return None
+
   def get_consumers(self, data_id: str) -> Iterator[DataModelEntry]:
-    return self.entries.query()\
-      .by_index("composite_data_pc", lambda idx: idx == (data_id, DataModelFlags.CONSUMER))\
-      .find_all()
+    for entry in self.entries:
+      if entry.get_id() == data_id and entry.flag == DataModelFlags.CONSUMER:
+        yield entry
+    
+  def __iter__(self):
+    return iter(self.entries)
 
   def __getitem__(self, data_id):
     return self.entries.get(data_id, index_name='id')

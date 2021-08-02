@@ -1,0 +1,28 @@
+<Segment offset="0" name="__global__" type="char" size="8">
+  <Segment offset="0" name="plant" type="char" size="8">
+    <Segment offset="0" name="SYS01" type="char" size="2">
+      <Segment offset="0" name="FP01" type="char" size="1">
+        <Entry offset="0" name="FP01:B01:OPT01" type="char" size="1"/>
+      </Segment>
+      <Segment offset="1" name="SENDING:SYS02" type="char" size="1">
+        <Entry offset="0" name="FP01:X01" type="char" size="1"/>
+      </Segment>
+    </Segment>
+    <Segment offset="2" name="SYS02" type="char" size="5">
+      <Segment offset="0" name="FP02" type="char" size="4">
+        <Entry offset="0" name="FP02:B01:IPT01" type="char" size="1"/>
+        <Entry offset="1" name="FP02:B01:OPT01" type="char" size="1"/>
+        <Entry offset="2" name="FP02:B02:IPT01" type="char" size="1"/>
+        <Entry offset="3" name="FP02:B02:OPT01" type="char" size="1"/>
+      </Segment>
+      <Segment offset="4" name="SENDING:SYS03" type="char" size="1">
+        <Entry offset="0" name="FP02:X01" type="char" size="1"/>
+      </Segment>
+    </Segment>
+    <Segment offset="7" name="SYS03" type="char" size="1">
+      <Segment offset="0" name="FP03" type="char" size="1">
+        <Entry offset="0" name="FP03:B01:IPT01" type="char" size="1"/>
+      </Segment>
+    </Segment>
+  </Segment>
+</Segment>

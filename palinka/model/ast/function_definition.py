@@ -7,6 +7,8 @@ from .declarator import Declarator
 from .declaration import Declaration
 from .compound_statement import CompoundStatement
 
+import palinka.model.ast.external_declaration as external_declaration
+
 class FunctionDefinition:
     """
         <function-definition> ::= <declaration-specifier>* <declarator> <declaration>* <compound-statement>
@@ -20,3 +22,6 @@ class FunctionDefinition:
 
     def __iter__(self):
         return iter(self.nodes)
+
+    def as_external_declaration(self) -> external_declaration.ExternalDeclaration:
+        return external_declaration.ExternalDeclaration(self)

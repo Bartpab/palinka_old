@@ -18,13 +18,17 @@ def build_symbol_table(root: ast.automation.PlantDeclaration, symbols: symbol_ta
 def transform(root: ast.automation.PlantDeclaration, symbols: symbol_table.SymbolTable):
     return transform_dispatch(root, dispatcher=transform_dispatch, symbol_table=symbols)
 
-def compile(root: ast.automation.PlantDeclaration, symbol_table: Optional[symbol_table.SymbolTable]) -> str:
+def compile(root: ast.automation.PlantDeclaration, symbol_table: Optional[symbol_table.SymbolTable], flags = None) -> str:
     """
         Compile the automation's AST
     """
+    flags = flags or []
     symbol_table = symbol_table or symbol_table.SymbolTable()
     build_symbol_table(root, symbol_table)
-    root = transform(root, symbol_table)
+    
+    if "raw" not in flags:
+        root = transform(root, symbol_table)
+    
     return compiler_dispatch(root, dispatcher=compiler_dispatch)
 
     

@@ -9,7 +9,15 @@ def compile(node: ast.automation.PlantDeclaration, *args, **kwargs):
     tb = TB()
 
     tb.add("/// BEGIN DIRECTORY plant ///")
-    tb.add("\n".join([dispatch(cnode, *args, **kwargs) for cnode in node]))
+    
+    for cnode in node:
+        if isinstance(cnode, ast.automation.TranslationUnit):
+            tb.add("/// BEGIN FILE plant.c ///")
+            tb.add(dispatch(cnode, *args, **kwargs))
+            tb.add("/// END FILE ///")
+        else:
+            tb.add(dispatch(cnode, *args, **kwargs))
+    
     tb.add("/// END DIRECTORY ///")
 
     return str(tb)

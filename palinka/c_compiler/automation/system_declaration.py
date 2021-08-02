@@ -9,9 +9,14 @@ def compile(node: ast.automation.SystemDeclaration, *args, **kwargs):
     
     sys_name = dispatch(node.nodes[0], *args, **kwargs)
 
-    tb.add(f"/// BEGIN FILE {sys_name}.c ///")
+    tb.add(f"/// BEGIN FILE {sys_name}.h ///")
     tb.add(dispatch(node.nodes[1], *args, **kwargs))
     tb.add("/// END FILE ///")
+
+    tb.add(f"/// BEGIN FILE {sys_name}.c ///")
+    tb.add(dispatch(node.nodes[2], *args, **kwargs))
+    tb.add("/// END FILE ///")
+
 
     return str(tb)
 

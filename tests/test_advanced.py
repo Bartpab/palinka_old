@@ -54,8 +54,18 @@ class EndToEndTestSuite(unittest.TestCase):
                                         automation.FunctionBlockPort('OPT01', 'Output:0', 1, types.bool_type)
                                     )
                             )\
+                          .add_block(
+                                automation.FunctionBlock('B02', 'Block_02', 'neg')\
+                                    .add_port(
+                                        automation.FunctionBlockPort('IPT01', 'Input:0', 0, types.bool_type)
+                                    )\
+                                    .add_port(
+                                        automation.FunctionBlockPort('OPT01', 'Output:0', 1, types.bool_type)
+                                    )
+                            )\
+                            .create_connection("B01", "OPT01", "B02", "IPT01")\
                             .create_input("FP01", "X01", "B01", "IPT01")\
-                            .create_output("X01", "B01", "OPT01")
+                            .create_output("X01", "B02", "OPT01")
                     )
             ).add_system(
                 automation.System('SYS03')\
@@ -69,14 +79,20 @@ class EndToEndTestSuite(unittest.TestCase):
                     )                
             )
         # Parse the plant description into an AST
-        ast = palinka.ast.automation.plant_builder.build(plant)
+        ast = palinka.ast.automation.build(plant)
 
+        for entry in plant.damo:
+            print(entry)
+        
+        for dl in plant.data_links:
+            print(dl)
+        
         # Compiling phase
         symbol_table = palinka.model.symbol_table.SymbolTable()
-        raw_code = palinka.c_compiler.automation.compile(ast, symbol_table)
+        raw_code = palinka.c_compiler.automation.compile(ast, symbol_table, [])
 
         # Create the project        
-        palinka.writer.create_project(os.path.join('tests', 'assets'), raw_code)
+        palinka.writer.create_project(os.path.join('tests', 'assets'), raw_code, symbol_table)
 
 if __name__ == '__main__':
     unittest.main()

@@ -94,7 +94,22 @@ class SymbolTable:
             data_type=data_type
         ))
 
-    def get(self, data_name: str) -> Optional[Union[SymbolTableEntry, SymbolTableSegment]]:
+    def get(self, data_path: str) -> Optional[Union[SymbolTableEntry, SymbolTableSegment]]:
+        stack = data_path.split("/")
+        
+        if len(stack) == 2:
+            segment = self.get_(stack[0])
+            
+            if segment:
+                return segment[stack[1]]
+
+            return None
+
+        else:
+            return self.get_(data_path)
+            
+
+    def get_(self, data_name: str) -> Optional[Union[SymbolTableEntry, SymbolTableSegment]]:
         stack = self.stack[:]
 
         while stack:

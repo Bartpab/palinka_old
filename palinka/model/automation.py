@@ -19,6 +19,9 @@ class Data:
 
     def __hash__(self):
         return hash(self.get_id(), self.get_type())
+    
+    def __str__(self):
+        return f"Data: {self.get_id()}, {self.get_type()}"
 
 class Placeholder(Data):
     def __init__(self, id: str, type: DataType):
@@ -143,6 +146,9 @@ class FunctionPlanOutput:
         self.data = data
         self.source = source
 
+    def get_source(self) -> FunctionBlockPort:
+        return self.source
+
     def get_data(self):
         return self.data
 
@@ -237,6 +243,9 @@ class FunctionPlan:
         self.outputs.add(opt)
         return self
 
+    def get_outputs(self) -> Iterator[FunctionPlanOutput]:
+        return self.outputs
+
     def get_internal_data(self):
         for block in self.blocks:
             for port in block.ports:
@@ -252,10 +261,13 @@ class System:
     def __init__(self, name: str):
         self.name = name
         self.function_plans: Database[FunctionPlan] = Database(id=DatabaseIndex(lambda fp: fp.get_id(), unique=True))
-        self.data_links: list[DataLink] = Database()
+        self.data_links: Database[DataLink] = Database()
     
     def __hash__(self):
         return hash(self.get_name())
+
+    def __str__(self):
+        return f"System: {self.get_name()}"
 
     def add_function_plan(self, fp: FunctionPlan):
         self.function_plans.add(fp)
@@ -264,6 +276,9 @@ class System:
     def get_function_plans(self) -> Iterator[FunctionPlan]:
         return self.function_plans
     
+    def has_data_links(self):
+        return not self.data_links.is_empty()
+
     def add_data_link(self, data_link: DataLink):
         self.data_links.add(data_link)
     
@@ -294,16 +309,22 @@ class DataLink:
     def __init__(self, source: System, target: System):
         self.source = source
         self.target = target
-        self.data: list[Data]
+        self.data: list[Data] = []
 
     def get_source(self) -> System:
         return self.source
     
     def get_target(self) -> System:
         return self.target
+    
+    def get_data(self) -> Iterator[Data]:
+        return self.data
 
     def __hash__(self):
         return hash(self.get_source(), self.get_target())
+    
+    def __str__(self):
+        return f"<DATA-LINK>: {self.get_source()} -> {self.get_target()} [{len(self.data)}]"
 
 class Plant:
     def __init__(self):

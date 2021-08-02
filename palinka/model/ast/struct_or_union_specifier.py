@@ -5,6 +5,8 @@ from typing import Union as PyUnion
 from .identifier import Identifier
 from .struct_declaration import StructDeclaration
 
+import palinka.model.ast.type_specifier as type_specifier
+
 class Struct:
     def __init__(self):
         self.nodes = []
@@ -61,3 +63,7 @@ class StructOrUnionSpecifier:
 
     def __iter__(self):
         return iter(self.nodes)
+
+    def as_type_specifier(self) -> type_specifier.TypeSpecifier:
+        return type_specifier.TypeSpecifier(self)
+    

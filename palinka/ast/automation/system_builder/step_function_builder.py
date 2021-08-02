@@ -1,7 +1,9 @@
 from ....model.automation import System
 from ....model import ast
 
-def build(system: System) -> ast.FunctionDefinition:
+import palinka.ast.utils as astu
+
+def build_source(system: System) -> ast.FunctionDefinition:
     """
         Build a the system's step function.
 
@@ -10,39 +12,17 @@ def build(system: System) -> ast.FunctionDefinition:
             ...
         }
     """
-    func_type_specifiers: list[ast.DeclarationSpecifier] = [ast.DeclarationSpecifier(ast.TypeSpecifier(ast.Void()))]
+    func_type_specifiers: list[ast.DeclarationSpecifier] = [ast.Void().as_type_specifier().as_declaration_specifier()]
     
-    func_declarator: ast.Declarator = ast.Declarator.create(
-        None,
-        # step_system_@system.name(System_t* sys, DataBlock_t* idb)
-        ast.DirectDeclarator.call(
-            # step_system_@system.name
-            ast.DirectDeclarator.identifier(ast.Identifier(f'step_system_{system.get_id()}')),
-            # System_t* sys
-            ast.ParameterList.create(
-                # System_t* sys
-                ast.ParameterDeclaration.create(
-                    # System_t
-                    [
-                        ast.DeclarationSpecifier.create(
-                            ast.TypeSpecifier(
-                                ast.StructOrUnionSpecifier.struct_identifier(
-                                    ast.Identifier("System_t")
-                                )
-                            )
-                        )
-                    ],
-                    ast.Declarator.create(
-                        ast.Pointer.basic(),
-                        ast.DirectDeclarator.identifier(
-                            ast.Identifier("sys")
-                        )
-                    )
-                )
+    func_declarator: ast.Declarator = astu.func_declarator(
+        f'sys_{system.get_id()}_step',
+        astu.param_list(
+            astu.param_decl(
+                [astu.struct_specifier("Plant_t").as_type_specifier().as_declaration_specifier()],
+                astu.id_declarator("plant", as_ptr=True)
             )
         )
-    )
-
+    )   
 
     return ast.FunctionDefinition.create(
         func_type_specifiers,
@@ -52,27 +32,30 @@ def build(system: System) -> ast.FunctionDefinition:
     )
 
 def build_step_function_statements(system: System) -> ast.CompoundStatement:
-    declarations: list[ast.Declaration] = []
-    statements: list[ast.Statement] = []
+    declarations: list[ast.Declaration] = [
+        astu.struct_var_decl("System_t", "sys", as_ptr=True)
+    ]
+    
+    statements: list[ast.Statement] = [
+        astu.assign_stmt(
+            "sys", 
+            astu.function_call_expr("open_system", "plant", f"${system.get_id()}")
+        )
+    ]
 
     for function_plan in system.get_function_plans():
-        # We make the function block call statement.
-        # FB call args are always (System_t* sys, DataBlock_t* idb)
-        function_name: ast.PostfixExpression = ast.PrimaryExpression.identifier(ast.Identifier(f"fb_{function_plan.get_id()}")).as_(ast.PostfixExpression)
-        function_args: list[ast.AssignmentExpression] = [
-            ast.PrimaryExpression.identifier(ast.Identifier('sys')).as_(ast.AssignmentExpression)
-        ]
-
-        function_call: ast.Statement = ast.ExpressionStatement(
-            ast.PostfixExpression.call(
-                function_name,
-                function_args
-            ).as_expression()
-        ).as_statement()
-
         statements += [
-            function_call
-        ]
+            astu.function_call_stmt(
+                f"fb_{function_plan.get_id()}",
+                "sys"
+        )]
+
+    if system.has_data_links():
+        statements += [astu.function_call_stmt(f"sys_{system.get_id()}_copy_to_sending_memory", "sys")]
+
+    statements += [
+        astu.function_call_stmt("close_system", "sys")
+    ]
 
     return ast.CompoundStatement.create(declarations, statements)
 

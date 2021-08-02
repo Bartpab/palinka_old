@@ -10,14 +10,18 @@ def transform(node: ast.PrimaryExpression, *args, **kwargs):
     symbols: SymbolTable = kwargs['symbol_table']
     dispatch = kwargs['dispatcher']
 
-    alias = list(map(lambda idt: idt.name, rec_find_all(lambda n: isinstance(n, ast.Identifier) and n.name.startswith('$'), node)))
-    alias = "".join(alias[0][1:]) if alias else None
-
-    if alias:
-        entry = symbols.get(alias)
-        if entry:
-            addr = entry.get_offset()
-            return ast.PrimaryExpression(ast.Constant(addr))
+    if isinstance(node.nodes[0], ast.Identifier):
+        identifier = node.nodes[0].name
+        if identifier.startswith("$") or identifier.startswith("@"):
+            op = identifier[0]
+            identifier = "".join(identifier[1:])
+            entry = symbols.get(identifier)
+            if entry:
+                if op == "$":
+                    value = entry.get_offset()
+                elif op == "@":
+                    value = entry.get_size()
+                return ast.PrimaryExpression(ast.Constant(value))
     
     # We do not have this special use case
     node.nodes = [dispatch(cnode, *args, **kwargs) for cnode in node]

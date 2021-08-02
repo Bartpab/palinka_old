@@ -46,6 +46,9 @@ from .type_qualifier            import TypeQualifier, Const, Volatile           
 from .type_specifier            import TypeSpecifier, Char, Short, Int, Long, Float, Double, Signed, Unsigned, Void, TypedefName # Ok
 from .unary_expression          import UnaryExpression, UnaryOperator, SizeOf       # Ok                            # Ok                              # Ok
 
+# Macro
+from .preprocessor              import Preprocessor, Include
+
 # Custom
 from . import automation
 

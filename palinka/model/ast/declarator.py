@@ -27,33 +27,37 @@ class DirectDeclarator:
         Tuple[DirectDeclarator, Optional[ConstantExpression]],
         Tuple[DirectDeclarator, parameter_list.ParameterList],
         Tuple[DirectDeclarator, list[Identifier]]
-    ]):
+    ], discr):
+        self.discr = discr
         self.case = nodes
         self.nodes = flatten(list(nodes))
 
     def is_first_case(self):
-        return len(self.nodes) == 1 and isinstance(self.nodes[0], Identifier)
+        return self.discr == 1
     
     def is_second_case(self):
-        return len(self.nodes) == 1 and isinstance(self.nodes[0], Declarator)
+        return self.discr == 2
     
     def is_third_case(self):
-        return len(self.case) == 2 and (isinstance(self.case[1], ConstantExpression) or self.case[1] is None)
+        return self.discr == 3
     
     def is_fourth_case(self):
-        return len(self.nodes) == 2 and isinstance(self.nodes[1], parameter_list.ParameterList)
+        return self.discr == 4
 
     def is_fifth_case(self):
-        return len(self.case) == 2 and isinstance(self.cases[1], list)
+        return self.discr == 5
 
     def identifier(n1: Identifier):
-        return DirectDeclarator((n1,))
+        return DirectDeclarator((n1,), 1)
     
-    def declarattor(n1: Declarator):
-        return DirectDeclarator((n1,))
+    def declarator(n1: Declarator):
+        return DirectDeclarator((n1,), 2)
 
-    def call(n1: DirectDeclarator, n2: parameter_list.ParameterList):
-        return DirectDeclarator((n1, n2))
+    def call(n1: DirectDeclarator, n2: Optional[parameter_list.ParameterList]):
+        if n2 is None:
+            return DirectDeclarator((n1, []), 5)
+
+        return DirectDeclarator((n1, n2), 4)
 
     def __iter__(self):
         return iter(self.nodes)

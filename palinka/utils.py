@@ -42,7 +42,7 @@ class TextBuilder:
         return "\n".join(self.lines)
 
 def rec_find_all(predicate, node):
-    stack = [node]
+    stack = [node] if not isinstance(node, list) else node[:]
     while stack:
         node = stack.pop(0)
         if predicate(node):
@@ -295,6 +295,9 @@ class Database(Generic[T]):
     def concat(self, entries: Iterable[T]):
         for entry in entries:
             self.add(entry)
+
+    def is_empty(self):
+        return len(self.entries) == 0
 
     def add(self, entry: T):
         pk = min(

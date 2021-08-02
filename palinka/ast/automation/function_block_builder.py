@@ -38,22 +38,76 @@ def build_input_assignments(block: FunctionBlock) -> list[ast.Statement]:
             if port == c.get_target():
                 # From the idb we get a pointer, we need to dereference to assign values
                 # *lh_ptr = *rh_ptr
-                lh = ast.UnaryExpression.unary(
-                    ast.UnaryOperator('*'), 
+                lh_typename_recast: ast.TypeName = ast.TypeName.create(
+                [ast.SpecifierQualifier(
+                    ast.TypeSpecifier(
+                        ast.TypedefName(
+                            ast.Identifier(
+                                c.get_target().get_type().get_name()
+                            )
+                        )
+                    )
+                )],
+                ast.AbstractDeclarator.basic_ptr())
+
+                lh_get_from_idb: CastExpression = ast.PostfixExpression.second_case(
+                    ast.PostfixExpression.fifth_case(
+                        ast.PrimaryExpression.identifier(
+                            ast.Identifier('idb')
+                        ).as_(ast.PostfixExpression),
+                        ast.Identifier(f'base')
+                    ),
                     ast.PrimaryExpression.identifier(
                         ast.Identifier(f'${c.get_target().get_global_id()}')
-                    ).as_(ast.CastExpression)
-                ).as_(ast.ConditionalExpression)
-                
-                rh = ast.UnaryExpression.unary(
+                    ).as_expression()
+                ).as_(ast.CastExpression)
+
+                if c.get_target().get_type() != base_type:
+                    lh = ast.CastExpression.expr(
+                        lh_typename_recast,
+                        lh_get_from_idb
+                    )
+
+                lh = ast.UnaryExpression.unary(
                     ast.UnaryOperator('*'), 
+                    lh_get_from_idb
+                ).as_(ast.ConditionalExpression)
+
+                rh_typename_recast: ast.TypeName = ast.TypeName.create(
+                [ast.SpecifierQualifier(
+                    ast.TypeSpecifier(
+                        ast.TypedefName(
+                            ast.Identifier(
+                                c.get_source().get_type().get_name()
+                            )
+                        )
+                    )
+                )],
+                ast.AbstractDeclarator.basic_ptr())
+
+                rh_get_from_idb: CastExpression = ast.PostfixExpression.second_case(
+                    ast.PostfixExpression.fifth_case(
+                        ast.PrimaryExpression.identifier(
+                            ast.Identifier('idb')
+                        ).as_(ast.PostfixExpression),
+                        ast.Identifier(f'base')
+                    ),
                     ast.PrimaryExpression.identifier(
                         ast.Identifier(f'${c.get_source().get_global_id()}')
-                    ).as_(ast.CastExpression)
+                    ).as_expression()
+                ).as_(ast.CastExpression)
+  
+                rh = ast.UnaryExpression.unary(
+                    ast.UnaryOperator('*'), 
+                    rh_get_from_idb
                 ).as_(ast.AssignmentExpression)
-                
-                op = ast.AssignmentExpression('=')
-                
+
+                if c.get_source().get_type() != base_type:
+                    rh = ast.CastExpression.expr(
+                        rh_typename_recast,
+                        rh_get_from_idb
+                    )
+
                 statements.append(
                     ast.ExpressionStatement(
                         ast.AssignmentExpression.expr(
