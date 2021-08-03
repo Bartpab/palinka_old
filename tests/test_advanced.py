@@ -86,12 +86,6 @@ class EndToEndTestSuite(unittest.TestCase):
         # Parse the plant description into an AST
         ast = palinka.ast.automation.build(plant)
 
-        for entry in plant.damo:
-            print(entry)
-        
-        for dl in plant.data_links:
-            print(dl)
-        
         # Compiling phase
         symbol_table = palinka.model.symbol_table.SymbolTable()
         raw_code = palinka.c_compiler.automation.compile(ast, symbol_table, [])

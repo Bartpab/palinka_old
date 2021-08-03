@@ -171,10 +171,10 @@ class FunctionPlan:
         self.id = id_
         self.label = label
 
-        self.blocks: Database[FunctionBlock]                = Database(id=DatabaseIndex(lambda block: block.get_id(), unique=True))
+        self.blocks: Database[FunctionBlock] = Database(id=DatabaseIndex(lambda block: block.get_id(), unique=True))
         self.connections: Database[FunctionBlockConnection] = Database()
-        self.inputs: Database[FunctionPlanInput]            = Database()
-        self.outputs: Database[FunctionPlanOutput]          = Database()
+        self.inputs: Database[FunctionPlanInput] = Database()
+        self.outputs: Database[FunctionPlanOutput] = Database()
 
     def get_global_id(self):
         return self.get_id()
@@ -514,3 +514,4 @@ class Plant:
 
     def get_systems(self) -> Iterator[System]:
         return self.systems
+

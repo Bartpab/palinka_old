@@ -5,7 +5,6 @@ from typing import Type, Optional, Any, Tuple
 
 from palinka.utils import Database, DatabaseIndex, TwoDimensionalIndex
 from palinka.types import DataType
-from palinka.model.tec4 import Symbol, Segment
 
 def data_type_to_size(type):
   if type == "char":

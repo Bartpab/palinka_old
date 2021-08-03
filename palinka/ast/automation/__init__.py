@@ -44,7 +44,6 @@ def build_data_links(plant: Plant):
                         
             for consumer in consumers:
                 consumer_system = consumer.get_system()
-                print(f'{producer_system.get_id()} -{namespace}:{entry_name}-> {consumer_system.get_id()}')
                 # Create the Data Link if it does not exist yet.
                 if not links.contains((producer_system, consumer_system, namespace), index_name='cmp'):
                     links.add(DataLink(index=index, source=producer.get_system(), target=consumer.get_system(), namespace=namespace))
