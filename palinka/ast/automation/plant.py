@@ -1,16 +1,9 @@
-from palinka.model.ast import unary_expression
-from palinka.model.ast.identifier import Identifier
-from typing import Iterator, Tuple
-
-from ...model.automation import Plant, Data, System, DataLink
+from ...model.automation import Plant
 from ...model import ast
-from ...model import damo
-from ...utils import Database, TwoDimensionalIndex
 from . import system
 
 import palinka.ast.utils as astu
 
-import itertools
 
 def build(plant: Plant):
     systems: list[ast.automation.SystemDeclaration] = [system.build(sys) for sys in plant.get_systems()]
@@ -89,11 +82,13 @@ def build_init_function(plant: Plant):
     )]
 
     for i, system in enumerate(plant.get_systems()):
+        sys_namespace = f"sys_{system.get_slug_id()}"
+
         statements += [astu.assign_stmt(
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(i)
+                    astu.constant_expr(system.get_address())
                 ),
                 "offset"
             ),
@@ -102,7 +97,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(i)
+                    astu.constant_expr(system.get_address())
                 ),
                 "size"
             ),
@@ -113,7 +108,7 @@ def build_init_function(plant: Plant):
                 astu.attr_access_expr(
                     astu.getitem_expr(
                         astu.attr_access_expr("plant", "systems", arrow=False),
-                        astu.constant_expr(i)
+                        astu.constant_expr(system.get_address())
                     ),
                     "rwlock"
                 )
@@ -123,11 +118,11 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(i)
+                    astu.constant_expr(system.get_address())
                 ),
                 "step"
             ),
-            astu.id_expr(f"sys_{system.get_id()}_step")
+            astu.id_expr(f"{sys_namespace}_step")
         )]        
 
     statements += [astu.return_stmt("plant")]

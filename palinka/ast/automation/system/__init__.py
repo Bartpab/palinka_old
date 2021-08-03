@@ -15,13 +15,16 @@ from . import cpy_recv
 
 def build(system: System) -> ast.automation.SystemDeclaration:
     return ast.automation.SystemDeclaration.create(
-        ast.Identifier(system.get_name()),
+        system.get_id(),
+        system.get_slug_id(),
         build_header(system),
         build_source(system)
     )
 
 
 def build_header(system: System) -> ast.automation.TranslationUnit:
+    sys_namespace = f"sys_{system.get_slug_id()}"
+
     declarations = []
 
     # Declare the step function
@@ -32,7 +35,7 @@ def build_header(system: System) -> ast.automation.TranslationUnit:
                 None, 
                 ast.DirectDeclarator.call(
                     ast.DirectDeclarator.identifier(
-                        ast.Identifier(f"sys_{system.get_id()}_step")
+                        ast.Identifier(f"{sys_namespace}_step")
                     ), 
                     astu.param_list(
                         astu.param_decl(
@@ -90,7 +93,7 @@ def build_source(system: System) -> ast.automation.TranslationUnit:
         ast.Preprocessor(
             ast.Include(
                 ast.Identifier(
-                    f"src/codegen/plant/{system.get_id()}.h"
+                    f"src/codegen/plant/{system.get_slug_id()}.h"
                 ), internal=True
             )
         )

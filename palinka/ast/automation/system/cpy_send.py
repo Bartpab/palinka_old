@@ -32,7 +32,7 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
     return decls
 
 def build_function(system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{system.get_id()}_cpy_send"
+    fb_name = f"sys_{system.get_slug_id()}_cpy_send"
     
     fb_declarator = astu.func_declarator(
         fb_name,
@@ -51,7 +51,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     statements = []
     
     for lnk in system.get_exporting_data_links():
-        fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_id()}"
+        fb_name = f"sys_{system.get_slug_id()}_cpy_send_{lnk.get_id()}"
         statements += [astu.function_call_stmt(fb_name, "sys")]
 
 
@@ -63,7 +63,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     )    
 
 def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_id()}"
+    fb_name = f"sys_{system.get_slug_id()}_cpy_send_{lnk.get_id()}"
     
     fb_declarator: ast.Declarator = astu.func_declarator(
         fb_name,

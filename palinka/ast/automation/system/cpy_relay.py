@@ -31,7 +31,7 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
     return decls
 
 def build_function(system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{system.get_id()}_relay"
+    fb_name = f"sys_{system.get_slug_id()}_relay"
     
     fb_declarator = astu.func_declarator(
         fb_name,
@@ -53,7 +53,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     statements = []
     
     for lnk in system.get_relay_data_links():
-        fb_name = f"sys_{system.get_id()}_cpy_relay_{lnk.get_id()}"
+        fb_name = f"sys_{system.get_slug_id()}_cpy_relay_{lnk.get_id()}"
         statements += [astu.function_call_stmt(fb_name, "plant", "sys")]
 
 
@@ -65,7 +65,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     )    
 
 def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{system.get_id()}_cpy_relay_{lnk.get_id()}"
+    fb_name = f"sys_{system.get_slug_id()}_cpy_relay_{lnk.get_id()}"
     
     fb_declarator = astu.func_declarator(
         fb_name,
@@ -120,7 +120,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
     prev_symbol_entry_name = f"{prev_system.get_id()}/{relay_or_sending}:{lnk.get_id()}"
     next_symbol_entry_name = f"{next_system.get_id()}/RECV:{lnk.get_id()}"
 
-    statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(prev_system.index)))]
+    statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(prev_system.get_address())))]
     statements += [astu.assign_stmt("other_idb", astu.function_call_expr("open_data_block", astu.ref_expr("sys"), f"${prev_symbol_entry_name}"))]
     statements += [
         astu.function_call_stmt(
@@ -139,7 +139,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
     
     # Copy the data into the receiving memory of the target system only if it's the last one on the path
     if lnk.is_target(next_system):
-        statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(next_system.index)))]
+        statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(next_system.get_address())))]
         statements += [astu.assign_stmt("other_idb", astu.function_call_expr("open_data_block", astu.ref_expr("sys"), f"${next_symbol_entry_name}"))]
         statements += [
             astu.function_call_stmt(

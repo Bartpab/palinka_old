@@ -6,6 +6,7 @@ from typing import Tuple, Optional
 import palinka.model.damo as damo
 from palinka.utils import Database, DatabaseIndex
 from palinka.types import DataType
+from palinka.helpers import c_id
 
 from more_itertools import unique_everseen
 from itertools import chain
@@ -285,16 +286,17 @@ class BaseSystem:
         raise NotImplementedError()
 
 class System:
-    def __init__(self, name: str):
-        self.name = name
+    def __init__(self, id: str):
+        self.address = None
+        self.id = id
         self.function_plans: Database[FunctionPlan] = Database(id=DatabaseIndex(lambda fp: fp.get_id(), unique=True))
         self.data_links: Database[DataLink] = Database()
 
     def __hash__(self):
-        return hash(self.get_name())
+        return hash(self.get_id())
 
     def __str__(self):
-        return f"System: {self.get_name()}"
+        return f"System: {self.get_id()}"
 
     def add_function_plan(self, fp: FunctionPlan):
         self.function_plans.add(fp)
@@ -322,10 +324,13 @@ class System:
         return list(filter(lambda lnk: lnk.is_target(self), self.get_data_links()))
 
     def get_id(self):
-        return self.name
+        return str(self.id)
 
-    def get_name(self):
-        return self.name
+    def get_address(self):
+        return self.address
+
+    def get_slug_id(self):
+        return c_id(self.get_id())
 
     def get_imported_data(self) -> Iterator[Data]:
         return unique_everseen(
@@ -352,7 +357,7 @@ class DataLink:
 
     def get_id(self):
         return self.index
-
+    
     def get_namespace(self) -> str:
         return self.namespace
 
@@ -482,7 +487,7 @@ class Topology:
 class Plant:
     def __init__(self):
         self.systems: Database[System] = Database(
-            name=DatabaseIndex(lambda system: system.get_name(), unique=True)
+            name=DatabaseIndex(lambda system: system.get_id(), unique=True)
         )
         self.topology = Topology()
         self.last_id = -1
@@ -501,7 +506,7 @@ class Plant:
     def add_system(self, system: System) -> Plant:
         self.last_id += 1
         self.systems.add(system)
-        system.index = self.last_id
+        system.address = self.last_id
         return self
 
     def get_system(self, name) -> Optional[System]:

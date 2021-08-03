@@ -1,2 +1,2 @@
 #include "src/model/plant.h"
-void sys_SYS03_step(struct Plant_t * plant);
+void sys_sys03_step(struct Plant_t * plant);

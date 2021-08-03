@@ -31,7 +31,7 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
     return decls
 
 def build_function(system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{system.get_id()}_cpy_recv"
+    fb_name = f"sys_{system.get_slug_id()}_cpy_recv"
     
     fb_declarator = astu.func_declarator(
         fb_name,
@@ -49,7 +49,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     statements = []
     
     for lnk in filter(lambda lnk: lnk.get_target() == system, system.get_data_links()):
-        fb_name = f"sys_{lnk.get_target().get_name()}_cpy_recv_{lnk.get_source().get_name()}"
+        fb_name = f"sys_{system.get_slug_id()}_cpy_recv_{lnk.get_id()}"
         statements += [astu.function_call_stmt(fb_name, "sys")]
 
 
@@ -61,7 +61,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     )    
 
 def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{lnk.get_target().get_name()}_cpy_recv_{lnk.get_source().get_name()}"
+    fb_name = f"sys_{system.get_slug_id()}_cpy_recv_{lnk.get_id()}"
     
     fb_declarator = astu.func_declarator(
         fb_name,
@@ -99,7 +99,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
         astu.function_call_expr(
             'open_data_block', 
             'sys', 
-            f"$RECV:{lnk.get_target().get_id()}"
+            f"$RECV:{lnk.get_id()}"
         )
     )]
 
