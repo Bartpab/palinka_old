@@ -1,32 +1,40 @@
-<Segment offset="0" name="__global__" type="char" size="10">
-  <Segment offset="0" name="plant" type="char" size="10">
-    <Segment offset="0" name="SYS01" type="char" size="2">
+<Segment offset="0" name="__global__" type="char" size="12">
+  <Segment offset="0" name="plant" type="char" size="12">
+    <Segment offset="0" name="NET01" type="char" size="2">
+      <Segment offset="0" name="RELAY:0" type="char" size="1">
+        <Entry offset="0" name="FP01:X01" type="char" size="1"/>
+      </Segment>
+      <Segment offset="1" name="RELAY:1" type="char" size="1">
+        <Entry offset="0" name="FP02:X01" type="char" size="1"/>
+      </Segment>
+    </Segment>
+    <Segment offset="2" name="SYS01" type="char" size="2">
       <Segment offset="0" name="FP01" type="char" size="1">
         <Entry offset="0" name="FP01:B01:OPT01" type="char" size="1"/>
       </Segment>
-      <Segment offset="1" name="SENDING:SYS02" type="char" size="1">
+      <Segment offset="1" name="SENDING:0" type="char" size="1">
         <Entry offset="0" name="FP01:X01" type="char" size="1"/>
       </Segment>
     </Segment>
-    <Segment offset="2" name="SYS02" type="char" size="6">
+    <Segment offset="4" name="SYS02" type="char" size="6">
       <Segment offset="0" name="FP02" type="char" size="4">
         <Entry offset="0" name="FP02:B01:IPT01" type="char" size="1"/>
         <Entry offset="1" name="FP02:B01:OPT01" type="char" size="1"/>
         <Entry offset="2" name="FP02:B02:IPT01" type="char" size="1"/>
         <Entry offset="3" name="FP02:B02:OPT01" type="char" size="1"/>
       </Segment>
-      <Segment offset="4" name="RECV:SYS02" type="char" size="1">
+      <Segment offset="4" name="RECV:0" type="char" size="1">
         <Entry offset="0" name="FP01:X01" type="char" size="1"/>
       </Segment>
-      <Segment offset="5" name="SENDING:SYS03" type="char" size="1">
+      <Segment offset="5" name="SENDING:1" type="char" size="1">
         <Entry offset="0" name="FP02:X01" type="char" size="1"/>
       </Segment>
     </Segment>
-    <Segment offset="8" name="SYS03" type="char" size="2">
+    <Segment offset="10" name="SYS03" type="char" size="2">
       <Segment offset="0" name="FP03" type="char" size="1">
         <Entry offset="0" name="FP03:B01:IPT01" type="char" size="1"/>
       </Segment>
-      <Segment offset="1" name="RECV:SYS03" type="char" size="1">
+      <Segment offset="1" name="RECV:1" type="char" size="1">
         <Entry offset="0" name="FP02:X01" type="char" size="1"/>
       </Segment>
     </Segment>

@@ -28,6 +28,7 @@ class EndToEndTestSuite(unittest.TestCase):
     def test_e2e(self):
         # Create a fake plant
         plant = automation.Plant()\
+            .add_system(automation.System("NET01"))\
             .add_system(
                 automation.System('SYS01')\
                     .add_function_plan(
@@ -38,7 +39,7 @@ class EndToEndTestSuite(unittest.TestCase):
                                         automation.FunctionBlockPort('OPT01', 'Output:0', 0, types.bool_type)
                                     )
                             )\
-                            .create_output("X01", "B01", "OPT01")
+                            .create_output("X01", "B01", "OPT01", namespace="plant_bus")
                     )
             )\
             .add_system(
@@ -64,8 +65,8 @@ class EndToEndTestSuite(unittest.TestCase):
                                     )
                             )\
                             .create_connection("B01", "OPT01", "B02", "IPT01")\
-                            .create_input("FP01", "X01", "B01", "IPT01")\
-                            .create_output("X01", "B02", "OPT01")
+                            .create_input("FP01", "X01", "B01", "IPT01", namespace="plant_bus")\
+                            .create_output("X01", "B02", "OPT01", namespace="plant_bus")
                     )
             ).add_system(
                 automation.System('SYS03')\
@@ -75,9 +76,13 @@ class EndToEndTestSuite(unittest.TestCase):
                                 automation.FunctionBlock('B01', 'Block_01', 'bin_output')\
                                     .add_port(automation.FunctionBlockPort('IPT01', 'Input:0', 0, types.bool_type))
                             )\
-                            .create_input("FP02", "X01", "B01", "IPT01")
+                            .create_input("FP02", "X01", "B01", "IPT01", namespace="plant_bus")
                     )                
-            )
+            )\
+            .connect("SYS01", "NET01", network="plant_bus")\
+            .connect("SYS02", "NET01", network="plant_bus")\
+            .connect("SYS03", "NET01", network="plant_bus")
+
         # Parse the plant description into an AST
         ast = palinka.ast.automation.build(plant)
 

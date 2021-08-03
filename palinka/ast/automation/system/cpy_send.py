@@ -19,11 +19,14 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
         The routine is called "sys_{system.get_id()}_cpy_send"
     """
 
+    if not system.get_exporting_data_links():
+        return []
+
     decls: list[ast.automation.ExternalDeclaration] = [
         build_function(system)
     ]   
 
-    for lnk in filter(lambda lnk: lnk.get_source() == system, system.get_data_links()):
+    for lnk in system.get_exporting_data_links():
         decls += [build_subfunction(lnk, system)]
     
     return decls
@@ -36,7 +39,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
         astu.param_list(
             astu.param_decl(
                 astu.struct_specifier("System_t").as_type_specifier(),
-                astu.id_declarator("sys")
+                astu.id_declarator("sys", True)
             )
         ),
         as_ptr=False
@@ -47,8 +50,8 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     declarations = []
     statements = []
     
-    for lnk in filter(lambda lnk: lnk.get_source() == system, system.get_data_links()):
-        fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_target().get_name()}"
+    for lnk in system.get_exporting_data_links():
+        fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_id()}"
         statements += [astu.function_call_stmt(fb_name, "sys")]
 
 
@@ -60,38 +63,18 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     )    
 
 def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_target().get_name()}"
+    fb_name = f"sys_{lnk.get_source().get_name()}_cpy_send_{lnk.get_id()}"
     
-    fb_declarator: ast.Declarator = ast.Declarator.create(
-        None,
-        # step_system_@system.name(System_t* sys)
-        ast.DirectDeclarator.call(
-            # step_system_@system.name
-            ast.DirectDeclarator.identifier(ast.Identifier(fb_name)),
-            # System_t* sys
-            ast.ParameterList.create(
-                # System_t* sys
-                ast.ParameterDeclaration.create(
-                    # System_t
-                    [
-                        ast.DeclarationSpecifier.create(
-                            ast.TypeSpecifier(
-                                ast.StructOrUnionSpecifier.struct_identifier(
-                                    ast.Identifier("System_t")
-                                )
-                            )
-                        )
-                    ],
-                    ast.Declarator.create(
-                        ast.Pointer.basic(),
-                        ast.DirectDeclarator.identifier(
-                            ast.Identifier("sys")
-                        )
-                    )
-                )
+    fb_declarator: ast.Declarator = astu.func_declarator(
+        fb_name,
+        astu.param_list(
+            astu.param_decl(
+                astu.struct_specifier("System_t").as_type_specifier(),
+                astu.id_declarator("sys", True)
             )
         )
     )
+
 
     db_definition = ast.automation.DataBlockDefinition([
         ast.automation.DataBlockEntryDeclaration(data.get_id(), data.get_type()) for data in lnk.get_data()
@@ -102,7 +85,7 @@ def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalD
         [ast.DeclarationSpecifier(ast.TypeSpecifier(ast.Void()))],
         fb_declarator,
         build_subfunction_statements(lnk, system),
-        f"SENDING:{lnk.get_target().get_id()}"
+        f"SENDING:{lnk.get_id()}"
     )
 
 def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundStatement:
@@ -120,7 +103,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
         astu.function_call_expr(
             'open_data_block', 
             'sys', 
-            f"$SENDING:{lnk.get_target().get_id()}"
+            f"$SENDING:{lnk.get_id()}"
         )
     )]
 

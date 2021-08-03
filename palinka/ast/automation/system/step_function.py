@@ -39,26 +39,33 @@ def build_step_function_statements(system: System) -> ast.CompoundStatement:
         )
     ]
 
-    if system.has_data_links():
+    # We received data from other systems
+    if system.get_importing_data_links():
         statements += [
-            astu.function_call_stmt(f"sys_{system.get_id()}_copy_recv", "sys")
+            astu.function_call_stmt(f"sys_{system.get_id()}_copy_recv", astu.ref_expr("sys"))
         ]
+
+    if system.get_relay_data_links():
+        statements += [
+            astu.function_call_stmt(f"sys_{system.get_id()}_copy_relay", "plant", astu.ref_expr("sys"))
+        ]        
 
     for function_plan in system.get_function_plans():
         statements += [
             astu.function_call_stmt(
                 f"fb_{function_plan.get_id()}",
-                "sys"
+                astu.ref_expr("sys")
             )
         ]
 
-    if system.has_data_links():
+    # We send data to other systems
+    if system.get_exporting_data_links():
         statements += [
-            astu.function_call_stmt(f"sys_{system.get_id()}_copy_send", "sys")
+            astu.function_call_stmt(f"sys_{system.get_id()}_copy_send", astu.ref_expr("sys"))
         ]
 
     statements += [
-        astu.function_call_stmt("close_system", "sys")
+        astu.function_call_stmt("close_system", astu.ref_expr("sys"))
     ]
 
     return ast.CompoundStatement.create(declarations, statements)

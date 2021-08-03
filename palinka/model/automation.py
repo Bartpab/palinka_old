@@ -137,8 +137,9 @@ class FunctionBlockConnection:
         return self.target
 
 class FunctionPlanInput:
-    def __init__(self, data: Data, target: FunctionBlockPort):
+    def __init__(self, data: Data, target: FunctionBlockPort, namespace: str = None):
         self.data = data
+        self.namespace = namespace
         self.target = target
     
     def get_target(self) -> FunctionBlockPort:
@@ -148,8 +149,9 @@ class FunctionPlanInput:
         return self.data
 
 class FunctionPlanOutput:
-    def __init__(self, data: Data, source: FunctionBlockPort):
+    def __init__(self, data: Data, source: FunctionBlockPort, namespace: str = None):
         self.data = data
+        self.namespace = namespace
         self.source = source
 
     def get_source(self) -> FunctionBlockPort:
@@ -220,7 +222,7 @@ class FunctionPlan:
         self.inputs.add(ipt)
         return self
 
-    def create_input(self, function_plan_id: str, sig_name: str, target_block_id: str, target_port_id: str):
+    def create_input(self, function_plan_id: str, sig_name: str, target_block_id: str, target_port_id: str, namespace: str = None):
         tgt = self.get_block(target_block_id)
         tgtp = tgt.get_port(target_port_id)
 
@@ -230,21 +232,22 @@ class FunctionPlan:
                     function_plan_id, 
                     sig_name, 
                     tgtp.get_type()
-                ), tgtp
+                ), tgtp, namespace
             )
         )
 
     def get_inputs(self) -> Iterator[FunctionPlanInput]:
         return self.inputs
 
-    def create_output(self, sig_name: str, source_block_id: str, source_port_id: str):
+    def create_output(self, sig_name: str, source_block_id: str, source_port_id: str, namespace: str = None):
         src = self.get_block(source_block_id)
         srcp = src.get_port(source_port_id)
 
         return self.add_output(
             FunctionPlanOutput(
                 Signal(self, sig_name, srcp.get_type()),
-                srcp
+                srcp,
+                namespace
             )
         )
 
@@ -261,17 +264,32 @@ class FunctionPlan:
                 yield port.get_data()
 
     def get_imported_data(self) -> Iterator[Data]:
-        return unique_everseen(map(lambda ipt: ipt.get_data(), self.inputs))
+        return unique_everseen(map(lambda ipt: (ipt.namespace, ipt.get_data()), self.inputs))
     
     def get_exported_data(self) -> Iterator[Data]:
-        return unique_everseen(map(lambda ipt: ipt.get_data(), self.outputs))
+        return unique_everseen(map(lambda ipt: (ipt.namespace, ipt.get_data()), self.outputs))
+
+class BaseSystem:
+    BUS_SYSTEM = 1
+
+    def __init__(self, name):
+        self.name = name
+    
+    def get_function_plans(self):
+        raise NotImplementedError()
+    
+    def has_data_links(self) -> bool:
+        raise NotImplementedError()
+    
+    def get_data_links(self) -> Iterator[DataLink]:
+        raise NotImplementedError()
 
 class System:
     def __init__(self, name: str):
         self.name = name
         self.function_plans: Database[FunctionPlan] = Database(id=DatabaseIndex(lambda fp: fp.get_id(), unique=True))
         self.data_links: Database[DataLink] = Database()
-    
+
     def __hash__(self):
         return hash(self.get_name())
 
@@ -293,6 +311,15 @@ class System:
     
     def get_data_links(self) -> Iterator[DataLink]:
         return self.data_links
+    
+    def get_relay_data_links(self) -> Iterable[DataLink]:
+        return list(filter(lambda lnk: lnk.is_relay(self), self.get_data_links()))
+
+    def get_exporting_data_links(self) -> Iterable[DataLink]:
+        return list(filter(lambda lnk: lnk.is_source(self), self.get_data_links()))
+
+    def get_importing_data_links(self) -> Iterable[DataLink]:
+        return list(filter(lambda lnk: lnk.is_target(self), self.get_data_links()))
 
     def get_id(self):
         return self.name
@@ -315,10 +342,70 @@ class System:
         )    
 
 class DataLink:
-    def __init__(self, source: System, target: System):
+    def __init__(self, index: str, source: System, target: System, namespace: str = None):
+        self.index = str(index)
+        self.path = [source, target]
         self.source = source
         self.target = target
+        self.namespace = namespace
         self.data: list[Data] = []
+
+    def get_id(self):
+        return self.index
+
+    def get_namespace(self) -> str:
+        return self.namespace
+
+    def is_source(self, system: System) -> bool:
+        return self.path[0] == system
+    
+    def is_relay(self, system: System) -> bool:
+        try:
+            idx = self.path.index(system)
+            if idx >= len(self.path) -1 or idx <= 0:
+                return False
+            else:
+                return True
+        except ValueError:
+            return False        
+
+    def is_target(self, system: System) -> bool:
+        return self.path[-1] == system
+
+    def set_path(self, path: list[System]):
+        if path[0] != self.get_source() and path[-1] != self.get_target():
+            raise Exception("Invalid path, the source and target of the path must be the same as the data link.")
+        
+        self.path = path
+
+    def get_path(self) -> list[System]:
+        return self.path
+
+    def add_relay(self, system: System):
+        """
+            Add a system as a relay of the data link's chain
+        """
+        self.path.insert(-1, system)
+
+    def next(self, system: System) -> Optional[System]:
+        try:
+            idx = self.path.index(system)
+            if idx >= len(self.path) -1:
+                return None
+            else:
+                return self.path[idx + 1]
+        except ValueError:
+            return None
+
+    def previous(self, system: System) -> Optional[System]:
+        try:
+            idx = self.path.index(system)
+            if idx <= 0:
+                return None
+            else:
+                return self.path[idx - 1]
+        except ValueError:
+            return None        
 
     def get_source(self) -> System:
         return self.source
@@ -333,24 +420,91 @@ class DataLink:
         return hash(self.get_source(), self.get_target())
     
     def __str__(self):
-        return f"<DATA-LINK>: {self.get_source()} -> {self.get_target()} [{len(self.data)}]"
+        return f"<DATA-LINK>: [{self.get_namespace()}] {self.get_source()} -> {self.get_target()} [{len(self.data)}]"
+
+class TopologyEdge:
+    def __init__(self, s0: System, s1: System, network: str):
+        self.s0 = s0
+        self.s1 = s1
+        self.network = network
+    
+    def is_connecting(self, sys: System):
+        return sys == self.s0 or sys == self.s1
+
+    def other_one(self, sys: System):
+        if self.s0 == sys:
+            return self.s1
+        else:
+            return self.s0
+
+    def get_network(self) -> str:
+        return self.network
+
+    def __str__(self) -> str:
+        return f"<TOPOLOGY_EDGE>: [{self.network}] {self.s0} -- {self.s1}"
+
+class Topology:
+    def __init__(self):
+        self.edges: Database[TopologyEdge] = Database()
+    
+    def connect(self, sys0: System, sys1: System, network: str):
+        self.edges.add(TopologyEdge(sys0, sys1, network))
+
+    def neighbors(self, sys, network: str):
+        for edge in self.edges:
+            if edge.is_connecting(sys) and edge.get_network() == network:
+                yield edge
+
+    def find_shortest_path(self, source: System, target: System, network: str) -> list[System]:
+        visited = []
+        stack = [(source, [])]
+        
+        while stack:
+            sys, path = stack.pop(0)
+            
+            if sys not in visited:
+                visited.append(sys)
+            else:
+                continue
+
+            np = path[:] + [sys]
+
+            # Found you
+            if sys == target:
+                return np
+            
+            for edge in self.neighbors(sys, network):
+                ngh = edge.other_one(sys)
+                stack.append((ngh, np[:]))
+
+        return []
 
 class Plant:
     def __init__(self):
         self.systems: Database[System] = Database(
             name=DatabaseIndex(lambda system: system.get_name(), unique=True)
         )
+        self.topology = Topology()
         self.last_id = -1
         self.damo = damo.DataModel()
         self.data_links: Database[DataLink] = Database()
-    
-    def add_system(self, system: System):
+
+    def get_topology(self) -> Topology:
+        return self.topology
+
+    def connect(self, sys0: str, sys1: str, network: str) -> Plant:
+        sys0 = self.get_system(sys0)
+        sys1 = self.get_system(sys1)  
+        self.topology.connect(sys0, sys1, network)
+        return self
+
+    def add_system(self, system: System) -> Plant:
         self.last_id += 1
         self.systems.add(system)
         system.index = self.last_id
         return self
 
-    def get_system(self, name):
+    def get_system(self, name) -> Optional[System]:
         return self.systems.get(name, index_name='name')
 
     def get_systems(self) -> Iterator[System]:

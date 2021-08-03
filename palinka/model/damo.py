@@ -6,13 +6,17 @@ from palinka.utils import Database, DatabaseIndex, TwoDimensionalIndex
 from palinka.types import DataType
 
 class DataModelEntry:
-  def __init__(self, system: System, data: Data, flag: int):
+  def __init__(self, system: System, data: Data, namespace: str, flag: int):
     self.system: System  = system
     self.data = data
+    self.namespace = namespace
     self.flag = flag
   
   def get_data(self) -> Data:
     return self.data
+
+  def get_namespace(self) -> str:
+    return self.namespace
 
   def get_system(self) -> System:
     return self.system
@@ -40,16 +44,15 @@ class DataModel:
   def get_data_names(self) -> Iterator[str]:
       return self.entries.get_indexer('id').get_indexes()
 
-  def get_producer(self, data_id: str) -> Optional[DataModelEntry]:
+  def get_producers(self, data_id: str) -> Iterator[DataModelEntry]:
     for entry in self.entries:
       if entry.get_id() == data_id and entry.flag == DataModelFlags.PRODUCER:
-        return entry
+        yield entry
     
-    return None
 
-  def get_consumers(self, data_id: str) -> Iterator[DataModelEntry]:
+  def get_consumers(self, data_id: str, namespace: str) -> Iterator[DataModelEntry]:
     for entry in self.entries:
-      if entry.get_id() == data_id and entry.flag == DataModelFlags.CONSUMER:
+      if entry.get_id() == data_id and entry.flag == DataModelFlags.CONSUMER and entry.get_namespace() == namespace:
         yield entry
     
   def __iter__(self):
@@ -61,7 +64,7 @@ class DataModel:
   def contains(self, system: System, data_id: str) -> bool:
       return self.entries.contains(key=(system, data_id), index_name='composite_system_data')
 
-  def add(self, system: System, data: Data, flag: int = 0) :
+  def add(self, system: System, data: Data, namespace: str, flag: int = 0) :
     """
       system_id: str of the system managing the data
       data_id: str of the data
@@ -74,6 +77,7 @@ class DataModel:
         DataModelEntry(
           system=system,
           data=data,
+          namespace=namespace,
           flag=flag
         )
       )

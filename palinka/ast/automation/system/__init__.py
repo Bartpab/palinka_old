@@ -9,6 +9,7 @@ from ....model import ast
 from .. import function_plan
 from . import step_function
 from . import cpy_send
+from . import cpy_relay
 from . import cpy_recv
 
 
@@ -68,6 +69,7 @@ def build_source(system: System) -> ast.automation.TranslationUnit:
         )
 
     declarations += cpy_recv.build_source(system)
+    declarations += cpy_relay.build_source(system)
     declarations += cpy_send.build_source(system)
 
     preprocessors = [

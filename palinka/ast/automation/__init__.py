@@ -15,47 +15,60 @@ def build_damo(plant: Plant) -> None:
     system: System
     
     for system in plant.get_systems():
-        imports: Iterator[Tuple[int, Data]] = map(lambda data: (damo.DataModelFlags.CONSUMER, data), system.get_imported_data())
-        exports: Iterator[Tuple[int, Data]] = map(lambda data: (damo.DataModelFlags.PRODUCER, data), system.get_exported_data())
+        imports: Iterator[Tuple[int, Data]] = map(lambda desc: (damo.DataModelFlags.CONSUMER, desc[0], desc[1]), system.get_imported_data())
+        exports: Iterator[Tuple[int, Data]] = map(lambda desc: (damo.DataModelFlags.PRODUCER, desc[0], desc[1]), system.get_exported_data())
         
-        for flag, data in itertools.chain(imports, exports):
-            plant.damo.add(system, data, flag=flag)
+        for flag, namespace, data in itertools.chain(imports, exports):
+            plant.damo.add(system, data, namespace=namespace, flag=flag)
 
 def build_data_links(plant: Plant):
     """
         Based on the Data Model, we build the data links between systems
     """
     links: Database[DataLink] = Database(
-        composite_target_source=TwoDimensionalIndex(
-            lambda link: (link.get_source(), link.get_target()), 
+        cmp=TwoDimensionalIndex(
+            lambda link: (link.get_source(), link.get_target(), link.get_namespace()), 
             unique=True
         )
     )
 
+    index = 0
+
     for entry_name in plant.damo.get_data_names():
-        producer: damo.DataModelEntry = plant.damo.get_producer(entry_name)
-        consumers: list[damo.DataModelEntry] = plant.damo.get_consumers(entry_name)
-                
-        # Don't have the producer of the data, cannot do anything...
-        if producer is None:
-            continue
-        
-        for consumer in consumers:
-            print(f'{producer.get_system().get_id()} -{entry_name}-> {consumer.get_system().get_id()}')
-            # Create the Data Link if it does not exist yet.
-            if not links.contains((producer.get_system(), consumer.get_system()), index_name='composite_target_source'):
-                links.add(DataLink(source=producer.get_system(), target=consumer.get_system()))
+        for producer in plant.damo.get_producers(entry_name):
+            namespace: str = producer.get_namespace()
+            producer_system: System = producer.get_system()
+            data: Data= producer.get_data()
+     
+            consumers: list[damo.DataModelEntry] = plant.damo.get_consumers(entry_name, namespace)
+                        
+            for consumer in consumers:
+                consumer_system = consumer.get_system()
+                print(f'{producer_system.get_id()} -{namespace}:{entry_name}-> {consumer_system.get_id()}')
+                # Create the Data Link if it does not exist yet.
+                if not links.contains((producer_system, consumer_system, namespace), index_name='cmp'):
+                    links.add(DataLink(index=index, source=producer.get_system(), target=consumer.get_system(), namespace=namespace))
+                    index += 1
 
-            # Retrieve the Data Link and add the data in it
-            link: link = links.get((producer.get_system(), consumer.get_system()), index_name='composite_target_source')
-            link.data.append(producer.get_data())
+                # Retrieve the Data Link and add the data in it
+                link: link = links.get((producer.get_system(), consumer.get_system(), namespace), index_name='cmp')
+                link.data.append(producer.get_data())
 
-    # We give a reference to the data link to each target/source systems
+
+    # We now resolve the full path based on the plant's topology
     link: DataLink
     for link in links:
+        path = plant.get_topology().find_shortest_path(link.get_source(), link.get_target(), link.get_namespace())
+        
+        if not path:
+            raise Exception(f"No path exists from {link.get_source().get_id()} to {link.get_target().get_id()} in namespace {link.get_namespace()}.  ")
+
+        link.set_path(path)
         plant.data_links.add(link)
-        link.get_source().add_data_link(link)
-        link.get_target().add_data_link(link)
+        
+        for system in link.get_path():
+            system.add_data_link(link)
+
 
 def build(plt: Plant) -> ast.automation.PlantDeclaration:
     build_damo(plt)

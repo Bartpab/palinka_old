@@ -54,7 +54,7 @@ def assign_expr(lh, rh, op = '=') -> ast.AssignmentExpression:
 def assign_stmt(lh, rh) -> ast.Statement:
     return ast.Statement(ast.ExpressionStatement(assign_expr(lh, rh).as_expression()))
 
-def typename(specs: str, as_ptr: bool):
+def typename(specs: str, as_ptr: bool = False):
     if not isinstance(specs, list):
         specs = [specs]
 

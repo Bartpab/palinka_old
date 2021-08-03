@@ -18,24 +18,28 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
 
         The routine is called "sys_{system.get_id()}_cpy_recv"
     """
-    if not system.get_importing_data_links():
+    if not system.get_relay_data_links():
         return []
 
     decls: list[ast.automation.ExternalDeclaration] = [
         build_function(system)
     ]   
 
-    for lnk in filter(lambda lnk: lnk.get_target() == system, system.get_data_links()):
+    for lnk in filter(lambda lnk: lnk.is_relay(system), system.get_data_links()):
         decls += [build_subfunction(lnk, system)]
     
     return decls
 
 def build_function(system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{system.get_id()}_cpy_recv"
+    fb_name = f"sys_{system.get_id()}_relay"
     
     fb_declarator = astu.func_declarator(
         fb_name,
         astu.param_list(
+            astu.param_decl(
+                astu.struct_specifier("Plant_t").as_type_specifier(),
+                astu.id_declarator("plant", True)
+            ),
             astu.param_decl(
                 astu.struct_specifier("System_t").as_type_specifier(),
                 astu.id_declarator("sys", True)
@@ -48,9 +52,9 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     declarations = []
     statements = []
     
-    for lnk in filter(lambda lnk: lnk.get_target() == system, system.get_data_links()):
-        fb_name = f"sys_{lnk.get_target().get_name()}_cpy_recv_{lnk.get_source().get_name()}"
-        statements += [astu.function_call_stmt(fb_name, "sys")]
+    for lnk in system.get_relay_data_links():
+        fb_name = f"sys_{system.get_id()}_cpy_relay_{lnk.get_id()}"
+        statements += [astu.function_call_stmt(fb_name, "plant", "sys")]
 
 
     return ast.FunctionDefinition.create(
@@ -61,11 +65,15 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     )    
 
 def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalDeclaration:
-    fb_name = f"sys_{lnk.get_target().get_name()}_cpy_recv_{lnk.get_source().get_name()}"
+    fb_name = f"sys_{system.get_id()}_cpy_relay_{lnk.get_id()}"
     
     fb_declarator = astu.func_declarator(
         fb_name,
         astu.param_list(
+            astu.param_decl(
+                astu.struct_specifier("Plant_t").as_type_specifier(),
+                astu.id_declarator("sys", True)
+            ),
             astu.param_decl(
                 astu.struct_specifier("System_t").as_type_specifier(),
                 astu.id_declarator("sys", True)
@@ -82,7 +90,7 @@ def build_subfunction(lnk: DataLink, system: System) -> ast.automation.ExternalD
         [ast.DeclarationSpecifier(ast.TypeSpecifier(ast.Void()))],
         fb_declarator,
         build_subfunction_statements(lnk, system),
-        f"RECV:{lnk.get_id()}"
+        f"RELAY:{lnk.get_id()}"
     )
 
 def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundStatement:
@@ -91,7 +99,8 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
 
     declarations += [
         astu.struct_var_decl("DataBlock_t", "idb", as_ptr=False),
-        astu.struct_var_decl("DataBlock_t", "fp_idb", as_ptr=False)
+        astu.struct_var_decl("System_t", "other_sys", as_ptr=False),
+        astu.struct_var_decl("DataBlock_t", "other_idb", as_ptr=False)
     ]
 
     statements += [astu.assign_stmt(
@@ -99,18 +108,56 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
         astu.function_call_expr(
             'open_data_block', 
             'sys', 
-            f"$RECV:{lnk.get_target().get_id()}"
+            f"$RELAY:{lnk.get_id()}"
         )
     )]
+    
+    prev_system = lnk.previous(system)
+    next_system = lnk.next(system)
 
-    consuming_function_plans = []
+    # Copy from the memory of the previous system
+    relay_or_sending = "SENDING" if lnk.is_source(prev_system) else "RELAY"
+    prev_symbol_entry_name = f"{prev_system.get_id()}/{relay_or_sending}:{lnk.get_id()}"
+    next_symbol_entry_name = f"{next_system.get_id()}/RECV:{lnk.get_id()}"
+
+    statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(prev_system.index)))]
+    statements += [astu.assign_stmt("other_idb", astu.function_call_expr("open_data_block", astu.ref_expr("sys"), f"${prev_symbol_entry_name}"))]
+    statements += [
+        astu.function_call_stmt(
+            "memcpy",
+            astu.attr_access_expr("idb", "base", arrow=False),
+            astu.attr_access_expr("other_idb", "base", arrow=False),
+            astu.mult_expr(
+                astu.sizeof(astu.typename("char")),
+                astu.id_expr(f"@{prev_symbol_entry_name}")
+            )
+            
+        )
+    ]
+    statements += [astu.assign_stmt("other_sys", astu.function_call_expr("close_data_block", astu.ref_expr("other_idb")))]
+    statements += [astu.assign_stmt("other_sys", astu.function_call_expr("close_system", astu.ref_expr("other_sys")))]
     
-    for data in lnk.get_data():
-        for fp in system.get_function_plans():
-            for ipt in fp.get_inputs():
-                if ipt.get_data() == data:
-                    consuming_function_plans.append((data, fp, ipt))
+    # Copy the data into the receiving memory of the target system only if it's the last one on the path
+    if lnk.is_target(next_system):
+        statements += [astu.assign_stmt("other_sys", astu.function_call_expr("open_system", "plant", str(next_system.index)))]
+        statements += [astu.assign_stmt("other_idb", astu.function_call_expr("open_data_block", astu.ref_expr("sys"), f"${next_symbol_entry_name}"))]
+        statements += [
+            astu.function_call_stmt(
+                "memcpy",
+                astu.attr_access_expr("other_idb", "base", arrow=False),
+                astu.attr_access_expr("idb", "base", arrow=False),
+                astu.mult_expr(
+                    astu.sizeof(astu.typename("char")),
+                    astu.id_expr(f"@{prev_symbol_entry_name}")
+                )
+                
+            )
+        ]
+        statements += [astu.assign_stmt("other_sys", astu.function_call_expr("close_data_block", astu.ref_expr("other_idb")))]
+        statements += [astu.assign_stmt("other_sys", astu.function_call_expr("close_system", astu.ref_expr("other_sys")))]
     
+    return ast.CompoundStatement.create(declarations, statements)
+
     for (data, function_plan, ipt) in consuming_function_plans:
         lh = astu.getitem_expr(
             astu.attr_access_expr("fp_idb", "base", arrow=False), 
