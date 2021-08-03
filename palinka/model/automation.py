@@ -18,7 +18,10 @@ class Data:
         raise NotImplementedError()
 
     def __hash__(self):
-        return hash(self.get_id(), self.get_type())
+        return hash((self.get_id(), self.get_type()))
+    
+    def __eq__(self, other):
+        return hash(self) == hash(other)
     
     def __str__(self):
         return f"Data: {self.get_id()}, {self.get_type()}"
@@ -138,6 +141,9 @@ class FunctionPlanInput:
         self.data = data
         self.target = target
     
+    def get_target(self) -> FunctionBlockPort:
+        return self.target
+
     def get_data(self):
         return self.data
 
@@ -227,6 +233,9 @@ class FunctionPlan:
                 ), tgtp
             )
         )
+
+    def get_inputs(self) -> Iterator[FunctionPlanInput]:
+        return self.inputs
 
     def create_output(self, sig_name: str, source_block_id: str, source_port_id: str):
         src = self.get_block(source_block_id)
@@ -331,11 +340,14 @@ class Plant:
         self.systems: Database[System] = Database(
             name=DatabaseIndex(lambda system: system.get_name(), unique=True)
         )
+        self.last_id = -1
         self.damo = damo.DataModel()
         self.data_links: Database[DataLink] = Database()
     
     def add_system(self, system: System):
+        self.last_id += 1
         self.systems.add(system)
+        system.index = self.last_id
         return self
 
     def get_system(self, name):

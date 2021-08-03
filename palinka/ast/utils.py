@@ -32,8 +32,11 @@ def return_stmt(n) -> ast.Statement:
         n = id_expr(n)
     return ast.Statement(ast.JumpStatement.return_(n.as_expression()))
 
-def id_expr(id: str) -> ast.PrimaryExpression:
-    return ast.PrimaryExpression(ast.Identifier(id))
+def constant_expr(constant) -> ast.PrimaryExpression:
+    return ast.PrimaryExpression(ast.Constant(constant))
+
+def id_expr(name: str) -> ast.PrimaryExpression:
+    return ast.PrimaryExpression(ast.Identifier(name))
 
 def assign_expr(lh, rh, op = '=') -> ast.AssignmentExpression:
     if isinstance(lh, str):
@@ -90,6 +93,18 @@ def deref_expr(n: Union[str, CastExpression]) -> UnaryExpression:
         ast.UnaryOperator('*'), 
         n
     )
+
+def ref_expr(n: Union[str, CastExpression]) -> UnaryExpression:
+    if isinstance(n, str):
+        n = id_expr(n).as_(ast.CastExpression)
+    else:
+        n = n.as_(ast.CastExpression)
+
+    return ast.UnaryExpression.unary(
+        ast.UnaryOperator('&'), 
+        n
+    )
+
 def getitem_expr(lh: Union[str, ast.PostfixExpression], rh: Union[str, ast.Expression], arrow: bool = True) -> ast.PostfixExpression:
     """
         lh[rh]
@@ -110,7 +125,7 @@ def getitem_expr(lh: Union[str, ast.PostfixExpression], rh: Union[str, ast.Expre
             rh
         )
     
-def attr_access_expr(lh: Union[str, ast.PostfixExpression], attr_id: str) -> ast.PostfixExpression:
+def attr_access_expr(lh: Union[str, ast.PostfixExpression], attr_id: str, arrow=True) -> ast.PostfixExpression:
     """
         lh->attr_id
     """
@@ -119,15 +134,21 @@ def attr_access_expr(lh: Union[str, ast.PostfixExpression], attr_id: str) -> ast
     else:
         lh = lh.as_(ast.PostfixExpression)
 
-    return ast.PostfixExpression.fifth_case(
-        lh,
-        ast.Identifier(attr_id)
-    )
+    if arrow:
+        return ast.PostfixExpression.fifth_case(
+            lh,
+            ast.Identifier(attr_id)
+        )
+    else:
+        return ast.PostfixExpression.fourth_case(
+            lh,
+            ast.Identifier(attr_id)
+        )     
 
 def func_decl(decl_specs: list[ast.DeclarationSpecifier], declarator: ast.Declarator, decls: list[ast.Declaration], stmts: ast.CompoundStatement) -> ast.FunctionDefinition:
     return ast.FunctionDefinition.create(decl_specs, declarator, decls, stmts)
 
-def func_declarator(id: str, params: Optional[ast.ParameterList], as_ptr=True):
+def func_declarator(id: str, params: Optional[ast.ParameterList], as_ptr=False):
    return ast.Declarator.create(
         ast.Pointer.basic() if as_ptr else None,
         ast.DirectDeclarator.call(
@@ -137,7 +158,7 @@ def func_declarator(id: str, params: Optional[ast.ParameterList], as_ptr=True):
         )
     )
 
-def id_declarator(id: str, as_ptr: bool) -> ast.Declarator:
+def id_declarator(id: str, as_ptr: bool = False) -> ast.Declarator:
     return ast.Declarator.create(
         ast.Pointer.basic() if as_ptr else None,
         ast.DirectDeclarator.identifier(
@@ -146,6 +167,8 @@ def id_declarator(id: str, as_ptr: bool) -> ast.Declarator:
     )
 
 def param_decl(decl_specs: list[ast.DeclarationSpecifier], declarator: ast.Declarator) -> ast.ParameterDeclaration:
+    if not isinstance(decl_specs, list):
+        decl_specs = [decl_specs]
     return ast.ParameterDeclaration.create(decl_specs, declarator)
 
 def param_list(*param_decls) -> ast.ParameterList:

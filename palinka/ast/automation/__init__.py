@@ -1,7 +1,4 @@
-from . import plant_builder
-from . import system_builder
-from . import function_plan_builder
-from . import function_block_builder
+from . import plant
 
 from typing import Iterator, Tuple
 
@@ -9,12 +6,10 @@ from ...model.automation import Plant, Data, System, DataLink
 from ...model import ast
 from ...model import damo
 from ...utils import Database, TwoDimensionalIndex
-from . import system_builder
 
 import itertools
 
 def build_damo(plant: Plant) -> None:
-    print("Build DAMO")
     plant.damo = damo.DataModel()
     
     system: System
@@ -62,7 +57,7 @@ def build_data_links(plant: Plant):
         link.get_source().add_data_link(link)
         link.get_target().add_data_link(link)
 
-def build(plant: Plant) -> ast.automation.PlantDeclaration:
-    build_damo(plant)
-    build_data_links(plant)
-    return plant_builder.build(plant)
+def build(plt: Plant) -> ast.automation.PlantDeclaration:
+    build_damo(plt)
+    build_data_links(plt)
+    return plant.build(plt)

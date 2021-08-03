@@ -6,9 +6,10 @@ from palinka.utils import rec_find_all
 from ....model.automation import System
 from ....model import ast
 
-from .. import function_plan_builder
-from . import step_function_builder
-from . import prepare_sending_builder
+from .. import function_plan
+from . import step_function
+from . import cpy_send
+from . import cpy_recv
 
 
 def build(system: System) -> ast.automation.SystemDeclaration:
@@ -57,16 +58,17 @@ def build_header(system: System) -> ast.automation.TranslationUnit:
 
 def build_source(system: System) -> ast.automation.TranslationUnit:
     declarations: list[ast.automation.ExternalDeclaration] = [] 
-    declarations += ast.automation.ExternalDeclaration(step_function_builder.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(step_function.build_source(system))
 
-    for function_plan in system.get_function_plans():
+    for fp in system.get_function_plans():
         declarations.append(
             ast.automation.ExternalDeclaration(
-                function_plan_builder.build_source(function_plan)
+                function_plan.build_source(fp)
             )
         )
 
-    declarations += prepare_sending_builder.build_source(system)
+    declarations += cpy_recv.build_source(system)
+    declarations += cpy_send.build_source(system)
 
     preprocessors = [
         ast.Preprocessor(

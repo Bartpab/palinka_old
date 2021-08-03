@@ -2,25 +2,32 @@
 #include "src/model/data_block.h"
 #include "src/codegen/plant/SYS01.h"
 #include "src/blocks/bin_input.h"
-void * sys_SYS01_step(struct Plant_t * plant) {
+void sys_SYS01_step(struct Plant_t * plant) {
     struct System_t * sys;
     sys = open_system(plant, 0);
+    sys_SYS01_copy_recv(sys);
     fb_FP01(sys);
-    sys_SYS01_copy_to_sending_memory(sys);
+    sys_SYS01_copy_send(sys);
     close_system(sys);
 }
 void fp_FP01(struct System_t * sys) {
-    struct DataBlock_t * idb;
+    struct DataBlock_t idb;
     idb = open_data_block(sys, 0);
-    block_bin_input(idb->base[0]);
+    block_bin_input(idb.base[0]);
+    close_data_block(& idb);
 }
-void sys_SYS01_copy_to_sending_memory(struct System_t * sys) {
-    sys_SYS01_copy_to_sending_memory_for_SYS02(sys);
+void sys_SYS01_cpy_recv(struct System_t sys) {
+    
 }
-void sys_SYS01_copy_to_sending_memory_for_SYS02(struct System_t * sys) {
-    struct DataBlock_t * idb;
-    struct DataBlock_t * fp_idb;
+void sys_SYS01_cpy_send(struct System_t sys) {
+    sys_SYS01_cpy_send_SYS02(sys);
+}
+void sys_SYS01_cpy_send_SYS02(struct System_t * sys) {
+    struct DataBlock_t idb;
+    struct DataBlock_t fp_idb;
     idb = open_data_block(sys, 1);
     fp_idb = open_data_block(sys, 0);
-    * idb->base[0] = * fp_idb->base[0]
+    * idb.base[0] = * fp_idb.base[0]
+    close_data_block(& fp_idb);
+    close_data_block(& idb);
 }

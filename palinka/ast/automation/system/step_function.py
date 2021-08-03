@@ -6,12 +6,8 @@ import palinka.ast.utils as astu
 def build_source(system: System) -> ast.FunctionDefinition:
     """
         Build a the system's step function.
-
-        void step_system_@system_name(System_t* sys)
-        {
-            ...
-        }
     """
+
     func_type_specifiers: list[ast.DeclarationSpecifier] = [ast.Void().as_type_specifier().as_declaration_specifier()]
     
     func_declarator: ast.Declarator = astu.func_declarator(
@@ -39,19 +35,27 @@ def build_step_function_statements(system: System) -> ast.CompoundStatement:
     statements: list[ast.Statement] = [
         astu.assign_stmt(
             "sys", 
-            astu.function_call_expr("open_system", "plant", f"${system.get_id()}")
+            astu.function_call_expr("open_system", "plant", f"{system.index}")
         )
     ]
+
+    if system.has_data_links():
+        statements += [
+            astu.function_call_stmt(f"sys_{system.get_id()}_copy_recv", "sys")
+        ]
 
     for function_plan in system.get_function_plans():
         statements += [
             astu.function_call_stmt(
                 f"fb_{function_plan.get_id()}",
                 "sys"
-        )]
+            )
+        ]
 
     if system.has_data_links():
-        statements += [astu.function_call_stmt(f"sys_{system.get_id()}_copy_to_sending_memory", "sys")]
+        statements += [
+            astu.function_call_stmt(f"sys_{system.get_id()}_copy_send", "sys")
+        ]
 
     statements += [
         astu.function_call_stmt("close_system", "sys")
