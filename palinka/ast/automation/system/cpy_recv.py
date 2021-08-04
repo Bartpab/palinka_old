@@ -99,7 +99,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
         astu.function_call_expr(
             'open_data_block', 
             'sys', 
-            f"$RECV:{lnk.get_id()}"
+            f"#RECV:{lnk.get_id()}"
         )
     )]
 
@@ -130,7 +130,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
         rh = astu.deref_expr(rh)
 
         statements += [
-            astu.assign_stmt("fp_idb", astu.function_call_expr("open_data_block", "sys", f"${function_plan.get_id()}")),
+            astu.assign_stmt("fp_idb", astu.function_call_expr("open_data_block", "sys", f"#{function_plan.get_id()}")),
             astu.assign_expr(lh, rh),
             astu.function_call_stmt(
                 "close_data_block",

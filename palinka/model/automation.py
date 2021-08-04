@@ -56,13 +56,13 @@ class Signal(Data):
         self.type = type
     
     def get_code(self):
-        return self.source.get_global_id()
+        return self.source.get_id()
     
     def get_sig(self):
         return self.sig_name
 
     def get_id(self):
-        return f"{self.source.get_global_id()}:{self.sig_name}"
+        return f"{self.source.get_id()}:{self.sig_name}"
 
     def get_type(self):
         return self.type
@@ -198,11 +198,11 @@ class FunctionPlan:
         self.inputs: Database[FunctionPlanInput] = Database()
         self.outputs: Database[FunctionPlanOutput] = Database()
 
-    def get_global_id(self):
-        return self.get_id()
-
     def get_id(self):
         return self.id
+
+    def get_slug_id(self):
+        return c_id(self.get_id())
 
     def add_block(self, block: FunctionBlock):
         block.function_plan = self
@@ -339,6 +339,14 @@ class System:
     def get_data_links(self) -> Iterator[DataLink]:
         return self.data_links
     
+    def get_data_block_ids(self) -> Iterator[str]:
+        return chain(
+            map(lambda fp: fp.get_id(), self.get_function_plans()),
+            map(lambda dl: f"SEND:{dl.get_id()}", self.get_importing_data_links()),
+            map(lambda dl: f"RECV:{dl.get_id()}", self.get_importing_data_links()),
+            map(lambda dl: f"RELAY:{dl.get_id()}", self.get_importing_data_links())
+        )
+
     def get_relay_data_links(self) -> Iterable[DataLink]:
         return list(filter(lambda lnk: lnk.is_relay(self), self.get_data_links()))
 
@@ -372,8 +380,8 @@ class System:
         )    
 
 class DataLink:
-    def __init__(self, index: str, source: System, target: System, namespace: str = None):
-        self.index = str(index)
+    def __init__(self, id: str, source: System, target: System, namespace: str = None):
+        self.id = str(id)
         self.path = [source, target]
         self.source = source
         self.target = target
@@ -381,7 +389,10 @@ class DataLink:
         self.data: list[Data] = []
 
     def get_id(self):
-        return self.index
+        return self.id
+    
+    def get_slug_id(self):
+        return c_id(self.get_id())
     
     def get_namespace(self) -> str:
         return self.namespace

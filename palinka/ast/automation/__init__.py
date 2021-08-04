@@ -46,7 +46,7 @@ def build_data_links(plant: Plant):
                 consumer_system = consumer.get_system()
                 # Create the Data Link if it does not exist yet.
                 if not links.contains((producer_system, consumer_system, namespace), index_name='cmp'):
-                    links.add(DataLink(index=index, source=producer.get_system(), target=consumer.get_system(), namespace=namespace))
+                    links.add(DataLink(id=f"DLNK{index}", source=producer.get_system(), target=consumer.get_system(), namespace=namespace))
                     index += 1
 
                 # Retrieve the Data Link and add the data in it

@@ -8,7 +8,7 @@ from ...model import ast
 from . import function_block
 
 def build_source(fp: FunctionPlan) -> ast.automation.FunctionBlockDefinition:
-    fb_name = f"fp_{fp.get_id()}"
+    fb_name = f"fp_{fp.get_slug_id()}"
 
     return ast.automation.FunctionBlockDefinition.create(
         build_data_block_definition(fp),
@@ -37,7 +37,7 @@ def build_statements(function_plan: FunctionPlan) -> ast.CompoundStatement:
         astu.function_call_expr(
             'open_data_block', 
             'sys', 
-            f'${function_plan.get_global_id()}'
+            f'#{function_plan.get_id()}'
         )
     )]
 

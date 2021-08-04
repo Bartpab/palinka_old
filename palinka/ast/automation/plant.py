@@ -78,7 +78,7 @@ def build_init_function(plant: Plant):
 
     statements += [astu.assign_stmt(
          astu.attr_access_expr("plant", "nb_systems", arrow=False),
-         ast.PrimaryExpression(ast.Constant(nb_systems))
+         astu.id_expr("&plant")
     )]
 
     for i, system in enumerate(plant.get_systems()):
@@ -123,6 +123,12 @@ def build_init_function(plant: Plant):
                 "step"
             ),
             astu.id_expr(f"{sys_namespace}_step")
+        ), astu.function_call_stmt(
+            f"{sys_namespace}_init",
+            astu.getitem_expr(
+                    astu.attr_access_expr("plant", "systems", arrow=False),
+                    astu.id_expr(f"#{system.get_id()}")
+            )
         )]        
 
     statements += [astu.return_stmt("plant")]

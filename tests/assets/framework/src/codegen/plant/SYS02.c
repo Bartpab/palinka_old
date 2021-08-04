@@ -2,6 +2,9 @@
 #include "src/model/data_block.h"
 #include "src/codegen/plant/sys02.h"
 #include "libs/blocks/neg.h"
+void sys_sys02_init(struct System_t * system) {
+    sys.nb_blocks = 3;
+}
 void sys_sys02_step(struct Plant_t * plant) {
     struct System_t * sys;
     sys = open_system(plant, 4);
@@ -10,7 +13,7 @@ void sys_sys02_step(struct Plant_t * plant) {
     sys_sys02_cpy_send(& sys);
     close_system(& sys);
 }
-void fp_FP02(struct System_t * sys) {
+void fp_fp02(struct System_t * sys) {
     struct DataBlock_t idb;
     idb = open_data_block(sys, 0);
     block_neg(idb.base[0], idb.base[1]);
@@ -19,20 +22,20 @@ void fp_FP02(struct System_t * sys) {
     close_data_block(& idb);
 }
 void sys_sys02_cpy_recv(struct System_t * sys) {
-    sys_sys02_cpy_recv_1(sys);
+    sys_sys02_cpy_recv_DLNK1(sys);
 }
-void sys_sys02_cpy_recv_1(struct System_t * sys) {
+void sys_sys02_cpy_recv_DLNK1(struct System_t * sys) {
     struct DataBlock_t idb;
     struct DataBlock_t fp_idb;
-    idb = open_data_block(sys, 4);
+    idb = open_data_block(sys, 1);
     close_data_block(& idb);
 }
 void sys_sys02_cpy_send(struct System_t * sys) {
-    sys_sys02_cpy_send_2(sys);
+    sys_sys02_cpy_send_DLNK2(sys);
 }
-void sys_sys02_cpy_send_2(struct System_t * sys) {
+void sys_sys02_cpy_send_DLNK2(struct System_t * sys) {
     struct DataBlock_t idb;
     struct DataBlock_t fp_idb;
-    idb = open_data_block(sys, 5);
+    idb = open_data_block(sys, 2);
     close_data_block(& idb);
 }

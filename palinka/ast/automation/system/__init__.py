@@ -8,6 +8,7 @@ from ....model import ast
 
 from .. import function_plan
 from . import step_function
+from . import init_function
 from . import cpy_send
 from . import cpy_relay
 from . import cpy_recv
@@ -46,6 +47,24 @@ def build_header(system: System) -> ast.automation.TranslationUnit:
                 )
             )
         )
+    ), ast.Declaration.create(
+        [ast.Void().as_type_specifier().as_declaration_specifier()],
+        ast.InitDeclarator.create(
+            ast.Declarator.create(
+                None, 
+                ast.DirectDeclarator.call(
+                    ast.DirectDeclarator.identifier(
+                        ast.Identifier(f"{sys_namespace}_init")
+                    ), 
+                    astu.param_list(
+                        astu.param_decl(
+                            [astu.struct_specifier("System_t").as_type_specifier().as_declaration_specifier()],
+                            astu.id_declarator("sys", as_ptr=True)
+                        )
+                    )
+                )
+            )
+        )
     )]
 
     preprocessors = [
@@ -62,6 +81,7 @@ def build_header(system: System) -> ast.automation.TranslationUnit:
 
 def build_source(system: System) -> ast.automation.TranslationUnit:
     declarations: list[ast.automation.ExternalDeclaration] = [] 
+    declarations += ast.automation.ExternalDeclaration(init_function.build_source(system))
     declarations += ast.automation.ExternalDeclaration(step_function.build_source(system))
 
     for fp in system.get_function_plans():
