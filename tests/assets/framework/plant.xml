@@ -1,0 +1,66 @@
+<Plant>
+  <Systems>
+    <System id="NET01" address="0">
+      <ImportedData/>
+      <ExportedData/>
+      <FunctionPlans/>
+    </System>
+    <System id="SYS01:IO:01" address="1">
+      <ImportedData/>
+      <ExportedData>
+        <ScopedData namespace="io">
+          <Data code="FP01" sig="CH_1">
+            <DataType name="char" size="1"/>
+          </Data>
+        </ScopedData>
+      </ExportedData>
+      <FunctionPlans/>
+    </System>
+    <System id="SYS01:IM" address="2">
+      <ImportedData/>
+      <ExportedData/>
+      <FunctionPlans/>
+    </System>
+    <System id="SYS01" address="3">
+      <ImportedData/>
+      <ExportedData/>
+      <FunctionPlans>
+        <FunctionPlan id="FP01">
+          <FunctionBlocks>
+            <FunctionBlock id="B01" class="bin_input"/>
+          </FunctionBlocks>
+        </FunctionPlan>
+      </FunctionPlans>
+    </System>
+    <System id="SYS02" address="4">
+      <ImportedData/>
+      <ExportedData/>
+      <FunctionPlans>
+        <FunctionPlan id="FP02">
+          <FunctionBlocks>
+            <FunctionBlock id="B01" class="neg"/>
+            <FunctionBlock id="B02" class="neg"/>
+          </FunctionBlocks>
+        </FunctionPlan>
+      </FunctionPlans>
+    </System>
+    <System id="SYS03" address="5">
+      <ImportedData/>
+      <ExportedData/>
+      <FunctionPlans>
+        <FunctionPlan id="FP03">
+          <FunctionBlocks>
+            <FunctionBlock id="B01" class="bin_output"/>
+          </FunctionBlocks>
+        </FunctionPlan>
+      </FunctionPlans>
+    </System>
+  </Systems>
+  <Topology>
+    <TopologyEdge s0="SYS01" s1="SYS01:IM" network="io"/>
+    <TopologyEdge s0="SYS01:IO:01" s1="SYS01:IM" network="io"/>
+    <TopologyEdge s0="SYS01" s1="NET01" network="plant_bus"/>
+    <TopologyEdge s0="SYS02" s1="NET01" network="plant_bus"/>
+    <TopologyEdge s0="SYS03" s1="NET01" network="plant_bus"/>
+  </Topology>
+</Plant>

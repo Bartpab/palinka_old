@@ -267,6 +267,9 @@ class Database(Generic[T]):
         else:
             return self.entries[key_or_keys]
 
+    def __len__(self):
+        return len(self.entries)
+
     def __iter__(self):
         return Cursor(enumerate(self.entries))
 

@@ -11,6 +11,8 @@ from palinka.helpers import c_id
 from more_itertools import unique_everseen
 from itertools import chain
 
+from lxml import etree
+
 class Data:    
     def get_id(self):
         raise NotImplementedError()
@@ -28,13 +30,19 @@ class Data:
         return f"Data: {self.get_id()}, {self.get_type()}"
 
 class Placeholder(Data):
-    def __init__(self, id: str, sig_name: str, type: DataType):
-        self.id = id
+    def __init__(self, code_id: str, sig_name: str, type: DataType):
+        self.code_id = code_id
         self.sig_name = sig_name
         self.type = type
 
     def get_id(self):
-        return self.id + ":" + self.sig_name
+        return self.code_id + ":" + self.sig_name
+
+    def get_code(self):
+        return self.code_id
+    
+    def get_sig(self):
+        return self.sig_name
 
     def get_type(self):
         return self.type
@@ -47,6 +55,12 @@ class Signal(Data):
         self.sig_name = sig_name
         self.type = type
     
+    def get_code(self):
+        return self.source.get_global_id()
+    
+    def get_sig(self):
+        return self.sig_name
+
     def get_id(self):
         return f"{self.source.get_global_id()}:{self.sig_name}"
 
@@ -86,12 +100,12 @@ class FunctionBlockPort:
         return self.block
 
     def get_global_id(self):
-        block_gid = "" if not self.block else self.block.get_global_id()
+        block_gid = "" if not self.block else self.block.get_id()
         return f"{block_gid}:{self.get_id()}"
 
     def get_data(self) -> Data:
         return Placeholder(
-            self.block.get_global_id(), 
+            self.block.get_id(), 
             self.get_id(),
             self.type
         )
@@ -463,6 +477,9 @@ class Topology:
     def __init__(self):
         self.edges: Database[TopologyEdge] = Database()
     
+    def __iter__(self):
+        return iter(self.edges)
+
     def connect(self, sys0: System, sys1: System, network: str):
         self.edges.add(TopologyEdge(sys0, sys1, network))
 
@@ -526,3 +543,84 @@ class Plant:
     def get_systems(self) -> Iterator[System]:
         return self.systems
 
+
+def _serialize_topology_edge(edge: TopologyEdge):
+    return etree.Element("TopologyEdge", {
+        "s0": edge.s0.get_id(),
+        "s1": edge.s1.get_id(),
+        "network": edge.get_network()
+    })
+
+def _serialize_topology(topology: Topology):
+    node = etree.Element("Topology")
+    
+    for edge in topology:
+        node.append(_serialize_topology_edge(edge))
+    
+    return node
+
+def _serialize_data_type(dtype: DataType):
+    node = etree.Element("DataType", name=dtype.get_name(), size=str(dtype.get_size()))
+    return node
+
+def _serialize_data(data: Data):
+    node = etree.Element("Data", code=data.get_code(), sig=data.get_sig())
+    node.append(_serialize_data_type(data.get_type()))
+    return node
+
+def _serialize_scoped_data(scoped_data: ScopedData):
+    node = etree.Element("ScopedData", namespace=scoped_data.namespace)
+    node.append(_serialize_data(scoped_data.get_data()))
+    return node
+
+def _serialize_function_block(block: FunctionBlock):
+    node = etree.Element("FunctionBlock", {
+        "id": block.get_id(),
+        "class": block.get_class()
+    })
+
+    return node
+
+def _serialize_function_plan(fp: FunctionPlan):
+    node = etree.Element("FunctionPlan", id=fp.get_id())
+    blocks = etree.SubElement(node, "FunctionBlocks")
+    
+    for block in fp.get_blocks():
+        blocks.append(_serialize_function_block(block))
+
+    return node
+
+def _serialize_system(system: System):
+    node = etree.Element("System", id=system.get_id(), address=str(system.get_address()))
+    
+    imported_data = etree.SubElement(node, "ImportedData")
+
+    for imp in system.imported_data:
+        imported_data.append(_serialize_scoped_data(imp))
+
+    exported_data = etree.SubElement(node, "ExportedData")
+    for exp in system.exported_data:
+        exported_data.append(_serialize_scoped_data(exp))
+
+    function_plans = etree.SubElement(node, "FunctionPlans")
+    
+    for fp in system.get_function_plans():
+        function_plans.append(_serialize_function_plan(fp))
+
+    return node
+
+def _serialize_systems(systems: Iterator[System]):
+    node = etree.Element("Systems")
+    for system in systems:
+        node.append(_serialize_system(system))
+    return node
+
+def _serialize_plant(plant: Plant):
+    node = etree.Element("Plant")
+    node.append(_serialize_systems(plant.get_systems()))
+    node.append(_serialize_topology(plant.get_topology()))
+    return node
+
+def serialize(plant: Plant):
+    node = _serialize_plant(plant)
+    return etree.tostring(node, pretty_print=True)

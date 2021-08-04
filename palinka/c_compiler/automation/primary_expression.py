@@ -12,15 +12,19 @@ def transform(node: ast.PrimaryExpression, *args, **kwargs):
 
     if isinstance(node.nodes[0], ast.Identifier):
         identifier = node.nodes[0].name
-        if identifier.startswith("$") or identifier.startswith("@"):
+        if identifier.startswith("$") or identifier.startswith("@") or identifier.startswith("#") or identifier.startswith("&"):
             op = identifier[0]
             identifier = "".join(identifier[1:])
             entry = symbols.get(identifier)
             if entry:
-                if op == "$":
+                if op == "$": # Offset
                     value = entry.get_offset()
-                elif op == "@":
+                elif op == "@": # Raw Size
                     value = entry.get_size()
+                elif op == "#": # Index
+                    value = entry.get_index()
+                elif op == '&': # Number of entries
+                    value = len(entry)
                 return ast.PrimaryExpression(ast.Constant(value))
     
     # We do not have this special use case

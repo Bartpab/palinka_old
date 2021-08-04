@@ -37,7 +37,7 @@ class ProjectGenerator:
         self.libs.append((dir_path, name))
         return self
 
-    def generate(self, raw_code: str, symbol_table: palinka.model.symbol_table.SymbolTable):
+    def generate(self, raw_code: str, symbol_table: palinka.model.symbol_table.SymbolTable, plant: palinka.model.automation.Plant):
         path = self.path
         
         if os.path.exists(path):
@@ -58,6 +58,9 @@ class ProjectGenerator:
 
         with open(os.path.join(path, "symbols.xml"), "wb") as file:
             file.write(palinka.model.symbol_table.serialize(symbol_table))
+        
+        with open(os.path.join(path, "plant.xml"), "wb") as file:
+            file.write(palinka.model.automation.serialize(plant))
 
 class CodeWriter:
     BEGIN_RE = r"\/\/\/ BEGIN (FILE|DIRECTORY) (\S+([.]\s)?) \/\/\/"

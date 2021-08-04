@@ -106,7 +106,7 @@ class EndToEndTestSuite(unittest.TestCase):
         # Create the project        
         palinka.writer.ProjectGenerator(os.path.join('tests', 'assets'))\
             .add_library(os.path.join("tests", "assets", "libs", "blocks"), "blocks")\
-            .generate(raw_code, symbol_table)
+            .generate(raw_code, symbol_table, plant)
 
 if __name__ == '__main__':
     unittest.main()

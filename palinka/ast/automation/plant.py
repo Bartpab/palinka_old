@@ -69,7 +69,7 @@ def build_init_function(plant: Plant):
                             None
                         )
                     ),
-                    ast.PrimaryExpression(ast.Constant(nb_systems))
+                    astu.id_expr("&plant")
                 )
                 
             )
@@ -88,7 +88,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(system.get_address())
+                    astu.id_expr(f"#{system.get_id()}")
                 ),
                 "offset"
             ),
@@ -97,7 +97,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(system.get_address())
+                    astu.id_expr(f"#{system.get_id()}")
                 ),
                 "size"
             ),
@@ -108,7 +108,7 @@ def build_init_function(plant: Plant):
                 astu.attr_access_expr(
                     astu.getitem_expr(
                         astu.attr_access_expr("plant", "systems", arrow=False),
-                        astu.constant_expr(system.get_address())
+                        astu.id_expr(f"#{system.get_id()}")
                     ),
                     "rwlock"
                 )
@@ -118,7 +118,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.constant_expr(system.get_address())
+                    astu.id_expr(f"#{system.get_id()}")
                 ),
                 "step"
             ),

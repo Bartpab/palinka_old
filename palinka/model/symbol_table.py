@@ -10,10 +10,14 @@ class SymbolTableEntry:
   def __init__(self, name: str, data_type: DataType):
     self.offset: int = 0
     self.name: str = name
+    self.index = 0
     if data_type is None:
         raise Exception("data_type cannot be None.")
     self.type: DataType = data_type
   
+  def get_index(self):
+    return self.index
+
   def get_offset(self):
       return self.offset
 
@@ -25,9 +29,13 @@ class SymbolTableSegment:
         self.name    = name
         self.entries: Database[Union[SymbolTableEntry, SymbolTableSegment]] = Database(name=DatabaseIndex(lambda entry: entry.name, unique=True)) 
         self.offset  = 0
+        self.index   = 0
         self.size    = 0
         self.type = base_type
     
+    def get_index(self):
+        return self.index
+
     def get_offset(self):
         return self.offset
 
@@ -48,6 +56,12 @@ class SymbolTableSegment:
             tail += entry.get_size()
         
         self.size = size
+
+    def add(self, entry: Union[SymbolTableEntry, SymbolTableSegment]):
+        self.entries.add(entry)
+
+    def __len__(self):
+        return len(self.entries)
 
     def __getitem__(self, name):
         return self.entries.get(name, index_name='name')
@@ -76,7 +90,8 @@ class SymbolTable:
             raise Exception(f"A symbol table entry which is not a segment already exist with the same name {name}.")
 
         else:
-            self.curr().entries.add(area)
+            area.index = len(self.curr())
+            self.curr().add(area)
             self.stack.append(area)
 
     def pop(self):
@@ -89,10 +104,12 @@ class SymbolTable:
         if not isinstance(data_type, DataType):
             raise Exception("Expecting data_type to be an instance of DataType.")
         
-        self.curr().entries.add(SymbolTableEntry(
+        entry = SymbolTableEntry(
             name=data_name, 
             data_type=data_type
-        ))
+        )
+        entry.index = len(self.curr())
+        self.curr().add(entry)
 
     def get(self, data_path: str) -> Optional[Union[SymbolTableEntry, SymbolTableSegment]]:
         stack = data_path.split("/")
@@ -124,9 +141,9 @@ def serialize(symbols: SymbolTable):
 
 def _serialize(segment_or_entry):
     if isinstance(segment_or_entry, SymbolTableEntry):
-        return etree.Element("Entry", offset=str(segment_or_entry.offset), name=segment_or_entry.name, type=str(segment_or_entry.type), size=str(segment_or_entry.get_size()))
+        return etree.Element("Entry", index=str(segment_or_entry.index), offset=str(segment_or_entry.offset), name=segment_or_entry.name, type=str(segment_or_entry.type), size=str(segment_or_entry.get_size()))
     else:
-        node = etree.Element("Segment", offset=str(segment_or_entry.offset), name=segment_or_entry.name, type=str(segment_or_entry.type), size=str(segment_or_entry.get_size()))
+        node = etree.Element("Segment", index=str(segment_or_entry.index), offset=str(segment_or_entry.offset), name=segment_or_entry.name, type=str(segment_or_entry.type), size=str(segment_or_entry.get_size()))
         for entry in segment_or_entry.entries:
             node.append(_serialize(entry))
         return node
