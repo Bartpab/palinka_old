@@ -4,6 +4,9 @@
 #include "libs/blocks/bin_output.h"
 void sys_sys03_init(struct System_t * system) {
     sys.nb_blocks = 2;
+    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 2);
+    sys.data_blocks[0]->offset = 14;
+    sys.data_blocks[1]->offset = 14;
 }
 void sys_sys03_step(struct Plant_t * plant) {
     struct System_t * sys;

@@ -342,12 +342,12 @@ class System:
     def get_data_block_ids(self) -> Iterator[str]:
         return chain(
             map(lambda fp: fp.get_id(), self.get_function_plans()),
-            map(lambda dl: f"SEND:{dl.get_id()}", self.get_importing_data_links()),
+            map(lambda dl: f"SEND:{dl.get_id()}", self.get_exporting_data_links()),
             map(lambda dl: f"RECV:{dl.get_id()}", self.get_importing_data_links()),
-            map(lambda dl: f"RELAY:{dl.get_id()}", self.get_importing_data_links())
+            map(lambda dl: f"RELAY:{dl.get_id()}", self.get_relaying_data_links())
         )
 
-    def get_relay_data_links(self) -> Iterable[DataLink]:
+    def get_relaying_data_links(self) -> Iterable[DataLink]:
         return list(filter(lambda lnk: lnk.is_relay(self), self.get_data_links()))
 
     def get_exporting_data_links(self) -> Iterable[DataLink]:

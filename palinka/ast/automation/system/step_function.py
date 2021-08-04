@@ -48,7 +48,7 @@ def build_step_function_statements(system: System) -> ast.CompoundStatement:
             astu.function_call_stmt(f"{sys_namespace}_cpy_recv", astu.ref_expr("sys"))
         ]
 
-    if system.get_relay_data_links():
+    if system.get_relaying_data_links():
         statements += [
             astu.function_call_stmt(f"{sys_namespace}_cpy_relay", "plant", astu.ref_expr("sys"))
         ]        

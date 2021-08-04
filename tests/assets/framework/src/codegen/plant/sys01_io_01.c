@@ -3,6 +3,8 @@
 #include "src/codegen/plant/sys01_io_01.h"
 void sys_sys01_io_01_init(struct System_t * system) {
     sys.nb_blocks = 1;
+    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 1);
+    sys.data_blocks[0]->offset = 2;
 }
 void sys_sys01_io_01_step(struct Plant_t * plant) {
     struct System_t * sys;

@@ -4,6 +4,10 @@
 #include "libs/blocks/neg.h"
 void sys_sys02_init(struct System_t * system) {
     sys.nb_blocks = 3;
+    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 3);
+    sys.data_blocks[0]->offset = 8;
+    sys.data_blocks[2]->offset = 8;
+    sys.data_blocks[1]->offset = 8;
 }
 void sys_sys02_step(struct Plant_t * plant) {
     struct System_t * sys;

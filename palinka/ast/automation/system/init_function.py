@@ -40,6 +40,41 @@ def build_step_function_statements(system: System) -> ast.CompoundStatement:
          astu.id_expr(f"&{system.get_id()}")
     )]
 
+    statements += [astu.assign_stmt(
+        astu.attr_access_expr("sys", "data_blocks", arrow=False),
+        astu.cast_expr(
+            astu.typename(
+                astu.struct_specifier("DataBlock_t").as_type_specifier(),
+                as_ptr=True
+            ),   
+            astu.function_call_expr(
+                "malloc",
+                astu.mult_expr(
+                    astu.sizeof(
+                        ast.TypeName.create(
+                            [astu.struct_specifier("DataBlock_t").as_type_specifier().as_declaration_specifier()],
+                            None
+                        )
+                    ),
+                    astu.id_expr(f"&{system.get_id()}")
+                )
+                
+            )
+        )
+    )]
+
+    for db_id in system.get_data_block_ids():
+        statements += [astu.assign_stmt(
+            astu.attr_access_expr(
+                astu.getitem_expr(
+                    astu.attr_access_expr("sys", "data_blocks", arrow=False),
+                    astu.id_expr(f"#{db_id}")
+                ),
+                "offset"
+            ),
+            astu.id_expr(f"${system.get_id()}")
+        )]
+
     return ast.CompoundStatement.create(declarations, statements)
 
 

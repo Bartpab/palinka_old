@@ -4,6 +4,10 @@
 #include "libs/blocks/bin_input.h"
 void sys_sys01_init(struct System_t * system) {
     sys.nb_blocks = 3;
+    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 3);
+    sys.data_blocks[0]->offset = 4;
+    sys.data_blocks[2]->offset = 4;
+    sys.data_blocks[1]->offset = 4;
 }
 void sys_sys01_step(struct Plant_t * plant) {
     struct System_t * sys;

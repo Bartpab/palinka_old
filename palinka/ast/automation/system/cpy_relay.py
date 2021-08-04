@@ -18,7 +18,7 @@ def build_source(system: System) -> list[ast.automation.ExternalDeclaration]:
 
         The routine is called "sys_{system.get_id()}_cpy_recv"
     """
-    if not system.get_relay_data_links():
+    if not system.get_relaying_data_links():
         return []
 
     decls: list[ast.automation.ExternalDeclaration] = [
@@ -52,7 +52,7 @@ def build_function(system: System) -> ast.automation.ExternalDeclaration:
     declarations = []
     statements = []
     
-    for lnk in system.get_relay_data_links():
+    for lnk in system.get_relaying_data_links():
         fb_name = f"sys_{system.get_slug_id()}_cpy_relay_{lnk.get_id()}"
         statements += [astu.function_call_stmt(fb_name, "plant", "sys")]
 
@@ -116,7 +116,7 @@ def build_subfunction_statements(lnk: DataLink, system: System) -> ast.CompoundS
     next_system = lnk.next(system)
 
     # Copy from the memory of the previous system
-    relay_or_sending = "SENDING" if lnk.is_source(prev_system) else "RELAY"
+    relay_or_sending = "SEND" if lnk.is_source(prev_system) else "RELAY"
     prev_symbol_entry_name = f"{prev_system.get_id()}/{relay_or_sending}:{lnk.get_id()}"
     next_symbol_entry_name = f"{next_system.get_id()}/RECV:{lnk.get_id()}"
 
