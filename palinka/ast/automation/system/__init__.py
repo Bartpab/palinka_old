@@ -105,7 +105,7 @@ def build_source(system: System) -> ast.automation.TranslationUnit:
             ast.Preprocessor(
                 ast.Include(
                     ast.Identifier(
-                        f"src/blocks/{block}.h"
+                        f"libs/blocks/{block}.h"
                     ), internal=True
                 )
             )

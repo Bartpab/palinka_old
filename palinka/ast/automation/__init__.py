@@ -2,7 +2,7 @@ from . import plant
 
 from typing import Iterator, Tuple
 
-from ...model.automation import Plant, Data, System, DataLink
+from ...model.automation import Plant, Data, System, DataLink, ScopedData
 from ...model import ast
 from ...model import damo
 from ...utils import Database, TwoDimensionalIndex
@@ -15,11 +15,11 @@ def build_damo(plant: Plant) -> None:
     system: System
     
     for system in plant.get_systems():
-        imports: Iterator[Tuple[int, Data]] = map(lambda desc: (damo.DataModelFlags.CONSUMER, desc[0], desc[1]), system.get_imported_data())
-        exports: Iterator[Tuple[int, Data]] = map(lambda desc: (damo.DataModelFlags.PRODUCER, desc[0], desc[1]), system.get_exported_data())
+        imports: Iterator[ScopedData] = map(lambda scoped_data: (damo.DataModelFlags.CONSUMER, scoped_data), system.get_imported_data())
+        exports: Iterator[ScopedData] = map(lambda scoped_data: (damo.DataModelFlags.PRODUCER, scoped_data), system.get_exported_data())
         
-        for flag, namespace, data in itertools.chain(imports, exports):
-            plant.damo.add(system, data, namespace=namespace, flag=flag)
+        for flag, scoped_data in itertools.chain(imports, exports):
+            plant.damo.add(system, scoped_data.get_data(), namespace=scoped_data.get_namespace(), flag=flag)
 
 def build_data_links(plant: Plant):
     """

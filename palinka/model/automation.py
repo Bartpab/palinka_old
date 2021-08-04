@@ -28,23 +28,13 @@ class Data:
         return f"Data: {self.get_id()}, {self.get_type()}"
 
 class Placeholder(Data):
-    def __init__(self, id: str, type: DataType):
+    def __init__(self, id: str, sig_name: str, type: DataType):
         self.id = id
+        self.sig_name = sig_name
         self.type = type
 
     def get_id(self):
-        return self.id
-
-    def get_type(self):
-        return self.type
-    
-class FunctionPlanPlaceholder(Data):
-    def __init__(self, function_plan_id: str, sig_name: str, type: DataType):
-        self.id = f"{function_plan_id}:{sig_name}"
-        self.type = type
-
-    def get_id(self):
-        return self.id
+        return self.id + ":" + self.sig_name
 
     def get_type(self):
         return self.type
@@ -62,6 +52,20 @@ class Signal(Data):
 
     def get_type(self):
         return self.type
+
+class ScopedData:
+    def __init__(self, data: Data, namespace: str):
+        self.data = data
+        self.namespace = namespace
+    
+    def get_id(self):
+        return self.data.get_id()
+
+    def get_data(self):
+        return self.data
+    
+    def get_namespace(self):
+        return self.namespace
 
 class FunctionBlockPort:
     def __init__(self, id: str, label: str, order: int, type: DataType):
@@ -86,7 +90,11 @@ class FunctionBlockPort:
         return f"{block_gid}:{self.get_id()}"
 
     def get_data(self) -> Data:
-        return Placeholder(self.get_global_id(), self.type)
+        return Placeholder(
+            self.block.get_global_id(), 
+            self.get_id(),
+            self.type
+        )
 
 class FunctionBlock:
     def __init__(self, id: str, label: str, type: str):
@@ -146,8 +154,8 @@ class FunctionPlanInput:
     def get_target(self) -> FunctionBlockPort:
         return self.target
 
-    def get_data(self):
-        return self.data
+    def get_data(self) -> ScopedData:
+        return ScopedData(self.data, self.namespace)
 
 class FunctionPlanOutput:
     def __init__(self, data: Data, source: FunctionBlockPort, namespace: str = None):
@@ -158,8 +166,8 @@ class FunctionPlanOutput:
     def get_source(self) -> FunctionBlockPort:
         return self.source
 
-    def get_data(self):
-        return self.data
+    def get_data(self) -> ScopedData:
+        return ScopedData(self.data, self.namespace)
 
 class FunctionPlan:
     """
@@ -229,7 +237,7 @@ class FunctionPlan:
 
         return self.add_input(
             FunctionPlanInput(
-                FunctionPlanPlaceholder(
+                Placeholder(
                     function_plan_id, 
                     sig_name, 
                     tgtp.get_type()
@@ -264,32 +272,19 @@ class FunctionPlan:
             for port in block.ports:
                 yield port.get_data()
 
-    def get_imported_data(self) -> Iterator[Data]:
-        return unique_everseen(map(lambda ipt: (ipt.namespace, ipt.get_data()), self.inputs))
+    def get_imported_data(self) -> Iterator[ScopedData]:
+        return unique_everseen(map(lambda ipt: ipt.get_data(), self.inputs))
     
-    def get_exported_data(self) -> Iterator[Data]:
-        return unique_everseen(map(lambda ipt: (ipt.namespace, ipt.get_data()), self.outputs))
-
-class BaseSystem:
-    BUS_SYSTEM = 1
-
-    def __init__(self, name):
-        self.name = name
-    
-    def get_function_plans(self):
-        raise NotImplementedError()
-    
-    def has_data_links(self) -> bool:
-        raise NotImplementedError()
-    
-    def get_data_links(self) -> Iterator[DataLink]:
-        raise NotImplementedError()
+    def get_exported_data(self) -> Iterator[ScopedData]:
+        return unique_everseen(map(lambda ipt: ipt.get_data(), self.outputs))
 
 class System:
     def __init__(self, id: str):
         self.address = None
         self.id = id
         self.function_plans: Database[FunctionPlan] = Database(id=DatabaseIndex(lambda fp: fp.get_id(), unique=True))
+        self.exported_data: Database[ScopedData] = Database(id=DatabaseIndex(lambda data: data.get_id(), unique=True))
+        self.imported_data: Database[ScopedData] = Database(id=DatabaseIndex(lambda data: data.get_id(), unique=True))
         self.data_links: Database[DataLink] = Database()
 
     def __hash__(self):
@@ -297,6 +292,22 @@ class System:
 
     def __str__(self):
         return f"System: {self.get_id()}"
+    
+    def add_imported_data(self, dt: Data):
+        self.imported_data.add(dt)
+        return self
+
+    def create_exported_data(self, id: str, sig_name: str, dtype: DataType, namespace: str):
+        self.add_exported_data(ScopedData(Placeholder(id, sig_name, dtype), namespace))
+        return self
+    
+    def create_imported_data(self, id: str, sig_name: str, dtype: DataType, namespace: str):
+        self.add_imported_data(ScopedData(Placeholder(id, sig_name, dtype), namespace))
+        return self
+    
+    def add_exported_data(self, dt: Data):
+        self.exported_data.add(dt)
+        return self
 
     def add_function_plan(self, fp: FunctionPlan):
         self.function_plans.add(fp)
@@ -336,14 +347,14 @@ class System:
         return unique_everseen(
             chain(*[
                 function.get_imported_data() for function in self.function_plans
-            ])           
+            ], iter(self.imported_data))           
         )
 
     def get_exported_data(self) -> Iterator[Data]:
         return unique_everseen(
             chain(*[
                 function.get_exported_data() for function in self.function_plans
-            ])           
+            ], iter(self.exported_data))           
         )    
 
 class DataLink:

@@ -1,0 +1,1 @@
+void block_bin_input(char* output);

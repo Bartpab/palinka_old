@@ -7,6 +7,17 @@ import shutil
 
 import pkg_resources
 
+import os, shutil
+
+def copytree(src, dst, symlinks=False, ignore=None):
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        else:
+            shutil.copy2(s, d)
+
 def rec_copy(src, dest):
     if not pkg_resources.resource_isdir(__name__, src):
         src_stream = pkg_resources.resource_string(__name__, src)
@@ -20,7 +31,12 @@ def rec_copy(src, dest):
 class ProjectGenerator:
     def __init__(self, dir_path: str):
         self.path = os.path.join(dir_path, 'framework')
+        self.libs = []
     
+    def add_library(self, dir_path: str, name: str):
+        self.libs.append((dir_path, name))
+        return self
+
     def generate(self, raw_code: str, symbol_table: palinka.model.symbol_table.SymbolTable):
         path = self.path
         
@@ -30,14 +46,15 @@ class ProjectGenerator:
         try:
             os.makedirs(path, exist_ok=True)
             rec_copy("assets/framework", os.path.join(path))
+            
+            for lib, libname in self.libs:
+                shutil.copytree(lib, os.path.join(self.path, "libs", libname))
+
         except Exception as e:
             print(e)
-        finally:
-            pass
-            #pkg_resources.cleanup_resources()
-        
+                
             
-        write(os.path.join(path, 'src/codegen'), raw_code)
+        CodeWriter(os.path.join(path, 'src/codegen')).write(raw_code)
 
         with open(os.path.join(path, "symbols.xml"), "wb") as file:
             file.write(palinka.model.symbol_table.serialize(symbol_table))
@@ -61,25 +78,26 @@ class CodeWriter:
     def end_dir(self):
         self.path.pop(-1)
     
-    def write(self, line):
-        m_begin = re.search(CodeWriter.BEGIN_RE, line)
-        m_end = re.search(CodeWriter.END_RE, line)
+    def write(self, txt):
+        for line in txt.split('\n'):
+            m_begin = re.search(CodeWriter.BEGIN_RE, line)
+            m_end = re.search(CodeWriter.END_RE, line)
 
-        if m_begin:
-            t_file_or_dir = m_begin.group(1)
-            arg = m_begin.group(2)
-            if t_file_or_dir == "FILE":
-                self.begin_file(arg)
+            if m_begin:
+                t_file_or_dir = m_begin.group(1)
+                arg = m_begin.group(2)
+                if t_file_or_dir == "FILE":
+                    self.begin_file(arg)
+                else:
+                    self.begin_dir(arg)
+            elif m_end:
+                t_file_or_dir = m_end.group(1)
+                if t_file_or_dir == "FILE":
+                    self.end_file()
+                else:
+                    self.end_dir()
             else:
-                self.begin_dir(arg)
-        elif m_end:
-            t_file_or_dir = m_end.group(1)
-            if t_file_or_dir == "FILE":
-                self.end_file()
-            else:
-                self.end_dir()
-        else:
-            self.acc.append(line)
+                self.acc.append(line)
 
     def begin_file(self, file):
         self.files.append(file)
