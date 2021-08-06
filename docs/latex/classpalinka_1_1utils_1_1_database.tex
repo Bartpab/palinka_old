@@ -1,0 +1,153 @@
+\hypertarget{classpalinka_1_1utils_1_1_database}{}\doxysection{palinka.\+utils.\+Database Class Reference}
+\label{classpalinka_1_1utils_1_1_database}\index{palinka.utils.Database@{palinka.utils.Database}}
+Inheritance diagram for palinka.\+utils.\+Database\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1utils_1_1_database}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_ac014912202d80ebe4131ca743d6fbbdb}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, $\ast$$\ast$dict\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} indexes)
+\item 
+\mbox{\hyperlink{classpalinka_1_1utils_1_1_query}{Query}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a5bb453fcd1ea93fa5d8c62cd41fa7d38}{query}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a5996c4bfb8a144059d329b5763f75de9}{build\+\_\+index}} (self, index\+\_\+name)
+\item 
+Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}Any, \mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_afc537ac9c95bb6ee7e61c33cc85773db}{get\+\_\+indexer}} (self, index\+\_\+name)
+\item 
+Union\mbox{[}Optional\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}, list\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_ab31ae29e621c85689f6b49c87e2d683b}{get}} (self, Union\mbox{[}Any, int\mbox{]} key\+\_\+or\+\_\+keys, index\+\_\+name=None)
+\item 
+bool \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_ac5449d32bbee2d1c7ffb20a763a6e460}{contains}} (self, Union\mbox{[}Any, int\mbox{]} key, index\+\_\+name=None)
+\item 
+Union\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}, list\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a63ccfdbaad7cdc8a609c1f7a60e1acd8}{\+\_\+\+\_\+getitem\+\_\+\+\_\+}} (self, Union\mbox{[}int, Iterable\mbox{[}int\mbox{]}\mbox{]} key\+\_\+or\+\_\+keys)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a7541fcb7effe1d58d2d5cdc0f03baa39}{\+\_\+\+\_\+len\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a25a65d6f7c10e6821b8a47de68caee2e}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_affcf7cf933ec23ae3547a5b7eda37393}{remove\+\_\+by\+\_\+value}} (self, \mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}} entry)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a16d8f94c5d00453d0d6de0a694bd11f9}{concat}} (self, Iterable\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_af27de02b688a5865f74cb629aaf023b6}{entries}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a7006b9d97755f8ecec2aa5775403b3d5}{is\+\_\+empty}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_a13b8e7bebde56e9f9831088c661e90df}{add}} (self, \mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}} entry)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_ab5eb1b90314941c73a4e8506e075d957}{set\+\_\+index}} (self, str index\+\_\+name, Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} indexer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1utils_1_1_database_af27de02b688a5865f74cb629aaf023b6}{entries}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_ac014912202d80ebe4131ca743d6fbbdb}\label{classpalinka_1_1utils_1_1_database_ac014912202d80ebe4131ca743d6fbbdb}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{$\ast$$\ast$dict\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]}}]{indexes }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a63ccfdbaad7cdc8a609c1f7a60e1acd8}\label{classpalinka_1_1utils_1_1_database_a63ccfdbaad7cdc8a609c1f7a60e1acd8}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!\_\_getitem\_\_@{\_\_getitem\_\_}}
+\index{\_\_getitem\_\_@{\_\_getitem\_\_}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{\_\_getitem\_\_()}{\_\_getitem\_\_()}}
+{\footnotesize\ttfamily  Union\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}, list\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} palinka.\+utils.\+Database.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}int, Iterable\mbox{[}int\mbox{]}\mbox{]}}]{key\+\_\+or\+\_\+keys }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a25a65d6f7c10e6821b8a47de68caee2e}\label{classpalinka_1_1utils_1_1_database_a25a65d6f7c10e6821b8a47de68caee2e}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a7541fcb7effe1d58d2d5cdc0f03baa39}\label{classpalinka_1_1utils_1_1_database_a7541fcb7effe1d58d2d5cdc0f03baa39}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!\_\_len\_\_@{\_\_len\_\_}}
+\index{\_\_len\_\_@{\_\_len\_\_}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{\_\_len\_\_()}{\_\_len\_\_()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+\_\+\+\_\+len\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a13b8e7bebde56e9f9831088c661e90df}\label{classpalinka_1_1utils_1_1_database_a13b8e7bebde56e9f9831088c661e90df}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!add@{add}}
+\index{add@{add}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a5996c4bfb8a144059d329b5763f75de9}\label{classpalinka_1_1utils_1_1_database_a5996c4bfb8a144059d329b5763f75de9}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!build\_index@{build\_index}}
+\index{build\_index@{build\_index}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{build\_index()}{build\_index()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+build\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} (Re)build the index \end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a16d8f94c5d00453d0d6de0a694bd11f9}\label{classpalinka_1_1utils_1_1_database_a16d8f94c5d00453d0d6de0a694bd11f9}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!concat@{concat}}
+\index{concat@{concat}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+concat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Iterable\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}}]{entries }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_ac5449d32bbee2d1c7ffb20a763a6e460}\label{classpalinka_1_1utils_1_1_database_ac5449d32bbee2d1c7ffb20a763a6e460}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!contains@{contains}}
+\index{contains@{contains}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily  bool palinka.\+utils.\+Database.\+contains (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}Any, int\mbox{]}}]{key,  }\item[{}]{index\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_ab31ae29e621c85689f6b49c87e2d683b}\label{classpalinka_1_1utils_1_1_database_ab31ae29e621c85689f6b49c87e2d683b}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!get@{get}}
+\index{get@{get}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily  Union\mbox{[}Optional\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}, list\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} palinka.\+utils.\+Database.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}Any, int\mbox{]}}]{key\+\_\+or\+\_\+keys,  }\item[{}]{index\+\_\+name = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Retrieve an entry or a list of entries
+
+    If index is unique, or no index is set, return an entry . If the index is not unique, returns a list of entries
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_afc537ac9c95bb6ee7e61c33cc85773db}\label{classpalinka_1_1utils_1_1_database_afc537ac9c95bb6ee7e61c33cc85773db}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!get\_indexer@{get\_indexer}}
+\index{get\_indexer@{get\_indexer}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{get\_indexer()}{get\_indexer()}}
+{\footnotesize\ttfamily  Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}Any, \mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]} palinka.\+utils.\+Database.\+get\+\_\+indexer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{index\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a7006b9d97755f8ecec2aa5775403b3d5}\label{classpalinka_1_1utils_1_1_database_a7006b9d97755f8ecec2aa5775403b3d5}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+is\+\_\+empty (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_a5bb453fcd1ea93fa5d8c62cd41fa7d38}\label{classpalinka_1_1utils_1_1_database_a5bb453fcd1ea93fa5d8c62cd41fa7d38}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!query@{query}}
+\index{query@{query}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1utils_1_1_query}{Query}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} palinka.\+utils.\+Database.\+query (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_affcf7cf933ec23ae3547a5b7eda37393}\label{classpalinka_1_1utils_1_1_database_affcf7cf933ec23ae3547a5b7eda37393}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!remove\_by\_value@{remove\_by\_value}}
+\index{remove\_by\_value@{remove\_by\_value}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{remove\_by\_value()}{remove\_by\_value()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+remove\+\_\+by\+\_\+value (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_ab5eb1b90314941c73a4e8506e075d957}\label{classpalinka_1_1utils_1_1_database_ab5eb1b90314941c73a4e8506e075d957}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!set\_index@{set\_index}}
+\index{set\_index@{set\_index}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{set\_index()}{set\_index()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Database.\+set\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{index\+\_\+name,  }\item[{Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1utils_1_1_database_index}{Database\+Index}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}\mbox{]}}]{indexer }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_database_af27de02b688a5865f74cb629aaf023b6}\label{classpalinka_1_1utils_1_1_database_af27de02b688a5865f74cb629aaf023b6}} 
+\index{palinka.utils.Database@{palinka.utils.Database}!entries@{entries}}
+\index{entries@{entries}!palinka.utils.Database@{palinka.utils.Database}}
+\doxysubsubsection{\texorpdfstring{entries}{entries}}
+{\footnotesize\ttfamily palinka.\+utils.\+Database.\+entries}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/\mbox{\hyperlink{utils_8py}{utils.\+py}}\end{DoxyCompactItemize}

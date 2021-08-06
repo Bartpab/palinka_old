@@ -1,0 +1,100 @@
+\hypertarget{classpalinka_1_1utils_1_1_query}{}\doxysection{palinka.\+utils.\+Query Class Reference}
+\label{classpalinka_1_1utils_1_1_query}\index{palinka.utils.Query@{palinka.utils.Query}}
+Inheritance diagram for palinka.\+utils.\+Query\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1utils_1_1_query}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a6bf6e2ae408a518d23c5a224e5f8e032}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classpalinka_1_1utils_1_1_database}{Database}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a5e0a9019d54218975ed0d3470798491b}{database}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a5eea9eae104fbc6a7d10c820317f4cd1}{by\+\_\+index}} (self, str index\+\_\+name, Callable\mbox{[}\mbox{[}Any\mbox{]}, bool\mbox{]} predicate)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a7b3660ded3fa4d079772e97daffb18b6}{by\+\_\+attribute}} (self, str attr\+\_\+name, Callable\mbox{[}\mbox{[}Any\mbox{]}, bool\mbox{]} predicate)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_aa137a0afa3931e80c8a921f848d1a35e}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_ab641b376caf94a579e65fc8795c7a730}{find\+\_\+all}} (self)
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}} \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a18edda52e8be3cd62cbf0fc673e517c2}{find\+\_\+one}} (self, default=None)
+\item 
+\mbox{\hyperlink{classpalinka_1_1utils_1_1_cursor}{Cursor}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1utils_1_1_query_aad3e0d0b6587eafd2869916f598a84d8}{execute}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1utils_1_1_query_a5e0a9019d54218975ed0d3470798491b}{database}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1utils_1_1_query_aa8ab324ae5bf76bbee489be89c569936}{iterator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_a6bf6e2ae408a518d23c5a224e5f8e032}\label{classpalinka_1_1utils_1_1_query_a6bf6e2ae408a518d23c5a224e5f8e032}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Query.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classpalinka_1_1utils_1_1_database}{Database}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]}}]{database }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_aa137a0afa3931e80c8a921f848d1a35e}\label{classpalinka_1_1utils_1_1_query_aa137a0afa3931e80c8a921f848d1a35e}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Query.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_a7b3660ded3fa4d079772e97daffb18b6}\label{classpalinka_1_1utils_1_1_query_a7b3660ded3fa4d079772e97daffb18b6}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!by\_attribute@{by\_attribute}}
+\index{by\_attribute@{by\_attribute}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{by\_attribute()}{by\_attribute()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Query.\+by\+\_\+attribute (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{attr\+\_\+name,  }\item[{Callable\mbox{[}\mbox{[}Any\mbox{]}, bool\mbox{]}}]{predicate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_a5eea9eae104fbc6a7d10c820317f4cd1}\label{classpalinka_1_1utils_1_1_query_a5eea9eae104fbc6a7d10c820317f4cd1}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!by\_index@{by\_index}}
+\index{by\_index@{by\_index}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{by\_index()}{by\_index()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Query.\+by\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{index\+\_\+name,  }\item[{Callable\mbox{[}\mbox{[}Any\mbox{]}, bool\mbox{]}}]{predicate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_aad3e0d0b6587eafd2869916f598a84d8}\label{classpalinka_1_1utils_1_1_query_aad3e0d0b6587eafd2869916f598a84d8}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!execute@{execute}}
+\index{execute@{execute}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1utils_1_1_cursor}{Cursor}}\mbox{[}\mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}}\mbox{]} palinka.\+utils.\+Query.\+execute (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_ab641b376caf94a579e65fc8795c7a730}\label{classpalinka_1_1utils_1_1_query_ab641b376caf94a579e65fc8795c7a730}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!find\_all@{find\_all}}
+\index{find\_all@{find\_all}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{find\_all()}{find\_all()}}
+{\footnotesize\ttfamily def palinka.\+utils.\+Query.\+find\+\_\+all (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_a18edda52e8be3cd62cbf0fc673e517c2}\label{classpalinka_1_1utils_1_1_query_a18edda52e8be3cd62cbf0fc673e517c2}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!find\_one@{find\_one}}
+\index{find\_one@{find\_one}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{find\_one()}{find\_one()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{namespacepalinka_1_1utils_a3fae5cdf738afb959e2641cc628ba77a}{T}} palinka.\+utils.\+Query.\+find\+\_\+one (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{default = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_a5e0a9019d54218975ed0d3470798491b}\label{classpalinka_1_1utils_1_1_query_a5e0a9019d54218975ed0d3470798491b}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!database@{database}}
+\index{database@{database}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{database}{database}}
+{\footnotesize\ttfamily palinka.\+utils.\+Query.\+database}
+
+\mbox{\Hypertarget{classpalinka_1_1utils_1_1_query_aa8ab324ae5bf76bbee489be89c569936}\label{classpalinka_1_1utils_1_1_query_aa8ab324ae5bf76bbee489be89c569936}} 
+\index{palinka.utils.Query@{palinka.utils.Query}!iterator@{iterator}}
+\index{iterator@{iterator}!palinka.utils.Query@{palinka.utils.Query}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily palinka.\+utils.\+Query.\+iterator}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/\mbox{\hyperlink{utils_8py}{utils.\+py}}\end{DoxyCompactItemize}

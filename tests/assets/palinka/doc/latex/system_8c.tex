@@ -1,0 +1,61 @@
+\hypertarget{system_8c}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/system.c File Reference}
+\label{system_8c}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/system.c@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/system.c}}
+{\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system_8c_aa67b56de8d0f22c9078686313f187c94}{sys\+\_\+push\+\_\+error}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, const int code, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Push an error. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system_8c_a4a6ff14c5d10af9e666ed85757fe9d32}{sys\+\_\+pop\+\_\+error}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$output)
+\begin{DoxyCompactList}\small\item\em Pop an error. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system_8c_aae1442f63e2c5a0496d43d2cab24ba10}{sys\+\_\+step}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em System step function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_8c_a4a6ff14c5d10af9e666ed85757fe9d32}\label{system_8c_a4a6ff14c5d10af9e666ed85757fe9d32}} 
+\index{system.c@{system.c}!sys\_pop\_error@{sys\_pop\_error}}
+\index{sys\_pop\_error@{sys\_pop\_error}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{sys\_pop\_error()}{sys\_pop\_error()}}
+{\footnotesize\ttfamily int sys\+\_\+pop\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Pop an error. 
+
+If a system-\/related function fails, this function is used to pop the related error from the system. 
+\begin{DoxyParams}{Parameters}
+{\em sys} & The related system \\
+\hline
+{\em output} & The destination of the error (if returned value is 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an error is available, 0 if not error is available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_8c_aa67b56de8d0f22c9078686313f187c94}\label{system_8c_aa67b56de8d0f22c9078686313f187c94}} 
+\index{system.c@{system.c}!sys\_push\_error@{sys\_push\_error}}
+\index{sys\_push\_error@{sys\_push\_error}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{sys\_push\_error()}{sys\_push\_error()}}
+{\footnotesize\ttfamily void sys\+\_\+push\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{const int}]{code,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Push an error. 
+
+If a system-\/related function fails, this function is used to push the related error so it can be retrieved and analysed/displayed. The error is stored in a circular buffer and will remove old errors. \mbox{\Hypertarget{system_8c_aae1442f63e2c5a0496d43d2cab24ba10}\label{system_8c_aae1442f63e2c5a0496d43d2cab24ba10}} 
+\index{system.c@{system.c}!sys\_step@{sys\_step}}
+\index{sys\_step@{sys\_step}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{sys\_step()}{sys\_step()}}
+{\footnotesize\ttfamily int sys\+\_\+step (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+System step function. 
+
+This will call the step function store in the system. If an error occured (returned valued $>$ 0), an error is pushed in the system\textquotesingle{}s handler.
+
+\begin{DoxyReturn}{Returns}
+0 if anything went well, $>$ 0 if an error occured. 
+\end{DoxyReturn}

@@ -1,0 +1,95 @@
+\hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table}{}\doxysection{palinka.\+model.\+compiler.\+Symbol\+Table Class Reference}
+\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table}\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a90d14b0cf3407de5a8ee7e3849c24346}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aecc379ba84167a54cfb0f379a51e0023}{concat}} (self, \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table}{Symbol\+Table}} table)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_abdb150d1675ab24f11db82b2709b9f66}{build}} (self, int base=0)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ad3f7f6c7b897ab5c947ee38be39c51f0}{put}} (self, str name, Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1types_1_1_data_type}{Data\+Type}}\mbox{]} data\+\_\+type, Optional\mbox{[}str\mbox{]} symbolink=None)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_entry}{Symbol\+Table\+Entry}} \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ae46b2946a16bf424fe7e450c5e9bd3be}{get}} (self, name)
+\item 
+int \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a734c1920515467d769112b8b8b44b487}{address}} (self, name)
+\item 
+Iterator\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_entry}{Symbol\+Table\+Entry}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aa1fa3275a2ee1735d01340a3f93c64c8}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a3236386f586917df362fac34238ad8b5}{tail}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} Represents the symbol table used to compile the Tec4 code \end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a90d14b0cf3407de5a8ee7e3849c24346}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a90d14b0cf3407de5a8ee7e3849c24346}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+compiler.\+Symbol\+Table.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aa1fa3275a2ee1735d01340a3f93c64c8}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aa1fa3275a2ee1735d01340a3f93c64c8}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily  Iterator\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_entry}{Symbol\+Table\+Entry}}\mbox{]} palinka.\+model.\+compiler.\+Symbol\+Table.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a734c1920515467d769112b8b8b44b487}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a734c1920515467d769112b8b8b44b487}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!address@{address}}
+\index{address@{address}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{address()}{address()}}
+{\footnotesize\ttfamily  int palinka.\+model.\+compiler.\+Symbol\+Table.\+address (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_abdb150d1675ab24f11db82b2709b9f66}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_abdb150d1675ab24f11db82b2709b9f66}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!build@{build}}
+\index{build@{build}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily def palinka.\+model.\+compiler.\+Symbol\+Table.\+build (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{int }]{base = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}  Build the symbolic table
+
+  Set the addresses for each non-symbolic entry within the table, from base
+  Then, set the address for each symbolic entry based on the real entry's address.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aecc379ba84167a54cfb0f379a51e0023}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_aecc379ba84167a54cfb0f379a51e0023}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!concat@{concat}}
+\index{concat@{concat}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}}
+{\footnotesize\ttfamily def palinka.\+model.\+compiler.\+Symbol\+Table.\+concat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table}{Symbol\+Table}}}]{table }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ae46b2946a16bf424fe7e450c5e9bd3be}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ae46b2946a16bf424fe7e450c5e9bd3be}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!get@{get}}
+\index{get@{get}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1compiler_1_1_symbol_table_entry}{Symbol\+Table\+Entry}} palinka.\+model.\+compiler.\+Symbol\+Table.\+get (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ad3f7f6c7b897ab5c947ee38be39c51f0}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_ad3f7f6c7b897ab5c947ee38be39c51f0}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!put@{put}}
+\index{put@{put}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily def palinka.\+model.\+compiler.\+Symbol\+Table.\+put (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{name,  }\item[{Type\mbox{[}\mbox{\hyperlink{classpalinka_1_1types_1_1_data_type}{Data\+Type}}\mbox{]}}]{data\+\_\+type,  }\item[{Optional\mbox{[}str\mbox{]} }]{symbolink = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a3236386f586917df362fac34238ad8b5}\label{classpalinka_1_1model_1_1compiler_1_1_symbol_table_a3236386f586917df362fac34238ad8b5}} 
+\index{palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}!tail@{tail}}
+\index{tail@{tail}!palinka.model.compiler.SymbolTable@{palinka.model.compiler.SymbolTable}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily palinka.\+model.\+compiler.\+Symbol\+Table.\+tail}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/\mbox{\hyperlink{compiler_8py}{compiler.\+py}}\end{DoxyCompactItemize}

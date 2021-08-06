@@ -30,7 +30,7 @@ def rec_copy(src, dest):
 
 class ProjectGenerator:
     def __init__(self, dir_path: str):
-        self.path = os.path.join(dir_path, 'framework')
+        self.path = os.path.join(dir_path, 'palinka')
         self.libs = []
     
     def add_library(self, dir_path: str, name: str):
@@ -45,7 +45,7 @@ class ProjectGenerator:
 
         try:
             os.makedirs(path, exist_ok=True)
-            rec_copy("assets/framework", os.path.join(path))
+            rec_copy("assets/palinka", os.path.join(path))
             
             for lib, libname in self.libs:
                 shutil.copytree(lib, os.path.join(self.path, "libs", libname))

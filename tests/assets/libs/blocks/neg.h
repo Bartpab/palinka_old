@@ -1,1 +1,0 @@
-void block_neg(char* input, char* output);

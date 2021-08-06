@@ -1,0 +1,137 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{}\doxysection{palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aeee91fd9249b1ec11251b99a524e0423}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{Constant\+Expression}}\mbox{]}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1parameter__list_1_1_parameter_list}{parameter\+\_\+list.\+Parameter\+List}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a317a53926ee0efc896277ee98a31945b}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a833d85a68566e2c1188640fdf7784123}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0878fe73ac90feb0ce470b009f88b4dd}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0284906d1351b985bd7c4df78a8f6bce}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0c3279f1f7f550ea7301630c39dca297}{is\+\_\+third\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_acaada97c212fd862ec86c98109e6041a}{is\+\_\+fourth\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aba489c5c80a11e21d4bb8f157f0bc008}{is\+\_\+fifth\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a7976a131ae6fadc9cff4f65f956a691f}{identifier}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a8339a3006ed3db8408e2033e7fdc2e1b}{declarator}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a14c2e57c08f47b1627c8804bf60ef921}{call}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}} n1, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1parameter__list_1_1_parameter_list}{parameter\+\_\+list.\+Parameter\+List}}\mbox{]} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a09647cb8a8fdea71d5059f9ebe96cdc1}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a833d85a68566e2c1188640fdf7784123}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a69081996e401cd06e32757f22c652cdd}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a317a53926ee0efc896277ee98a31945b}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a direct declarator
+
+    <direct-declarator> ::= <identifier>
+                        | <declarator>
+                        | <direct-declarator> [<constant-expression>?]
+                        | <direct-declarator> (<parameter-list>)
+                        | <direct-declarator> (<identifier>*)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aeee91fd9249b1ec11251b99a524e0423}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aeee91fd9249b1ec11251b99a524e0423}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]},         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}}\mbox{]},         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{Constant\+Expression}}\mbox{]}\mbox{]},         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1parameter__list_1_1_parameter_list}{parameter\+\_\+list.\+Parameter\+List}}\mbox{]},         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]}\mbox{]}     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a09647cb8a8fdea71d5059f9ebe96cdc1}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a09647cb8a8fdea71d5059f9ebe96cdc1}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a14c2e57c08f47b1627c8804bf60ef921}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a14c2e57c08f47b1627c8804bf60ef921}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!call@{call}}
+\index{call@{call}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+call (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator}{Direct\+Declarator}}}]{n1,  }\item[{Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1parameter__list_1_1_parameter_list}{parameter\+\_\+list.\+Parameter\+List}}\mbox{]}}]{n2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a8339a3006ed3db8408e2033e7fdc2e1b}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a8339a3006ed3db8408e2033e7fdc2e1b}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!declarator@{declarator}}
+\index{declarator@{declarator}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{declarator()}{declarator()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+declarator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}}}]{n1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a7976a131ae6fadc9cff4f65f956a691f}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a7976a131ae6fadc9cff4f65f956a691f}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!identifier@{identifier}}
+\index{identifier@{identifier}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{identifier()}{identifier()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+identifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}}]{n1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aba489c5c80a11e21d4bb8f157f0bc008}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_aba489c5c80a11e21d4bb8f157f0bc008}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!is\_fifth\_case@{is\_fifth\_case}}
+\index{is\_fifth\_case@{is\_fifth\_case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{is\_fifth\_case()}{is\_fifth\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+is\+\_\+fifth\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0878fe73ac90feb0ce470b009f88b4dd}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0878fe73ac90feb0ce470b009f88b4dd}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_acaada97c212fd862ec86c98109e6041a}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_acaada97c212fd862ec86c98109e6041a}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!is\_fourth\_case@{is\_fourth\_case}}
+\index{is\_fourth\_case@{is\_fourth\_case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{is\_fourth\_case()}{is\_fourth\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+is\+\_\+fourth\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0284906d1351b985bd7c4df78a8f6bce}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0284906d1351b985bd7c4df78a8f6bce}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0c3279f1f7f550ea7301630c39dca297}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a0c3279f1f7f550ea7301630c39dca297}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!is\_third\_case@{is\_third\_case}}
+\index{is\_third\_case@{is\_third\_case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{is\_third\_case()}{is\_third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+is\+\_\+third\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a69081996e401cd06e32757f22c652cdd}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a69081996e401cd06e32757f22c652cdd}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!case@{case}}
+\index{case@{case}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a833d85a68566e2c1188640fdf7784123}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a833d85a68566e2c1188640fdf7784123}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a317a53926ee0efc896277ee98a31945b}\label{classpalinka_1_1model_1_1ast_1_1declarator_1_1_direct_declarator_a317a53926ee0efc896277ee98a31945b}} 
+\index{palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.declarator.DirectDeclarator@{palinka.model.ast.declarator.DirectDeclarator}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+declarator.\+Direct\+Declarator.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2declarator_8py}{declarator.\+py}}\end{DoxyCompactItemize}

@@ -1,1 +1,0 @@
-void block_bin_input(char* input);

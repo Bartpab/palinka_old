@@ -1,0 +1,129 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}{}\doxysection{palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a21215b27fd3c1f0982df74c8ad063676}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}{Exclusive\+Or\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aeb341694d50a2dd2fbb1aa900f3dcdca}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ae957020cbfbf48511b15690da6095a38}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_af25390b3788143bcc7df8ab12ccca5a8}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a6159a0b80262fd0e08e4f890fbcca8ee}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a5c63baa74826ade70e7201818a6410fb}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aa67fb8ad73be33d825351fa44a824f85}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ab98a404b2ed9081f83e6bb3f0f58ff1a}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aee8839fbad84184b170bfe3629d6f44a}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}{Exclusive\+Or\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}} n2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ae957020cbfbf48511b15690da6095a38}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a36a9c3f48b05dfff92e3ec7618f1a67e}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aeb341694d50a2dd2fbb1aa900f3dcdca}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a xor expression.
+    
+    <exclusive-or-expression> ::= <and-expression>
+                                | <exclusive-or-expression> ^ <and-expression>
+    
+    Ex: lh ^ rh
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a21215b27fd3c1f0982df74c8ad063676}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a21215b27fd3c1f0982df74c8ad063676}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}{Exclusive\+Or\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}\mbox{]}\mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a5c63baa74826ade70e7201818a6410fb}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a5c63baa74826ade70e7201818a6410fb}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aa67fb8ad73be33d825351fa44a824f85}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aa67fb8ad73be33d825351fa44a824f85}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ab98a404b2ed9081f83e6bb3f0f58ff1a}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ab98a404b2ed9081f83e6bb3f0f58ff1a}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <exclusive-or-expression> ::= <and-expression>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aee8839fbad84184b170bfe3629d6f44a}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aee8839fbad84184b170bfe3629d6f44a}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression}{Exclusive\+Or\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1and__expression_1_1_and_expression}{and\+\_\+expression.\+And\+Expression}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <exclusive-or-expression> ::= <exclusive-or-expression> ^ <and-expression>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_af25390b3788143bcc7df8ab12ccca5a8}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_af25390b3788143bcc7df8ab12ccca5a8}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    <exclusive-or-expression> ::= <and-expression>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a6159a0b80262fd0e08e4f890fbcca8ee}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a6159a0b80262fd0e08e4f890fbcca8ee}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    <exclusive-or-expression> ::= <exclusive-or-expression> ^ <and-expression>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a36a9c3f48b05dfff92e3ec7618f1a67e}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_a36a9c3f48b05dfff92e3ec7618f1a67e}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!case@{case}}
+\index{case@{case}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ae957020cbfbf48511b15690da6095a38}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_ae957020cbfbf48511b15690da6095a38}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aeb341694d50a2dd2fbb1aa900f3dcdca}\label{classpalinka_1_1model_1_1ast_1_1exclusive__or__expression_1_1_exclusive_or_expression_aeb341694d50a2dd2fbb1aa900f3dcdca}} 
+\index{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression@{palinka.model.ast.exclusive\_or\_expression.ExclusiveOrExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+exclusive\+\_\+or\+\_\+expression.\+Exclusive\+Or\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2exclusive__or__expression_8py}{exclusive\+\_\+or\+\_\+expression.\+py}}\end{DoxyCompactItemize}

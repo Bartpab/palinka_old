@@ -1,0 +1,50 @@
+\hypertarget{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay}{}\doxysection{palinka.\+ast.\+automation.\+system.\+cpy\+\_\+relay Namespace Reference}
+\label{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay}\index{palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}ast.\+automation.\+External\+Declaration\mbox{]} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_acf54fd9e552851e8e2736bef7c76efa7}{build\+\_\+source}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}} system)
+\item 
+ast.\+automation.\+External\+Declaration \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a976490a52adf1a08b585c017fde95658}{build\+\_\+function}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}} system)
+\item 
+ast.\+automation.\+External\+Declaration \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a7776b331197b11c6c8dc8467491b30fd}{build\+\_\+subfunction}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_data_link}{Data\+Link}} lnk, \mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}} system)
+\item 
+ast.\+Compound\+Statement \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_aa5435323b20c6affbe797cf86d75c9de}{build\+\_\+subfunction\+\_\+statements}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_data_link}{Data\+Link}} lnk, \mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}} system)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a976490a52adf1a08b585c017fde95658}\label{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a976490a52adf1a08b585c017fde95658}} 
+\index{palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}!build\_function@{build\_function}}
+\index{build\_function@{build\_function}!palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}}
+\doxysubsubsection{\texorpdfstring{build\_function()}{build\_function()}}
+{\footnotesize\ttfamily  ast.\+automation.\+External\+Declaration palinka.\+ast.\+automation.\+system.\+cpy\+\_\+relay.\+build\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}}}]{system }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_acf54fd9e552851e8e2736bef7c76efa7}\label{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_acf54fd9e552851e8e2736bef7c76efa7}} 
+\index{palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}!build\_source@{build\_source}}
+\index{build\_source@{build\_source}!palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}}
+\doxysubsubsection{\texorpdfstring{build\_source()}{build\_source()}}
+{\footnotesize\ttfamily  list\mbox{[}ast.\+automation.\+External\+Declaration\mbox{]} palinka.\+ast.\+automation.\+system.\+cpy\+\_\+relay.\+build\+\_\+source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}}}]{system }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Build the system's copy recv routine.
+
+    A data link is a pair consumer system/producer system. 
+
+    A memory area in the consumer system is created to store all the information that are produced by the producer system.
+
+    This routine will copy the data to function plans data blocks which are consumer of the information.
+
+    The routine is called "sys_{system.get_id()}_cpy_recv"
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a7776b331197b11c6c8dc8467491b30fd}\label{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_a7776b331197b11c6c8dc8467491b30fd}} 
+\index{palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}!build\_subfunction@{build\_subfunction}}
+\index{build\_subfunction@{build\_subfunction}!palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}}
+\doxysubsubsection{\texorpdfstring{build\_subfunction()}{build\_subfunction()}}
+{\footnotesize\ttfamily  ast.\+automation.\+External\+Declaration palinka.\+ast.\+automation.\+system.\+cpy\+\_\+relay.\+build\+\_\+subfunction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_data_link}{Data\+Link}}}]{lnk,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}}}]{system }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_aa5435323b20c6affbe797cf86d75c9de}\label{namespacepalinka_1_1ast_1_1automation_1_1system_1_1cpy__relay_aa5435323b20c6affbe797cf86d75c9de}} 
+\index{palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}!build\_subfunction\_statements@{build\_subfunction\_statements}}
+\index{build\_subfunction\_statements@{build\_subfunction\_statements}!palinka.ast.automation.system.cpy\_relay@{palinka.ast.automation.system.cpy\_relay}}
+\doxysubsubsection{\texorpdfstring{build\_subfunction\_statements()}{build\_subfunction\_statements()}}
+{\footnotesize\ttfamily  ast.\+Compound\+Statement palinka.\+ast.\+automation.\+system.\+cpy\+\_\+relay.\+build\+\_\+subfunction\+\_\+statements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_data_link}{Data\+Link}}}]{lnk,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_system}{System}}}]{system }\end{DoxyParamCaption})}
+

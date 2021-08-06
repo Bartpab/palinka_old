@@ -1,0 +1,196 @@
+\hypertarget{namespacepalinka_1_1ast_1_1utils}{}\doxysection{palinka.\+ast.\+utils Namespace Reference}
+\label{namespacepalinka_1_1ast_1_1utils}\index{palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ast.\+Postfix\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_af39cd8a83cfaf48c76e573ebc78cc2ae}{function\+\_\+call\+\_\+expr}} (function\+\_\+id, $\ast$args)
+\item 
+ast.\+Unary\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_aa8660d698731f9624434af5a3f5e0c34}{sizeof}} (ast.\+Type\+Name n)
+\item 
+ast.\+Statement \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a0b8e9e961b4cae2b0872c5a787e61b86}{function\+\_\+call\+\_\+stmt}} (function\+\_\+id, $\ast$args)
+\item 
+ast.\+Statement \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_afa2d3b8bc116458181408f2e3874369c}{return\+\_\+stmt}} (n)
+\item 
+ast.\+Primary\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a1c87b0b9cc900363f0a3f59bcc0c9770}{constant\+\_\+expr}} (constant)
+\item 
+ast.\+Primary\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a789fb668b1b1e5c309ce685d2ae9ef87}{id\+\_\+expr}} (str name)
+\item 
+ast.\+Assignment\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a0f29f175efe085d654f8653a3b7bc507}{assign\+\_\+expr}} (lh, rh, op=\textquotesingle{}=\textquotesingle{})
+\item 
+ast.\+Statement \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_ad08a570d5af7e676a47e5fc1b2976e05}{assign\+\_\+stmt}} (lh, rh)
+\item 
+def \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a99ab924a82271eed4a9ee637932f73d5}{typename}} (str specs, bool as\+\_\+ptr=False)
+\item 
+ast.\+Cast\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a45e7f99fc34a095b4c4cdbeb028fb738}{cast\+\_\+expr}} (ast.\+Type\+Name type\+\_\+name, ast.\+Cast\+Expression n)
+\item 
+ast.\+Multiplicative\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_aae1f5be28fcc13bb6ce878724b362664}{mult\+\_\+expr}} (ast.\+Multiplicative\+Expression lh, ast.\+Cast\+Expression rh, op=\char`\"{}$\ast$\char`\"{})
+\item 
+ast.\+Additive\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_aef62bd439e19dfb2785a339a550eef87}{add\+\_\+expr}} (ast.\+Additive\+Expression lh, ast.\+Multiplicative\+Expression rh, op=\char`\"{}+\char`\"{})
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{Unary\+Expression}} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_aea8b4e435c8631fb67743bafae10c517}{deref\+\_\+expr}} (Union\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]} n)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{Unary\+Expression}} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a12b29d99b7c814aac4ef827b2d72cf73}{ref\+\_\+expr}} (Union\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]} n)
+\item 
+ast.\+Postfix\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a2ddef401de8604705c079ebb3e2fc9fc}{getitem\+\_\+expr}} (Union\mbox{[}str, ast.\+Postfix\+Expression\mbox{]} lh, Union\mbox{[}str, ast.\+Expression\mbox{]} rh, bool arrow=True)
+\item 
+ast.\+Postfix\+Expression \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a2449936bb9117da8928d7ced10d14a5e}{attr\+\_\+access\+\_\+expr}} (Union\mbox{[}str, ast.\+Postfix\+Expression\mbox{]} lh, str attr\+\_\+id, arrow=True)
+\item 
+ast.\+Function\+Definition \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_afa46686efa00bb397e6d4a2af6e2570c}{func\+\_\+decl}} (list\mbox{[}ast.\+Declaration\+Specifier\mbox{]} decl\+\_\+specs, ast.\+Declarator declarator, list\mbox{[}ast.\+Declaration\mbox{]} decls, ast.\+Compound\+Statement stmts)
+\item 
+def \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_ae93d041549cc223bfe0349681e144fc8}{func\+\_\+declarator}} (str id, Optional\mbox{[}ast.\+Parameter\+List\mbox{]} params=None, as\+\_\+ptr=False)
+\item 
+ast.\+Declarator \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a170600bc0c61ec0766d84c2d848ef2db}{id\+\_\+declarator}} (str id, bool as\+\_\+ptr=False)
+\item 
+ast.\+Parameter\+Declaration \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a148b4c1eb67584a7c95d9da10c6fa330}{param\+\_\+decl}} (list\mbox{[}ast.\+Declaration\+Specifier\mbox{]} decl\+\_\+specs, ast.\+Declarator declarator)
+\item 
+ast.\+Parameter\+List \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_af58454b9540940de1062a596fc2cf784}{param\+\_\+list}} ($\ast$param\+\_\+decls)
+\item 
+ast.\+Struct\+Or\+Union\+Specifier \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_a65f6761e83a8680c3842a6112e7a43ef}{struct\+\_\+specifier}} (str id)
+\item 
+ast.\+Declaration \mbox{\hyperlink{namespacepalinka_1_1ast_1_1utils_af41c8ff7927fa3ee18d09671fc624942}{struct\+\_\+var\+\_\+decl}} (str struct\+\_\+id, str var\+\_\+id, bool as\+\_\+ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_aef62bd439e19dfb2785a339a550eef87}\label{namespacepalinka_1_1ast_1_1utils_aef62bd439e19dfb2785a339a550eef87}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!add\_expr@{add\_expr}}
+\index{add\_expr@{add\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{add\_expr()}{add\_expr()}}
+{\footnotesize\ttfamily  ast.\+Additive\+Expression palinka.\+ast.\+utils.\+add\+\_\+expr (\begin{DoxyParamCaption}\item[{ast.\+Additive\+Expression}]{lh,  }\item[{ast.\+Multiplicative\+Expression}]{rh,  }\item[{}]{op = {\ttfamily \char`\"{}+\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a0f29f175efe085d654f8653a3b7bc507}\label{namespacepalinka_1_1ast_1_1utils_a0f29f175efe085d654f8653a3b7bc507}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!assign\_expr@{assign\_expr}}
+\index{assign\_expr@{assign\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{assign\_expr()}{assign\_expr()}}
+{\footnotesize\ttfamily  ast.\+Assignment\+Expression palinka.\+ast.\+utils.\+assign\+\_\+expr (\begin{DoxyParamCaption}\item[{}]{lh,  }\item[{}]{rh,  }\item[{}]{op = {\ttfamily \textquotesingle{}=\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_ad08a570d5af7e676a47e5fc1b2976e05}\label{namespacepalinka_1_1ast_1_1utils_ad08a570d5af7e676a47e5fc1b2976e05}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!assign\_stmt@{assign\_stmt}}
+\index{assign\_stmt@{assign\_stmt}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{assign\_stmt()}{assign\_stmt()}}
+{\footnotesize\ttfamily  ast.\+Statement palinka.\+ast.\+utils.\+assign\+\_\+stmt (\begin{DoxyParamCaption}\item[{}]{lh,  }\item[{}]{rh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a2449936bb9117da8928d7ced10d14a5e}\label{namespacepalinka_1_1ast_1_1utils_a2449936bb9117da8928d7ced10d14a5e}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!attr\_access\_expr@{attr\_access\_expr}}
+\index{attr\_access\_expr@{attr\_access\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{attr\_access\_expr()}{attr\_access\_expr()}}
+{\footnotesize\ttfamily  ast.\+Postfix\+Expression palinka.\+ast.\+utils.\+attr\+\_\+access\+\_\+expr (\begin{DoxyParamCaption}\item[{Union\mbox{[}str, ast.\+Postfix\+Expression\mbox{]}}]{lh,  }\item[{str}]{attr\+\_\+id,  }\item[{}]{arrow = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    lh->attr_id
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a45e7f99fc34a095b4c4cdbeb028fb738}\label{namespacepalinka_1_1ast_1_1utils_a45e7f99fc34a095b4c4cdbeb028fb738}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!cast\_expr@{cast\_expr}}
+\index{cast\_expr@{cast\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{cast\_expr()}{cast\_expr()}}
+{\footnotesize\ttfamily  ast.\+Cast\+Expression palinka.\+ast.\+utils.\+cast\+\_\+expr (\begin{DoxyParamCaption}\item[{ast.\+Type\+Name}]{type\+\_\+name,  }\item[{ast.\+Cast\+Expression}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a1c87b0b9cc900363f0a3f59bcc0c9770}\label{namespacepalinka_1_1ast_1_1utils_a1c87b0b9cc900363f0a3f59bcc0c9770}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!constant\_expr@{constant\_expr}}
+\index{constant\_expr@{constant\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{constant\_expr()}{constant\_expr()}}
+{\footnotesize\ttfamily ast Primary\+Expression palinka.\+ast.\+utils.\+constant\+\_\+expr (\begin{DoxyParamCaption}\item[{}]{constant }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_aea8b4e435c8631fb67743bafae10c517}\label{namespacepalinka_1_1ast_1_1utils_aea8b4e435c8631fb67743bafae10c517}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!deref\_expr@{deref\_expr}}
+\index{deref\_expr@{deref\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{deref\_expr()}{deref\_expr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{Unary\+Expression}} palinka.\+ast.\+utils.\+deref\+\_\+expr (\begin{DoxyParamCaption}\item[{Union\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]}}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_afa46686efa00bb397e6d4a2af6e2570c}\label{namespacepalinka_1_1ast_1_1utils_afa46686efa00bb397e6d4a2af6e2570c}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!func\_decl@{func\_decl}}
+\index{func\_decl@{func\_decl}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{func\_decl()}{func\_decl()}}
+{\footnotesize\ttfamily  ast.\+Function\+Definition palinka.\+ast.\+utils.\+func\+\_\+decl (\begin{DoxyParamCaption}\item[{list\mbox{[}ast.\+Declaration\+Specifier\mbox{]}}]{decl\+\_\+specs,  }\item[{ast.\+Declarator}]{declarator,  }\item[{list\mbox{[}ast.\+Declaration\mbox{]}}]{decls,  }\item[{ast.\+Compound\+Statement}]{stmts }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_ae93d041549cc223bfe0349681e144fc8}\label{namespacepalinka_1_1ast_1_1utils_ae93d041549cc223bfe0349681e144fc8}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!func\_declarator@{func\_declarator}}
+\index{func\_declarator@{func\_declarator}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{func\_declarator()}{func\_declarator()}}
+{\footnotesize\ttfamily def palinka.\+ast.\+utils.\+func\+\_\+declarator (\begin{DoxyParamCaption}\item[{str}]{id,  }\item[{Optional\mbox{[}ast.\+Parameter\+List\mbox{]} }]{params = {\ttfamily None},  }\item[{}]{as\+\_\+ptr = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_af39cd8a83cfaf48c76e573ebc78cc2ae}\label{namespacepalinka_1_1ast_1_1utils_af39cd8a83cfaf48c76e573ebc78cc2ae}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!function\_call\_expr@{function\_call\_expr}}
+\index{function\_call\_expr@{function\_call\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{function\_call\_expr()}{function\_call\_expr()}}
+{\footnotesize\ttfamily  ast.\+Postfix\+Expression palinka.\+ast.\+utils.\+function\+\_\+call\+\_\+expr (\begin{DoxyParamCaption}\item[{}]{function\+\_\+id,  }\item[{$\ast$}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a0b8e9e961b4cae2b0872c5a787e61b86}\label{namespacepalinka_1_1ast_1_1utils_a0b8e9e961b4cae2b0872c5a787e61b86}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!function\_call\_stmt@{function\_call\_stmt}}
+\index{function\_call\_stmt@{function\_call\_stmt}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{function\_call\_stmt()}{function\_call\_stmt()}}
+{\footnotesize\ttfamily  ast.\+Statement palinka.\+ast.\+utils.\+function\+\_\+call\+\_\+stmt (\begin{DoxyParamCaption}\item[{}]{function\+\_\+id,  }\item[{$\ast$}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a2ddef401de8604705c079ebb3e2fc9fc}\label{namespacepalinka_1_1ast_1_1utils_a2ddef401de8604705c079ebb3e2fc9fc}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!getitem\_expr@{getitem\_expr}}
+\index{getitem\_expr@{getitem\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{getitem\_expr()}{getitem\_expr()}}
+{\footnotesize\ttfamily  ast.\+Postfix\+Expression palinka.\+ast.\+utils.\+getitem\+\_\+expr (\begin{DoxyParamCaption}\item[{Union\mbox{[}str, ast.\+Postfix\+Expression\mbox{]}}]{lh,  }\item[{Union\mbox{[}str, ast.\+Expression\mbox{]}}]{rh,  }\item[{bool }]{arrow = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    lh[rh]
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a170600bc0c61ec0766d84c2d848ef2db}\label{namespacepalinka_1_1ast_1_1utils_a170600bc0c61ec0766d84c2d848ef2db}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!id\_declarator@{id\_declarator}}
+\index{id\_declarator@{id\_declarator}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{id\_declarator()}{id\_declarator()}}
+{\footnotesize\ttfamily  ast.\+Declarator palinka.\+ast.\+utils.\+id\+\_\+declarator (\begin{DoxyParamCaption}\item[{str}]{id,  }\item[{bool }]{as\+\_\+ptr = {\ttfamily False} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a789fb668b1b1e5c309ce685d2ae9ef87}\label{namespacepalinka_1_1ast_1_1utils_a789fb668b1b1e5c309ce685d2ae9ef87}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!id\_expr@{id\_expr}}
+\index{id\_expr@{id\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{id\_expr()}{id\_expr()}}
+{\footnotesize\ttfamily  ast.\+Primary\+Expression palinka.\+ast.\+utils.\+id\+\_\+expr (\begin{DoxyParamCaption}\item[{str}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_aae1f5be28fcc13bb6ce878724b362664}\label{namespacepalinka_1_1ast_1_1utils_aae1f5be28fcc13bb6ce878724b362664}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!mult\_expr@{mult\_expr}}
+\index{mult\_expr@{mult\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{mult\_expr()}{mult\_expr()}}
+{\footnotesize\ttfamily  ast.\+Multiplicative\+Expression palinka.\+ast.\+utils.\+mult\+\_\+expr (\begin{DoxyParamCaption}\item[{ast.\+Multiplicative\+Expression}]{lh,  }\item[{ast.\+Cast\+Expression}]{rh,  }\item[{}]{op = {\ttfamily \char`\"{}$\ast$\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a148b4c1eb67584a7c95d9da10c6fa330}\label{namespacepalinka_1_1ast_1_1utils_a148b4c1eb67584a7c95d9da10c6fa330}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!param\_decl@{param\_decl}}
+\index{param\_decl@{param\_decl}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{param\_decl()}{param\_decl()}}
+{\footnotesize\ttfamily  ast.\+Parameter\+Declaration palinka.\+ast.\+utils.\+param\+\_\+decl (\begin{DoxyParamCaption}\item[{list\mbox{[}ast.\+Declaration\+Specifier\mbox{]}}]{decl\+\_\+specs,  }\item[{ast.\+Declarator}]{declarator }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_af58454b9540940de1062a596fc2cf784}\label{namespacepalinka_1_1ast_1_1utils_af58454b9540940de1062a596fc2cf784}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!param\_list@{param\_list}}
+\index{param\_list@{param\_list}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{param\_list()}{param\_list()}}
+{\footnotesize\ttfamily  ast.\+Parameter\+List palinka.\+ast.\+utils.\+param\+\_\+list (\begin{DoxyParamCaption}\item[{$\ast$}]{param\+\_\+decls }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a12b29d99b7c814aac4ef827b2d72cf73}\label{namespacepalinka_1_1ast_1_1utils_a12b29d99b7c814aac4ef827b2d72cf73}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!ref\_expr@{ref\_expr}}
+\index{ref\_expr@{ref\_expr}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{ref\_expr()}{ref\_expr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{Unary\+Expression}} palinka.\+ast.\+utils.\+ref\+\_\+expr (\begin{DoxyParamCaption}\item[{Union\mbox{[}str, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]}}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_afa2d3b8bc116458181408f2e3874369c}\label{namespacepalinka_1_1ast_1_1utils_afa2d3b8bc116458181408f2e3874369c}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!return\_stmt@{return\_stmt}}
+\index{return\_stmt@{return\_stmt}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{return\_stmt()}{return\_stmt()}}
+{\footnotesize\ttfamily  ast.\+Statement palinka.\+ast.\+utils.\+return\+\_\+stmt (\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_aa8660d698731f9624434af5a3f5e0c34}\label{namespacepalinka_1_1ast_1_1utils_aa8660d698731f9624434af5a3f5e0c34}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!sizeof@{sizeof}}
+\index{sizeof@{sizeof}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{sizeof()}{sizeof()}}
+{\footnotesize\ttfamily  ast.\+Unary\+Expression palinka.\+ast.\+utils.\+sizeof (\begin{DoxyParamCaption}\item[{ast.\+Type\+Name}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a65f6761e83a8680c3842a6112e7a43ef}\label{namespacepalinka_1_1ast_1_1utils_a65f6761e83a8680c3842a6112e7a43ef}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!struct\_specifier@{struct\_specifier}}
+\index{struct\_specifier@{struct\_specifier}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{struct\_specifier()}{struct\_specifier()}}
+{\footnotesize\ttfamily  ast.\+Struct\+Or\+Union\+Specifier palinka.\+ast.\+utils.\+struct\+\_\+specifier (\begin{DoxyParamCaption}\item[{str}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_af41c8ff7927fa3ee18d09671fc624942}\label{namespacepalinka_1_1ast_1_1utils_af41c8ff7927fa3ee18d09671fc624942}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!struct\_var\_decl@{struct\_var\_decl}}
+\index{struct\_var\_decl@{struct\_var\_decl}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{struct\_var\_decl()}{struct\_var\_decl()}}
+{\footnotesize\ttfamily  ast.\+Declaration palinka.\+ast.\+utils.\+struct\+\_\+var\+\_\+decl (\begin{DoxyParamCaption}\item[{str}]{struct\+\_\+id,  }\item[{str}]{var\+\_\+id,  }\item[{bool}]{as\+\_\+ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1utils_a99ab924a82271eed4a9ee637932f73d5}\label{namespacepalinka_1_1ast_1_1utils_a99ab924a82271eed4a9ee637932f73d5}} 
+\index{palinka.ast.utils@{palinka.ast.utils}!typename@{typename}}
+\index{typename@{typename}!palinka.ast.utils@{palinka.ast.utils}}
+\doxysubsubsection{\texorpdfstring{typename()}{typename()}}
+{\footnotesize\ttfamily def palinka.\+ast.\+utils.\+typename (\begin{DoxyParamCaption}\item[{str}]{specs,  }\item[{bool }]{as\+\_\+ptr = {\ttfamily False} }\end{DoxyParamCaption})}
+

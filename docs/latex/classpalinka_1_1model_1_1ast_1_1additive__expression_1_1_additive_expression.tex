@@ -1,0 +1,97 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{}\doxysection{palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a700c2230dc3aa35d035244a33837bf1c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_binop}{Additive\+Expression\+Binop}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a8b03cbbabb345aef8ec742dc74fa9c70}{nodes}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a85c2952e1191385e22f32256ba574af5}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_ac972bf98ff6a20c9d6a4f251628d0ece}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a863a6a1fccc38073c22c3f3535ea68f7}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}} n1)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a801d9d8d3ce04c24e78c4ab0c618171e}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_binop}{Additive\+Expression\+Binop}} n2, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}} n3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a04ade388ea35d18c10bffda0713e3541}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a8b03cbbabb345aef8ec742dc74fa9c70}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents an additive expression.
+
+
+    <additive-expression> ::= <multiplicative-expression>
+                          | 
+    Eg: lh + rh; lh - rh.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a700c2230dc3aa35d035244a33837bf1c}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a700c2230dc3aa35d035244a33837bf1c}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}             Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}\mbox{]},              Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_binop}{Additive\+Expression\+Binop}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}\mbox{]}         \mbox{]}}]{nodes }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a85c2952e1191385e22f32256ba574af5}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a85c2952e1191385e22f32256ba574af5}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_ac972bf98ff6a20c9d6a4f251628d0ece}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_ac972bf98ff6a20c9d6a4f251628d0ece}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a863a6a1fccc38073c22c3f3535ea68f7}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a863a6a1fccc38073c22c3f3535ea68f7}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a801d9d8d3ce04c24e78c4ab0c618171e}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a801d9d8d3ce04c24e78c4ab0c618171e}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}} palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression}{Additive\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_binop}{Additive\+Expression\+Binop}}}]{n2,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1multiplicative__expression_1_1_multiplicative_expression}{multiplicative\+\_\+expression.\+Multiplicative\+Expression}}}]{n3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a04ade388ea35d18c10bffda0713e3541}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a04ade388ea35d18c10bffda0713e3541}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!case@{case}}
+\index{case@{case}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a8b03cbbabb345aef8ec742dc74fa9c70}\label{classpalinka_1_1model_1_1ast_1_1additive__expression_1_1_additive_expression_a8b03cbbabb345aef8ec742dc74fa9c70}} 
+\index{palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.additive\_expression.AdditiveExpression@{palinka.model.ast.additive\_expression.AdditiveExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+additive\+\_\+expression.\+Additive\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2additive__expression_8py}{additive\+\_\+expression.\+py}}\end{DoxyCompactItemize}

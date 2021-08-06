@@ -313,7 +313,7 @@ class System:
 
         # Several attributes
         self.devices: Database[Device] = Database(id=DatabaseIndex(lambda dev: dev.get_id(), unique=True))
-        self.free_memory_size = 16000 #16 Ko
+        self.memory_size = 10000000 # 10 Mo
 
     def __hash__(self):
         return hash(self.get_id())

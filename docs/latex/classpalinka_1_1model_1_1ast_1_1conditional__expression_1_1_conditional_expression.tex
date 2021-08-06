@@ -1,0 +1,123 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{}\doxysection{palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a75f23981129d5e011d780e2be335b4f3}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{Conditional\+Expression}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a6862838283e8fdfca1faecb25cf4b065}{nodes}})
+\item 
+bool \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a8d5d9822a2eb02e68ca512c955619970}{is\+\_\+first\+\_\+case}} (self)
+\item 
+bool \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a091fe1a5b0d0bd29659e719e5d8869a1}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ac83ccb6388210c1e2bfe13dfd7f0aa64}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{assignment\+\_\+expression.\+Assignment\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a7128d809b6643f7d833401a725d6269b}{as\+\_\+parent}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab670f9a672eda699903bae9e3e0e5ab5}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_aafe6d776bdf7cfde2dc0630a6c520656}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a432950068722e8f613270d8df6a14521}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}} predicate, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} expression, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{Conditional\+Expression}} other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab18914155352601fc1b8f38512ac1391}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a6862838283e8fdfca1faecb25cf4b065}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a ternary conditional expression.
+
+    <conditional-expression> ::= <logical-or-expression> 
+                             | <logical-or-expression> ? <expression> : <conditional-expression>
+
+    Eg: predicate ? expression : other
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a75f23981129d5e011d780e2be335b4f3}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a75f23981129d5e011d780e2be335b4f3}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}}\mbox{]},          Tuple\mbox{[}             \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}},              \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}},              \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{Conditional\+Expression}}             \mbox{]}         \mbox{]}}]{nodes }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ac83ccb6388210c1e2bfe13dfd7f0aa64}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ac83ccb6388210c1e2bfe13dfd7f0aa64}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab670f9a672eda699903bae9e3e0e5ab5}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab670f9a672eda699903bae9e3e0e5ab5}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a7128d809b6643f7d833401a725d6269b}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a7128d809b6643f7d833401a725d6269b}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!as\_parent@{as\_parent}}
+\index{as\_parent@{as\_parent}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{as\_parent()}{as\_parent()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{assignment\+\_\+expression.\+Assignment\+Expression}} palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+as\+\_\+parent (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_aafe6d776bdf7cfde2dc0630a6c520656}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_aafe6d776bdf7cfde2dc0630a6c520656}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a432950068722e8f613270d8df6a14521}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a432950068722e8f613270d8df6a14521}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression}}}]{predicate,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{expression,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{Conditional\+Expression}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <conditional-expression> ::= <logical-or-expression> ? <expression> : <conditional-expession>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a8d5d9822a2eb02e68ca512c955619970}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a8d5d9822a2eb02e68ca512c955619970}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily  bool palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a091fe1a5b0d0bd29659e719e5d8869a1}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a091fe1a5b0d0bd29659e719e5d8869a1}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily  bool palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab18914155352601fc1b8f38512ac1391}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_ab18914155352601fc1b8f38512ac1391}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!case@{case}}
+\index{case@{case}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a6862838283e8fdfca1faecb25cf4b065}\label{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression_a6862838283e8fdfca1faecb25cf4b065}} 
+\index{palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.conditional\_expression.ConditionalExpression@{palinka.model.ast.conditional\_expression.ConditionalExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+conditional\+\_\+expression.\+Conditional\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2conditional__expression_8py}{conditional\+\_\+expression.\+py}}\end{DoxyCompactItemize}

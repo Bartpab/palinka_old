@@ -1,0 +1,113 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{}\doxysection{palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a7ec75c709cd6b7707665503ff5fc3828}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1type__name_1_1_type_name}{type\+\_\+name.\+Type\+Name}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ab7209205534ec40d10400beead7a5855}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac831e75b6e5c6309eb6fb3659521f9f9}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a50e02ff22dd288ef31476facf59b6a85}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a86ddb4100fca260bebfe6c45ab41d959}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_aed84dd705c2e3e6deb016790bfd7163b}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac0dba702d1c70bae84787e2094c248a7}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a2182fc43d9ba3de0cbab09e021eea7f5}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a66d51434fd11e7cd280ed93f4f546d3c}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1type__name_1_1_type_name}{type\+\_\+name.\+Type\+Name}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}} n2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac831e75b6e5c6309eb6fb3659521f9f9}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ab7209205534ec40d10400beead7a5855}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a cast expression.
+
+    <cast-expression> ::= <unary-expression>
+                      |  (<type-name>) <cast-expression>
+
+    Eg: (char*) variable
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a7ec75c709cd6b7707665503ff5fc3828}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a7ec75c709cd6b7707665503ff5fc3828}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}             Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}}\mbox{]},              Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1type__name_1_1_type_name}{type\+\_\+name.\+Type\+Name}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}\mbox{]}         \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_aed84dd705c2e3e6deb016790bfd7163b}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_aed84dd705c2e3e6deb016790bfd7163b}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac0dba702d1c70bae84787e2094c248a7}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac0dba702d1c70bae84787e2094c248a7}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a2182fc43d9ba3de0cbab09e021eea7f5}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a2182fc43d9ba3de0cbab09e021eea7f5}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a66d51434fd11e7cd280ed93f4f546d3c}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a66d51434fd11e7cd280ed93f4f546d3c}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1type__name_1_1_type_name}{type\+\_\+name.\+Type\+Name}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression}{Cast\+Expression}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a50e02ff22dd288ef31476facf59b6a85}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a50e02ff22dd288ef31476facf59b6a85}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a86ddb4100fca260bebfe6c45ab41d959}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_a86ddb4100fca260bebfe6c45ab41d959}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac831e75b6e5c6309eb6fb3659521f9f9}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ac831e75b6e5c6309eb6fb3659521f9f9}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ab7209205534ec40d10400beead7a5855}\label{classpalinka_1_1model_1_1ast_1_1cast__expression_1_1_cast_expression_ab7209205534ec40d10400beead7a5855}} 
+\index{palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.cast\_expression.CastExpression@{palinka.model.ast.cast\_expression.CastExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+cast\+\_\+expression.\+Cast\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2cast__expression_8py}{cast\+\_\+expression.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement}{}\doxysection{palinka.\+model.\+ast.\+statement.\+Selection\+Statement Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement}\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a664bc21d9a7c0b131d5904dc53ece218}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_if}{If}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# if($<$ expression $>$)$<$ statement $>$ Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_if}{If}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# if($<$ expression $>$)$<$ statement $>$ else$<$ statement $>$ Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_switch}{Switch}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]} \# \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a21e6ab57136f618b9e3dc4a3979060d3}{switch}}($<$ expression $>$)$<$ statement $>$\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a2b851ad8365e7c9925d6472c59fe251b}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_ae04f005f3341920ec82be3a866e675a1}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a3c87f6eaab34f660d458f39eae5a7c91}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa120744a8929c4755423af4b0a15fee1}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a9078d727714d0e43267d5f96149b8af7}{is\+\_\+third\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a17cd843d766f25e91b11c03544b9580b}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa015da6bb25fa0bc44bf9021d8de51d4}{if\+\_\+}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a8f3c359fc81085e7655e603a60c35627}{if\+\_\+else}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n3)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a21e6ab57136f618b9e3dc4a3979060d3}{switch}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_ae04f005f3341920ec82be3a866e675a1}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a63e52039947a0af73d4abebb7c18e893}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a2b851ad8365e7c9925d6472c59fe251b}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a selection statement.
+
+    <selection-statement> ::= if ( <expression> ) <statement>
+                           | if ( <expression> ) <statement> else <statement>
+                           | switch ( <expression> ) <statement>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a664bc21d9a7c0b131d5904dc53ece218}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a664bc21d9a7c0b131d5904dc53ece218}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}             Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_if}{If}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# if ($<$expression$>$) $<$statement$>$             Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_if}{If}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# if ( $<$expression$>$ ) $<$statement$>$ else $<$statement$>$             Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_switch}{Switch}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]} \# \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a21e6ab57136f618b9e3dc4a3979060d3}{switch}} ($<$expression$>$) $<$statement$>$     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a17cd843d766f25e91b11c03544b9580b}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a17cd843d766f25e91b11c03544b9580b}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa015da6bb25fa0bc44bf9021d8de51d4}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa015da6bb25fa0bc44bf9021d8de51d4}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!if\_@{if\_}}
+\index{if\_@{if\_}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{if\_()}{if\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+if\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a8f3c359fc81085e7655e603a60c35627}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a8f3c359fc81085e7655e603a60c35627}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!if\_else@{if\_else}}
+\index{if\_else@{if\_else}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{if\_else()}{if\_else()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+if\+\_\+else (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a3c87f6eaab34f660d458f39eae5a7c91}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a3c87f6eaab34f660d458f39eae5a7c91}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa120744a8929c4755423af4b0a15fee1}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_aa120744a8929c4755423af4b0a15fee1}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a9078d727714d0e43267d5f96149b8af7}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a9078d727714d0e43267d5f96149b8af7}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!is\_third\_case@{is\_third\_case}}
+\index{is\_third\_case@{is\_third\_case}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{is\_third\_case()}{is\_third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+is\+\_\+third\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a21e6ab57136f618b9e3dc4a3979060d3}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a21e6ab57136f618b9e3dc4a3979060d3}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!switch@{switch}}
+\index{switch@{switch}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{switch()}{switch()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+switch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a63e52039947a0af73d4abebb7c18e893}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a63e52039947a0af73d4abebb7c18e893}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!case@{case}}
+\index{case@{case}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_ae04f005f3341920ec82be3a866e675a1}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_ae04f005f3341920ec82be3a866e675a1}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a2b851ad8365e7c9925d6472c59fe251b}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_selection_statement_a2b851ad8365e7c9925d6472c59fe251b}} 
+\index{palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.statement.SelectionStatement@{palinka.model.ast.statement.SelectionStatement}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Selection\+Statement.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2statement_8py}{statement.\+py}}\end{DoxyCompactItemize}

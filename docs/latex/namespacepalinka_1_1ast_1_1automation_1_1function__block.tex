@@ -1,0 +1,44 @@
+\hypertarget{namespacepalinka_1_1ast_1_1automation_1_1function__block}{}\doxysection{palinka.\+ast.\+automation.\+function\+\_\+block Namespace Reference}
+\label{namespacepalinka_1_1ast_1_1automation_1_1function__block}\index{palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list\mbox{[}ast.\+Statement\mbox{]} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1function__block_a9e4d42dd67e225088da102eda83d2690}{build}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}} block)
+\item 
+list\mbox{[}ast.\+Statement\mbox{]} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1function__block_ada822357f86df75dc53c192447ecaf12}{build\+\_\+input\+\_\+assignments}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}} block)
+\item 
+list\mbox{[}ast.\+Statement\mbox{]} \mbox{\hyperlink{namespacepalinka_1_1ast_1_1automation_1_1function__block_a262ec7045ae8d0d6cd676084883d2d10}{build\+\_\+function\+\_\+call}} (\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}} block)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1function__block_a9e4d42dd67e225088da102eda83d2690}\label{namespacepalinka_1_1ast_1_1automation_1_1function__block_a9e4d42dd67e225088da102eda83d2690}} 
+\index{palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}!build@{build}}
+\index{build@{build}!palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily  list\mbox{[}ast.\+Statement\mbox{]} palinka.\+ast.\+automation.\+function\+\_\+block.\+build (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}}}]{block }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Returns a list of statements based on the segment's symbol functionality
+
+    - Build input assignments
+    - Build the function call
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1function__block_a262ec7045ae8d0d6cd676084883d2d10}\label{namespacepalinka_1_1ast_1_1automation_1_1function__block_a262ec7045ae8d0d6cd676084883d2d10}} 
+\index{palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}!build\_function\_call@{build\_function\_call}}
+\index{build\_function\_call@{build\_function\_call}!palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}}
+\doxysubsubsection{\texorpdfstring{build\_function\_call()}{build\_function\_call()}}
+{\footnotesize\ttfamily  list\mbox{[}ast.\+Statement\mbox{]} palinka.\+ast.\+automation.\+function\+\_\+block.\+build\+\_\+function\+\_\+call (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}}}]{block }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1ast_1_1automation_1_1function__block_ada822357f86df75dc53c192447ecaf12}\label{namespacepalinka_1_1ast_1_1automation_1_1function__block_ada822357f86df75dc53c192447ecaf12}} 
+\index{palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}!build\_input\_assignments@{build\_input\_assignments}}
+\index{build\_input\_assignments@{build\_input\_assignments}!palinka.ast.automation.function\_block@{palinka.ast.automation.function\_block}}
+\doxysubsubsection{\texorpdfstring{build\_input\_assignments()}{build\_input\_assignments()}}
+{\footnotesize\ttfamily  list\mbox{[}ast.\+Statement\mbox{]} palinka.\+ast.\+automation.\+function\+\_\+block.\+build\+\_\+input\+\_\+assignments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1automation_1_1_function_block}{Function\+Block}}}]{block }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Retrieve the inputs of the symbol from the outputs of the preceding symbols.
+
+    Symbol's function are called as regular function calls.
+
+    IO of symbol's function are stored in the instance data block of the called function block.
+\end{DoxyVerb}
+ 

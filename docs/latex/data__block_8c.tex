@@ -1,0 +1,96 @@
+\hypertarget{data__block_8c}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/automation/data\+\_\+block.c File Reference}
+\label{data__block_8c}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/data\_block.c@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/data\_block.c}}
+
+
+Implemens the data block API.  
+
+
+{\ttfamily \#include \char`\"{}src/model/automation/data\+\_\+block.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{data__block_8c_aec79c9d40e2bed0560a2bffd14023725}{init\+\_\+data\+\_\+block\+\_\+list}} (struct \mbox{\hyperlink{struct_automation_data_block_list__t}{Automation\+Data\+Block\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Initialise a data block list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{data__block_8c_a587048c74fb046b5dd37d3ac8c4db0cb}{push\+\_\+data\+\_\+block}} (struct \mbox{\hyperlink{struct_automation_data_block_list__t}{Automation\+Data\+Block\+List\+\_\+t}} $\ast$list, char $\ast$base, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Push a data block in the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{data__block_8c_a460e6e4d8ed22927d48e99478d645ee2}{open\+\_\+data\+\_\+block}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t db\+\_\+id, struct \mbox{\hyperlink{struct_automation_data_block__t}{Automation\+Data\+Block\+\_\+t}} $\ast$$\ast$db)
+\begin{DoxyCompactList}\small\item\em Open a data block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{data__block_8c_ab8f49fcd8de1d71031ddb0d5367cadc3}{close\+\_\+data\+\_\+block}} (struct \mbox{\hyperlink{struct_automation_data_block__t}{Automation\+Data\+Block\+\_\+t}} $\ast$db)
+\begin{DoxyCompactList}\small\item\em Close the data block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implemens the data block API. 
+
+\begin{DoxyAuthor}{Author}
+Gaël P. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06/08/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{data__block_8c_ab8f49fcd8de1d71031ddb0d5367cadc3}\label{data__block_8c_ab8f49fcd8de1d71031ddb0d5367cadc3}} 
+\index{data\_block.c@{data\_block.c}!close\_data\_block@{close\_data\_block}}
+\index{close\_data\_block@{close\_data\_block}!data\_block.c@{data\_block.c}}
+\doxysubsubsection{\texorpdfstring{close\_data\_block()}{close\_data\_block()}}
+{\footnotesize\ttfamily int close\+\_\+data\+\_\+block (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block__t}{Automation\+Data\+Block\+\_\+t}} $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Close the data block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & The handler of the data block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occured, else $>$ 0 if an error occured. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{data__block_8c_aec79c9d40e2bed0560a2bffd14023725}\label{data__block_8c_aec79c9d40e2bed0560a2bffd14023725}} 
+\index{data\_block.c@{data\_block.c}!init\_data\_block\_list@{init\_data\_block\_list}}
+\index{init\_data\_block\_list@{init\_data\_block\_list}!data\_block.c@{data\_block.c}}
+\doxysubsubsection{\texorpdfstring{init\_data\_block\_list()}{init\_data\_block\_list()}}
+{\footnotesize\ttfamily void init\+\_\+data\+\_\+block\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block_list__t}{Automation\+Data\+Block\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Initialise a data block list. 
+
+\mbox{\Hypertarget{data__block_8c_a460e6e4d8ed22927d48e99478d645ee2}\label{data__block_8c_a460e6e4d8ed22927d48e99478d645ee2}} 
+\index{data\_block.c@{data\_block.c}!open\_data\_block@{open\_data\_block}}
+\index{open\_data\_block@{open\_data\_block}!data\_block.c@{data\_block.c}}
+\doxysubsubsection{\texorpdfstring{open\_data\_block()}{open\_data\_block()}}
+{\footnotesize\ttfamily int open\+\_\+data\+\_\+block (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{db\+\_\+id,  }\item[{struct \mbox{\hyperlink{struct_automation_data_block__t}{Automation\+Data\+Block\+\_\+t}} $\ast$$\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Open a data block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The automation system \\
+\hline
+{\em db\+\_\+id} & The data block identifier \\
+\hline
+{\em db} & The handler of the data block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occured, else $>$ 0 if an error occured. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{data__block_8c_a587048c74fb046b5dd37d3ac8c4db0cb}\label{data__block_8c_a587048c74fb046b5dd37d3ac8c4db0cb}} 
+\index{data\_block.c@{data\_block.c}!push\_data\_block@{push\_data\_block}}
+\index{push\_data\_block@{push\_data\_block}!data\_block.c@{data\_block.c}}
+\doxysubsubsection{\texorpdfstring{push\_data\_block()}{push\_data\_block()}}
+{\footnotesize\ttfamily int push\+\_\+data\+\_\+block (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block_list__t}{Automation\+Data\+Block\+List\+\_\+t}} $\ast$}]{list,  }\item[{char $\ast$}]{base,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Push a data block in the list. 
+

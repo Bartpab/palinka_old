@@ -1,0 +1,124 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{}\doxysection{palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a3addf2fa15f6b95c20c4b6582ec5c4b0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{Logical\+Or\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5125e31cdfaf65b54fa61d59ca752292}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4df548b62a3278a4a915e18d318c218a}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5aaacab8c7dc642ba05b0beade1eda50}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_ac877badb9c01f24b99e26c691cee4834}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2618c89a4a4ba9368ec96faf8c4b7180}{is\+\_\+second\+\_\+case}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a7465de5de34b453c68be021b39aec365}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2db6b01154ef849f01cbb29acdf3eb07}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a9dbd9b180c4c3680e1a524dca267cd83}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{Logical\+Or\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}} n2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4df548b62a3278a4a915e18d318c218a}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4d5ac0b6f19d2987a994b00b833d3d92}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5125e31cdfaf65b54fa61d59ca752292}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a logical or expression.
+
+
+    <logical-or-expression> ::= <logical-and-expression>
+                                | <logical-or-expression> || <logical-and-expression>
+
+    Eg: lh || rh
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a3addf2fa15f6b95c20c4b6582ec5c4b0}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a3addf2fa15f6b95c20c4b6582ec5c4b0}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{Logical\+Or\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}\mbox{]}\mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5aaacab8c7dc642ba05b0beade1eda50}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5aaacab8c7dc642ba05b0beade1eda50}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a7465de5de34b453c68be021b39aec365}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a7465de5de34b453c68be021b39aec365}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2db6b01154ef849f01cbb29acdf3eb07}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2db6b01154ef849f01cbb29acdf3eb07}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a9dbd9b180c4c3680e1a524dca267cd83}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a9dbd9b180c4c3680e1a524dca267cd83}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression}{Logical\+Or\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1logical__and__expression_1_1_logical_and_expression}{logical\+\_\+and\+\_\+expression.\+Logical\+And\+Expression}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <logical-or-expression> ::= <logical-or-expression> || <logical-and-expression>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_ac877badb9c01f24b99e26c691cee4834}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_ac877badb9c01f24b99e26c691cee4834}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2618c89a4a4ba9368ec96faf8c4b7180}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a2618c89a4a4ba9368ec96faf8c4b7180}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4d5ac0b6f19d2987a994b00b833d3d92}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4d5ac0b6f19d2987a994b00b833d3d92}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!case@{case}}
+\index{case@{case}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4df548b62a3278a4a915e18d318c218a}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a4df548b62a3278a4a915e18d318c218a}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5125e31cdfaf65b54fa61d59ca752292}\label{classpalinka_1_1model_1_1ast_1_1logical__or__expression_1_1_logical_or_expression_a5125e31cdfaf65b54fa61d59ca752292}} 
+\index{palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.logical\_or\_expression.LogicalOrExpression@{palinka.model.ast.logical\_or\_expression.LogicalOrExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+logical\+\_\+or\+\_\+expression.\+Logical\+Or\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2logical__or__expression_8py}{logical\+\_\+or\+\_\+expression.\+py}}\end{DoxyCompactItemize}

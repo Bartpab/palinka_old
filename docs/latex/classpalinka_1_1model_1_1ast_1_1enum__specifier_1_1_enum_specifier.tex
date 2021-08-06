@@ -1,0 +1,125 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier}{}\doxysection{palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier}\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ad3eaff25adaeeea40caca9fc25244f11}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}\mbox{]}, Tuple\mbox{[}list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_abc93b57a000564a1420e7bc92b77fa86}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a71e594d259f5064346cee23eb041060e}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a1e68a105c22c372dea07272caa867837}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_af1770972c888f61423abd56370a96787}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a4aeb3800e7faedc6c42a4115bea1c48e}{is\+\_\+third\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a3cc0efb8529aaf5b7f235df70a15ed29}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ada536beab7687508dda1387707a6eed7}{first\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}} n1, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a58f56641f6bd33340b4485ad07545e87}{second\+\_\+case}} (list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a286bdaf552ba43bd64ec89c5ea59a58b}{third\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}} n1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a71e594d259f5064346cee23eb041060e}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a89633ee9e86ac3ee9b4b0ba10ce09d98}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_abc93b57a000564a1420e7bc92b77fa86}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents an enumerator specifier
+
+    <enum-specifier> ::= enum <identifier> { <enumerator-list> }
+                    | enum { <enumerator-list> }
+                    | enum <identifier>
+
+    Implicit,
+    <enumerator-list> ::= <enumerator> | <enumerator-list>, <enumerator>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ad3eaff25adaeeea40caca9fc25244f11}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ad3eaff25adaeeea40caca9fc25244f11}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}\mbox{]},         Tuple\mbox{[}list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}\mbox{]},         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}\mbox{]}     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a3cc0efb8529aaf5b7f235df70a15ed29}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a3cc0efb8529aaf5b7f235df70a15ed29}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ada536beab7687508dda1387707a6eed7}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_ada536beab7687508dda1387707a6eed7}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!first\_case@{first\_case}}
+\index{first\_case@{first\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{first\_case()}{first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+first\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}}]{n1,  }\item[{list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a1e68a105c22c372dea07272caa867837}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a1e68a105c22c372dea07272caa867837}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_af1770972c888f61423abd56370a96787}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_af1770972c888f61423abd56370a96787}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a4aeb3800e7faedc6c42a4115bea1c48e}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a4aeb3800e7faedc6c42a4115bea1c48e}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!is\_third\_case@{is\_third\_case}}
+\index{is\_third\_case@{is\_third\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{is\_third\_case()}{is\_third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+is\+\_\+third\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a58f56641f6bd33340b4485ad07545e87}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a58f56641f6bd33340b4485ad07545e87}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!second\_case@{second\_case}}
+\index{second\_case@{second\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{second\_case()}{second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+second\+\_\+case (\begin{DoxyParamCaption}\item[{list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1enumerator_1_1_enumerator}{Enumerator}}\mbox{]}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a286bdaf552ba43bd64ec89c5ea59a58b}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a286bdaf552ba43bd64ec89c5ea59a58b}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!third\_case@{third\_case}}
+\index{third\_case@{third\_case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{third\_case()}{third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+third\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a89633ee9e86ac3ee9b4b0ba10ce09d98}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a89633ee9e86ac3ee9b4b0ba10ce09d98}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!case@{case}}
+\index{case@{case}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a71e594d259f5064346cee23eb041060e}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_a71e594d259f5064346cee23eb041060e}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_abc93b57a000564a1420e7bc92b77fa86}\label{classpalinka_1_1model_1_1ast_1_1enum__specifier_1_1_enum_specifier_abc93b57a000564a1420e7bc92b77fa86}} 
+\index{palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.enum\_specifier.EnumSpecifier@{palinka.model.ast.enum\_specifier.EnumSpecifier}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+enum\+\_\+specifier.\+Enum\+Specifier.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2enum__specifier_8py}{enum\+\_\+specifier.\+py}}\end{DoxyCompactItemize}

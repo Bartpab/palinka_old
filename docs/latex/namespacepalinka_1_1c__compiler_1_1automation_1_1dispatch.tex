@@ -1,0 +1,127 @@
+\hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch}{}\doxysection{palinka.\+c\+\_\+compiler.\+automation.\+dispatch Namespace Reference}
+\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch}\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a0a210bb5bc4e6bfe250298dd07df5129}{default\+\_\+build\+\_\+symbol\+\_\+table\+\_\+dispatch}} (node, $\ast$args, $\ast$$\ast$kwargs)
+\item 
+def \mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ae985af780a505a481819c21dea4c22c2}{default\+\_\+transform\+\_\+dispatch}} (node, $\ast$args, $\ast$$\ast$kwargs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab90324986a8cddc192382c233f59b2d7}{MODULE\+\_\+\+DISPATCHER\+\_\+\+MAP}}
+\item 
+list \mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ad07425c09b60518986f413a870299199}{MODULE\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}}
+\item 
+list \mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab37a23f7676a410b01d3b8c0716c1f87}{MODULE\+\_\+\+TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP}}
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a914d2ff5775e4f5e61a5b78c516d3583}{COMPILER\+\_\+\+DISPATCHER\+\_\+\+MAP}} = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab90324986a8cddc192382c233f59b2d7}{MODULE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a001d0253eb1f7c2de19d631a58c2da6a}{compile}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a49463f82a2cd36d1889e467b7acbfbbe}{BUILD\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}} = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ad07425c09b60518986f413a870299199}{MODULE\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a3f63a4fa04f5f47db13d6243e6e7167c}{build\+\_\+symbol\+\_\+table}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a589d0cdf6a4959dca5bc7dfd822584ea}{TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP}} = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab37a23f7676a410b01d3b8c0716c1f87}{MODULE\+\_\+\+TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a961dcf9d1be6d8232dd4e47d9e9a3185}{transform}}\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab710c463d4e722e11c37ff93c03f19ac}{compiler\+\_\+dispatch}} = base\+\_\+dispatcher.\+build\+\_\+dispatcher(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a914d2ff5775e4f5e61a5b78c516d3583}{COMPILER\+\_\+\+DISPATCHER\+\_\+\+MAP}}, fallback=base\+\_\+dispatcher.\+compiler\+\_\+dispatch)
+\item 
+\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a4bce79449d8414ddfdf2c72b8adc3a44}{build\+\_\+symbol\+\_\+table\+\_\+dispatch}} = base\+\_\+dispatcher.\+build\+\_\+dispatcher(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a49463f82a2cd36d1889e467b7acbfbbe}{BUILD\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, fallback=\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a0a210bb5bc4e6bfe250298dd07df5129}{default\+\_\+build\+\_\+symbol\+\_\+table\+\_\+dispatch}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a0a210bb5bc4e6bfe250298dd07df5129}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a0a210bb5bc4e6bfe250298dd07df5129}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!default\_build\_symbol\_table\_dispatch@{default\_build\_symbol\_table\_dispatch}}
+\index{default\_build\_symbol\_table\_dispatch@{default\_build\_symbol\_table\_dispatch}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{default\_build\_symbol\_table\_dispatch()}{default\_build\_symbol\_table\_dispatch()}}
+{\footnotesize\ttfamily def palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+default\+\_\+build\+\_\+symbol\+\_\+table\+\_\+dispatch (\begin{DoxyParamCaption}\item[{}]{node,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ae985af780a505a481819c21dea4c22c2}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ae985af780a505a481819c21dea4c22c2}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!default\_transform\_dispatch@{default\_transform\_dispatch}}
+\index{default\_transform\_dispatch@{default\_transform\_dispatch}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{default\_transform\_dispatch()}{default\_transform\_dispatch()}}
+{\footnotesize\ttfamily def palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+default\+\_\+transform\+\_\+dispatch (\begin{DoxyParamCaption}\item[{}]{node,  }\item[{$\ast$}]{args,  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a4bce79449d8414ddfdf2c72b8adc3a44}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a4bce79449d8414ddfdf2c72b8adc3a44}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!build\_symbol\_table\_dispatch@{build\_symbol\_table\_dispatch}}
+\index{build\_symbol\_table\_dispatch@{build\_symbol\_table\_dispatch}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{build\_symbol\_table\_dispatch}{build\_symbol\_table\_dispatch}}
+{\footnotesize\ttfamily palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+build\+\_\+symbol\+\_\+table\+\_\+dispatch = base\+\_\+dispatcher.\+build\+\_\+dispatcher(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a49463f82a2cd36d1889e467b7acbfbbe}{BUILD\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, fallback=\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a0a210bb5bc4e6bfe250298dd07df5129}{default\+\_\+build\+\_\+symbol\+\_\+table\+\_\+dispatch}})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a49463f82a2cd36d1889e467b7acbfbbe}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a49463f82a2cd36d1889e467b7acbfbbe}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP@{BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP}}
+\index{BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP@{BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP}{BUILD\_SYMBOL\_TABLE\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+BUILD\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ad07425c09b60518986f413a870299199}{MODULE\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a3f63a4fa04f5f47db13d6243e6e7167c}{build\+\_\+symbol\+\_\+table}}\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab710c463d4e722e11c37ff93c03f19ac}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab710c463d4e722e11c37ff93c03f19ac}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!compiler\_dispatch@{compiler\_dispatch}}
+\index{compiler\_dispatch@{compiler\_dispatch}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{compiler\_dispatch}{compiler\_dispatch}}
+{\footnotesize\ttfamily palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+compiler\+\_\+dispatch = base\+\_\+dispatcher.\+build\+\_\+dispatcher(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a914d2ff5775e4f5e61a5b78c516d3583}{COMPILER\+\_\+\+DISPATCHER\+\_\+\+MAP}}, fallback=base\+\_\+dispatcher.\+compiler\+\_\+dispatch)}
+
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a914d2ff5775e4f5e61a5b78c516d3583}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a914d2ff5775e4f5e61a5b78c516d3583}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!COMPILER\_DISPATCHER\_MAP@{COMPILER\_DISPATCHER\_MAP}}
+\index{COMPILER\_DISPATCHER\_MAP@{COMPILER\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{COMPILER\_DISPATCHER\_MAP}{COMPILER\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+COMPILER\+\_\+\+DISPATCHER\+\_\+\+MAP = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab90324986a8cddc192382c233f59b2d7}{MODULE\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a001d0253eb1f7c2de19d631a58c2da6a}{compile}}\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab90324986a8cddc192382c233f59b2d7}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab90324986a8cddc192382c233f59b2d7}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!MODULE\_DISPATCHER\_MAP@{MODULE\_DISPATCHER\_MAP}}
+\index{MODULE\_DISPATCHER\_MAP@{MODULE\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{MODULE\_DISPATCHER\_MAP}{MODULE\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily list palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+MODULE\+\_\+\+DISPATCHER\+\_\+\+MAP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     (ast.automation.ExternalDeclaration, external\_declaration),}
+\DoxyCodeLine{3     (ast.automation.FunctionBlockDefinition, function\_block\_definition),}
+\DoxyCodeLine{4     (ast.automation.PlantDeclaration, plant\_declaration),}
+\DoxyCodeLine{5     (ast.automation.SystemDeclaration, system\_declaration),}
+\DoxyCodeLine{6     (ast.automation.TranslationUnit, translation\_unit),}
+\DoxyCodeLine{7     (ast.automation.DataBlockDefinition, data\_block\_definition),}
+\DoxyCodeLine{8     (ast.automation.DataBlockEntryDeclaration, data\_block\_entry\_declaration)}
+\DoxyCodeLine{9 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ad07425c09b60518986f413a870299199}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ad07425c09b60518986f413a870299199}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP@{MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP}}
+\index{MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP@{MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP}{MODULE\_SYMBOL\_TABLE\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily list palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+MODULE\+\_\+\+SYMBOL\+\_\+\+TABLE\+\_\+\+DISPATCHER\+\_\+\+MAP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     (ast.automation.PlantDeclaration, plant\_declaration),}
+\DoxyCodeLine{3     (ast.automation.SystemDeclaration, system\_declaration),}
+\DoxyCodeLine{4     (ast.automation.FunctionBlockDefinition, function\_block\_definition),}
+\DoxyCodeLine{5     (ast.automation.DataBlockEntryDeclaration, data\_block\_entry\_declaration)}
+\DoxyCodeLine{6 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab37a23f7676a410b01d3b8c0716c1f87}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab37a23f7676a410b01d3b8c0716c1f87}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!MODULE\_TRANSFORM\_DISPATCHER\_MAP@{MODULE\_TRANSFORM\_DISPATCHER\_MAP}}
+\index{MODULE\_TRANSFORM\_DISPATCHER\_MAP@{MODULE\_TRANSFORM\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{MODULE\_TRANSFORM\_DISPATCHER\_MAP}{MODULE\_TRANSFORM\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily list palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+MODULE\+\_\+\+TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [}
+\DoxyCodeLine{2     (ast.automation.PlantDeclaration, plant\_declaration),}
+\DoxyCodeLine{3     (ast.automation.SystemDeclaration, system\_declaration),}
+\DoxyCodeLine{4     (ast.automation.FunctionBlockDefinition, function\_block\_definition),}
+\DoxyCodeLine{5     (ast.PrimaryExpression, primary\_expression)}
+\DoxyCodeLine{6 ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a589d0cdf6a4959dca5bc7dfd822584ea}\label{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_a589d0cdf6a4959dca5bc7dfd822584ea}} 
+\index{palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}!TRANSFORM\_DISPATCHER\_MAP@{TRANSFORM\_DISPATCHER\_MAP}}
+\index{TRANSFORM\_DISPATCHER\_MAP@{TRANSFORM\_DISPATCHER\_MAP}!palinka.c\_compiler.automation.dispatch@{palinka.c\_compiler.automation.dispatch}}
+\doxysubsubsection{\texorpdfstring{TRANSFORM\_DISPATCHER\_MAP}{TRANSFORM\_DISPATCHER\_MAP}}
+{\footnotesize\ttfamily palinka.\+c\+\_\+compiler.\+automation.\+dispatch.\+TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP = base\+\_\+dispatcher.\+build\+\_\+dispatcher\+\_\+map(\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_1_1dispatch_ab37a23f7676a410b01d3b8c0716c1f87}{MODULE\+\_\+\+TRANSFORM\+\_\+\+DISPATCHER\+\_\+\+MAP}}, \textquotesingle{}\mbox{\hyperlink{namespacepalinka_1_1c__compiler_1_1automation_a961dcf9d1be6d8232dd4e47d9e9a3185}{transform}}\textquotesingle{})}
+

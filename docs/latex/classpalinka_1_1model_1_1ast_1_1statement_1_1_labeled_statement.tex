@@ -1,0 +1,122 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement}{}\doxysection{palinka.\+model.\+ast.\+statement.\+Labeled\+Statement Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement}\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_abf171084dc184da88acee651948b9d06}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# \+::=$<$ identifier $>$ \+:$<$ statement $>$ Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{constant\+\_\+expression.\+Constant\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# \+::=\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_aa0acf8267eea0a60a68a067af84f054b}{case}}$<$ constant-\/expression $>$ \+:$<$ statement $>$ Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]} \# \+::=default\+:$<$ statement\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ae704db9561d82e8d9d2896c0b368f524}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a3737d730b6168e14c527b66b00c9516a}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ab7f98a0307ffcce5908f478c3da87491}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a005015ae49e4b9d68ac344ee5200ffa8}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_af02d03da8fbaca9d171c8833ca05e147}{is\+\_\+third\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ac613f4aba1bb49079a185822b451c33a}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ad390d0f209f28f2de5138d10008ba5ef}{first\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a2aae4007e85816e261658a51f9b91311}{second\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{constant\+\_\+expression.\+Constant\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a8942ce58797e0b5f8aafdf21d62c4121}{third\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a3737d730b6168e14c527b66b00c9516a}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_aa0acf8267eea0a60a68a067af84f054b}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ae704db9561d82e8d9d2896c0b368f524}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents a labeled statement.
+
+    <labeled-statement> ::= <identifier> : <statement>
+                        |   case <constant-expression> : <statement>
+                        |   default: <statement> 
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_abf171084dc184da88acee651948b9d06}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_abf171084dc184da88acee651948b9d06}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]},               \# \+::= $<$identifier$>$ \+: $<$statement$>$         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{constant\+\_\+expression.\+Constant\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]},       \# \+::= \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_aa0acf8267eea0a60a68a067af84f054b}{case}} $<$constant-\/expression$>$ \+: $<$statement$>$         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}                            \# \+::= default\+: $<$statement     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ac613f4aba1bb49079a185822b451c33a}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ac613f4aba1bb49079a185822b451c33a}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ad390d0f209f28f2de5138d10008ba5ef}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ad390d0f209f28f2de5138d10008ba5ef}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!first\_case@{first\_case}}
+\index{first\_case@{first\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{first\_case()}{first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+first\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1identifier_1_1_identifier}{Identifier}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ab7f98a0307ffcce5908f478c3da87491}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ab7f98a0307ffcce5908f478c3da87491}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a005015ae49e4b9d68ac344ee5200ffa8}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a005015ae49e4b9d68ac344ee5200ffa8}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_af02d03da8fbaca9d171c8833ca05e147}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_af02d03da8fbaca9d171c8833ca05e147}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!is\_third\_case@{is\_third\_case}}
+\index{is\_third\_case@{is\_third\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{is\_third\_case()}{is\_third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+is\+\_\+third\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a2aae4007e85816e261658a51f9b91311}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a2aae4007e85816e261658a51f9b91311}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!second\_case@{second\_case}}
+\index{second\_case@{second\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{second\_case()}{second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+second\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1constant__expression_1_1_constant_expression}{constant\+\_\+expression.\+Constant\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a8942ce58797e0b5f8aafdf21d62c4121}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a8942ce58797e0b5f8aafdf21d62c4121}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!third\_case@{third\_case}}
+\index{third\_case@{third\_case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{third\_case()}{third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+third\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_aa0acf8267eea0a60a68a067af84f054b}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_aa0acf8267eea0a60a68a067af84f054b}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!case@{case}}
+\index{case@{case}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a3737d730b6168e14c527b66b00c9516a}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_a3737d730b6168e14c527b66b00c9516a}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ae704db9561d82e8d9d2896c0b368f524}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_labeled_statement_ae704db9561d82e8d9d2896c0b368f524}} 
+\index{palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.statement.LabeledStatement@{palinka.model.ast.statement.LabeledStatement}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Labeled\+Statement.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2statement_8py}{statement.\+py}}\end{DoxyCompactItemize}

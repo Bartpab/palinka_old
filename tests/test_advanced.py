@@ -97,11 +97,11 @@ class EndToEndTestSuite(unittest.TestCase):
             .connect("SYS03", "NET01", network="plant_bus")
 
         # Parse the plant description into an AST
-        ast = palinka.ast.automation.build(plant)
+        ast = palinka.c_parser.CParser().visit(plant)
 
         # Compiling phase
         symbol_table = palinka.model.symbol_table.SymbolTable()
-        raw_code = palinka.c_compiler.automation.compile(ast, symbol_table, [])
+        raw_code = palinka.c_generator.CGenerator().visit(ast)
 
         # Create the project        
         palinka.writer.ProjectGenerator(os.path.join('tests', 'assets'))\

@@ -1,0 +1,79 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition}{}\doxysection{palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition}\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a0d7eca01e9853f3a77aaa1aba6240b3f}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_data_block_definition}{Data\+Block\+Definition}} n1, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declaration__specifier_1_1_declaration_specifier}{Declaration\+Specifier}}\mbox{]} n2, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}} n3, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1compound__statement_1_1_compound_statement}{Compound\+Statement}} n4, str \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_afe66196962796bdaed59a6098f55ab95}{name}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a31e66d4d3da705868e22004f7aa3fad6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_data_block_definition}{Data\+Block\+Definition}}, list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declaration__specifier_1_1_declaration_specifier}{Declaration\+Specifier}}\mbox{]}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1compound__statement_1_1_compound_statement}{Compound\+Statement}}\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_acc781762f9f1f35854136ba48c012c97}{nodes}}, str \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_afe66196962796bdaed59a6098f55ab95}{name}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_aa4c786ca8cc45243c5349c8813c9ea4c}{get\+\_\+name}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a55a84be2eead27cc57baae47dc6c9878}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_afe66196962796bdaed59a6098f55ab95}{name}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_acc781762f9f1f35854136ba48c012c97}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    A function block is a function bound to an instance data block, aka a function with a memory.
+
+    This is a low-level representation of a segment within an automation system, or a pu, xu ...
+
+    This defines a new function whose signature is <declaration-specifier>* <declarator> (System_t* sys, DataBlock_t* idb) <compound-statement>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a31e66d4d3da705868e22004f7aa3fad6}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a31e66d4d3da705868e22004f7aa3fad6}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Tuple\mbox{[}         \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_data_block_definition}{Data\+Block\+Definition}},         list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declaration__specifier_1_1_declaration_specifier}{Declaration\+Specifier}}\mbox{]},         \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}},          \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1compound__statement_1_1_compound_statement}{Compound\+Statement}}     \mbox{]}}]{nodes,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a55a84be2eead27cc57baae47dc6c9878}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a55a84be2eead27cc57baae47dc6c9878}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a0d7eca01e9853f3a77aaa1aba6240b3f}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_a0d7eca01e9853f3a77aaa1aba6240b3f}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!create@{create}}
+\index{create@{create}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_data_block_definition}{Data\+Block\+Definition}}}]{n1,  }\item[{list\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declaration__specifier_1_1_declaration_specifier}{Declaration\+Specifier}}\mbox{]}}]{n2,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1declarator_1_1_declarator}{Declarator}}}]{n3,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1compound__statement_1_1_compound_statement}{Compound\+Statement}}}]{n4,  }\item[{str}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_aa4c786ca8cc45243c5349c8813c9ea4c}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_aa4c786ca8cc45243c5349c8813c9ea4c}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+get\+\_\+name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_afe66196962796bdaed59a6098f55ab95}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_afe66196962796bdaed59a6098f55ab95}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!name@{name}}
+\index{name@{name}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+name}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_acc781762f9f1f35854136ba48c012c97}\label{classpalinka_1_1model_1_1ast_1_1automation_1_1function__block__definition_1_1_function_block_definition_acc781762f9f1f35854136ba48c012c97}} 
+\index{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition@{palinka.model.ast.automation.function\_block\_definition.FunctionBlockDefinition}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+automation.\+function\+\_\+block\+\_\+definition.\+Function\+Block\+Definition.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/automation/\mbox{\hyperlink{model_2ast_2automation_2function__block__definition_8py}{function\+\_\+block\+\_\+definition.\+py}}\end{DoxyCompactItemize}

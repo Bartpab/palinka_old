@@ -1,0 +1,110 @@
+\hypertarget{mmu_8h}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.h File Reference}
+\label{mmu_8h}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.h@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} \mbox{\hyperlink{mmu_8h_a0f02a570aa97da5880bc07b0a39e17c5}{mmu\+\_\+init}} (struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} $\ast$mmu, char $\ast$base\+\_\+heap, size\+\_\+t free\+\_\+space\+\_\+size)
+\item 
+void \mbox{\hyperlink{mmu_8h_a742589a238a1da57b56dbe8069e19823}{sys\+\_\+free}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, char $\ast$block)
+\item 
+char $\ast$ \mbox{\hyperlink{mmu_8h_a3e2de839c88fb1105d9eb63187c375f5}{sys\+\_\+alloc}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
+\item 
+struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{mmu_8h_a29832d31589df1af6f94c0ce29b2d615}{get\+\_\+free\+\_\+block}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t size)
+\item 
+char $\ast$ \mbox{\hyperlink{mmu_8h_aa2721811f83422cae2d58ec18cdc060c}{sys\+\_\+sbrk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, int len)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{mmu_8h_ae9d4b42e4c53407285e9ea60b85a6348}{raw\+\_\+tail}}
+\item 
+char $\ast$ \mbox{\hyperlink{mmu_8h_accf3fe933191c4981b6c75439789de50}{raw\+\_\+head}}
+\item 
+char $\ast$ \mbox{\hyperlink{mmu_8h_a74a97364eb9b981271d0f68def3f58e6}{raw\+\_\+end}}
+\item 
+struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{mmu_8h_ad84a37e46869e9422551c9b77f758829}{head}}
+\item 
+struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{mmu_8h_a63e70a69ab3f2b81140ffb291524c7bd}{tail}}
+\item 
+struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} \mbox{\hyperlink{mmu_8h_a0c0a636dcea10dcb81901e0c65fa9eba}{mmu\+\_\+init}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mmu_8h_a29832d31589df1af6f94c0ce29b2d615}\label{mmu_8h_a29832d31589df1af6f94c0ce29b2d615}} 
+\index{mmu.h@{mmu.h}!get\_free\_block@{get\_free\_block}}
+\index{get\_free\_block@{get\_free\_block}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{get\_free\_block()}{get\_free\_block()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}}$\ast$ get\+\_\+free\+\_\+block (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmu_8h_a0f02a570aa97da5880bc07b0a39e17c5}\label{mmu_8h_a0f02a570aa97da5880bc07b0a39e17c5}} 
+\index{mmu.h@{mmu.h}!mmu\_init@{mmu\_init}}
+\index{mmu\_init@{mmu\_init}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{mmu\_init()}{mmu\_init()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} mmu\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} $\ast$}]{mmu,  }\item[{char $\ast$}]{base\+\_\+heap,  }\item[{size\+\_\+t}]{free\+\_\+space\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmu_8h_a3e2de839c88fb1105d9eb63187c375f5}\label{mmu_8h_a3e2de839c88fb1105d9eb63187c375f5}} 
+\index{mmu.h@{mmu.h}!sys\_alloc@{sys\_alloc}}
+\index{sys\_alloc@{sys\_alloc}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{sys\_alloc()}{sys\_alloc()}}
+{\footnotesize\ttfamily char$\ast$ sys\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmu_8h_a742589a238a1da57b56dbe8069e19823}\label{mmu_8h_a742589a238a1da57b56dbe8069e19823}} 
+\index{mmu.h@{mmu.h}!sys\_free@{sys\_free}}
+\index{sys\_free@{sys\_free}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{sys\_free()}{sys\_free()}}
+{\footnotesize\ttfamily void sys\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{char $\ast$}]{block }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmu_8h_aa2721811f83422cae2d58ec18cdc060c}\label{mmu_8h_aa2721811f83422cae2d58ec18cdc060c}} 
+\index{mmu.h@{mmu.h}!sys\_sbrk@{sys\_sbrk}}
+\index{sys\_sbrk@{sys\_sbrk}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{sys\_sbrk()}{sys\_sbrk()}}
+{\footnotesize\ttfamily char$\ast$ sys\+\_\+sbrk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mmu_8h_ad84a37e46869e9422551c9b77f758829}\label{mmu_8h_ad84a37e46869e9422551c9b77f758829}} 
+\index{mmu.h@{mmu.h}!head@{head}}
+\index{head@{head}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}}$\ast$ head}
+
+\mbox{\Hypertarget{mmu_8h_a0c0a636dcea10dcb81901e0c65fa9eba}\label{mmu_8h_a0c0a636dcea10dcb81901e0c65fa9eba}} 
+\index{mmu.h@{mmu.h}!mmu\_init@{mmu\_init}}
+\index{mmu\_init@{mmu\_init}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{mmu\_init}{mmu\_init}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} mmu\+\_\+init}
+
+\mbox{\Hypertarget{mmu_8h_a74a97364eb9b981271d0f68def3f58e6}\label{mmu_8h_a74a97364eb9b981271d0f68def3f58e6}} 
+\index{mmu.h@{mmu.h}!raw\_end@{raw\_end}}
+\index{raw\_end@{raw\_end}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{raw\_end}{raw\_end}}
+{\footnotesize\ttfamily char$\ast$ raw\+\_\+end}
+
+\mbox{\Hypertarget{mmu_8h_accf3fe933191c4981b6c75439789de50}\label{mmu_8h_accf3fe933191c4981b6c75439789de50}} 
+\index{mmu.h@{mmu.h}!raw\_head@{raw\_head}}
+\index{raw\_head@{raw\_head}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{raw\_head}{raw\_head}}
+{\footnotesize\ttfamily char$\ast$ raw\+\_\+head}
+
+\mbox{\Hypertarget{mmu_8h_ae9d4b42e4c53407285e9ea60b85a6348}\label{mmu_8h_ae9d4b42e4c53407285e9ea60b85a6348}} 
+\index{mmu.h@{mmu.h}!raw\_tail@{raw\_tail}}
+\index{raw\_tail@{raw\_tail}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{raw\_tail}{raw\_tail}}
+{\footnotesize\ttfamily char$\ast$ raw\+\_\+tail}
+
+\mbox{\Hypertarget{mmu_8h_a63e70a69ab3f2b81140ffb291524c7bd}\label{mmu_8h_a63e70a69ab3f2b81140ffb291524c7bd}} 
+\index{mmu.h@{mmu.h}!tail@{tail}}
+\index{tail@{tail}!mmu.h@{mmu.h}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}}$\ast$ tail}
+

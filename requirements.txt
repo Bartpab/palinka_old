@@ -4,3 +4,4 @@ networkx
 lxml
 slugify
 more_itertools
+pycparser

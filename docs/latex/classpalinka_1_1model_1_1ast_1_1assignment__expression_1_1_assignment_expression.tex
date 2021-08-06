@@ -1,0 +1,129 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{}\doxysection{palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+Inheritance diagram for palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a32ec3f13198777fa83c8ca58b10bf6e2}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}}\mbox{]}, Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_op}{Assignment\+Expression\+Op}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{Assignment\+Expression}}\mbox{]},\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_afdde493ecc1d442191fe5443379b03ea}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7afc2f3cf67e5e3c7461ad9c36cc014f}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a47ddd1e06757cdd3e9689e52315fe614}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a974caac6db3ad7649119fdcaeb4b4430}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a0b3ecbe8af6e749bdc1193773ede1c93}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a8544e79757c4248d3ff1d7be74fd82f9}{as\+\_\+parent}} (self)
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a5d2252ab63a924e5b16ecd9c40e71878}{as\+\_\+expression}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_aed3890e324dd3767dde2c707b61e2d9f}{create}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}} n1)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7eefd8ab7263689ff2f56e739025e3ac}{expr}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}} n1, str n2, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{Assignment\+Expression}} n3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7afc2f3cf67e5e3c7461ad9c36cc014f}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a9f001ce9da10beda53b48ba31a95fbb6}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_afdde493ecc1d442191fe5443379b03ea}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents an assignment expression.
+
+    <assignment-expression> ::= <conditional-expression>
+                            | <unary-expression> <assignement-expression-op> <assignment-expression>
+
+    Eg: lh = rh
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a32ec3f13198777fa83c8ca58b10bf6e2}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a32ec3f13198777fa83c8ca58b10bf6e2}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}}\mbox{]},          Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1unary__expression_1_1_unary_expression}{unary\+\_\+expression.\+Unary\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_op}{Assignment\+Expression\+Op}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{Assignment\+Expression}}\mbox{]},     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a0b3ecbe8af6e749bdc1193773ede1c93}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a0b3ecbe8af6e749bdc1193773ede1c93}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a5d2252ab63a924e5b16ecd9c40e71878}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a5d2252ab63a924e5b16ecd9c40e71878}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!as\_expression@{as\_expression}}
+\index{as\_expression@{as\_expression}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{as\_expression()}{as\_expression()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+as\+\_\+expression (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a8544e79757c4248d3ff1d7be74fd82f9}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a8544e79757c4248d3ff1d7be74fd82f9}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!as\_parent@{as\_parent}}
+\index{as\_parent@{as\_parent}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{as\_parent()}{as\_parent()}}
+{\footnotesize\ttfamily  \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+as\+\_\+parent (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_aed3890e324dd3767dde2c707b61e2d9f}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_aed3890e324dd3767dde2c707b61e2d9f}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!create@{create}}
+\index{create@{create}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}}}]{n1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7eefd8ab7263689ff2f56e739025e3ac}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7eefd8ab7263689ff2f56e739025e3ac}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!expr@{expr}}
+\index{expr@{expr}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{expr()}{expr()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+expr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1conditional__expression_1_1_conditional_expression}{conditional\+\_\+expression.\+Conditional\+Expression}}}]{n1,  }\item[{str}]{n2,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression}{Assignment\+Expression}}}]{n3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a47ddd1e06757cdd3e9689e52315fe614}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a47ddd1e06757cdd3e9689e52315fe614}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a974caac6db3ad7649119fdcaeb4b4430}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a974caac6db3ad7649119fdcaeb4b4430}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a9f001ce9da10beda53b48ba31a95fbb6}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a9f001ce9da10beda53b48ba31a95fbb6}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!case@{case}}
+\index{case@{case}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7afc2f3cf67e5e3c7461ad9c36cc014f}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_a7afc2f3cf67e5e3c7461ad9c36cc014f}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_afdde493ecc1d442191fe5443379b03ea}\label{classpalinka_1_1model_1_1ast_1_1assignment__expression_1_1_assignment_expression_afdde493ecc1d442191fe5443379b03ea}} 
+\index{palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.assignment\_expression.AssignmentExpression@{palinka.model.ast.assignment\_expression.AssignmentExpression}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+assignment\+\_\+expression.\+Assignment\+Expression.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2assignment__expression_8py}{assignment\+\_\+expression.\+py}}\end{DoxyCompactItemize}

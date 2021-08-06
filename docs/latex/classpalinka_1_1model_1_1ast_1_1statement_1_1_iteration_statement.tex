@@ -1,0 +1,128 @@
+\hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement}{}\doxysection{palinka.\+model.\+ast.\+statement.\+Iteration\+Statement Class Reference}
+\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement}\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a4233a613e914a56cc7f916c442a1f322}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, Union\mbox{[}Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# while($<$ expression $>$)$<$ statement $>$ Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, \# do$<$ statement $>$ while$<$ expression $>$ Tuple\mbox{[}Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]} \# for($<$ expression $>$;$<$ expression $>$;$<$ expression $>$)$<$ statement $>$\mbox{]} \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a0de3dd6fe6c828078b2f45a99e9f43a8}{nodes}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a623d332cadd95c9718b39a38538b80e9}{discr}})
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abd1d5239ee9deda564c9f02dfefadc0f}{is\+\_\+first\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aceb8a84a088b44a29b4c1d77c92c592f}{is\+\_\+second\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_acdc2d79cc8fc73ecc5dd8a7b4f230584}{is\+\_\+third\+\_\+case}} (self)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_ae431c0beae33d12d3c16a6ce817dfc8d}{\+\_\+\+\_\+iter\+\_\+\+\_\+}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a2ec989b66f0918e6ce3becb15065a74e}{first\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abb3b070882c176575f28652bbc86e72b}{second\+\_\+case}} (\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n1, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}} n2)
+\item 
+def \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_af5eb304eb610fa2c3f72992ec0389a0d}{third\+\_\+case}} (Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]} n1, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]} n2, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]} n3, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}} n4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a623d332cadd95c9718b39a38538b80e9}{discr}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aa059edcc70d5784e56a5e1effbae6fe1}{case}}
+\item 
+\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a0de3dd6fe6c828078b2f45a99e9f43a8}{nodes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    Represents an iteraton statement.
+
+    <iteration-statement> ::= while (<expression>) <statement>
+                            | do <statement> while (<expression>)
+                            | for ( <expression>?; <expression>?; <expression>? ) <statement>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a4233a613e914a56cc7f916c442a1f322}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a4233a613e914a56cc7f916c442a1f322}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Union\mbox{[}         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]}, \# while ($<$expression$>$) $<$statement$>$         Tuple\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, \# do $<$statement$>$ while $<$expression$>$         Tuple\mbox{[}Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}, \mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}\mbox{]} \# for ( $<$expression$>$; $<$expression$>$; $<$expression$>$ ) $<$statement$>$     \mbox{]}}]{nodes,  }\item[{}]{discr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_ae431c0beae33d12d3c16a6ce817dfc8d}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_ae431c0beae33d12d3c16a6ce817dfc8d}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!\_\_iter\_\_@{\_\_iter\_\_}}
+\index{\_\_iter\_\_@{\_\_iter\_\_}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{\_\_iter\_\_()}{\_\_iter\_\_()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+\_\+\+\_\+iter\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a2ec989b66f0918e6ce3becb15065a74e}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a2ec989b66f0918e6ce3becb15065a74e}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!first\_case@{first\_case}}
+\index{first\_case@{first\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{first\_case()}{first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+first\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <iteration-statement> ::= while (<expression>) <statement>
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abd1d5239ee9deda564c9f02dfefadc0f}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abd1d5239ee9deda564c9f02dfefadc0f}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!is\_first\_case@{is\_first\_case}}
+\index{is\_first\_case@{is\_first\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{is\_first\_case()}{is\_first\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+is\+\_\+first\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aceb8a84a088b44a29b4c1d77c92c592f}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aceb8a84a088b44a29b4c1d77c92c592f}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!is\_second\_case@{is\_second\_case}}
+\index{is\_second\_case@{is\_second\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{is\_second\_case()}{is\_second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+is\+\_\+second\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_acdc2d79cc8fc73ecc5dd8a7b4f230584}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_acdc2d79cc8fc73ecc5dd8a7b4f230584}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!is\_third\_case@{is\_third\_case}}
+\index{is\_third\_case@{is\_third\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{is\_third\_case()}{is\_third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+is\+\_\+third\+\_\+case (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abb3b070882c176575f28652bbc86e72b}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_abb3b070882c176575f28652bbc86e72b}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!second\_case@{second\_case}}
+\index{second\_case@{second\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{second\_case()}{second\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+second\+\_\+case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n1,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <iteration-statement> ::= do <statement> while (<expression>)
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_af5eb304eb610fa2c3f72992ec0389a0d}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_af5eb304eb610fa2c3f72992ec0389a0d}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!third\_case@{third\_case}}
+\index{third\_case@{third\_case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{third\_case()}{third\_case()}}
+{\footnotesize\ttfamily def palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+third\+\_\+case (\begin{DoxyParamCaption}\item[{Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}}]{n1,  }\item[{Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}}]{n2,  }\item[{Optional\mbox{[}\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1expression_1_1_expression}{expression.\+Expression}}\mbox{]}}]{n3,  }\item[{\mbox{\hyperlink{classpalinka_1_1model_1_1ast_1_1statement_1_1_statement}{Statement}}}]{n4 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}    <iteration-statement> ::= for ( <expression>?; <expression>?; <expression>? ) <statement>
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aa059edcc70d5784e56a5e1effbae6fe1}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_aa059edcc70d5784e56a5e1effbae6fe1}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!case@{case}}
+\index{case@{case}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{case}{case}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+case}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a623d332cadd95c9718b39a38538b80e9}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a623d332cadd95c9718b39a38538b80e9}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!discr@{discr}}
+\index{discr@{discr}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{discr}{discr}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+discr}
+
+\mbox{\Hypertarget{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a0de3dd6fe6c828078b2f45a99e9f43a8}\label{classpalinka_1_1model_1_1ast_1_1statement_1_1_iteration_statement_a0de3dd6fe6c828078b2f45a99e9f43a8}} 
+\index{palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}!nodes@{nodes}}
+\index{nodes@{nodes}!palinka.model.ast.statement.IterationStatement@{palinka.model.ast.statement.IterationStatement}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily palinka.\+model.\+ast.\+statement.\+Iteration\+Statement.\+nodes}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/model/ast/\mbox{\hyperlink{model_2ast_2statement_8py}{statement.\+py}}\end{DoxyCompactItemize}
