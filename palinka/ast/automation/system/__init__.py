@@ -7,12 +7,14 @@ from ....model.automation import System
 from ....model import ast
 
 from .. import function_plan
-from . import step_function
-from . import init_function
+from . import step
+from . import init
+from . import size_memory
+from . import os_size_memory
+from . import app_size_memory
 from . import cpy_send
 from . import cpy_relay
 from . import cpy_recv
-
 
 def build(system: System) -> ast.automation.SystemDeclaration:
     return ast.automation.SystemDeclaration.create(
@@ -81,8 +83,11 @@ def build_header(system: System) -> ast.automation.TranslationUnit:
 
 def build_source(system: System) -> ast.automation.TranslationUnit:
     declarations: list[ast.automation.ExternalDeclaration] = [] 
-    declarations += ast.automation.ExternalDeclaration(init_function.build_source(system))
-    declarations += ast.automation.ExternalDeclaration(step_function.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(init.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(step.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(size_memory.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(app_size_memory.build_source(system))
+    declarations += ast.automation.ExternalDeclaration(os_size_memory.build_source(system))
 
     for fp in system.get_function_plans():
         declarations.append(

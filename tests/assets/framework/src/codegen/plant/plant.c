@@ -3,8 +3,10 @@
 struct Plant_t init() {
     struct Plant_t plant;
     plant.base = (char *) malloc(sizeof(char) * 16);
-    plant.systems = (struct System_t *) malloc(sizeof(struct System_t) * 6);
-    plant.nb_systems = 6;
+    plant.systems = (struct System_t *) malloc(sizeof(struct System_t) * <palinka.utils.Database 
+    object 
+        at0x000002D3F2329788>); 
+    plant.nb_systems = <palinka.utils.Database object at 0x000002D3F2329788>;
     plant.systems[0]->offset = 0;
     plant.systems[0]->size = 2;
     pthread_rwlock_init(& plant.systems[0]->rwlock);

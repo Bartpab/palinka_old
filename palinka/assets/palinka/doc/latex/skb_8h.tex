@@ -1,0 +1,97 @@
+\hypertarget{skb_8h}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/common/skb.h File Reference}
+\label{skb_8h}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/skb.h@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/skb.h}}
+{\ttfamily \#include \char`\"{}src/model/system/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_socket_buffer_queue_cell__t}{Socket\+Buffer\+Queue\+Cell\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{skb_8h_a32b6396ea527324c77f04f18946ae9d5}{SKB\+\_\+\+QUEUE\+\_\+\+SIZE}}~300
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{skb_8h_a118778785b324c429a3085b067111066}{init\+\_\+skb\+\_\+queue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue)
+\item 
+int \mbox{\hyperlink{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}{skb\+\_\+enqueue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb)
+\item 
+int \mbox{\hyperlink{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}{skb\+\_\+dequeue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$$\ast$skb)
+\item 
+struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$ \mbox{\hyperlink{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}{alloc\+\_\+skb}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{skb_8h_a40dd363886fe1ff3a27e021538363035}{free\+\_\+skb}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb)
+\item 
+int \mbox{\hyperlink{skb_8h_a6a0558ce315e0408faed25663909f2af}{skb\+\_\+reserve}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t len)
+\item 
+char $\ast$ \mbox{\hyperlink{skb_8h_ad8ebbd0570620ebb33d06bd3a69d1490}{skb\+\_\+push}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$size\+\_\+t data\+\_\+len)
+\item 
+char $\ast$ \mbox{\hyperlink{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}{skb\+\_\+put}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t data\+\_\+len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{skb_8h_a32b6396ea527324c77f04f18946ae9d5}\label{skb_8h_a32b6396ea527324c77f04f18946ae9d5}} 
+\index{skb.h@{skb.h}!SKB\_QUEUE\_SIZE@{SKB\_QUEUE\_SIZE}}
+\index{SKB\_QUEUE\_SIZE@{SKB\_QUEUE\_SIZE}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{SKB\_QUEUE\_SIZE}{SKB\_QUEUE\_SIZE}}
+{\footnotesize\ttfamily \#define SKB\+\_\+\+QUEUE\+\_\+\+SIZE~300}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}\label{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}} 
+\index{skb.h@{skb.h}!alloc\_skb@{alloc\_skb}}
+\index{alloc\_skb@{alloc\_skb}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{alloc\_skb()}{alloc\_skb()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}$\ast$ alloc\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_a40dd363886fe1ff3a27e021538363035}\label{skb_8h_a40dd363886fe1ff3a27e021538363035}} 
+\index{skb.h@{skb.h}!free\_skb@{free\_skb}}
+\index{free\_skb@{free\_skb}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{free\_skb()}{free\_skb()}}
+{\footnotesize\ttfamily void free\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_a118778785b324c429a3085b067111066}\label{skb_8h_a118778785b324c429a3085b067111066}} 
+\index{skb.h@{skb.h}!init\_skb\_queue@{init\_skb\_queue}}
+\index{init\_skb\_queue@{init\_skb\_queue}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{init\_skb\_queue()}{init\_skb\_queue()}}
+{\footnotesize\ttfamily void init\+\_\+skb\+\_\+queue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}\label{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}} 
+\index{skb.h@{skb.h}!skb\_dequeue@{skb\_dequeue}}
+\index{skb\_dequeue@{skb\_dequeue}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_dequeue()}{skb\_dequeue()}}
+{\footnotesize\ttfamily int skb\+\_\+dequeue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$$\ast$}]{skb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}\label{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}} 
+\index{skb.h@{skb.h}!skb\_enqueue@{skb\_enqueue}}
+\index{skb\_enqueue@{skb\_enqueue}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_enqueue()}{skb\_enqueue()}}
+{\footnotesize\ttfamily int skb\+\_\+enqueue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_ad8ebbd0570620ebb33d06bd3a69d1490}\label{skb_8h_ad8ebbd0570620ebb33d06bd3a69d1490}} 
+\index{skb.h@{skb.h}!skb\_push@{skb\_push}}
+\index{skb\_push@{skb\_push}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_push()}{skb\_push()}}
+{\footnotesize\ttfamily char$\ast$ skb\+\_\+push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}\label{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}} 
+\index{skb.h@{skb.h}!skb\_put@{skb\_put}}
+\index{skb\_put@{skb\_put}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_put()}{skb\_put()}}
+{\footnotesize\ttfamily char$\ast$ skb\+\_\+put (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{skb_8h_a6a0558ce315e0408faed25663909f2af}\label{skb_8h_a6a0558ce315e0408faed25663909f2af}} 
+\index{skb.h@{skb.h}!skb\_reserve@{skb\_reserve}}
+\index{skb\_reserve@{skb\_reserve}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_reserve()}{skb\_reserve()}}
+{\footnotesize\ttfamily int skb\+\_\+reserve (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+

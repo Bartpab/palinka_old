@@ -3,11 +3,13 @@
 #include "src/codegen/plant/sys01.h"
 #include "libs/blocks/bin_input.h"
 void sys_sys01_init(struct System_t * system) {
-    sys.nb_blocks = 3;
-    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 3);
-    sys.data_blocks[0]->offset = 4;
-    sys.data_blocks[2]->offset = 4;
-    sys.data_blocks[1]->offset = 4;
+    sys->app_base = sys->base;
+    sys->nb_blocks = 3;
+    sys->data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 3);
+    sys.data_blocks[0]->base = sys->app_base[0];
+    sys.data_blocks[2]->base = sys->app_base[3];
+    sys.data_blocks[1]->base = sys->app_base[2];
+    sys.sys_base = sys.base + sys_sys01_app_memory_size();
 }
 void sys_sys01_step(struct Plant_t * plant) {
     struct System_t * sys;
@@ -16,6 +18,15 @@ void sys_sys01_step(struct Plant_t * plant) {
     fb_FP01(& sys);
     sys_sys01_cpy_send(& sys);
     close_system(& sys);
+}
+size_t sys_sys01_memory_size() {
+    return sys_sys01_app_size_memory() + sys_sys01_os_size_memory();
+}
+size_t sys_sys01_app_memory_size() {
+    return 2 + 1 + 1;
+}
+size_t sys_sys01_os_memory_size() {
+    return sizeof(struct SystemData_t);
 }
 void fp_fp01(struct System_t * sys) {
     struct DataBlock_t idb;

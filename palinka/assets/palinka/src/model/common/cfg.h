@@ -1,0 +1,3 @@
+struct CommonCfg_t {
+    
+};

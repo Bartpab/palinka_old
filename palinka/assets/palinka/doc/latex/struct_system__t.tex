@@ -1,0 +1,77 @@
+\hypertarget{struct_system__t}{}\doxysection{System\+\_\+t Struct Reference}
+\label{struct_system__t}\index{System\_t@{System\_t}}
+
+
+A handler to a simulated system.  
+
+
+
+
+{\ttfamily \#include $<$system.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_system__t_ad5a8e161a7cb12934847e251b44befe4}{int}} (\mbox{\hyperlink{plant_8h_a1560bd99062c17c8de1c47bf7b55a5ce}{step}} $\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$system)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{struct_system__t_a04eb5025fcf26ae5b3be397f3c30e264}{base}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_system__t_a2d2868d60a81fe9e1b17175afcd34b02}{memory\+\_\+size}}
+\item 
+struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} \mbox{\hyperlink{struct_system__t_a04317b8585e530a5903b52e73ad086b2}{err}}
+\begin{DoxyCompactList}\small\item\em Last known error, if a system-\/related functions returns an error code, the full error will be available here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A handler to a simulated system. 
+
+Contains everything to manage the system, its memory (and size), the error (if any), and the hook functions (step)
+
+When init a system, you must always perform the following operations in that order
+\begin{DoxyItemize}
+\item init\+\_\+common(sys, sizeof(specific\+\_\+header\+\_\+t))
+\item init\+\_\+$<$specific$>$(sys)
+\end{DoxyItemize}
+
+init\+\_\+common will initialise everything common to a system such as the MMU, the DEV, etc and reserve space to put the specific\+\_\+header\+\_\+t. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_system__t_ad5a8e161a7cb12934847e251b44befe4}\label{struct_system__t_ad5a8e161a7cb12934847e251b44befe4}} 
+\index{System\_t@{System\_t}!int@{int}}
+\index{int@{int}!System\_t@{System\_t}}
+\doxysubsubsection{\texorpdfstring{int()}{int()}}
+{\footnotesize\ttfamily System\+\_\+t\+::int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plant_8h_a1560bd99062c17c8de1c47bf7b55a5ce}{step}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+Step function that will be executed when calling system\+\_\+step 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_system__t_a04eb5025fcf26ae5b3be397f3c30e264}\label{struct_system__t_a04eb5025fcf26ae5b3be397f3c30e264}} 
+\index{System\_t@{System\_t}!base@{base}}
+\index{base@{base}!System\_t@{System\_t}}
+\doxysubsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily char$\ast$ System\+\_\+t\+::base}
+
+Memory base \mbox{\Hypertarget{struct_system__t_a04317b8585e530a5903b52e73ad086b2}\label{struct_system__t_a04317b8585e530a5903b52e73ad086b2}} 
+\index{System\_t@{System\_t}!err@{err}}
+\index{err@{err}!System\_t@{System\_t}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} System\+\_\+t\+::err}
+
+
+
+Last known error, if a system-\/related functions returns an error code, the full error will be available here. 
+
+Currently no error stack exist, this can managed in a future version \mbox{\Hypertarget{struct_system__t_a2d2868d60a81fe9e1b17175afcd34b02}\label{struct_system__t_a2d2868d60a81fe9e1b17175afcd34b02}} 
+\index{System\_t@{System\_t}!memory\_size@{memory\_size}}
+\index{memory\_size@{memory\_size}!System\_t@{System\_t}}
+\doxysubsubsection{\texorpdfstring{memory\_size}{memory\_size}}
+{\footnotesize\ttfamily size\+\_\+t System\+\_\+t\+::memory\+\_\+size}
+
+Memory size 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/\mbox{\hyperlink{system_8h}{system.\+h}}\end{DoxyCompactItemize}

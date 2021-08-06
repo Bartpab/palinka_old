@@ -69,7 +69,7 @@ def build_init_function(plant: Plant):
                             None
                         )
                     ),
-                    astu.id_expr("&plant")
+                    astu.constant_expr(plant.get_systems())
                 )
                 
             )
@@ -77,8 +77,8 @@ def build_init_function(plant: Plant):
     )]
 
     statements += [astu.assign_stmt(
-         astu.attr_access_expr("plant", "nb_systems", arrow=False),
-         astu.id_expr("&plant")
+        astu.attr_access_expr("plant", "nb_systems", arrow=False),
+        astu.constant_expr(plant.get_systems())
     )]
 
     for i, system in enumerate(plant.get_systems()):
@@ -88,7 +88,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.id_expr(f"#{system.get_id()}")
+                    astu.constant_expr(i)
                 ),
                 "offset"
             ),
@@ -97,7 +97,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.id_expr(f"#{system.get_id()}")
+                    astu.constant_expr(i)
                 ),
                 "size"
             ),
@@ -108,7 +108,7 @@ def build_init_function(plant: Plant):
                 astu.attr_access_expr(
                     astu.getitem_expr(
                         astu.attr_access_expr("plant", "systems", arrow=False),
-                        astu.id_expr(f"#{system.get_id()}")
+                        astu.constant_expr(i)
                     ),
                     "rwlock"
                 )
@@ -118,7 +118,7 @@ def build_init_function(plant: Plant):
             astu.attr_access_expr(
                 astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.id_expr(f"#{system.get_id()}")
+                    astu.constant_expr(i)
                 ),
                 "step"
             ),
@@ -127,7 +127,7 @@ def build_init_function(plant: Plant):
             f"{sys_namespace}_init",
             astu.getitem_expr(
                     astu.attr_access_expr("plant", "systems", arrow=False),
-                    astu.id_expr(f"#{system.get_id()}")
+                    astu.constant_expr(i)
             )
         )]        
 

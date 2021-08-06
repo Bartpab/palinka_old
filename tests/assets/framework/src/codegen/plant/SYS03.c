@@ -3,10 +3,12 @@
 #include "src/codegen/plant/sys03.h"
 #include "libs/blocks/bin_output.h"
 void sys_sys03_init(struct System_t * system) {
-    sys.nb_blocks = 2;
-    sys.data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 2);
-    sys.data_blocks[0]->offset = 14;
-    sys.data_blocks[1]->offset = 14;
+    sys->app_base = sys->base;
+    sys->nb_blocks = 2;
+    sys->data_blocks = (struct DataBlock_t *) malloc(sizeof(struct DataBlock_t) * 2);
+    sys.data_blocks[0]->base = sys->app_base[0];
+    sys.data_blocks[1]->base = sys->app_base[1];
+    sys.sys_base = sys.base + sys_sys03_app_memory_size();
 }
 void sys_sys03_step(struct Plant_t * plant) {
     struct System_t * sys;
@@ -14,6 +16,15 @@ void sys_sys03_step(struct Plant_t * plant) {
     sys_sys03_cpy_recv(& sys);
     fb_FP03(& sys);
     close_system(& sys);
+}
+size_t sys_sys03_memory_size() {
+    return sys_sys03_app_size_memory() + sys_sys03_os_size_memory();
+}
+size_t sys_sys03_app_memory_size() {
+    return 1 + 1;
+}
+size_t sys_sys03_os_memory_size() {
+    return sizeof(struct SystemData_t);
 }
 void fp_fp03(struct System_t * sys) {
     struct DataBlock_t idb;

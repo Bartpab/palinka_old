@@ -53,8 +53,10 @@ class Int:
 
     def __str__(self):
         return "int"
+
     def as_type_specifier(self):
         return TypeSpecifier(self)
+        
 class Long:
     def __init__(self):
         self.nodes = []

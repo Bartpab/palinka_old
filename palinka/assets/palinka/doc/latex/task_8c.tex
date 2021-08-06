@@ -1,0 +1,112 @@
+\hypertarget{task_8c}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/automation/task.c File Reference}
+\label{task_8c}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/task.c@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/task.c}}
+
+
+Implements the task API.  
+
+
+{\ttfamily \#include \char`\"{}src/model/automation/task.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{task_8c_a8bc71873ac5abd10cd709a4575233dbe}{execute\+\_\+task}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em Execute the task on the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task_8c_a9070d9ebc2678acade79c715a201150a}{init\+\_\+task\+\_\+list}} (struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Initialise the list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} \mbox{\hyperlink{task_8c_a2b08d18fa98bf9e303e51f9894c9e9c0}{iter\+\_\+task\+\_\+list}} (struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Return an iterator for the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{task_8c_a738ed25b05be9b350a694acbf66323b1}{push\+\_\+task}} (struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$list, void($\ast$raw)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$))
+\begin{DoxyCompactList}\small\item\em Add a task to the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{task_8c_aa8ed5e016162d2ada311b5d20b30a7fd}{init\+\_\+task\+\_\+list\+\_\+it}} (struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$list, struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$it)
+\begin{DoxyCompactList}\small\item\em Initialise the iterator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{task_8c_abf3353619e4a99d1d98f3e4d73c66025}{next\+\_\+task\+\_\+list\+\_\+it}} (struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$it)
+\begin{DoxyCompactList}\small\item\em Get the next element on the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the task API. 
+
+\begin{DoxyAuthor}{Author}
+Gaël P. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06/08/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{task_8c_a8bc71873ac5abd10cd709a4575233dbe}\label{task_8c_a8bc71873ac5abd10cd709a4575233dbe}} 
+\index{task.c@{task.c}!execute\_task@{execute\_task}}
+\index{execute\_task@{execute\_task}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{execute\_task()}{execute\_task()}}
+{\footnotesize\ttfamily int execute\+\_\+task (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+Execute the task on the system. 
+
+\begin{DoxyReturn}{Returns}
+0 if no error occured, else $>$ 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task_8c_a9070d9ebc2678acade79c715a201150a}\label{task_8c_a9070d9ebc2678acade79c715a201150a}} 
+\index{task.c@{task.c}!init\_task\_list@{init\_task\_list}}
+\index{init\_task\_list@{init\_task\_list}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{init\_task\_list()}{init\_task\_list()}}
+{\footnotesize\ttfamily void init\+\_\+task\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Initialise the list. 
+
+\mbox{\Hypertarget{task_8c_aa8ed5e016162d2ada311b5d20b30a7fd}\label{task_8c_aa8ed5e016162d2ada311b5d20b30a7fd}} 
+\index{task.c@{task.c}!init\_task\_list\_it@{init\_task\_list\_it}}
+\index{init\_task\_list\_it@{init\_task\_list\_it}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{init\_task\_list\_it()}{init\_task\_list\_it()}}
+{\footnotesize\ttfamily void init\+\_\+task\+\_\+list\+\_\+it (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$}]{list,  }\item[{struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+
+
+
+Initialise the iterator. 
+
+\mbox{\Hypertarget{task_8c_a2b08d18fa98bf9e303e51f9894c9e9c0}\label{task_8c_a2b08d18fa98bf9e303e51f9894c9e9c0}} 
+\index{task.c@{task.c}!iter\_task\_list@{iter\_task\_list}}
+\index{iter\_task\_list@{iter\_task\_list}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{iter\_task\_list()}{iter\_task\_list()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} iter\+\_\+task\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Return an iterator for the list. 
+
+\begin{DoxyReturn}{Returns}
+The iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task_8c_abf3353619e4a99d1d98f3e4d73c66025}\label{task_8c_abf3353619e4a99d1d98f3e4d73c66025}} 
+\index{task.c@{task.c}!next\_task\_list\_it@{next\_task\_list\_it}}
+\index{next\_task\_list\_it@{next\_task\_list\_it}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{next\_task\_list\_it()}{next\_task\_list\_it()}}
+{\footnotesize\ttfamily int next\+\_\+task\+\_\+list\+\_\+it (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+
+
+
+Get the next element on the list. 
+
+\begin{DoxyReturn}{Returns}
+0 if the iterator is exhausted, 1 if an element has been fetched. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{task_8c_a738ed25b05be9b350a694acbf66323b1}\label{task_8c_a738ed25b05be9b350a694acbf66323b1}} 
+\index{task.c@{task.c}!push\_task@{push\_task}}
+\index{push\_task@{push\_task}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{push\_task()}{push\_task()}}
+{\footnotesize\ttfamily int push\+\_\+task (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$}]{list,  }\item[{void($\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$)}]{raw }\end{DoxyParamCaption})}
+
+
+
+Add a task to the list. 
+
+\begin{DoxyReturn}{Returns}
+1 if no element can be added to the list, 0 else. 
+\end{DoxyReturn}

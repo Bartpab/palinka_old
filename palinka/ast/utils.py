@@ -38,6 +38,9 @@ def constant_expr(constant) -> ast.PrimaryExpression:
 def id_expr(name: str) -> ast.PrimaryExpression:
     return ast.PrimaryExpression(ast.Identifier(name))
 
+def constant_expr(value) -> ast.PrimaryExpression:
+    return ast.PrimaryExpression(ast.Constant(value))
+
 def assign_expr(lh, rh, op = '=') -> ast.AssignmentExpression:
     if isinstance(lh, str):
         lh = id_expr(lh)
@@ -82,6 +85,10 @@ def cast_expr(type_name: ast.TypeName, n: ast.CastExpression) -> ast.CastExpress
 
 def mult_expr(lh: ast.MultiplicativeExpression, rh: ast.CastExpression, op="*") -> ast.MultiplicativeExpression:
     return ast.MultiplicativeExpression.expr(lh.as_(ast.MultiplicativeExpression), ast.MultiplicativeExpressionBinop(op), rh.as_(ast.CastExpression))
+
+def add_expr(lh: ast.AdditiveExpression, rh: ast.MultiplicativeExpression, op="+") -> ast.AdditiveExpression:
+    return ast.AdditiveExpression.expr(lh.as_(ast.AdditiveExpression), ast.AdditiveExpressionBinop(op), rh.as_(ast.MultiplicativeExpression))
+
 
 def deref_expr(n: Union[str, CastExpression]) -> UnaryExpression:
     if isinstance(n, str):
@@ -148,7 +155,7 @@ def attr_access_expr(lh: Union[str, ast.PostfixExpression], attr_id: str, arrow=
 def func_decl(decl_specs: list[ast.DeclarationSpecifier], declarator: ast.Declarator, decls: list[ast.Declaration], stmts: ast.CompoundStatement) -> ast.FunctionDefinition:
     return ast.FunctionDefinition.create(decl_specs, declarator, decls, stmts)
 
-def func_declarator(id: str, params: Optional[ast.ParameterList], as_ptr=False):
+def func_declarator(id: str, params: Optional[ast.ParameterList] = None, as_ptr=False):
    return ast.Declarator.create(
         ast.Pointer.basic() if as_ptr else None,
         ast.DirectDeclarator.call(

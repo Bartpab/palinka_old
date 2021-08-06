@@ -292,6 +292,16 @@ class FunctionPlan:
     def get_exported_data(self) -> Iterator[ScopedData]:
         return unique_everseen(map(lambda ipt: ipt.get_data(), self.outputs))
 
+class Device:
+    """
+        Represents a physical device available to the system
+    """
+    def __init__(self, id):
+        self.id = id
+
+    def get_id(self):
+        return self.id
+
 class System:
     def __init__(self, id: str):
         self.address = None
@@ -301,12 +311,20 @@ class System:
         self.imported_data: Database[ScopedData] = Database(id=DatabaseIndex(lambda data: data.get_id(), unique=True))
         self.data_links: Database[DataLink] = Database()
 
+        # Several attributes
+        self.devices: Database[Device] = Database(id=DatabaseIndex(lambda dev: dev.get_id(), unique=True))
+        self.free_memory_size = 16000 #16 Ko
+
     def __hash__(self):
         return hash(self.get_id())
 
     def __str__(self):
-        return f"System: {self.get_id()}"
+        return f"<SYSTEM> {self.get_id()}"
     
+    def add_device(self, device):
+        self.devices.add(device)
+        return self
+
     def add_imported_data(self, dt: Data):
         self.imported_data.add(dt)
         return self
@@ -339,6 +357,9 @@ class System:
     def get_data_links(self) -> Iterator[DataLink]:
         return self.data_links
     
+    def get_number_of_data_blocks(self) -> int:
+        return len(list(self.get_data_block_ids()))
+
     def get_data_block_ids(self) -> Iterator[str]:
         return chain(
             map(lambda fp: fp.get_id(), self.get_function_plans()),
@@ -553,7 +574,9 @@ class Plant:
 
     def get_systems(self) -> Iterator[System]:
         return self.systems
-
+    
+    def get_number_of_systems(self) -> int:
+        return len(self.get_systems())
 
 def _serialize_topology_edge(edge: TopologyEdge):
     return etree.Element("TopologyEdge", {

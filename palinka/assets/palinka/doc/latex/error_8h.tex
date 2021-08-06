@@ -1,0 +1,82 @@
+\hypertarget{error_8h}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/error.h File Reference}
+\label{error_8h}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/error.h@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/error.h}}
+{\ttfamily \#include $<$cstdio$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{error_8h_a739aafe0806cdf9b9aff09b3d690ddb8}{ERROR\+\_\+\+MSG\+\_\+\+MAX\+\_\+\+SIZE}}~256
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{error_8h_ac6bd1941b17b2c9e97ae6ff7b5231daf}{write\+\_\+error}} (struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$err, const int code, const char $\ast$msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{error_8h_ac667bb1f74ae533e9a850d7b09f0d85d}{ERR\+\_\+\+NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY\+\_\+\+SPACE}} = 0x01
+\item 
+const int \mbox{\hyperlink{error_8h_ae0eff340519d460f6a01a79fd9859003}{ERR\+\_\+\+REACHED\+\_\+\+AUTOMATION\+\_\+\+TASKS\+\_\+\+LIMIT}} = 0x02
+\item 
+const int \mbox{\hyperlink{error_8h_a82dafe4f97177e85ea962d9121512791}{ERR\+\_\+\+REACHED\+\_\+\+AUTOMATION\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+LIMIT}} = 0x03
+\item 
+const int \mbox{\hyperlink{error_8h_ae394f89be2acc108db824b244798eb83}{ERR\+\_\+\+UNALLOCATED\+\_\+\+DATA\+\_\+\+BLOCK}} = 0x03
+\item 
+const int \mbox{\hyperlink{error_8h_a2e052972a0462102e69ad7e9360fef5f}{ERR\+\_\+\+FREED\+\_\+\+DATA\+\_\+\+BLOCK}} = 0x03
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{error_8h_a739aafe0806cdf9b9aff09b3d690ddb8}\label{error_8h_a739aafe0806cdf9b9aff09b3d690ddb8}} 
+\index{error.h@{error.h}!ERROR\_MSG\_MAX\_SIZE@{ERROR\_MSG\_MAX\_SIZE}}
+\index{ERROR\_MSG\_MAX\_SIZE@{ERROR\_MSG\_MAX\_SIZE}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERROR\_MSG\_MAX\_SIZE}{ERROR\_MSG\_MAX\_SIZE}}
+{\footnotesize\ttfamily \#define ERROR\+\_\+\+MSG\+\_\+\+MAX\+\_\+\+SIZE~256}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{error_8h_ac6bd1941b17b2c9e97ae6ff7b5231daf}\label{error_8h_ac6bd1941b17b2c9e97ae6ff7b5231daf}} 
+\index{error.h@{error.h}!write\_error@{write\_error}}
+\index{write\_error@{write\_error}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{write\_error()}{write\_error()}}
+{\footnotesize\ttfamily void write\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{err,  }\item[{const int}]{code,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{error_8h_a2e052972a0462102e69ad7e9360fef5f}\label{error_8h_a2e052972a0462102e69ad7e9360fef5f}} 
+\index{error.h@{error.h}!ERR\_FREED\_DATA\_BLOCK@{ERR\_FREED\_DATA\_BLOCK}}
+\index{ERR\_FREED\_DATA\_BLOCK@{ERR\_FREED\_DATA\_BLOCK}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_FREED\_DATA\_BLOCK}{ERR\_FREED\_DATA\_BLOCK}}
+{\footnotesize\ttfamily const int ERR\+\_\+\+FREED\+\_\+\+DATA\+\_\+\+BLOCK = 0x03}
+
+\mbox{\Hypertarget{error_8h_ac667bb1f74ae533e9a850d7b09f0d85d}\label{error_8h_ac667bb1f74ae533e9a850d7b09f0d85d}} 
+\index{error.h@{error.h}!ERR\_NOT\_ENOUGH\_MEMORY\_SPACE@{ERR\_NOT\_ENOUGH\_MEMORY\_SPACE}}
+\index{ERR\_NOT\_ENOUGH\_MEMORY\_SPACE@{ERR\_NOT\_ENOUGH\_MEMORY\_SPACE}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_NOT\_ENOUGH\_MEMORY\_SPACE}{ERR\_NOT\_ENOUGH\_MEMORY\_SPACE}}
+{\footnotesize\ttfamily const int ERR\+\_\+\+NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY\+\_\+\+SPACE = 0x01}
+
+\mbox{\Hypertarget{error_8h_a82dafe4f97177e85ea962d9121512791}\label{error_8h_a82dafe4f97177e85ea962d9121512791}} 
+\index{error.h@{error.h}!ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT@{ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT}}
+\index{ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT@{ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT}{ERR\_REACHED\_AUTOMATION\_DATA\_BLOCK\_LIMIT}}
+{\footnotesize\ttfamily const int ERR\+\_\+\+REACHED\+\_\+\+AUTOMATION\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+LIMIT = 0x03}
+
+\mbox{\Hypertarget{error_8h_ae0eff340519d460f6a01a79fd9859003}\label{error_8h_ae0eff340519d460f6a01a79fd9859003}} 
+\index{error.h@{error.h}!ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT@{ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT}}
+\index{ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT@{ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT}{ERR\_REACHED\_AUTOMATION\_TASKS\_LIMIT}}
+{\footnotesize\ttfamily const int ERR\+\_\+\+REACHED\+\_\+\+AUTOMATION\+\_\+\+TASKS\+\_\+\+LIMIT = 0x02}
+
+\mbox{\Hypertarget{error_8h_ae394f89be2acc108db824b244798eb83}\label{error_8h_ae394f89be2acc108db824b244798eb83}} 
+\index{error.h@{error.h}!ERR\_UNALLOCATED\_DATA\_BLOCK@{ERR\_UNALLOCATED\_DATA\_BLOCK}}
+\index{ERR\_UNALLOCATED\_DATA\_BLOCK@{ERR\_UNALLOCATED\_DATA\_BLOCK}!error.h@{error.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_UNALLOCATED\_DATA\_BLOCK}{ERR\_UNALLOCATED\_DATA\_BLOCK}}
+{\footnotesize\ttfamily const int ERR\+\_\+\+UNALLOCATED\+\_\+\+DATA\+\_\+\+BLOCK = 0x03}
+
