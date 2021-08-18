@@ -10,7 +10,7 @@
 #define __TASK_H__
 
 #include <stddef.h>
-#include "src/model/system.h"
+#include "src/model/system/api.h"
 
 #define MAX_NUMBER_OF_TASKS 256
 /**
@@ -33,7 +33,7 @@ int execute_task(struct System_t* sys, struct AutomationTask_t* task);
  * \brief Represents a list of automation tasks.
  */
 struct AutomationTaskList_t {
-    struct AutomationTask_t arena[MAX_NUMBER_OF_TASKS];
+    struct AutomationTask_t tail[MAX_NUMBER_OF_TASKS];
     struct AutomationTask_t* head;
     struct AutomationTask_t* limit;
 };
@@ -41,19 +41,19 @@ struct AutomationTaskList_t {
 /**
  * \brief Initialise the list
  */
-void init_task_list(struct AutomationTaskList_t* list);
+void task_list_init(struct AutomationTaskList_t* list);
 
 /**
  * \brief Return an iterator for the list.
  * \return The iterator
  */
-struct AutomationTaskListIterator_t iter_task_list(struct AutomationTaskList_t* list);
+struct AutomationTaskListIterator_t task_list_iter(struct AutomationTaskList_t* list);
 
 /**
  * \brief Add a task to the list.
  * \return 1 if no element can be added to the list, 0 else.
  */
-int push_task(struct AutomationTaskList_t* list, void (*raw)(struct System_t*));
+int task_push(struct AutomationTaskList_t* list, void (*raw)(struct System_t*));
 
 /**
 * \struct AutomationTaskListIterator_t
@@ -61,19 +61,22 @@ int push_task(struct AutomationTaskList_t* list, void (*raw)(struct System_t*));
 */
 struct AutomationTaskListIterator_t {
     struct AutomationTask_t* curr;
-    struct AutomationTask_t* limit;
+    struct AutomationTaskList_t* list;
 
-    int (next*)(struct AutomationTaskListIterator_t* it);
+    int (*next)(struct AutomationTaskListIterator_t* it);
+    int (*get)(struct AutomationTaskListIterator_t*, struct AutomationTask_t**);
 };
 
 /**
  * \brief Initialise the iterator
  */
-void init_task_list_it(struct AutomationTaskList_t* list, struct AutomationTaskListIterator_t* it);
+void task_list_init_it(struct AutomationTaskList_t* list, struct AutomationTaskListIterator_t* it);
 
 /**
  * \brief Get the next element on the list.
  * \return 0 if the iterator is exhausted, 1 if an element has been fetched.
  */
-int next_task_list_it(struct AutomationTaskListIterator_t* it);
+int task_list_it_next(struct AutomationTaskListIterator_t* it);
+
+int task_list_it_get(struct AutomationTaskListIterator_t* it, struct AutomaationTask_t** out);
 #endif

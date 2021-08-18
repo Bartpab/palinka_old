@@ -5,11 +5,18 @@
  * \version 0.1
  * \date 06/08/2021
  */
-#ifndef __SYSTEM_H__
-#define __SYSTEM_H__
+#ifndef __SYSTEM_API_H__
+#define __SYSTEM_API_H__
 
+#include "src/model/system/cfg.h"
 #include "src/model/error.h"
+#include "src/utils/alloc.h"
+
+#include "src/model/common/device/phy/api.h"
+
 #include <stddef.h>
+
+#define SYSTEM_NAME_MAX_LENGTH 256
 
 /**
  * \struct System_t
@@ -18,17 +25,24 @@
  * Contains everything to manage the system, its memory (and size), the error (if any), and the hook functions (step)
  * 
  * When init a system, you must always perform the following operations in that order
- * - init_common(sys, sizeof(specific_header_t))
+ * - common_init(sys, sizeof(specific_header_t))
  * - init_<specific>(sys)
  * 
- * init_common will initialise everything common to a system such as the MMU, the DEV, etc and reserve space to put the specific_header_t.
+ * common_init will initialise everything common to a system such as the MMU, the DEV, etc and reserve space to put the specific_header_t.
  */
 struct System_t {
+    /*! Name of the system */
+    char name[SYSTEM_NAME_MAX_LENGTH];
+
     /*! Memory base */
-    char* base;         
+    void* base;         
+    
     /*! Memory size */
     size_t memory_size;    
     
+    /*! Physical devices */
+    struct PhysicalDeviceList_t devices;
+
     /*! 
     * \brief Last known error, if a system-related functions returns an error code, the full error will be available here.
     *
@@ -39,8 +53,13 @@ struct System_t {
     /*! 
     * Step function that will be executed when calling system_step 
     */
-    int (step*)(struct System_t* system); 
+    int (*step)(struct System_t* system); 
 };
+
+/**
+ * \brief Initialise the system
+ */
+int sys_init(struct System_t* sys, struct SystemCfg_t* cfg, struct Allocator_t* allocator);
 
 /**
  * \brief Push an error.
@@ -69,5 +88,13 @@ int sys_pop_error(struct System_t* sys, struct Error_t* output);
  * \return 0 if anything went well, > 0 if an error occured.
  */
 int sys_step(struct System_t* sys);
+
+/**
+ * \brief System interrupt function
+ * If an error occured (returned valued > 0), an error is pushed in the system's handler.
+ * 
+ * \return 0 if anything went well, > 0 if an error occured.
+ */
+int sys_interrupt(struct System_t* sys, unsigned char irq);
 
 #endif

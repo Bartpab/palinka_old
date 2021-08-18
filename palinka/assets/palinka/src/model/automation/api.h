@@ -1,19 +1,22 @@
+#ifndef __AUTOMATION_API_H__
+#define __AUTOMATION_API_H__
+
 #include <stddef.h>
 
 #include "src/model/automation/cfg.h"
 #include "src/model/automation/header.h"
-#include "src/model/system.h"
+#include "src/model/system/api.h"
 
 /**
 * \brief Initialise the system as an automation system.
 *
-* Calls init_common internally.
+* Calls common_init internally.
 *
 * \param sys The system to initialise as an automation system.
 * \param cfg The automation system configuration
 * \return 0 if no error occured, else > 0 if an error occured.
 */
-int init_automation_system(struct System_t* sys, struct AutomationSystemCfg_t* cfg);
+int automation_system_init(struct System_t* sys, struct AutomationCfg_t* cfg);
 
 /**
  * \brief Execute a simulation step for the system
@@ -21,12 +24,17 @@ int init_automation_system(struct System_t* sys, struct AutomationSystemCfg_t* c
  * \param sys The related system.
  * \return 0 if no error occured, else > 0 if an error occured.
  */
-int step_automation_system(struct System_t* sys);
+int automation_system_step(struct System_t* sys);
 
 // Lower Level //
 
 /**
- * \brief Return the automation system's header
- * \return The automation header of the system.
+ * \brief Callback to initialise the automation system.
+ * 
+ * This works because cfg is the first attribute of AutomationCfg_t, and because
+ * we ensure that the pointer is in fact a pointer to a full AutomationCfg_t value.
  */
-struct AutomationHeader_t* get_automation_header(struct System_t* sys);
+int automation_system_init_cbk(struct System_t* sys, struct CommongCfg_t* cfg);
+
+
+#endif

@@ -10,6 +10,8 @@
 #define __COMMON_HEADER__
 
 #include "src/model/common/mmu.h"
+#include "src/model/common/irq.h"
+#include "src/model/system/api.h"
 
 /**
  * \struct CommonHeader_t
@@ -20,7 +22,12 @@
 struct CommonHeader_t 
 {
     struct MemoryManagementUnit_t mmu; /*! Memory Management unit */
-    char* next;                        /*! Jump to the system's specific header */
+    struct InterruptRequestTable_t irq; /*! Interrupt Request */
 };
+
+struct CommonHeader_t* get_common_header(struct System_t* sys) 
+{
+    return (struct CommonHeader_t*) sys->base;
+}
 
 #endif

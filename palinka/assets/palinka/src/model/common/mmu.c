@@ -1,18 +1,17 @@
-#ifndef __MMU_H__
-#define __MMU_H__
-
 #include <stddef.h>
+
+#include "src/model/common/mmu.h"
+#include "src/model/common/data.h"
 
 void mmu_init(struct MemoryManagementUnit_t* mmu, char* base_heap, size_t free_space_size)
 {
-    mmu->raw_tail = base_heap;
-    mmu->raw_head = mmu.base;
-    mmu->raw_end  = mmu.base + free_space_size;
+    mmu->raw_tail = mmu->raw_head = base_heap;
+    mmu->raw_limit  = mmu->raw_tail + free_space_size - 1;
 }
 
 struct HeapHeader_t* get_free_block(struct System_t* sys, size_t size)
 {
-    struct HeapHeader_t* curr = get_system_header(sys)->head;
+    struct HeapHeader_t* curr = get_common_header(sys)->mmu.head;
     
     while(curr) {
         if(curr->is_free && curr->size >= size) {
@@ -25,57 +24,57 @@ struct HeapHeader_t* get_free_block(struct System_t* sys, size_t size)
     return NULL;
 }
 
-char* sys_sbrk(struct System_t* sys, int len)
+void* sys_sbrk(struct System_t* sys, int len)
 {
-    if (len > 0) {
-        struct SystemData_t* sysdt = get_system_data(sys);
-        
-        // Cannot increase heap memory
-        if (sysdt->mmu.raw_head + len >= sysdt->mmu.raw_end) 
-        {
-            return NULL;
-        }
 
-        char* block = sysdt->mmu.raw_head;
-        sysdt->mmu.raw_head += len;
+    struct CommonHeader_t* common = get_common_header(sys);
+
+    if (len > 0) { // If the len is > 0, we fetch raw memory 
+        // Cannot increase heap memory
+        if (common->mmu.raw_head + len > common->mmu.raw_limit) 
+            return NULL;
+
+        // Increase the raw head pointer by the size of the block
+        char* block = common->mmu.raw_head;
+        common->mmu.raw_head += len;
         return block;       
-    } else if(len < 0) {
-        if(sysdt->mmu.raw_head - len < sysdt->mmu.raw_tail) {
-           sysdt->mmu.raw_head = sysdt->mmu.raw_tail; 
+    } else if(len < 0) { // If the len is < 0, we release raw memory
+        if(common->mmu.raw_head - len < common->mmu.raw_tail) {
+           common->mmu.raw_head = common->mmu.raw_tail; 
         } else {
-            sysdt->mmu.raw_head -= len;
+            common->mmu.raw_head -= len;
         }
         return NULL;
-    } else {
-        return sysdt->mmu.raw_head;
+    } else { // If the len is 0, we return the raw head memory
+        return common->mmu.raw_head;
     }
 }
 
-void sys_free(struct System_t* sys, char* block)
+void sys_free(struct System_t* sys, void* block)
 {
-    struct SystemData_t* sysdt = get_system_data(sys);
+    struct CommonHeader_t* common = get_common_header(sys);
     struct HeapHeader_t* header, *it;
 
     header = (struct HeapHeader_t*) block - 1;
-    char* raw_head = sys_sbrk(sys, 0);
+    void* raw_head = sys_sbrk(sys, 0);
 
     // We remove the tail element
     if (block + header->size == raw_head) 
     {
-        if (sysdt->mmu.head == sysdt->mmu.tail) {
-            sysdt->mmu.head = sysdt->mmu.tail = NULL;
+        if (common->mmu.head == common->mmu.tail) {
+            common->mmu.head = common->mmu.tail = NULL;
         } else {
-            it = sysdt->mmu.head;
+            it = common->mmu.head;
             while (it) {
-                if(it->next == sysdt->mmu.tail) {
+                if(it->next == common->mmu.tail) {
                     it->next = NULL;
-                    sysdt->mmu.tail = it;
+                    common->mmu.tail = it;
                 }
                 it = it->next;
             }
         }
 
-        sys_sbrk(0 - sizeof(struct HeapHeader_t) - header->size);
+        sys_sbrk(sys, 0 - sizeof(struct HeapHeader_t) - header->size);
         return;
     }
 
@@ -83,20 +82,22 @@ void sys_free(struct System_t* sys, char* block)
 }
 
 
-char* sys_alloc(struct System_t* sys, size_t len)
+void* sys_alloc(struct System_t* sys, size_t len)
 {
-    struct SystemData_t* sysdt = get_system_data(sys);
+    struct CommonHeader_t* common = get_system_data(sys);
     struct HeapHeader_t* header;
+    size_t required_size;
+    void* block;
 
     header = get_free_block(sys, len);
 
     if(header != NULL) {
         header->is_free = 0;
-        return (char*)(header + 1);
+        return (void*)(header + 1);
     }
 
-    required_size = sizeof(HeapHeader_t) + len
-    block = sys_sbrk(required_size);
+    required_size = sizeof(struct HeapHeader_t) + len;
+    block = sys_sbrk(sys, required_size);
     
     if (block == NULL) {
         return NULL;
@@ -105,15 +106,13 @@ char* sys_alloc(struct System_t* sys, size_t len)
     header = (struct HeapHeader_t*) block;
     header->size = len;
     header->is_free = 0;
-    headr->next = NULL;
+    header->next = NULL;
 
-    if(sysdt->mmu.head == NULL)
-        sysdt->mmu.head = header;
+    if(common->mmu.head == NULL)
+        common->mmu.head = header;
     
-    if(sysdt->mmu.tail != NULL) 
-        sysdt->mmu.tail.next = header;
+    if(common->mmu.tail != NULL) 
+        common->mmu.tail->next = header;
 
     return (char*)(header + 1);
 }
-
-#endif

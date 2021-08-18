@@ -94,10 +94,10 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A handler to a simulated system. </p>
 <p>Contains everything to manage the system, its memory (and size), the error (if any), and the hook functions (step)</p>
 <p>When init a system, you must always perform the following operations in that order</p><ul>
-<li>init_common(sys, sizeof(specific_header_t))</li>
+<li>common_init(sys, sizeof(specific_header_t))</li>
 <li>init_&lt;specific&gt;(sys)</li>
 </ul>
-<p>init_common will initialise everything common to a system such as the MMU, the DEV, etc and reserve space to put the specific_header_t. </p>
+<p>common_init will initialise everything common to a system such as the MMU, the DEV, etc and reserve space to put the specific_header_t. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad5a8e161a7cb12934847e251b44befe4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5a8e161a7cb12934847e251b44befe4">&#9670;&nbsp;</a></span>int()</h2>
@@ -167,7 +167,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/<a class="el" href="system_8h_source.html">system.h</a></li>
+<li>C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/<a class="el" href="system_8h_source.html">system.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

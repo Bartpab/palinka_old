@@ -1,12 +1,12 @@
-\hypertarget{api_8c}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/automation/api.c File Reference}
-\label{api_8c}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/api.c@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/api.c}}
+\hypertarget{api_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c File Reference}
+\label{api_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/api.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/cfg.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/header.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/task.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/header.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/init.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/common/data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/common/api.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
@@ -14,10 +14,10 @@
 \item 
 int \mbox{\hyperlink{api_8c_afff68ba3b3bf511f3af1f1230398a985}{init\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Automation\+System\+Cfg\+\_\+t $\ast$cfg)
 \begin{DoxyCompactList}\small\item\em Initialise the system as an automation system. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{api_8c_a0d679cce1de6c159cd2618f7631a3ea9}{get\+\_\+automation\+\_\+header}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
-\begin{DoxyCompactList}\small\item\em Return the automation system\textquotesingle{}s header. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{api_8c_a266f5278a8e73232ac003d3864c4f854}{step\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
-\begin{DoxyCompactList}\small\item\em Execute a simulation step for the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Execute a simulation step for the system. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{api_8c_a0d679cce1de6c159cd2618f7631a3ea9}{get\+\_\+automation\+\_\+header}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Return the automation system\textquotesingle{}s header. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}

@@ -1,6 +1,8 @@
-\hypertarget{mmu_8c}{}\doxysection{C\+:/\+Users/\+GP69\+E5\+EN/\+Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.c File Reference}
-\label{mmu_8c}\index{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.c@{C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.c}}
+\hypertarget{mmu_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c File Reference}
+\label{mmu_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}src/model/common/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/common/data.\+h\char`\"{}}\newline
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,15 +12,15 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{mmu_8c_a0cdcade82ef8523129ec13a5ae2ae567}{mmu\+\_\+init}} (struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} $\ast$mmu, char $\ast$base\+\_\+heap, size\+\_\+t free\+\_\+space\+\_\+size)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise the MMU. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{mmu_8c_a29832d31589df1af6f94c0ce29b2d615}{get\+\_\+free\+\_\+block}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t size)
 \item 
 char $\ast$ \mbox{\hyperlink{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}{sys\+\_\+sbrk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, int len)
-\item 
+\begin{DoxyCompactList}\small\item\em Change the data segment size. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{mmu_8c_a742589a238a1da57b56dbe8069e19823}{sys\+\_\+free}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, char $\ast$block)
-\item 
+\begin{DoxyCompactList}\small\item\em System\textquotesingle{}s memory free. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}{sys\+\_\+alloc}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em System\textquotesingle{}s memory allocator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -41,23 +43,79 @@ char $\ast$ \mbox{\hyperlink{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}{sys\+\_\+
 \index{mmu.c@{mmu.c}!mmu\_init@{mmu\_init}}
 \index{mmu\_init@{mmu\_init}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{mmu\_init()}{mmu\_init()}}
-{\footnotesize\ttfamily void mmu\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} $\ast$}]{mmu,  }\item[{char $\ast$}]{base\+\_\+heap,  }\item[{size\+\_\+t}]{free\+\_\+space\+\_\+size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void mmu\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_memory_management_unit__t}{Memory\+Management\+Unit\+\_\+t}} $\ast$}]{mmu,  }\item[{char $\ast$}]{base\+\_\+heap,  }\item[{size\+\_\+t}]{heap\+\_\+max\+\_\+size }\end{DoxyParamCaption})}
 
+
+
+Initialise the MMU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mmu} & The Memory Management Unit \\
+\hline
+{\em base\+\_\+heap} & The address to the raw heap area \\
+\hline
+{\em heap\+\_\+max\+\_\+size} & The maximum size of the raw heap area \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}\label{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}} 
 \index{mmu.c@{mmu.c}!sys\_alloc@{sys\_alloc}}
 \index{sys\_alloc@{sys\_alloc}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_alloc()}{sys\_alloc()}}
 {\footnotesize\ttfamily char$\ast$ sys\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
 
+
+
+System\textquotesingle{}s memory allocator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The system \\
+\hline
+{\em len} & The size of the memory block. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL if the allocation failed (eg\+: no more memory), else the address of the allocated block. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mmu_8c_a742589a238a1da57b56dbe8069e19823}\label{mmu_8c_a742589a238a1da57b56dbe8069e19823}} 
 \index{mmu.c@{mmu.c}!sys\_free@{sys\_free}}
 \index{sys\_free@{sys\_free}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_free()}{sys\_free()}}
 {\footnotesize\ttfamily void sys\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{char $\ast$}]{block }\end{DoxyParamCaption})}
 
+
+
+System\textquotesingle{}s memory free. 
+
+Free the memory block
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The system \\
+\hline
+{\em block} & The memory block to free \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}\label{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}} 
 \index{mmu.c@{mmu.c}!sys\_sbrk@{sys\_sbrk}}
 \index{sys\_sbrk@{sys\_sbrk}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_sbrk()}{sys\_sbrk()}}
 {\footnotesize\ttfamily char$\ast$ sys\+\_\+sbrk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{int}]{len }\end{DoxyParamCaption})}
 
+
+
+Change the data segment size. 
+
+The simulation allocate a fixed-\/size memory block at the beginning. The system can get/release raw memory based on this memory block. The raw memory is then used by the MMU to alloc/free memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The system \\
+\hline
+{\em len} & If $>$ 0, add len bytes to the data segment, if $<$ 0 remove len bytes to the data segment, if =0, return the head of the data segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL if the function failed (eg\+: no more memory), or the address of the allocated block. 
+\end{DoxyReturn}

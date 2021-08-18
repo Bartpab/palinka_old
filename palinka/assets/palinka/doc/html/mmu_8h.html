@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/common/mmu.h File Reference</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,12 +67,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">mmu.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains the Memory Management Unit functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 </div>
 <p><a href="mmu_8h_source.html">Go to the source code of this file.</a></p>
@@ -80,39 +82,34 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Management Unit.  <a href="struct_memory_management_unit__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_heap_header__t.html">HeapHeader_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0f02a570aa97da5880bc07b0a39e17c5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a0f02a570aa97da5880bc07b0a39e17c5">mmu_init</a> (struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> *mmu, char *base_heap, size_t free_space_size)</td></tr>
-<tr class="separator:a0f02a570aa97da5880bc07b0a39e17c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a742589a238a1da57b56dbe8069e19823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a742589a238a1da57b56dbe8069e19823">sys_free</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, char *block)</td></tr>
-<tr class="separator:a742589a238a1da57b56dbe8069e19823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced3be7468ff7fdb0280f39fc279c84b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#aced3be7468ff7fdb0280f39fc279c84b">mmu_init</a> (struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> *mmu, char *base_heap, size_t heap_max_size)</td></tr>
+<tr class="memdesc:aced3be7468ff7fdb0280f39fc279c84b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the MMU.  <a href="mmu_8h.html#aced3be7468ff7fdb0280f39fc279c84b">More...</a><br /></td></tr>
+<tr class="separator:aced3be7468ff7fdb0280f39fc279c84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e2de839c88fb1105d9eb63187c375f5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a3e2de839c88fb1105d9eb63187c375f5">sys_alloc</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, size_t len)</td></tr>
+<tr class="memdesc:a3e2de839c88fb1105d9eb63187c375f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">System's memory allocator.  <a href="mmu_8h.html#a3e2de839c88fb1105d9eb63187c375f5">More...</a><br /></td></tr>
 <tr class="separator:a3e2de839c88fb1105d9eb63187c375f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742589a238a1da57b56dbe8069e19823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a742589a238a1da57b56dbe8069e19823">sys_free</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, char *block)</td></tr>
+<tr class="memdesc:a742589a238a1da57b56dbe8069e19823"><td class="mdescLeft">&#160;</td><td class="mdescRight">System's memory free.  <a href="mmu_8h.html#a742589a238a1da57b56dbe8069e19823">More...</a><br /></td></tr>
+<tr class="separator:a742589a238a1da57b56dbe8069e19823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29832d31589df1af6f94c0ce29b2d615"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a29832d31589df1af6f94c0ce29b2d615">get_free_block</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, size_t size)</td></tr>
 <tr class="separator:a29832d31589df1af6f94c0ce29b2d615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2721811f83422cae2d58ec18cdc060c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#aa2721811f83422cae2d58ec18cdc060c">sys_sbrk</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, int len)</td></tr>
+<tr class="memdesc:aa2721811f83422cae2d58ec18cdc060c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the data segment size.  <a href="mmu_8h.html#aa2721811f83422cae2d58ec18cdc060c">More...</a><br /></td></tr>
 <tr class="separator:aa2721811f83422cae2d58ec18cdc060c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ae9d4b42e4c53407285e9ea60b85a6348"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#ae9d4b42e4c53407285e9ea60b85a6348">raw_tail</a></td></tr>
-<tr class="separator:ae9d4b42e4c53407285e9ea60b85a6348"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accf3fe933191c4981b6c75439789de50"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#accf3fe933191c4981b6c75439789de50">raw_head</a></td></tr>
-<tr class="separator:accf3fe933191c4981b6c75439789de50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a97364eb9b981271d0f68def3f58e6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a74a97364eb9b981271d0f68def3f58e6">raw_end</a></td></tr>
-<tr class="separator:a74a97364eb9b981271d0f68def3f58e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad84a37e46869e9422551c9b77f758829"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#ad84a37e46869e9422551c9b77f758829">head</a></td></tr>
-<tr class="separator:ad84a37e46869e9422551c9b77f758829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e70a69ab3f2b81140ffb291524c7bd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a63e70a69ab3f2b81140ffb291524c7bd">tail</a></td></tr>
-<tr class="separator:a63e70a69ab3f2b81140ffb291524c7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c0a636dcea10dcb81901e0c65fa9eba"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mmu_8h.html#a0c0a636dcea10dcb81901e0c65fa9eba">mmu_init</a></td></tr>
-<tr class="separator:a0c0a636dcea10dcb81901e0c65fa9eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains the Memory Management Unit functions. </p>
+<dl class="section author"><dt>Author</dt><dd>Gaël P. </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>06/08/2021 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a29832d31589df1af6f94c0ce29b2d615"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29832d31589df1af6f94c0ce29b2d615">&#9670;&nbsp;</a></span>get_free_block()</h2>
 
@@ -141,14 +138,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0f02a570aa97da5880bc07b0a39e17c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f02a570aa97da5880bc07b0a39e17c5">&#9670;&nbsp;</a></span>mmu_init()</h2>
+<a id="aced3be7468ff7fdb0280f39fc279c84b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced3be7468ff7fdb0280f39fc279c84b">&#9670;&nbsp;</a></span>mmu_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> mmu_init </td>
+          <td class="memname">void mmu_init </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> *&#160;</td>
           <td class="paramname"><em>mmu</em>, </td>
@@ -163,7 +160,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>free_space_size</em>&#160;</td>
+          <td class="paramname"><em>heap_max_size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -172,6 +169,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialise the MMU. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mmu</td><td>The Memory Management Unit </td></tr>
+    <tr><td class="paramname">base_heap</td><td>The address to the raw heap area </td></tr>
+    <tr><td class="paramname">heap_max_size</td><td>The maximum size of the raw heap area </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -201,6 +208,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>System's memory allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sys</td><td>The system </td></tr>
+    <tr><td class="paramname">len</td><td>The size of the memory block. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL if the allocation failed (eg: no more memory), else the address of the allocated block. </dd></dl>
+
 </div>
 </div>
 <a id="a742589a238a1da57b56dbe8069e19823"></a>
@@ -228,6 +245,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>System's memory free. </p>
+<p>Free the memory block</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sys</td><td>The system </td></tr>
+    <tr><td class="paramname">block</td><td>The memory block to free </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -257,90 +284,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ad84a37e46869e9422551c9b77f758829"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad84a37e46869e9422551c9b77f758829">&#9670;&nbsp;</a></span>head</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a>* head</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0c0a636dcea10dcb81901e0c65fa9eba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c0a636dcea10dcb81901e0c65fa9eba">&#9670;&nbsp;</a></span>mmu_init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a> mmu_init</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a74a97364eb9b981271d0f68def3f58e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74a97364eb9b981271d0f68def3f58e6">&#9670;&nbsp;</a></span>raw_end</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* raw_end</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="accf3fe933191c4981b6c75439789de50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accf3fe933191c4981b6c75439789de50">&#9670;&nbsp;</a></span>raw_head</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* raw_head</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae9d4b42e4c53407285e9ea60b85a6348"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d4b42e4c53407285e9ea60b85a6348">&#9670;&nbsp;</a></span>raw_tail</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* raw_tail</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a63e70a69ab3f2b81140ffb291524c7bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63e70a69ab3f2b81140ffb291524c7bd">&#9670;&nbsp;</a></span>tail</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="struct_heap_header__t.html">HeapHeader_t</a>* tail</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Change the data segment size. </p>
+<p>The simulation allocate a fixed-size memory block at the beginning. The system can get/release raw memory based on this memory block. The raw memory is then used by the MMU to alloc/free memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sys</td><td>The system </td></tr>
+    <tr><td class="paramname">len</td><td>If &gt; 0, add len bytes to the data segment, if &lt; 0 remove len bytes to the data segment, if =0, return the head of the data segment. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL if the function failed (eg: no more memory), or the address of the allocated block. </dd></dl>
 
 </div>
 </div>

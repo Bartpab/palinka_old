@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/GP69E5EN/Documents/dev/palinka/palinka/assets/palinka/src/model/automation/api.h File Reference</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,10 +80,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afff68ba3b3bf511f3af1f1230398a985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">init_automation_system</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct AutomationSystemCfg_t *cfg)</td></tr>
+<tr class="memitem:afff68ba3b3bf511f3af1f1230398a985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct AutomationSystemCfg_t *cfg)</td></tr>
 <tr class="memdesc:afff68ba3b3bf511f3af1f1230398a985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the system as an automation system.  <a href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">More...</a><br /></td></tr>
 <tr class="separator:afff68ba3b3bf511f3af1f1230398a985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266f5278a8e73232ac003d3864c4f854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">step_automation_system</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
+<tr class="memitem:a266f5278a8e73232ac003d3864c4f854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
 <tr class="memdesc:a266f5278a8e73232ac003d3864c4f854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a simulation step for the system.  <a href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">More...</a><br /></td></tr>
 <tr class="separator:a266f5278a8e73232ac003d3864c4f854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_header__t.html">AutomationHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
@@ -113,13 +113,13 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="afff68ba3b3bf511f3af1f1230398a985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff68ba3b3bf511f3af1f1230398a985">&#9670;&nbsp;</a></span>init_automation_system()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afff68ba3b3bf511f3af1f1230398a985">&#9670;&nbsp;</a></span>automation_system_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int init_automation_system </td>
+          <td class="memname">int automation_system_init </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="struct_system__t.html">System_t</a> *&#160;</td>
           <td class="paramname"><em>sys</em>, </td>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise the system as an automation system. </p>
-<p>Calls init_common internally.</p>
+<p>Calls common_init internally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sys</td><td>The system to initialise as an automation system. </td></tr>
@@ -152,13 +152,13 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a266f5278a8e73232ac003d3864c4f854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a266f5278a8e73232ac003d3864c4f854">&#9670;&nbsp;</a></span>step_automation_system()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a266f5278a8e73232ac003d3864c4f854">&#9670;&nbsp;</a></span>automation_system_step()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int step_automation_system </td>
+          <td class="memname">int automation_system_step </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="struct_system__t.html">System_t</a> *&#160;</td>
           <td class="paramname"><em>sys</em></td><td>)</td>

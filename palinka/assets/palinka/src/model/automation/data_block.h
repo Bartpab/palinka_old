@@ -11,7 +11,7 @@
 #define __DATA_BLOCK_H__
 
 #include <stddef.h>
-#include "src/model/system.h"
+#include "src/model/system/api.h"
 
 #include "src/model/automation/api.h"
 
@@ -31,7 +31,7 @@ struct AutomationDataBlock_t {
 * \brief A list of data block
 */
 struct AutomationDataBlockList_t {
-    struct AutomationDataBlock_t arena[MAX_NUMBER_OF_DATA_BLOCKS];
+    struct AutomationDataBlock_t tail[MAX_NUMBER_OF_DATA_BLOCKS];
     struct AutomationDataBlock_t* head;
     struct AutomationDataBlock_t* limit;
 };
@@ -44,7 +44,7 @@ void init_data_block_list(struct AutomationDataBlockList_t* list);
 /**
  * \brief Push a data block in the list.
  */
-int push_data_block(struct AutomationDataBlockList_t* list, char* base, size_t size);
+int data_block_push(struct AutomationDataBlockList_t* list, char* base, size_t size);
 
 /**
  * \brief Open a data block
@@ -53,7 +53,7 @@ int push_data_block(struct AutomationDataBlockList_t* list, char* base, size_t s
  * \param db The handler of the data block
  * \return 0 if no error occured, else > 0 if an error occured.
  */
-int open_data_block(struct System_t* sys, size_t db_id, struct AutomationDataBlock_t** db); 
+int data_block_open(struct System_t* sys, size_t db_id, struct AutomationDataBlock_t** db); 
 
 /**
  * \brief Close the data block
