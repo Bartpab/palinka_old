@@ -1,0 +1,56 @@
+\hypertarget{plant_2cfg_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/plant/cfg.h File Reference}
+\label{plant_2cfg_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/plant/cfg.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/plant/cfg.h}}
+{\ttfamily \#include \char`\"{}src/model/system/cfg.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{plant_2cfg_8h_a014e3cc0c8ff3fdde199a14a18ecb68d}{plant\+\_\+cfg\+\_\+init}} (struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$cfg, size\+\_\+t system\+\_\+capacity)
+\begin{DoxyCompactList}\small\item\em Initialise the plant configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plant_2cfg_8h_ac14237544200b0909d69b37b311e9c8c}{plant\+\_\+cfg\+\_\+delete}} (struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em Delete the plant configuration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plant_2cfg_8h_a24b9d03e25e775d4455a21046b21e9e0}{plant\+\_\+cfg\+\_\+add\+\_\+sys}} (struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$plant\+\_\+cfg, struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} sys\+\_\+cfg)
+\begin{DoxyCompactList}\small\item\em Add a system configuration in the plant configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plant_2cfg_8h_a24b9d03e25e775d4455a21046b21e9e0}\label{plant_2cfg_8h_a24b9d03e25e775d4455a21046b21e9e0}} 
+\index{cfg.h@{cfg.h}!plant\_cfg\_add\_sys@{plant\_cfg\_add\_sys}}
+\index{plant\_cfg\_add\_sys@{plant\_cfg\_add\_sys}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{plant\_cfg\_add\_sys()}{plant\_cfg\_add\_sys()}}
+{\footnotesize\ttfamily int plant\+\_\+cfg\+\_\+add\+\_\+sys (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$}]{plant\+\_\+cfg,  }\item[{struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}}}]{sys\+\_\+cfg }\end{DoxyParamCaption})}
+
+
+
+Add a system configuration in the plant configuration. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (no more space). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plant_2cfg_8h_ac14237544200b0909d69b37b311e9c8c}\label{plant_2cfg_8h_ac14237544200b0909d69b37b311e9c8c}} 
+\index{cfg.h@{cfg.h}!plant\_cfg\_delete@{plant\_cfg\_delete}}
+\index{plant\_cfg\_delete@{plant\_cfg\_delete}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{plant\_cfg\_delete()}{plant\_cfg\_delete()}}
+{\footnotesize\ttfamily void plant\+\_\+cfg\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+Delete the plant configuration. 
+
+\mbox{\Hypertarget{plant_2cfg_8h_a014e3cc0c8ff3fdde199a14a18ecb68d}\label{plant_2cfg_8h_a014e3cc0c8ff3fdde199a14a18ecb68d}} 
+\index{cfg.h@{cfg.h}!plant\_cfg\_init@{plant\_cfg\_init}}
+\index{plant\_cfg\_init@{plant\_cfg\_init}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{plant\_cfg\_init()}{plant\_cfg\_init()}}
+{\footnotesize\ttfamily int plant\+\_\+cfg\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$}]{cfg,  }\item[{size\+\_\+t}]{system\+\_\+capacity }\end{DoxyParamCaption})}
+
+
+
+Initialise the plant configuration. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (could not initialise list of system configurations). 
+\end{DoxyReturn}

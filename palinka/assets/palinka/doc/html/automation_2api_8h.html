@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h File Reference</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,52 +68,31 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">api.h File Reference</div>  </div>
+<div class="title">core.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="automation_2cfg_8h_source.html">src/model/automation/cfg.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="automation_2header_8h_source.html">src/model/automation/header.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="system_8h_source.html">src/model/system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="header_8h_source.html">src/model/automation/header.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="system_2core_8h_source.html">src/model/system/core.h</a>&quot;</code><br />
 </div>
-<p><a href="automation_2api_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="automation_2core_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afff68ba3b3bf511f3af1f1230398a985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct AutomationSystemCfg_t *cfg)</td></tr>
-<tr class="memdesc:afff68ba3b3bf511f3af1f1230398a985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the system as an automation system.  <a href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">More...</a><br /></td></tr>
-<tr class="separator:afff68ba3b3bf511f3af1f1230398a985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266f5278a8e73232ac003d3864c4f854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
-<tr class="memdesc:a266f5278a8e73232ac003d3864c4f854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a simulation step for the system.  <a href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">More...</a><br /></td></tr>
-<tr class="separator:a266f5278a8e73232ac003d3864c4f854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_header__t.html">AutomationHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2api_8h.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
-<tr class="memdesc:a0d679cce1de6c159cd2618f7631a3ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the automation system's header.  <a href="automation_2api_8h.html#a0d679cce1de6c159cd2618f7631a3ea9">More...</a><br /></td></tr>
-<tr class="separator:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07b8ecb7e3c679e711c063bb00fd940"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2core_8h.html#ab07b8ecb7e3c679e711c063bb00fd940">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct <a class="el" href="struct_automation_cfg__t.html">AutomationCfg_t</a> *cfg)</td></tr>
+<tr class="memdesc:ab07b8ecb7e3c679e711c063bb00fd940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the system as an automation system.  <a href="automation_2core_8h.html#ab07b8ecb7e3c679e711c063bb00fd940">More...</a><br /></td></tr>
+<tr class="separator:ab07b8ecb7e3c679e711c063bb00fd940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b70470973d55cb6679373e92c242d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2core_8h.html#a63b70470973d55cb6679373e92c242d0">automation_system_step</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
+<tr class="memdesc:a63b70470973d55cb6679373e92c242d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a simulation step for the system.  <a href="automation_2core_8h.html#a63b70470973d55cb6679373e92c242d0">More...</a><br /></td></tr>
+<tr class="separator:a63b70470973d55cb6679373e92c242d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4a0bc73549fa154bfef3c145b5731d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2core_8h.html#a6f4a0bc73549fa154bfef3c145b5731d">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct KernelgCfg_t *cfg)</td></tr>
+<tr class="memdesc:a6f4a0bc73549fa154bfef3c145b5731d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to initialise the automation system.  <a href="automation_2core_8h.html#a6f4a0bc73549fa154bfef3c145b5731d">More...</a><br /></td></tr>
+<tr class="separator:a6f4a0bc73549fa154bfef3c145b5731d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0d679cce1de6c159cd2618f7631a3ea9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d679cce1de6c159cd2618f7631a3ea9">&#9670;&nbsp;</a></span>get_automation_header()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="struct_automation_header__t.html">AutomationHeader_t</a>* get_automation_header </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_system__t.html">System_t</a> *&#160;</td>
-          <td class="paramname"><em>sys</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the automation system's header. </p>
-<dl class="section return"><dt>Returns</dt><dd>The automation header of the system. </dd></dl>
-
-</div>
-</div>
-<a id="afff68ba3b3bf511f3af1f1230398a985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff68ba3b3bf511f3af1f1230398a985">&#9670;&nbsp;</a></span>automation_system_init()</h2>
+<a id="ab07b8ecb7e3c679e711c063bb00fd940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07b8ecb7e3c679e711c063bb00fd940">&#9670;&nbsp;</a></span>automation_system_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +106,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">struct AutomationSystemCfg_t *&#160;</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_cfg__t.html">AutomationCfg_t</a> *&#160;</td>
           <td class="paramname"><em>cfg</em>&#160;</td>
         </tr>
         <tr>
@@ -139,7 +118,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise the system as an automation system. </p>
-<p>Calls common_init internally.</p>
+<p>Calls kernel_init internally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sys</td><td>The system to initialise as an automation system. </td></tr>
@@ -151,8 +130,39 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a266f5278a8e73232ac003d3864c4f854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a266f5278a8e73232ac003d3864c4f854">&#9670;&nbsp;</a></span>automation_system_step()</h2>
+<a id="a6f4a0bc73549fa154bfef3c145b5731d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4a0bc73549fa154bfef3c145b5731d">&#9670;&nbsp;</a></span>automation_system_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automation_system_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_system__t.html">System_t</a> *&#160;</td>
+          <td class="paramname"><em>sys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct KernelgCfg_t *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback to initialise the automation system. </p>
+<p>This works because cfg is the first attribute of <a class="el" href="struct_automation_cfg__t.html">AutomationCfg_t</a>, and because we ensure that the pointer is in fact a pointer to a full <a class="el" href="struct_automation_cfg__t.html">AutomationCfg_t</a> value. </p>
+
+</div>
+</div>
+<a id="a63b70470973d55cb6679373e92c242d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b70470973d55cb6679373e92c242d0">&#9670;&nbsp;</a></span>automation_system_step()</h2>
 
 <div class="memitem">
 <div class="memproto">

@@ -1,0 +1,41 @@
+\hypertarget{irq_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.c File Reference}
+\label{irq_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.c}}
+{\ttfamily \#include \char`\"{}src/model/kernel/irq.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{irq_8c_afadafc8ed09474b15ff23e16e879c3a0}{irq\+\_\+init}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, size\+\_\+t capacity)
+\item 
+void \mbox{\hyperlink{irq_8c_a24c77980e035f46a8f77166c30d4de65}{irq\+\_\+delete}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator)
+\item 
+int \mbox{\hyperlink{irq_8c_a3fb6e6f827b312967a59cf89bcd4e52c}{irq\+\_\+register}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, unsigned char irq, int($\ast$interrupt)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$))
+\item 
+int \mbox{\hyperlink{irq_8c_a4770efbef74289dc065b28f73f2337a0}{irq\+\_\+interrupt}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, unsigned char irq)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{irq_8c_a24c77980e035f46a8f77166c30d4de65}\label{irq_8c_a24c77980e035f46a8f77166c30d4de65}} 
+\index{irq.c@{irq.c}!irq\_delete@{irq\_delete}}
+\index{irq\_delete@{irq\_delete}!irq.c@{irq.c}}
+\doxysubsubsection{\texorpdfstring{irq\_delete()}{irq\_delete()}}
+{\footnotesize\ttfamily void irq\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8c_afadafc8ed09474b15ff23e16e879c3a0}\label{irq_8c_afadafc8ed09474b15ff23e16e879c3a0}} 
+\index{irq.c@{irq.c}!irq\_init@{irq\_init}}
+\index{irq\_init@{irq\_init}!irq.c@{irq.c}}
+\doxysubsubsection{\texorpdfstring{irq\_init()}{irq\_init()}}
+{\footnotesize\ttfamily int irq\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8c_a4770efbef74289dc065b28f73f2337a0}\label{irq_8c_a4770efbef74289dc065b28f73f2337a0}} 
+\index{irq.c@{irq.c}!irq\_interrupt@{irq\_interrupt}}
+\index{irq\_interrupt@{irq\_interrupt}!irq.c@{irq.c}}
+\doxysubsubsection{\texorpdfstring{irq\_interrupt()}{irq\_interrupt()}}
+{\footnotesize\ttfamily int irq\+\_\+interrupt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{unsigned char}]{irq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8c_a3fb6e6f827b312967a59cf89bcd4e52c}\label{irq_8c_a3fb6e6f827b312967a59cf89bcd4e52c}} 
+\index{irq.c@{irq.c}!irq\_register@{irq\_register}}
+\index{irq\_register@{irq\_register}!irq.c@{irq.c}}
+\doxysubsubsection{\texorpdfstring{irq\_register()}{irq\_register()}}
+{\footnotesize\ttfamily int irq\+\_\+register (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{unsigned char}]{irq,  }\item[{int($\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$)}]{interrupt }\end{DoxyParamCaption})}
+

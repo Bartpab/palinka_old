@@ -1,0 +1,78 @@
+\hypertarget{alloc_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/utils/memory/alloc.h File Reference}
+\label{alloc_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/utils/memory/alloc.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/utils/memory/alloc.h}}
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} \mbox{\hyperlink{alloc_8h_ab73bc38b29e0fb12e29f0df722aac5a3}{create\+\_\+static\+\_\+allocator}} (void $\ast$base, size\+\_\+t capacity)
+\item 
+struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} \mbox{\hyperlink{alloc_8h_a7e5fee2e84d227db59bee152c048373b}{create\+\_\+sys\+\_\+allocator}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\item 
+void \mbox{\hyperlink{alloc_8h_af31368db472b4e68056c01d637eb50d1}{allocator\+\_\+free}} (struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, void $\ast$block)
+\item 
+void $\ast$ \mbox{\hyperlink{alloc_8h_acf8badf1c31a1efb033558e133441fbb}{allocator\+\_\+alloc}} (struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, size\+\_\+t len)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{alloc_8h_ae93fb6ac76de71afcb0310fe18b5b02b}{SYS\+\_\+\+ALLOCATOR}} = 0x1
+\item 
+const char \mbox{\hyperlink{alloc_8h_a7388a08ea51a4a25c6b284f3243205f2}{GLOBAL\+\_\+\+ALLOCATOR}} = 0x2
+\item 
+const char \mbox{\hyperlink{alloc_8h_aa98a50af46eae999b224418e102feee4}{STATIC\+\_\+\+ALLOCATOR}} = 0x3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alloc_8h_acf8badf1c31a1efb033558e133441fbb}\label{alloc_8h_acf8badf1c31a1efb033558e133441fbb}} 
+\index{alloc.h@{alloc.h}!allocator\_alloc@{allocator\_alloc}}
+\index{allocator\_alloc@{allocator\_alloc}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{allocator\_alloc()}{allocator\_alloc()}}
+{\footnotesize\ttfamily void$\ast$ allocator\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alloc_8h_af31368db472b4e68056c01d637eb50d1}\label{alloc_8h_af31368db472b4e68056c01d637eb50d1}} 
+\index{alloc.h@{alloc.h}!allocator\_free@{allocator\_free}}
+\index{allocator\_free@{allocator\_free}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{allocator\_free()}{allocator\_free()}}
+{\footnotesize\ttfamily void allocator\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{void $\ast$}]{block }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alloc_8h_ab73bc38b29e0fb12e29f0df722aac5a3}\label{alloc_8h_ab73bc38b29e0fb12e29f0df722aac5a3}} 
+\index{alloc.h@{alloc.h}!create\_static\_allocator@{create\_static\_allocator}}
+\index{create\_static\_allocator@{create\_static\_allocator}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{create\_static\_allocator()}{create\_static\_allocator()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} create\+\_\+static\+\_\+allocator (\begin{DoxyParamCaption}\item[{void $\ast$}]{base,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alloc_8h_a7e5fee2e84d227db59bee152c048373b}\label{alloc_8h_a7e5fee2e84d227db59bee152c048373b}} 
+\index{alloc.h@{alloc.h}!create\_sys\_allocator@{create\_sys\_allocator}}
+\index{create\_sys\_allocator@{create\_sys\_allocator}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{create\_sys\_allocator()}{create\_sys\_allocator()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} create\+\_\+sys\+\_\+allocator (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{alloc_8h_a7388a08ea51a4a25c6b284f3243205f2}\label{alloc_8h_a7388a08ea51a4a25c6b284f3243205f2}} 
+\index{alloc.h@{alloc.h}!GLOBAL\_ALLOCATOR@{GLOBAL\_ALLOCATOR}}
+\index{GLOBAL\_ALLOCATOR@{GLOBAL\_ALLOCATOR}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{GLOBAL\_ALLOCATOR}{GLOBAL\_ALLOCATOR}}
+{\footnotesize\ttfamily const char GLOBAL\+\_\+\+ALLOCATOR = 0x2}
+
+\mbox{\Hypertarget{alloc_8h_aa98a50af46eae999b224418e102feee4}\label{alloc_8h_aa98a50af46eae999b224418e102feee4}} 
+\index{alloc.h@{alloc.h}!STATIC\_ALLOCATOR@{STATIC\_ALLOCATOR}}
+\index{STATIC\_ALLOCATOR@{STATIC\_ALLOCATOR}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{STATIC\_ALLOCATOR}{STATIC\_ALLOCATOR}}
+{\footnotesize\ttfamily const char STATIC\+\_\+\+ALLOCATOR = 0x3}
+
+\mbox{\Hypertarget{alloc_8h_ae93fb6ac76de71afcb0310fe18b5b02b}\label{alloc_8h_ae93fb6ac76de71afcb0310fe18b5b02b}} 
+\index{alloc.h@{alloc.h}!SYS\_ALLOCATOR@{SYS\_ALLOCATOR}}
+\index{SYS\_ALLOCATOR@{SYS\_ALLOCATOR}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{SYS\_ALLOCATOR}{SYS\_ALLOCATOR}}
+{\footnotesize\ttfamily const char SYS\+\_\+\+ALLOCATOR = 0x1}
+

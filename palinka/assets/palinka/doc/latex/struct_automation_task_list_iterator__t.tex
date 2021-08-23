@@ -14,9 +14,11 @@ An iterator for an automation task list.
 \item 
 struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_automation_task_list_iterator__t_afa9eec7dbe1a86e15ba6dac2fed504ef}{curr}}
 \item 
-struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_automation_task_list_iterator__t_aeac11a347898bb7ca0dc1edcef9bb7cf}{limit}}
+struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_automation_task_list_iterator__t_aef38a30e6e7af5b8705759f87003a572}{list}}
 \item 
 int($\ast$ \mbox{\hyperlink{struct_automation_task_list_iterator__t_a753a53c0e93438e63d20ebb0a9b03875}{next}} )(struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$it)
+\item 
+int($\ast$ \mbox{\hyperlink{struct_automation_task_list_iterator__t_ac4cd9bb7229abf109bc33180bc8179fd}{get}} )(struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$, struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$$\ast$)
 \end{DoxyCompactItemize}
 
 
@@ -30,11 +32,17 @@ An iterator for an automation task list.
 \doxysubsubsection{\texorpdfstring{curr}{curr}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}}$\ast$ Automation\+Task\+List\+Iterator\+\_\+t\+::curr}
 
-\mbox{\Hypertarget{struct_automation_task_list_iterator__t_aeac11a347898bb7ca0dc1edcef9bb7cf}\label{struct_automation_task_list_iterator__t_aeac11a347898bb7ca0dc1edcef9bb7cf}} 
-\index{AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}!limit@{limit}}
-\index{limit@{limit}!AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}}
-\doxysubsubsection{\texorpdfstring{limit}{limit}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}}$\ast$ Automation\+Task\+List\+Iterator\+\_\+t\+::limit}
+\mbox{\Hypertarget{struct_automation_task_list_iterator__t_ac4cd9bb7229abf109bc33180bc8179fd}\label{struct_automation_task_list_iterator__t_ac4cd9bb7229abf109bc33180bc8179fd}} 
+\index{AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}!get@{get}}
+\index{get@{get}!AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}}
+\doxysubsubsection{\texorpdfstring{get}{get}}
+{\footnotesize\ttfamily int($\ast$ Automation\+Task\+List\+Iterator\+\_\+t\+::get) (struct \mbox{\hyperlink{struct_automation_task_list_iterator__t}{Automation\+Task\+List\+Iterator\+\_\+t}} $\ast$, struct \mbox{\hyperlink{struct_automation_task__t}{Automation\+Task\+\_\+t}} $\ast$$\ast$)}
+
+\mbox{\Hypertarget{struct_automation_task_list_iterator__t_aef38a30e6e7af5b8705759f87003a572}\label{struct_automation_task_list_iterator__t_aef38a30e6e7af5b8705759f87003a572}} 
+\index{AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}!list@{list}}
+\index{list@{list}!AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_task_list__t}{Automation\+Task\+List\+\_\+t}}$\ast$ Automation\+Task\+List\+Iterator\+\_\+t\+::list}
 
 \mbox{\Hypertarget{struct_automation_task_list_iterator__t_a753a53c0e93438e63d20ebb0a9b03875}\label{struct_automation_task_list_iterator__t_a753a53c0e93438e63d20ebb0a9b03875}} 
 \index{AutomationTaskListIterator\_t@{AutomationTaskListIterator\_t}!next@{next}}

@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['max_5fconnections_59',['MAX_CONNECTIONS',['../server_8h.html#a053b7859476cc9867ec62c49e68d3fa1',1,'server.h']]],
-  ['max_5fnumber_5fof_5fdata_5fblocks_60',['MAX_NUMBER_OF_DATA_BLOCKS',['../data__block_8h.html#ac92915deba1c43a5041bb69d86e8167c',1,'data_block.h']]],
-  ['max_5fnumber_5fof_5ftasks_61',['MAX_NUMBER_OF_TASKS',['../task_8h.html#ae429fe1a9a03040b1a337048275f8540',1,'task.h']]],
-  ['memory_5fsize_62',['memory_size',['../struct_system__t.html#a2d2868d60a81fe9e1b17175afcd34b02',1,'System_t']]],
-  ['memorymanagementunit_5ft_63',['MemoryManagementUnit_t',['../struct_memory_management_unit__t.html',1,'']]],
-  ['mmu_64',['mmu',['../struct_common_header__t.html#ae66485fe2cf025963f79fb1e9048b171',1,'CommonHeader_t']]],
-  ['mmu_2ec_65',['mmu.c',['../mmu_8c.html',1,'']]],
-  ['mmu_2eh_66',['mmu.h',['../mmu_8h.html',1,'']]],
-  ['mmu_5finit_67',['mmu_init',['../mmu_8c.html#a0cdcade82ef8523129ec13a5ae2ae567',1,'mmu_init(struct MemoryManagementUnit_t *mmu, char *base_heap, size_t free_space_size):&#160;mmu.c'],['../mmu_8h.html#aced3be7468ff7fdb0280f39fc279c84b',1,'mmu_init(struct MemoryManagementUnit_t *mmu, char *base_heap, size_t heap_max_size):&#160;mmu.c']]],
-  ['msg_68',['msg',['../struct_error__t.html#afc60dc6d23dc145689f540ada2a2bc05',1,'Error_t']]]
+  ['name_133',['name',['../struct_system__t.html#ae90d80703829be5b2a3c13d5a9d84c72',1,'System_t::name()'],['../struct_system_cfg__t.html#a682364d9f33da06b39801f42e4c30e7d',1,'SystemCfg_t::name()']]],
+  ['network_5fdevice_134',['NETWORK_DEVICE',['../kernel_2device_2phy_2api_8h.html#acd5e43565c895ec0bc9607f0da705338',1,'api.h']]],
+  ['networkcard_5ft_135',['NetworkCard_t',['../struct_network_card__t.html',1,'']]],
+  ['networkcardcfg_5ft_136',['NetworkCardCfg_t',['../struct_network_card_cfg__t.html',1,'']]],
+  ['networkcardheader_5ft_137',['NetworkCardHeader_t',['../struct_network_card_header__t.html',1,'']]],
+  ['next_138',['next',['../struct_automation_task_cfg_iterator__t.html#a0394bf7dee2ad5ea06327840141445c7',1,'AutomationTaskCfgIterator_t::next()'],['../struct_automation_data_block_cfg_iterator__t.html#ae271b5ee91fe4e508a0ba06bc5ce33e5',1,'AutomationDataBlockCfgIterator_t::next()'],['../struct_automation_task_list_iterator__t.html#a753a53c0e93438e63d20ebb0a9b03875',1,'AutomationTaskListIterator_t::next()'],['../struct_heap_header__t.html#a65a4370874f446b19aa02c4d32a4a71c',1,'HeapHeader_t::next()'],['../struct_socket_buffer_queue_cell__t.html#aea1b05e0544c2bfbca06e8168768d989',1,'SocketBufferQueueCell_t::next()'],['../struct_system_list_cfg_iterator__t.html#a22a1729f00941d86052d7e5a6a670e0b',1,'SystemListCfgIterator_t::next()'],['../struct_system_container_list_iterator__t.html#a43ef46569bd71e839b9b4030568898f8',1,'SystemContainerListIterator_t::next()']]]
 ];

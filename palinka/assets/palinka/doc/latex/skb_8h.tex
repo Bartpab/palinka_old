@@ -1,16 +1,17 @@
-\hypertarget{skb_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/common/skb.h File Reference}
-\label{skb_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/skb.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/skb.h}}
-{\ttfamily \#include \char`\"{}src/model/common/mmu.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
+\hypertarget{skb_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/skb.h File Reference}
+\label{skb_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/skb.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/skb.h}}
+{\ttfamily \#include \char`\"{}src/model/kernel/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/utils/memory/alloc.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}}
-\item 
+\begin{DoxyCompactList}\small\item\em Socket buffer queue. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_socket_buffer_queue_cell__t}{Socket\+Buffer\+Queue\+Cell\+\_\+t}}
-\item 
+\begin{DoxyCompactList}\small\item\em A queue cell to store the socket buffer and the next element in the queue. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Socket Buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,22 +20,24 @@ struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{skb_8h_a118778785b324c429a3085b067111066}{init\+\_\+skb\+\_\+queue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue)
-\item 
+int \mbox{\hyperlink{skb_8h_ae0a856db8c46d271623067caed2d5a35}{skb\+\_\+queue\+\_\+init}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, size\+\_\+t capacity)
+\begin{DoxyCompactList}\small\item\em Initialise a Socket Buffer Queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{skb_8h_a031bcb87f48d531b0d8f78cef401ef1e}{skb\+\_\+queue\+\_\+delete}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator)
+\begin{DoxyCompactList}\small\item\em Delete a Socket Buffer Queue. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}{skb\+\_\+enqueue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb)
-\item 
+\begin{DoxyCompactList}\small\item\em Enqueue a socket buffer. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}{skb\+\_\+dequeue}} (struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$queue, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$$\ast$skb)
-\item 
-struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$ \mbox{\hyperlink{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}{alloc\+\_\+skb}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
-\item 
-void \mbox{\hyperlink{skb_8h_a40dd363886fe1ff3a27e021538363035}{free\+\_\+skb}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb)
-\item 
+\begin{DoxyCompactList}\small\item\em Dequeue a socket buffer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$ \mbox{\hyperlink{skb_8h_afe7e2560c1a176d47e0d2990a28a0b1f}{alloc\+\_\+skb}} (struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, size\+\_\+t capacity)
+\begin{DoxyCompactList}\small\item\em Allocate a new socket buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{skb_8h_a017dbb02a99948e6fe3376429f90eaaf}{free\+\_\+skb}} (struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb)
+\begin{DoxyCompactList}\small\item\em Free the socket buffer. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{skb_8h_a6a0558ce315e0408faed25663909f2af}{skb\+\_\+reserve}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t len)
-\item 
-char $\ast$ \mbox{\hyperlink{skb_8h_a98b13a10823260026482958fa34e4f64}{skb\+\_\+push}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t data\+\_\+len)
-\item 
-char $\ast$ \mbox{\hyperlink{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}{skb\+\_\+put}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t data\+\_\+len)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reserve headspace in the buffer. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{skb_8h_a7f72c168406cdff41320358f9a3e3937}{skb\+\_\+push}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t data\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Consume tailspace to write data at the end of the buffer. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{skb_8h_a19680699ba29cd8396a4748579e0dfa2}{skb\+\_\+put}} (struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$skb, size\+\_\+t data\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Consume headspace to write data at the beginning of the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -47,51 +50,148 @@ char $\ast$ \mbox{\hyperlink{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}{skb\+\_\+
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}\label{skb_8h_a821cd45ca3bb43c3f7485a8a1cf8c893}} 
+\mbox{\Hypertarget{skb_8h_afe7e2560c1a176d47e0d2990a28a0b1f}\label{skb_8h_afe7e2560c1a176d47e0d2990a28a0b1f}} 
 \index{skb.h@{skb.h}!alloc\_skb@{alloc\_skb}}
 \index{alloc\_skb@{alloc\_skb}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{alloc\_skb()}{alloc\_skb()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}$\ast$ alloc\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}}$\ast$ alloc\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{skb_8h_a40dd363886fe1ff3a27e021538363035}\label{skb_8h_a40dd363886fe1ff3a27e021538363035}} 
+
+
+Allocate a new socket buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em allocator} & The allocator \\
+\hline
+{\em len} & The capacity of the buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{skb_8h_a017dbb02a99948e6fe3376429f90eaaf}\label{skb_8h_a017dbb02a99948e6fe3376429f90eaaf}} 
 \index{skb.h@{skb.h}!free\_skb@{free\_skb}}
 \index{free\_skb@{free\_skb}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{free\_skb()}{free\_skb()}}
-{\footnotesize\ttfamily void free\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void free\+\_\+skb (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{skb_8h_a118778785b324c429a3085b067111066}\label{skb_8h_a118778785b324c429a3085b067111066}} 
-\index{skb.h@{skb.h}!init\_skb\_queue@{init\_skb\_queue}}
-\index{init\_skb\_queue@{init\_skb\_queue}!skb.h@{skb.h}}
-\doxysubsubsection{\texorpdfstring{init\_skb\_queue()}{init\_skb\_queue()}}
-{\footnotesize\ttfamily void init\+\_\+skb\+\_\+queue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue }\end{DoxyParamCaption})}
 
+
+Free the socket buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em allocator} & The allocator used to allocate the socket buffer. \\
+\hline
+{\em skb} & The socket buffer to free. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}\label{skb_8h_aaedb67225e21b35d9a841c11df4ffa64}} 
 \index{skb.h@{skb.h}!skb\_dequeue@{skb\_dequeue}}
 \index{skb\_dequeue@{skb\_dequeue}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{skb\_dequeue()}{skb\_dequeue()}}
 {\footnotesize\ttfamily int skb\+\_\+dequeue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$$\ast$}]{skb }\end{DoxyParamCaption})}
 
+
+
+Dequeue a socket buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & The queue \\
+\hline
+{\em skb} & Where to store the address to the socket buffer (if any) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an element is stored in the queue, 0 else. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}\label{skb_8h_a5ca0472ffcc9f1de95d50ecdf48cb043}} 
 \index{skb.h@{skb.h}!skb\_enqueue@{skb\_enqueue}}
 \index{skb\_enqueue@{skb\_enqueue}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{skb\_enqueue()}{skb\_enqueue()}}
 {\footnotesize\ttfamily int skb\+\_\+enqueue (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{skb_8h_a98b13a10823260026482958fa34e4f64}\label{skb_8h_a98b13a10823260026482958fa34e4f64}} 
+
+
+Enqueue a socket buffer. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (no more cell left) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{skb_8h_a7f72c168406cdff41320358f9a3e3937}\label{skb_8h_a7f72c168406cdff41320358f9a3e3937}} 
 \index{skb.h@{skb.h}!skb\_push@{skb\_push}}
 \index{skb\_push@{skb\_push}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{skb\_push()}{skb\_push()}}
-{\footnotesize\ttfamily char$\ast$ skb\+\_\+push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ skb\+\_\+push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}\label{skb_8h_aa7848fe0fdac16646eccbe50e7b0ac67}} 
+
+
+Consume tailspace to write data at the end of the buffer. 
+
+\begin{DoxyReturn}{Returns}
+The pointer to the pushed memory block, NULL if failed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{skb_8h_a19680699ba29cd8396a4748579e0dfa2}\label{skb_8h_a19680699ba29cd8396a4748579e0dfa2}} 
 \index{skb.h@{skb.h}!skb\_put@{skb\_put}}
 \index{skb\_put@{skb\_put}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{skb\_put()}{skb\_put()}}
-{\footnotesize\ttfamily char$\ast$ skb\+\_\+put (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ skb\+\_\+put (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{data\+\_\+len }\end{DoxyParamCaption})}
 
+
+
+Consume headspace to write data at the beginning of the buffer. 
+
+\begin{DoxyReturn}{Returns}
+The pointer to the pushed memory block, NULL if failed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{skb_8h_a031bcb87f48d531b0d8f78cef401ef1e}\label{skb_8h_a031bcb87f48d531b0d8f78cef401ef1e}} 
+\index{skb.h@{skb.h}!skb\_queue\_delete@{skb\_queue\_delete}}
+\index{skb\_queue\_delete@{skb\_queue\_delete}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_queue\_delete()}{skb\_queue\_delete()}}
+{\footnotesize\ttfamily void skb\+\_\+queue\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator }\end{DoxyParamCaption})}
+
+
+
+Delete a Socket Buffer Queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & The queue to delete. \\
+\hline
+{\em allocator} & The allocator used to initialise the queue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{skb_8h_ae0a856db8c46d271623067caed2d5a35}\label{skb_8h_ae0a856db8c46d271623067caed2d5a35}} 
+\index{skb.h@{skb.h}!skb\_queue\_init@{skb\_queue\_init}}
+\index{skb\_queue\_init@{skb\_queue\_init}!skb.h@{skb.h}}
+\doxysubsubsection{\texorpdfstring{skb\_queue\_init()}{skb\_queue\_init()}}
+{\footnotesize\ttfamily int skb\+\_\+queue\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer_queue__t}{Socket\+Buffer\+Queue\+\_\+t}} $\ast$}]{queue,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Initialise a Socket Buffer Queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & The queue to initialise \\
+\hline
+{\em allocator} & A memory allocator \\
+\hline
+{\em capacity} & The capacity of the queue\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (no more memory) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{skb_8h_a6a0558ce315e0408faed25663909f2af}\label{skb_8h_a6a0558ce315e0408faed25663909f2af}} 
 \index{skb.h@{skb.h}!skb\_reserve@{skb\_reserve}}
 \index{skb\_reserve@{skb\_reserve}!skb.h@{skb.h}}
 \doxysubsubsection{\texorpdfstring{skb\_reserve()}{skb\_reserve()}}
 {\footnotesize\ttfamily int skb\+\_\+reserve (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_socket_buffer__t}{Socket\+Buffer\+\_\+t}} $\ast$}]{skb,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
 
+
+
+Reserve headspace in the buffer. 
+
+This reserves space to write the header part of the buffer. \begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (no more space) 
+\end{DoxyReturn}

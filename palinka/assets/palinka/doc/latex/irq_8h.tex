@@ -1,0 +1,50 @@
+\hypertarget{irq_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.h File Reference}
+\label{irq_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/irq.h}}
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/utils/memory/alloc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Contains the IRQ table for interruption. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_interrupt_request_table_entry__t}{Interrupt\+Request\+Table\+Entry\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{irq_8h_afadafc8ed09474b15ff23e16e879c3a0}{irq\+\_\+init}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator, size\+\_\+t capacity)
+\item 
+void \mbox{\hyperlink{irq_8h_a24c77980e035f46a8f77166c30d4de65}{irq\+\_\+delete}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$allocator)
+\item 
+int \mbox{\hyperlink{irq_8h_a3fb6e6f827b312967a59cf89bcd4e52c}{irq\+\_\+register}} (struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, unsigned char irq, int($\ast$interrupt)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$))
+\item 
+int \mbox{\hyperlink{irq_8h_a4770efbef74289dc065b28f73f2337a0}{irq\+\_\+interrupt}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$table, unsigned char irq)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{irq_8h_a24c77980e035f46a8f77166c30d4de65}\label{irq_8h_a24c77980e035f46a8f77166c30d4de65}} 
+\index{irq.h@{irq.h}!irq\_delete@{irq\_delete}}
+\index{irq\_delete@{irq\_delete}!irq.h@{irq.h}}
+\doxysubsubsection{\texorpdfstring{irq\_delete()}{irq\_delete()}}
+{\footnotesize\ttfamily void irq\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8h_afadafc8ed09474b15ff23e16e879c3a0}\label{irq_8h_afadafc8ed09474b15ff23e16e879c3a0}} 
+\index{irq.h@{irq.h}!irq\_init@{irq\_init}}
+\index{irq\_init@{irq\_init}!irq.h@{irq.h}}
+\doxysubsubsection{\texorpdfstring{irq\_init()}{irq\_init()}}
+{\footnotesize\ttfamily int irq\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{allocator,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8h_a4770efbef74289dc065b28f73f2337a0}\label{irq_8h_a4770efbef74289dc065b28f73f2337a0}} 
+\index{irq.h@{irq.h}!irq\_interrupt@{irq\_interrupt}}
+\index{irq\_interrupt@{irq\_interrupt}!irq.h@{irq.h}}
+\doxysubsubsection{\texorpdfstring{irq\_interrupt()}{irq\_interrupt()}}
+{\footnotesize\ttfamily int irq\+\_\+interrupt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{unsigned char}]{irq }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{irq_8h_a3fb6e6f827b312967a59cf89bcd4e52c}\label{irq_8h_a3fb6e6f827b312967a59cf89bcd4e52c}} 
+\index{irq.h@{irq.h}!irq\_register@{irq\_register}}
+\index{irq\_register@{irq\_register}!irq.h@{irq.h}}
+\doxysubsubsection{\texorpdfstring{irq\_register()}{irq\_register()}}
+{\footnotesize\ttfamily int irq\+\_\+register (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_interrupt_request_table__t}{Interrupt\+Request\+Table\+\_\+t}} $\ast$}]{table,  }\item[{unsigned char}]{irq,  }\item[{int($\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$)}]{interrupt }\end{DoxyParamCaption})}
+

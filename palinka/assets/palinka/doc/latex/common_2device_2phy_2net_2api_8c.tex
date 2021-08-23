@@ -1,0 +1,58 @@
+\hypertarget{kernel_2device_2phy_2net_2core_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/device/net/core.c File Reference}
+\label{kernel_2device_2phy_2net_2core_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/net/core.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/net/core.c}}
+{\ttfamily \#include \char`\"{}src/model/device/net/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/device/accessor.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2net_2core_8c_acd75d3518eaf251ba7f94c91a22d3f1b}{hard\+\_\+net\+\_\+init\+\_\+}} (struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$pdev, struct \mbox{\hyperlink{struct_physical_device_cfg__t}{Physical\+Device\+Cfg\+\_\+t}} $\ast$pcfg, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$firmware\+\_\+allocator, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$dev\+\_\+allocator)
+\begin{DoxyCompactList}\small\item\em Callback to initialise the network card from the \mbox{\hyperlink{struct_physical_device_cfg__t}{Physical\+Device\+Cfg\+\_\+t}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2net_2core_8c_acf9e735486386f77a329088e0a081229}{hard\+\_\+net\+\_\+init}} (struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$pdev, struct \mbox{\hyperlink{struct_network_card_cfg__t}{Network\+Card\+Cfg\+\_\+t}} $\ast$cfg, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$firmware\+\_\+allocator, struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$dev\+\_\+allocator)
+\begin{DoxyCompactList}\small\item\em Initialise the network card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_2device_2phy_2net_2core_8c_aba40f3c9a3f9f348e4a031fc8258351b}{hard\+\_\+net\+\_\+recv}} (struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$pdev, void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Send data to the network card. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_2device_2phy_2net_2core_8c_a1b464698ca0bd646d5cc23ff6cbf9031}{hard\+\_\+net\+\_\+send}} (struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$pdev, void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Send data from the network card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_2device_2phy_2net_2core_8c_acf9e735486386f77a329088e0a081229}\label{kernel_2device_2phy_2net_2core_8c_acf9e735486386f77a329088e0a081229}} 
+\index{core.c@{core.c}!hard\_net\_init@{hard\_net\_init}}
+\index{hard\_net\_init@{hard\_net\_init}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{hard\_net\_init()}{hard\_net\_init()}}
+{\footnotesize\ttfamily int hard\+\_\+net\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$}]{pdev,  }\item[{struct \mbox{\hyperlink{struct_network_card_cfg__t}{Network\+Card\+Cfg\+\_\+t}} $\ast$}]{cfg,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{firmware\+\_\+allocator,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{dev\+\_\+allocator }\end{DoxyParamCaption})}
+
+
+
+Initialise the network card. 
+
+\mbox{\Hypertarget{kernel_2device_2phy_2net_2core_8c_acd75d3518eaf251ba7f94c91a22d3f1b}\label{kernel_2device_2phy_2net_2core_8c_acd75d3518eaf251ba7f94c91a22d3f1b}} 
+\index{core.c@{core.c}!hard\_net\_init\_@{hard\_net\_init\_}}
+\index{hard\_net\_init\_@{hard\_net\_init\_}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{hard\_net\_init\_()}{hard\_net\_init\_()}}
+{\footnotesize\ttfamily int hard\+\_\+net\+\_\+init\+\_\+ (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$}]{pdev,  }\item[{struct \mbox{\hyperlink{struct_physical_device_cfg__t}{Physical\+Device\+Cfg\+\_\+t}} $\ast$}]{pcfg,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{firmware\+\_\+allocator,  }\item[{struct \mbox{\hyperlink{struct_allocator__t}{Allocator\+\_\+t}} $\ast$}]{dev\+\_\+allocator }\end{DoxyParamCaption})}
+
+
+
+Callback to initialise the network card from the \mbox{\hyperlink{struct_physical_device_cfg__t}{Physical\+Device\+Cfg\+\_\+t}}. 
+
+\mbox{\Hypertarget{kernel_2device_2phy_2net_2core_8c_aba40f3c9a3f9f348e4a031fc8258351b}\label{kernel_2device_2phy_2net_2core_8c_aba40f3c9a3f9f348e4a031fc8258351b}} 
+\index{core.c@{core.c}!hard\_net\_recv@{hard\_net\_recv}}
+\index{hard\_net\_recv@{hard\_net\_recv}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{hard\_net\_recv()}{hard\_net\_recv()}}
+{\footnotesize\ttfamily void hard\+\_\+net\+\_\+recv (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$}]{pdev,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Send data to the network card. 
+
+\mbox{\Hypertarget{kernel_2device_2phy_2net_2core_8c_a1b464698ca0bd646d5cc23ff6cbf9031}\label{kernel_2device_2phy_2net_2core_8c_a1b464698ca0bd646d5cc23ff6cbf9031}} 
+\index{core.c@{core.c}!hard\_net\_send@{hard\_net\_send}}
+\index{hard\_net\_send@{hard\_net\_send}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{hard\_net\_send()}{hard\_net\_send()}}
+{\footnotesize\ttfamily void hard\+\_\+net\+\_\+send (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$}]{pdev,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Send data from the network card. 
+

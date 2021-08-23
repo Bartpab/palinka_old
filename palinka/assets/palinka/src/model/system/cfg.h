@@ -1,8 +1,9 @@
 #ifndef __SYSTEM_CFG_H__
 #define __SYSTEM_CFG_H__
 
-#include "src/model/common/cfg.h"
-#include "src/model/system/api.h"
+#include "src/model/kernel/cfg.h"
+#include "src/model/device/cfg.h"
+#include "src/model/system/core.h"
 
 /**
  * \brief System configuration
@@ -10,15 +11,21 @@
 struct SystemCfg_t 
 {
     char name[SYSTEM_NAME_MAX_LENGTH];
-    struct CommonCfg_t* base_cfg;
-    int (*init_cbk)(struct System_t*, struct CommonCfg_t*);
-    int (*step_cbk)(struct System_t*);
+    size_t memory_size;
+
+    struct KernelCfg_t* base_cfg;
+
+    /*! Physical device configurations */
+    struct PhysicalDeviceCfgList_t pdevices;
+
+    int (*init)(struct System_t*);
+    int (*step)(struct System_t*);
 };
 
 void sys_cfg_init(struct SystemCfg_t* sys_cfg, const char* name, 
-    struct CommonCfg_t* cfg, size_t cfg_size, 
-    int (*init_cbk)(struct System_t*, struct CommonCfg_t*), 
-    int(*step_cbk)(struct System_t*)
+    struct KernelCfg_t* cfg, size_t cfg_size, 
+    int (*init)(struct System_t*, struct KernelCfg_t*), 
+    int(*step)(struct System_t*)
 );
 void sys_cfg_delete(struct SystemCfg_t* sys_cfg);
 

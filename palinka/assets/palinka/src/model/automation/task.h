@@ -10,7 +10,7 @@
 #define __TASK_H__
 
 #include <stddef.h>
-#include "src/model/system/api.h"
+#include "src/model/system/core.h"
 
 #define MAX_NUMBER_OF_TASKS 256
 /**

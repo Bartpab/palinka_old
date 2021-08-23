@@ -1,0 +1,42 @@
+\hypertarget{kernel_2core_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.c File Reference}
+\label{kernel_2core_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.c}}
+{\ttfamily \#include \char`\"{}src/model/kernel/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/utils/memory/alloc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kernel_2core_8c_a5ae0d0c4e06a3b25a404781afb50821e}{kernel\+\_\+init}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$kernel, size\+\_\+t reserved)
+\begin{DoxyCompactList}\small\item\em Initialise system\textquotesingle{}s kernel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_2core_8c_ab393d7fd0aec6473b341b976cb7a6808}{kernel\+\_\+delete}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Delete kernel header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_2core_8c_ab393d7fd0aec6473b341b976cb7a6808}\label{kernel_2core_8c_ab393d7fd0aec6473b341b976cb7a6808}} 
+\index{core.c@{core.c}!kernel\_delete@{kernel\_delete}}
+\index{kernel\_delete@{kernel\_delete}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{kernel\_delete()}{kernel\_delete()}}
+{\footnotesize\ttfamily void kernel\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+Delete kernel header. 
+
+\mbox{\Hypertarget{kernel_2core_8c_a5ae0d0c4e06a3b25a404781afb50821e}\label{kernel_2core_8c_a5ae0d0c4e06a3b25a404781afb50821e}} 
+\index{core.c@{core.c}!kernel\_init@{kernel\_init}}
+\index{kernel\_init@{kernel\_init}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{kernel\_init()}{kernel\_init()}}
+{\footnotesize\ttfamily int kernel\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$}]{kernel,  }\item[{size\+\_\+t}]{reserved }\end{DoxyParamCaption})}
+
+
+
+Initialise system\textquotesingle{}s kernel. 
+
+This function must be called before any other init operations !
+
+struct System\+\_\+t$\ast$ sys\+: The system struct Kernel\+Cfg\+\_\+t$\ast$ cfg\+: The kernel configuration size\+\_\+t reserved\+: The number of octets to reserve for system-\/specific header, next will point to the next entry after the kernel header. 

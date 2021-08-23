@@ -1,13 +1,8 @@
-\hypertarget{mmu_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c File Reference}
-\label{mmu_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/mmu.c}}
+\hypertarget{mmu_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/mmu.c File Reference}
+\label{mmu_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/mmu.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/mmu.c}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}src/model/common/mmu.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/data.\+h\char`\"{}}\newline
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{mmu_8c_a7b25fd40d2260b55868da02bc34eeab7}{\+\_\+\+\_\+\+MMU\+\_\+\+H\+\_\+\+\_\+}}
-\end{DoxyCompactItemize}
+{\ttfamily \#include \char`\"{}src/model/kernel/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/data.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,21 +10,12 @@ void \mbox{\hyperlink{mmu_8c_a0cdcade82ef8523129ec13a5ae2ae567}{mmu\+\_\+init}} 
 \begin{DoxyCompactList}\small\item\em Initialise the MMU. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_heap_header__t}{Heap\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{mmu_8c_a29832d31589df1af6f94c0ce29b2d615}{get\+\_\+free\+\_\+block}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t size)
 \item 
-char $\ast$ \mbox{\hyperlink{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}{sys\+\_\+sbrk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, int len)
+void $\ast$ \mbox{\hyperlink{mmu_8c_a38a9200e7ab78d81b05091f6d67cc339}{sys\+\_\+sbrk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, int len)
 \begin{DoxyCompactList}\small\item\em Change the data segment size. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{mmu_8c_a742589a238a1da57b56dbe8069e19823}{sys\+\_\+free}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, char $\ast$block)
+void \mbox{\hyperlink{mmu_8c_a5b4b26d9b4caecdfd57b8f0950ed6fcc}{sys\+\_\+free}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, void $\ast$block)
 \begin{DoxyCompactList}\small\item\em System\textquotesingle{}s memory free. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}{sys\+\_\+alloc}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
+void $\ast$ \mbox{\hyperlink{mmu_8c_a6fec7e43bd2e4cb21706f54b37bced9a}{sys\+\_\+alloc}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, size\+\_\+t len)
 \begin{DoxyCompactList}\small\item\em System\textquotesingle{}s memory allocator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{mmu_8c_a7b25fd40d2260b55868da02bc34eeab7}\label{mmu_8c_a7b25fd40d2260b55868da02bc34eeab7}} 
-\index{mmu.c@{mmu.c}!\_\_MMU\_H\_\_@{\_\_MMU\_H\_\_}}
-\index{\_\_MMU\_H\_\_@{\_\_MMU\_H\_\_}!mmu.c@{mmu.c}}
-\doxysubsubsection{\texorpdfstring{\_\_MMU\_H\_\_}{\_\_MMU\_H\_\_}}
-{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+MMU\+\_\+\+H\+\_\+\+\_\+}
-
 
 
 \doxysubsection{Function Documentation}
@@ -58,11 +44,11 @@ Initialise the MMU.
 {\em heap\+\_\+max\+\_\+size} & The maximum size of the raw heap area \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}\label{mmu_8c_a3e2de839c88fb1105d9eb63187c375f5}} 
+\mbox{\Hypertarget{mmu_8c_a6fec7e43bd2e4cb21706f54b37bced9a}\label{mmu_8c_a6fec7e43bd2e4cb21706f54b37bced9a}} 
 \index{mmu.c@{mmu.c}!sys\_alloc@{sys\_alloc}}
 \index{sys\_alloc@{sys\_alloc}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_alloc()}{sys\_alloc()}}
-{\footnotesize\ttfamily char$\ast$ sys\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ sys\+\_\+alloc (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
 
 
 
@@ -78,11 +64,11 @@ System\textquotesingle{}s memory allocator.
 \begin{DoxyReturn}{Returns}
 NULL if the allocation failed (eg\+: no more memory), else the address of the allocated block. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{mmu_8c_a742589a238a1da57b56dbe8069e19823}\label{mmu_8c_a742589a238a1da57b56dbe8069e19823}} 
+\mbox{\Hypertarget{mmu_8c_a5b4b26d9b4caecdfd57b8f0950ed6fcc}\label{mmu_8c_a5b4b26d9b4caecdfd57b8f0950ed6fcc}} 
 \index{mmu.c@{mmu.c}!sys\_free@{sys\_free}}
 \index{sys\_free@{sys\_free}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_free()}{sys\_free()}}
-{\footnotesize\ttfamily void sys\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{char $\ast$}]{block }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void sys\+\_\+free (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{void $\ast$}]{block }\end{DoxyParamCaption})}
 
 
 
@@ -97,11 +83,11 @@ Free the memory block
 {\em block} & The memory block to free \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}\label{mmu_8c_aa2721811f83422cae2d58ec18cdc060c}} 
+\mbox{\Hypertarget{mmu_8c_a38a9200e7ab78d81b05091f6d67cc339}\label{mmu_8c_a38a9200e7ab78d81b05091f6d67cc339}} 
 \index{mmu.c@{mmu.c}!sys\_sbrk@{sys\_sbrk}}
 \index{sys\_sbrk@{sys\_sbrk}!mmu.c@{mmu.c}}
 \doxysubsubsection{\texorpdfstring{sys\_sbrk()}{sys\_sbrk()}}
-{\footnotesize\ttfamily char$\ast$ sys\+\_\+sbrk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{int}]{len }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ sys\+\_\+sbrk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{int}]{len }\end{DoxyParamCaption})}
 
 
 

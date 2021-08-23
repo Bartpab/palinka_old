@@ -1,0 +1,95 @@
+\hypertarget{struct_physical_device_accessor__t}{}\doxysection{Physical\+Device\+Accessor\+\_\+t Struct Reference}
+\label{struct_physical_device_accessor__t}\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+
+
+An accessor to a physical device.  
+
+
+
+
+{\ttfamily \#include $<$accessor.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_physical_device_accessor__t_afbba6d158464178885e0dcca682242aa}{type}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>unsigned char \mbox{\hyperlink{struct_physical_device_accessor__t_ac70dfde748d0f4160f754e6c02af8c7e}{sys\_id}}\\
+\>\>unsigned char \mbox{\hyperlink{struct_physical_device_accessor__t_a8adb700146719b421ccf2cbeec448b14}{dev\_id}}\\
+\>\>struct \mbox{\hyperlink{struct_plant__t}{Plant\_t}} $\ast$ \mbox{\hyperlink{struct_physical_device_accessor__t_a0583ab3aaf3450e7e91702f8b90d8bfd}{plant}}\\
+\>\} \mbox{\hyperlink{struct_physical_device_accessor__t_a1290934fddb6ca7840137a4c69e4cd71}{by\_plant}}\\
+\>struct \{\\
+\>\>unsigned char \mbox{\hyperlink{struct_physical_device_accessor__t_a8adb700146719b421ccf2cbeec448b14}{dev\_id}}\\
+\>\>struct \mbox{\hyperlink{struct_system_accessor__t}{SystemAccessor\_t}} \mbox{\hyperlink{struct_physical_device_accessor__t_a3179bfd9d121983e978e2e2e0fade3c3}{acc}}\\
+\>\} \mbox{\hyperlink{struct_physical_device_accessor__t_a933223e71b29945bdb99517163529bec}{by\_system}}\\
+\>struct \mbox{\hyperlink{struct_physical_device__t}{PhysicalDevice\_t}} $\ast$ \mbox{\hyperlink{struct_physical_device_accessor__t_ae30edec179595028f5e8d1ad242ca1ad}{dev}}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An accessor to a physical device. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a973adde76b8efdb9ac1511c37c026f73}\label{struct_physical_device_accessor__t_a973adde76b8efdb9ac1511c37c026f73}} 
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union \{ ... \} }
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a3179bfd9d121983e978e2e2e0fade3c3}\label{struct_physical_device_accessor__t_a3179bfd9d121983e978e2e2e0fade3c3}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!acc@{acc}}
+\index{acc@{acc}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{acc}{acc}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} Physical\+Device\+Accessor\+\_\+t\+::acc}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a1290934fddb6ca7840137a4c69e4cd71}\label{struct_physical_device_accessor__t_a1290934fddb6ca7840137a4c69e4cd71}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!by\_plant@{by\_plant}}
+\index{by\_plant@{by\_plant}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct \{ ... \}  Physical\+Device\+Accessor\+\_\+t\+::by\+\_\+plant}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a933223e71b29945bdb99517163529bec}\label{struct_physical_device_accessor__t_a933223e71b29945bdb99517163529bec}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!by\_system@{by\_system}}
+\index{by\_system@{by\_system}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct \{ ... \}  Physical\+Device\+Accessor\+\_\+t\+::by\+\_\+system}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_ae30edec179595028f5e8d1ad242ca1ad}\label{struct_physical_device_accessor__t_ae30edec179595028f5e8d1ad242ca1ad}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!dev@{dev}}
+\index{dev@{dev}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{dev}{dev}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}}$\ast$ Physical\+Device\+Accessor\+\_\+t\+::dev}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a8adb700146719b421ccf2cbeec448b14}\label{struct_physical_device_accessor__t_a8adb700146719b421ccf2cbeec448b14}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!dev\_id@{dev\_id}}
+\index{dev\_id@{dev\_id}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{dev\_id}{dev\_id}}
+{\footnotesize\ttfamily unsigned char Physical\+Device\+Accessor\+\_\+t\+::dev\+\_\+id}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_a0583ab3aaf3450e7e91702f8b90d8bfd}\label{struct_physical_device_accessor__t_a0583ab3aaf3450e7e91702f8b90d8bfd}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!plant@{plant}}
+\index{plant@{plant}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{plant}{plant}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}}$\ast$ Physical\+Device\+Accessor\+\_\+t\+::plant}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_ac70dfde748d0f4160f754e6c02af8c7e}\label{struct_physical_device_accessor__t_ac70dfde748d0f4160f754e6c02af8c7e}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!sys\_id@{sys\_id}}
+\index{sys\_id@{sys\_id}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{sys\_id}{sys\_id}}
+{\footnotesize\ttfamily unsigned char Physical\+Device\+Accessor\+\_\+t\+::sys\+\_\+id}
+
+\mbox{\Hypertarget{struct_physical_device_accessor__t_afbba6d158464178885e0dcca682242aa}\label{struct_physical_device_accessor__t_afbba6d158464178885e0dcca682242aa}} 
+\index{PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}!type@{type}}
+\index{type@{type}!PhysicalDeviceAccessor\_t@{PhysicalDeviceAccessor\_t}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily char Physical\+Device\+Accessor\+\_\+t\+::type}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/device/\mbox{\hyperlink{kernel_2device_2phy_2accessor_8h}{accessor.\+h}}\end{DoxyCompactItemize}

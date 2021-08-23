@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c File Reference</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,29 +68,29 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">api.c File Reference</div>  </div>
+<div class="title">core.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="automation_2api_8h_source.html">src/model/automation/api.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="automation_2core_8h_source.html">src/model/automation/core.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="automation_2cfg_8h_source.html">src/model/automation/cfg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="automation_2header_8h_source.html">src/model/automation/header.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="task_8h_source.html">src/model/automation/task.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common_2header_8h_source.html">src/model/common/data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common_2api_8h_source.html">src/model/common/api.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel_2header_8h_source.html">src/model/kernel/data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel_2core_8h_source.html">src/model/kernel/core.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="system_8h_source.html">src/model/system.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="error_8h_source.html">src/model/error.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afff68ba3b3bf511f3af1f1230398a985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="api_8c.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct AutomationSystemCfg_t *cfg)</td></tr>
-<tr class="memdesc:afff68ba3b3bf511f3af1f1230398a985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the system as an automation system.  <a href="api_8c.html#afff68ba3b3bf511f3af1f1230398a985">More...</a><br /></td></tr>
+<tr class="memitem:afff68ba3b3bf511f3af1f1230398a985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8c.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct AutomationSystemCfg_t *cfg)</td></tr>
+<tr class="memdesc:afff68ba3b3bf511f3af1f1230398a985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the system as an automation system.  <a href="core_8c.html#afff68ba3b3bf511f3af1f1230398a985">More...</a><br /></td></tr>
 <tr class="separator:afff68ba3b3bf511f3af1f1230398a985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266f5278a8e73232ac003d3864c4f854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="api_8c.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
-<tr class="memdesc:a266f5278a8e73232ac003d3864c4f854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a simulation step for the system.  <a href="api_8c.html#a266f5278a8e73232ac003d3864c4f854">More...</a><br /></td></tr>
+<tr class="memitem:a266f5278a8e73232ac003d3864c4f854"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8c.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
+<tr class="memdesc:a266f5278a8e73232ac003d3864c4f854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a simulation step for the system.  <a href="core_8c.html#a266f5278a8e73232ac003d3864c4f854">More...</a><br /></td></tr>
 <tr class="separator:a266f5278a8e73232ac003d3864c4f854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_header__t.html">AutomationHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="api_8c.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
-<tr class="memdesc:a0d679cce1de6c159cd2618f7631a3ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the automation system's header.  <a href="api_8c.html#a0d679cce1de6c159cd2618f7631a3ea9">More...</a><br /></td></tr>
+<tr class="memitem:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_header__t.html">AutomationHeader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8c.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys)</td></tr>
+<tr class="memdesc:a0d679cce1de6c159cd2618f7631a3ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the automation system's header.  <a href="core_8c.html#a0d679cce1de6c159cd2618f7631a3ea9">More...</a><br /></td></tr>
 <tr class="separator:a0d679cce1de6c159cd2618f7631a3ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialise the system as an automation system. </p>
-<p>Calls common_init internally.</p>
+<p>Calls kernel_init internally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sys</td><td>The system to initialise as an automation system. </td></tr>

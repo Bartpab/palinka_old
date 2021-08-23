@@ -1,0 +1,88 @@
+\hypertarget{plant_2core_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/plant/core.h File Reference}
+\label{plant_2core_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/plant/core.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/plant/core.h}}
+{\ttfamily \#include \char`\"{}src/model/system/list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/plant/cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A handler to the simulated plant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{plant_2core_8h_a618e7c6b97c8c675a59c27994224a843}{plant\+\_\+init}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$plant, struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em API ///. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plant_2core_8h_aff8c57d4ca0a255af0d0d4addbb1b9ad}{plant\+\_\+get\+\_\+system}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$plant, unsigned char sys\+\_\+id, struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$sys\+\_\+acc)
+\begin{DoxyCompactList}\small\item\em Retrieve an accessor the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plant_2core_8h_a1bdf6729223ae9a3822cba0717e9a675}{plant\+\_\+delete}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em Delete the plant simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plant_2core_8h_a8f15f3eee2bd2a3d415fe00b8d2759b7}{plant\+\_\+step}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$plant)
+\begin{DoxyCompactList}\small\item\em Execute a step of the simulation for the plant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plant_2core_8h_a9ca30cce3c074f627e5766ae6dcc0cc6}{plant\+\_\+push\+\_\+error}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$sys, const int code, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Push an error. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plant_2core_8h_a5b20006adc5e6f99a09539af0d237a45}{plant\+\_\+pop\+\_\+error}} (struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$plant, struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$output)
+\begin{DoxyCompactList}\small\item\em Pop an error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plant_2core_8h_a1bdf6729223ae9a3822cba0717e9a675}\label{plant_2core_8h_a1bdf6729223ae9a3822cba0717e9a675}} 
+\index{core.h@{core.h}!plant\_delete@{plant\_delete}}
+\index{plant\_delete@{plant\_delete}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_delete()}{plant\_delete()}}
+{\footnotesize\ttfamily void plant\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+Delete the plant simulation. 
+
+\mbox{\Hypertarget{plant_2core_8h_aff8c57d4ca0a255af0d0d4addbb1b9ad}\label{plant_2core_8h_aff8c57d4ca0a255af0d0d4addbb1b9ad}} 
+\index{core.h@{core.h}!plant\_get\_system@{plant\_get\_system}}
+\index{plant\_get\_system@{plant\_get\_system}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_get\_system()}{plant\_get\_system()}}
+{\footnotesize\ttfamily int plant\+\_\+get\+\_\+system (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{plant,  }\item[{unsigned char}]{sys\+\_\+id,  }\item[{struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$}]{sys\+\_\+acc }\end{DoxyParamCaption})}
+
+
+
+Retrieve an accessor the system. 
+
+\mbox{\Hypertarget{plant_2core_8h_a618e7c6b97c8c675a59c27994224a843}\label{plant_2core_8h_a618e7c6b97c8c675a59c27994224a843}} 
+\index{core.h@{core.h}!plant\_init@{plant\_init}}
+\index{plant\_init@{plant\_init}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_init()}{plant\_init()}}
+{\footnotesize\ttfamily int plant\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{plant,  }\item[{struct \mbox{\hyperlink{struct_plant_cfg__t}{Plant\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+API ///. 
+
+Initialise a plant simulation. \mbox{\Hypertarget{plant_2core_8h_a5b20006adc5e6f99a09539af0d237a45}\label{plant_2core_8h_a5b20006adc5e6f99a09539af0d237a45}} 
+\index{core.h@{core.h}!plant\_pop\_error@{plant\_pop\_error}}
+\index{plant\_pop\_error@{plant\_pop\_error}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_pop\_error()}{plant\_pop\_error()}}
+{\footnotesize\ttfamily int plant\+\_\+pop\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{plant,  }\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Pop an error. 
+
+\mbox{\Hypertarget{plant_2core_8h_a9ca30cce3c074f627e5766ae6dcc0cc6}\label{plant_2core_8h_a9ca30cce3c074f627e5766ae6dcc0cc6}} 
+\index{core.h@{core.h}!plant\_push\_error@{plant\_push\_error}}
+\index{plant\_push\_error@{plant\_push\_error}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_push\_error()}{plant\_push\_error()}}
+{\footnotesize\ttfamily void plant\+\_\+push\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{sys,  }\item[{const int}]{code,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Push an error. 
+
+\mbox{\Hypertarget{plant_2core_8h_a8f15f3eee2bd2a3d415fe00b8d2759b7}\label{plant_2core_8h_a8f15f3eee2bd2a3d415fe00b8d2759b7}} 
+\index{core.h@{core.h}!plant\_step@{plant\_step}}
+\index{plant\_step@{plant\_step}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{plant\_step()}{plant\_step()}}
+{\footnotesize\ttfamily int plant\+\_\+step (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_plant__t}{Plant\+\_\+t}} $\ast$}]{plant }\end{DoxyParamCaption})}
+
+
+
+Execute a step of the simulation for the plant. 
+

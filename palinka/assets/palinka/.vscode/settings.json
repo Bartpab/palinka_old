@@ -3,7 +3,19 @@
         "system.h": "c",
         "cfg.h": "c",
         "error.h": "c",
-        "api.h": "c",
-        "alloc.h": "c"
+        "core.h": "c",
+        "alloc.h": "c",
+        "array": "c",
+        "deque": "c",
+        "iterator": "c",
+        "list": "c",
+        "vector": "c",
+        "xhash": "c",
+        "xtree": "c",
+        "forward_list": "c",
+        "initializer_list": "c",
+        "xiosbase": "c",
+        "xstring": "c",
+        "mmu.h": "c"
     }
 }

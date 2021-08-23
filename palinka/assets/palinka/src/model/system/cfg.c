@@ -6,18 +6,18 @@
 
 void sys_cfg_init(struct SystemCfg_t* sys_cfg, 
     const char* name, 
-    struct CommonCfg_t* cfg, 
+    struct KernelCfg_t* cfg, 
     size_t cfg_size, 
-    int (*init_cbk)(struct System_t*, struct CommonCfg_t*), 
-    int(*step_cbk)(struct System_t*)
+    int (*init)(struct System_t*, struct KernelCfg_t*), 
+    int(*step)(struct System_t*)
     ) 
 {
     snprintf(sys_cfg->name, SYSTEM_NAME_MAX_LENGTH, name);
     sys_cfg->base_cfg = malloc(cfg_size);
     
     memcpy(sys_cfg->base_cfg, cfg, cfg_size);
-    sys_cfg->init_cbk = init_cbk;
-    sys_cfg->step_cbk = step_cbk;
+    sys_cfg->init = init;
+    sys_cfg->step = step;
 }
 
 void sys_cfg_delete(struct SystemCfg_t* sys_cfg)

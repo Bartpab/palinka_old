@@ -77,7 +77,7 @@ $(function() {
 <p>Contains the task API.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="system_8h_source.html">src/model/system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="system_2api_8h_source.html">src/model/system/api.h</a>&quot;</code><br />
 </div>
 <p><a href="task_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -103,21 +103,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a8bc71873ac5abd10cd709a4575233dbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a8bc71873ac5abd10cd709a4575233dbe">execute_task</a> (struct <a class="el" href="struct_system__t.html">System_t</a> *sys, struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a> *task)</td></tr>
 <tr class="memdesc:a8bc71873ac5abd10cd709a4575233dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the task on the system.  <a href="task_8h.html#a8bc71873ac5abd10cd709a4575233dbe">More...</a><br /></td></tr>
 <tr class="separator:a8bc71873ac5abd10cd709a4575233dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9070d9ebc2678acade79c715a201150a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a9070d9ebc2678acade79c715a201150a">task_list_init</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list)</td></tr>
-<tr class="memdesc:a9070d9ebc2678acade79c715a201150a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the list.  <a href="task_8h.html#a9070d9ebc2678acade79c715a201150a">More...</a><br /></td></tr>
-<tr class="separator:a9070d9ebc2678acade79c715a201150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b08d18fa98bf9e303e51f9894c9e9c0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a2b08d18fa98bf9e303e51f9894c9e9c0">task_list_iter</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list)</td></tr>
-<tr class="memdesc:a2b08d18fa98bf9e303e51f9894c9e9c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator for the list.  <a href="task_8h.html#a2b08d18fa98bf9e303e51f9894c9e9c0">More...</a><br /></td></tr>
-<tr class="separator:a2b08d18fa98bf9e303e51f9894c9e9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a738ed25b05be9b350a694acbf66323b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a738ed25b05be9b350a694acbf66323b1">task_push</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list, void(*raw)(struct <a class="el" href="struct_system__t.html">System_t</a> *))</td></tr>
-<tr class="memdesc:a738ed25b05be9b350a694acbf66323b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a task to the list.  <a href="task_8h.html#a738ed25b05be9b350a694acbf66323b1">More...</a><br /></td></tr>
-<tr class="separator:a738ed25b05be9b350a694acbf66323b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8ed5e016162d2ada311b5d20b30a7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#aa8ed5e016162d2ada311b5d20b30a7fd">task_list_init_it</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list, struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it)</td></tr>
-<tr class="memdesc:aa8ed5e016162d2ada311b5d20b30a7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the iterator.  <a href="task_8h.html#aa8ed5e016162d2ada311b5d20b30a7fd">More...</a><br /></td></tr>
-<tr class="separator:aa8ed5e016162d2ada311b5d20b30a7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf3353619e4a99d1d98f3e4d73c66025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#abf3353619e4a99d1d98f3e4d73c66025">task_list_it_next</a> (struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it)</td></tr>
-<tr class="memdesc:abf3353619e4a99d1d98f3e4d73c66025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next element on the list.  <a href="task_8h.html#abf3353619e4a99d1d98f3e4d73c66025">More...</a><br /></td></tr>
-<tr class="separator:abf3353619e4a99d1d98f3e4d73c66025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ae6ec2ffe7eb57465d2ef904375686"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a93ae6ec2ffe7eb57465d2ef904375686">task_list_init</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list)</td></tr>
+<tr class="memdesc:a93ae6ec2ffe7eb57465d2ef904375686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the list.  <a href="task_8h.html#a93ae6ec2ffe7eb57465d2ef904375686">More...</a><br /></td></tr>
+<tr class="separator:a93ae6ec2ffe7eb57465d2ef904375686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76108b422122040171da6be03680476f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a76108b422122040171da6be03680476f">task_list_iter</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list)</td></tr>
+<tr class="memdesc:a76108b422122040171da6be03680476f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator for the list.  <a href="task_8h.html#a76108b422122040171da6be03680476f">More...</a><br /></td></tr>
+<tr class="separator:a76108b422122040171da6be03680476f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e2bd49dfe8c896f589b8a41a1d2349"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ab8e2bd49dfe8c896f589b8a41a1d2349">task_push</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list, void(*raw)(struct <a class="el" href="struct_system__t.html">System_t</a> *))</td></tr>
+<tr class="memdesc:ab8e2bd49dfe8c896f589b8a41a1d2349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a task to the list.  <a href="task_8h.html#ab8e2bd49dfe8c896f589b8a41a1d2349">More...</a><br /></td></tr>
+<tr class="separator:ab8e2bd49dfe8c896f589b8a41a1d2349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ce0ffc5abfd75199646ef6ac432071"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#ae1ce0ffc5abfd75199646ef6ac432071">task_list_init_it</a> (struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *list, struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it)</td></tr>
+<tr class="memdesc:ae1ce0ffc5abfd75199646ef6ac432071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the iterator.  <a href="task_8h.html#ae1ce0ffc5abfd75199646ef6ac432071">More...</a><br /></td></tr>
+<tr class="separator:ae1ce0ffc5abfd75199646ef6ac432071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378796000d2c90d1dea2ab42bd305b9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a378796000d2c90d1dea2ab42bd305b9c">task_list_it_next</a> (struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it)</td></tr>
+<tr class="memdesc:a378796000d2c90d1dea2ab42bd305b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next element on the list.  <a href="task_8h.html#a378796000d2c90d1dea2ab42bd305b9c">More...</a><br /></td></tr>
+<tr class="separator:a378796000d2c90d1dea2ab42bd305b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a098a8cd064a3c89b3066b80bc04eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8h.html#a52a098a8cd064a3c89b3066b80bc04eb">task_list_it_get</a> (struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it, struct AutomaationTask_t **out)</td></tr>
+<tr class="separator:a52a098a8cd064a3c89b3066b80bc04eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains the task API. </p>
@@ -171,8 +173,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9070d9ebc2678acade79c715a201150a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9070d9ebc2678acade79c715a201150a">&#9670;&nbsp;</a></span>task_list_init()</h2>
+<a id="a93ae6ec2ffe7eb57465d2ef904375686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ae6ec2ffe7eb57465d2ef904375686">&#9670;&nbsp;</a></span>task_list_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,8 +193,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa8ed5e016162d2ada311b5d20b30a7fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8ed5e016162d2ada311b5d20b30a7fd">&#9670;&nbsp;</a></span>task_list_init_it()</h2>
+<a id="ae1ce0ffc5abfd75199646ef6ac432071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ce0ffc5abfd75199646ef6ac432071">&#9670;&nbsp;</a></span>task_list_init_it()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,29 +223,36 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2b08d18fa98bf9e303e51f9894c9e9c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b08d18fa98bf9e303e51f9894c9e9c0">&#9670;&nbsp;</a></span>task_list_iter()</h2>
+<a id="a52a098a8cd064a3c89b3066b80bc04eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a098a8cd064a3c89b3066b80bc04eb">&#9670;&nbsp;</a></span>task_list_it_get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> task_list_iter </td>
+          <td class="memname">int task_list_it_get </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *&#160;</td>
-          <td class="paramname"><em>list</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">struct AutomaationTask_t **&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return an iterator for the list. </p>
-<dl class="section return"><dt>Returns</dt><dd>The iterator </dd></dl>
-
 </div>
 </div>
-<a id="abf3353619e4a99d1d98f3e4d73c66025"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf3353619e4a99d1d98f3e4d73c66025">&#9670;&nbsp;</a></span>task_list_it_next()</h2>
+<a id="a378796000d2c90d1dea2ab42bd305b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378796000d2c90d1dea2ab42bd305b9c">&#9670;&nbsp;</a></span>task_list_it_next()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,8 +272,29 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a738ed25b05be9b350a694acbf66323b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a738ed25b05be9b350a694acbf66323b1">&#9670;&nbsp;</a></span>task_push()</h2>
+<a id="a76108b422122040171da6be03680476f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76108b422122040171da6be03680476f">&#9670;&nbsp;</a></span>task_list_iter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> task_list_iter </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return an iterator for the list. </p>
+<dl class="section return"><dt>Returns</dt><dd>The iterator </dd></dl>
+
+</div>
+</div>
+<a id="ab8e2bd49dfe8c896f589b8a41a1d2349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e2bd49dfe8c896f589b8a41a1d2349">&#9670;&nbsp;</a></span>task_push()</h2>
 
 <div class="memitem">
 <div class="memproto">

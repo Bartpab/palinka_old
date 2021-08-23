@@ -1,12 +1,101 @@
 \hypertarget{automation_2cfg_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/cfg.h File Reference}
 \label{automation_2cfg_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/cfg.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/cfg.h}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/cfg.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_automation_task_cfg__t}{Automation\+Task\+Cfg\+\_\+t}}
 \item 
+struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}}
+\item 
 struct \mbox{\hyperlink{struct_automation_data_block_cfg__t}{Automation\+Data\+Block\+Cfg\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}}
 \item 
 struct \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{automation_2cfg_8h_a14c85d0e22d8d99054e2a97987481bc2}{automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+init}} (struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_automation_task_cfg__t}{Automation\+Task\+Cfg\+\_\+t}} $\ast$cfg)
+\item 
+int \mbox{\hyperlink{automation_2cfg_8h_a382de304c9f1a32584735b1c502e4811}{automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+next}} (struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$it)
+\item 
+int \mbox{\hyperlink{automation_2cfg_8h_a763c935ed0bcf9c85905b978a9d4b509}{automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+get}} (struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$it, void($\ast$$\ast$out)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$))
+\item 
+void \mbox{\hyperlink{automation_2cfg_8h_af760457f1b2dcd4f7f81e7837619f995}{automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+init}} (struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_automation_data_block_cfg__t}{Automation\+Data\+Block\+Cfg\+\_\+t}} $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em Initialise an iterator over the list of data block configurations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{automation_2cfg_8h_abd2718be7ef99e069586d884effd47d2}{automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+next}} (struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$it)
+\begin{DoxyCompactList}\small\item\em Fetch the next element in the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{automation_2cfg_8h_a529de482466fcd24d2e5c845185507f7}{automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+get}} (struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$it, size\+\_\+t $\ast$$\ast$out)
+\begin{DoxyCompactList}\small\item\em Get the element behind the current iterator state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{automation_2cfg_8h_a529de482466fcd24d2e5c845185507f7}\label{automation_2cfg_8h_a529de482466fcd24d2e5c845185507f7}} 
+\index{cfg.h@{cfg.h}!automation\_data\_block\_cfg\_it\_get@{automation\_data\_block\_cfg\_it\_get}}
+\index{automation\_data\_block\_cfg\_it\_get@{automation\_data\_block\_cfg\_it\_get}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_data\_block\_cfg\_it\_get()}{automation\_data\_block\_cfg\_it\_get()}}
+{\footnotesize\ttfamily int automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{size\+\_\+t $\ast$$\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Get the element behind the current iterator state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & The iterator \\
+\hline
+{\em out} & The output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if an element exists, 0 else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{automation_2cfg_8h_af760457f1b2dcd4f7f81e7837619f995}\label{automation_2cfg_8h_af760457f1b2dcd4f7f81e7837619f995}} 
+\index{cfg.h@{cfg.h}!automation\_data\_block\_cfg\_it\_init@{automation\_data\_block\_cfg\_it\_init}}
+\index{automation\_data\_block\_cfg\_it\_init@{automation\_data\_block\_cfg\_it\_init}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_data\_block\_cfg\_it\_init()}{automation\_data\_block\_cfg\_it\_init()}}
+{\footnotesize\ttfamily void automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_automation_data_block_cfg__t}{Automation\+Data\+Block\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+Initialise an iterator over the list of data block configurations. 
+
+\mbox{\Hypertarget{automation_2cfg_8h_abd2718be7ef99e069586d884effd47d2}\label{automation_2cfg_8h_abd2718be7ef99e069586d884effd47d2}} 
+\index{cfg.h@{cfg.h}!automation\_data\_block\_cfg\_it\_next@{automation\_data\_block\_cfg\_it\_next}}
+\index{automation\_data\_block\_cfg\_it\_next@{automation\_data\_block\_cfg\_it\_next}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_data\_block\_cfg\_it\_next()}{automation\_data\_block\_cfg\_it\_next()}}
+{\footnotesize\ttfamily int automation\+\_\+data\+\_\+block\+\_\+cfg\+\_\+it\+\_\+next (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_data_block_cfg_iterator__t}{Automation\+Data\+Block\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+
+
+
+Fetch the next element in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & The iterator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if another element was fetched, 0 else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{automation_2cfg_8h_a763c935ed0bcf9c85905b978a9d4b509}\label{automation_2cfg_8h_a763c935ed0bcf9c85905b978a9d4b509}} 
+\index{cfg.h@{cfg.h}!automation\_task\_cfg\_it\_get@{automation\_task\_cfg\_it\_get}}
+\index{automation\_task\_cfg\_it\_get@{automation\_task\_cfg\_it\_get}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_task\_cfg\_it\_get()}{automation\_task\_cfg\_it\_get()}}
+{\footnotesize\ttfamily int automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{void($\ast$$\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$)}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{automation_2cfg_8h_a14c85d0e22d8d99054e2a97987481bc2}\label{automation_2cfg_8h_a14c85d0e22d8d99054e2a97987481bc2}} 
+\index{cfg.h@{cfg.h}!automation\_task\_cfg\_it\_init@{automation\_task\_cfg\_it\_init}}
+\index{automation\_task\_cfg\_it\_init@{automation\_task\_cfg\_it\_init}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_task\_cfg\_it\_init()}{automation\_task\_cfg\_it\_init()}}
+{\footnotesize\ttfamily void automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_automation_task_cfg__t}{Automation\+Task\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{automation_2cfg_8h_a382de304c9f1a32584735b1c502e4811}\label{automation_2cfg_8h_a382de304c9f1a32584735b1c502e4811}} 
+\index{cfg.h@{cfg.h}!automation\_task\_cfg\_it\_next@{automation\_task\_cfg\_it\_next}}
+\index{automation\_task\_cfg\_it\_next@{automation\_task\_cfg\_it\_next}!cfg.h@{cfg.h}}
+\doxysubsubsection{\texorpdfstring{automation\_task\_cfg\_it\_next()}{automation\_task\_cfg\_it\_next()}}
+{\footnotesize\ttfamily int automation\+\_\+task\+\_\+cfg\+\_\+it\+\_\+next (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_automation_task_cfg_iterator__t}{Automation\+Task\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+

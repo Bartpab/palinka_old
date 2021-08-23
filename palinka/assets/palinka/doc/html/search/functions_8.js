@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_5fdata_5fblock_178',['data_block_open',['../data__block_8c.html#a460e6e4d8ed22927d48e99478d645ee2',1,'data_block_open(struct System_t *sys, size_t db_id, struct AutomationDataBlock_t **db):&#160;data_block.c'],['../data__block_8h.html#a460e6e4d8ed22927d48e99478d645ee2',1,'data_block_open(struct System_t *sys, size_t db_id, struct AutomationDataBlock_t **db):&#160;data_block.c']]]
+  ['mmu_5finit_352',['mmu_init',['../mmu_8c.html#a0cdcade82ef8523129ec13a5ae2ae567',1,'mmu_init(struct MemoryManagementUnit_t *mmu, char *base_heap, size_t free_space_size):&#160;mmu.c'],['../mmu_8h.html#aced3be7468ff7fdb0280f39fc279c84b',1,'mmu_init(struct MemoryManagementUnit_t *mmu, char *base_heap, size_t heap_max_size):&#160;mmu.c']]]
 ];

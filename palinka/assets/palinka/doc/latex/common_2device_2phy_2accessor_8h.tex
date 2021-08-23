@@ -1,0 +1,62 @@
+\hypertarget{kernel_2device_2phy_2accessor_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/device/accessor.h File Reference}
+\label{kernel_2device_2phy_2accessor_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/accessor.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/accessor.h}}
+{\ttfamily \#include \char`\"{}src/model/plant/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/device/core.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_physical_device_accessor__t}{Physical\+Device\+Accessor\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em An accessor to a physical device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2accessor_8h_ae57e03365ce6c51458fbf16b2cc73fbc}{phy\+\_\+dev\+\_\+open}} (struct \mbox{\hyperlink{struct_physical_device_accessor__t}{Physical\+Device\+Accessor\+\_\+t}} $\ast$pdev\+\_\+acc, struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$$\ast$pdev)
+\item 
+void \mbox{\hyperlink{kernel_2device_2phy_2accessor_8h_ab0e1334f8a2442d7fcc9a27c73ad3d60}{phy\+\_\+dev\+\_\+close}} (struct \mbox{\hyperlink{struct_physical_device_accessor__t}{Physical\+Device\+Accessor\+\_\+t}} $\ast$pdev\+\_\+acc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{kernel_2device_2phy_2accessor_8h_a3e6c2d6018db66ccdc419d11085b4f98}{PHY\+\_\+\+DEV\+\_\+\+ACESSOR\+\_\+\+BY\+\_\+\+PLAN}} = 0x1
+\item 
+const char \mbox{\hyperlink{kernel_2device_2phy_2accessor_8h_a8e46f833ccd7b78d7a6deea7e4e5a68f}{PHY\+\_\+\+DEV\+\_\+\+ACESSOR\+\_\+\+BY\+\_\+\+SYS}} = 0x2
+\item 
+const char \mbox{\hyperlink{kernel_2device_2phy_2accessor_8h_aa739b76e3bdf0c0ceef947d26f0b0ba9}{PHY\+\_\+\+DEV\+\_\+\+ACCESSOR\+\_\+\+DIRECT}} = 0x3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_2device_2phy_2accessor_8h_ab0e1334f8a2442d7fcc9a27c73ad3d60}\label{kernel_2device_2phy_2accessor_8h_ab0e1334f8a2442d7fcc9a27c73ad3d60}} 
+\index{accessor.h@{accessor.h}!phy\_dev\_close@{phy\_dev\_close}}
+\index{phy\_dev\_close@{phy\_dev\_close}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_close()}{phy\_dev\_close()}}
+{\footnotesize\ttfamily void phy\+\_\+dev\+\_\+close (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_accessor__t}{Physical\+Device\+Accessor\+\_\+t}} $\ast$}]{pdev\+\_\+acc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{kernel_2device_2phy_2accessor_8h_ae57e03365ce6c51458fbf16b2cc73fbc}\label{kernel_2device_2phy_2accessor_8h_ae57e03365ce6c51458fbf16b2cc73fbc}} 
+\index{accessor.h@{accessor.h}!phy\_dev\_open@{phy\_dev\_open}}
+\index{phy\_dev\_open@{phy\_dev\_open}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_open()}{phy\_dev\_open()}}
+{\footnotesize\ttfamily int phy\+\_\+dev\+\_\+open (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_accessor__t}{Physical\+Device\+Accessor\+\_\+t}} $\ast$}]{pdev\+\_\+acc,  }\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$$\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kernel_2device_2phy_2accessor_8h_aa739b76e3bdf0c0ceef947d26f0b0ba9}\label{kernel_2device_2phy_2accessor_8h_aa739b76e3bdf0c0ceef947d26f0b0ba9}} 
+\index{accessor.h@{accessor.h}!PHY\_DEV\_ACCESSOR\_DIRECT@{PHY\_DEV\_ACCESSOR\_DIRECT}}
+\index{PHY\_DEV\_ACCESSOR\_DIRECT@{PHY\_DEV\_ACCESSOR\_DIRECT}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{PHY\_DEV\_ACCESSOR\_DIRECT}{PHY\_DEV\_ACCESSOR\_DIRECT}}
+{\footnotesize\ttfamily const char PHY\+\_\+\+DEV\+\_\+\+ACCESSOR\+\_\+\+DIRECT = 0x3}
+
+\mbox{\Hypertarget{kernel_2device_2phy_2accessor_8h_a3e6c2d6018db66ccdc419d11085b4f98}\label{kernel_2device_2phy_2accessor_8h_a3e6c2d6018db66ccdc419d11085b4f98}} 
+\index{accessor.h@{accessor.h}!PHY\_DEV\_ACESSOR\_BY\_PLAN@{PHY\_DEV\_ACESSOR\_BY\_PLAN}}
+\index{PHY\_DEV\_ACESSOR\_BY\_PLAN@{PHY\_DEV\_ACESSOR\_BY\_PLAN}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{PHY\_DEV\_ACESSOR\_BY\_PLAN}{PHY\_DEV\_ACESSOR\_BY\_PLAN}}
+{\footnotesize\ttfamily const char PHY\+\_\+\+DEV\+\_\+\+ACESSOR\+\_\+\+BY\+\_\+\+PLAN = 0x1}
+
+\mbox{\Hypertarget{kernel_2device_2phy_2accessor_8h_a8e46f833ccd7b78d7a6deea7e4e5a68f}\label{kernel_2device_2phy_2accessor_8h_a8e46f833ccd7b78d7a6deea7e4e5a68f}} 
+\index{accessor.h@{accessor.h}!PHY\_DEV\_ACESSOR\_BY\_SYS@{PHY\_DEV\_ACESSOR\_BY\_SYS}}
+\index{PHY\_DEV\_ACESSOR\_BY\_SYS@{PHY\_DEV\_ACESSOR\_BY\_SYS}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{PHY\_DEV\_ACESSOR\_BY\_SYS}{PHY\_DEV\_ACESSOR\_BY\_SYS}}
+{\footnotesize\ttfamily const char PHY\+\_\+\+DEV\+\_\+\+ACESSOR\+\_\+\+BY\+\_\+\+SYS = 0x2}
+

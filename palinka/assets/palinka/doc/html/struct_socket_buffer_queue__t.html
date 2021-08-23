@@ -69,6 +69,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Socket buffer queue.  
+ <a href="struct_socket_buffer_queue__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="skb_8h_source.html">skb.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -77,20 +80,36 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a0b70bbdd8cfdb5a9c15f9d502d374d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af64f947a69d25a95ebf2ce27916cd5c9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_socket_buffer_queue__t.html#af64f947a69d25a95ebf2ce27916cd5c9">tail</a></td></tr>
 <tr class="separator:af64f947a69d25a95ebf2ce27916cd5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9198cf0f12d5811e899847501154b4d2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_socket_buffer_queue__t.html#a9198cf0f12d5811e899847501154b4d2">arena</a> [<a class="el" href="skb_8h.html#a32b6396ea527324c77f04f18946ae9d5">SKB_QUEUE_SIZE</a>]</td></tr>
-<tr class="separator:a9198cf0f12d5811e899847501154b4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fad3aa59d3cb088e6a422074a978115"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_socket_buffer_queue__t.html#a8fad3aa59d3cb088e6a422074a978115">size</a></td></tr>
-<tr class="separator:a8fad3aa59d3cb088e6a422074a978115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e61cd79502efe6a8e4b3616bd6d497"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_socket_buffer_queue__t.html#a79e61cd79502efe6a8e4b3616bd6d497">arena</a></td></tr>
+<tr class="separator:a79e61cd79502efe6a8e4b3616bd6d497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e18b29622aa0125c360bc5ef2399a7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_socket_buffer_queue__t.html#a14e18b29622aa0125c360bc5ef2399a7">capacity</a></td></tr>
+<tr class="separator:a14e18b29622aa0125c360bc5ef2399a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9198cf0f12d5811e899847501154b4d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9198cf0f12d5811e899847501154b4d2">&#9670;&nbsp;</a></span>arena</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Socket buffer queue. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a79e61cd79502efe6a8e4b3616bd6d497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e61cd79502efe6a8e4b3616bd6d497">&#9670;&nbsp;</a></span>arena</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a> SocketBufferQueue_t::arena[<a class="el" href="skb_8h.html#a32b6396ea527324c77f04f18946ae9d5">SKB_QUEUE_SIZE</a>]</td>
+          <td class="memname">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a>* SocketBufferQueue_t::arena</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14e18b29622aa0125c360bc5ef2399a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e18b29622aa0125c360bc5ef2399a7">&#9670;&nbsp;</a></span>capacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SocketBufferQueue_t::capacity</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -105,20 +124,6 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">struct <a class="el" href="struct_socket_buffer_queue_cell__t.html">SocketBufferQueueCell_t</a>* SocketBufferQueue_t::head</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8fad3aa59d3cb088e6a422074a978115"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fad3aa59d3cb088e6a422074a978115">&#9670;&nbsp;</a></span>size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t SocketBufferQueue_t::size</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -140,7 +145,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/<a class="el" href="skb_8h_source.html">skb.h</a></li>
+<li>C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/<a class="el" href="skb_8h_source.html">skb.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

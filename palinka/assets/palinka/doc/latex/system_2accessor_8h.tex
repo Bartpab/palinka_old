@@ -1,0 +1,41 @@
+\hypertarget{system_2accessor_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/system/accessor.h File Reference}
+\label{system_2accessor_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/accessor.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/accessor.h}}
+{\ttfamily \#include \char`\"{}src/model/system/container.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{system_2accessor_8h_ad2ffb982ab13e9dfe86d699cf2968d98}{sys\+\_\+open}} (struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$$\ast$out)
+\begin{DoxyCompactList}\small\item\em Open an access to the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system_2accessor_8h_a7b5683a8088b4fcf78bda8c2b36f0954}{sys\+\_\+close}} (struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Close the access to the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_2accessor_8h_a7b5683a8088b4fcf78bda8c2b36f0954}\label{system_2accessor_8h_a7b5683a8088b4fcf78bda8c2b36f0954}} 
+\index{accessor.h@{accessor.h}!sys\_close@{sys\_close}}
+\index{sys\_close@{sys\_close}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{sys\_close()}{sys\_close()}}
+{\footnotesize\ttfamily void sys\+\_\+close (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+Close the access to the system. 
+
+Important to call it once the access is no longer required ! \mbox{\Hypertarget{system_2accessor_8h_ad2ffb982ab13e9dfe86d699cf2968d98}\label{system_2accessor_8h_ad2ffb982ab13e9dfe86d699cf2968d98}} 
+\index{accessor.h@{accessor.h}!sys\_open@{sys\_open}}
+\index{sys\_open@{sys\_open}!accessor.h@{accessor.h}}
+\doxysubsubsection{\texorpdfstring{sys\_open()}{sys\_open()}}
+{\footnotesize\ttfamily int sys\+\_\+open (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$$\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Open an access to the system. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed. 
+\end{DoxyReturn}

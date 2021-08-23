@@ -2,18 +2,23 @@
 \label{struct_socket_buffer__t}\index{SocketBuffer\_t@{SocketBuffer\_t}}
 
 
+Socket Buffer.  
+
+
+
+
 {\ttfamily \#include $<$skb.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_a5a7fe856ec0f9ce2fe1a16aedbc571a3}{head}}
+void $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_a789e37d4dae1a80715636958f5411204}{head}}
 \item 
-char $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_ac2228fe8c59610c1a57b2ba03e0c4b9c}{data}}
+void $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_afc373c3877d00e7d2bafb50a9f222ead}{data}}
 \item 
-char $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_a484de81b3018c6337d5e32ed90e22b00}{tail}}
+void $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_a752632cbfefc616bdaef0850f77fde19}{tail}}
 \item 
-char $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_a9d1797895cf9d1f403bd8cb010d66f66}{end}}
+void $\ast$ \mbox{\hyperlink{struct_socket_buffer__t_abfc98335cb2161aea80e8087210e9d9c}{end}}
 \item 
 size\+\_\+t \mbox{\hyperlink{struct_socket_buffer__t_a52fbed5003c23a43667816d24ceae129}{size}}
 \item 
@@ -21,24 +26,29 @@ size\+\_\+t \mbox{\hyperlink{struct_socket_buffer__t_a7da00896b9872abf0f21911477
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Socket Buffer. 
+
+This is used to prepare a frame to send over the network/bus 
+
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{struct_socket_buffer__t_ac2228fe8c59610c1a57b2ba03e0c4b9c}\label{struct_socket_buffer__t_ac2228fe8c59610c1a57b2ba03e0c4b9c}} 
+\mbox{\Hypertarget{struct_socket_buffer__t_afc373c3877d00e7d2bafb50a9f222ead}\label{struct_socket_buffer__t_afc373c3877d00e7d2bafb50a9f222ead}} 
 \index{SocketBuffer\_t@{SocketBuffer\_t}!data@{data}}
 \index{data@{data}!SocketBuffer\_t@{SocketBuffer\_t}}
 \doxysubsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily char$\ast$ Socket\+Buffer\+\_\+t\+::data}
+{\footnotesize\ttfamily void$\ast$ Socket\+Buffer\+\_\+t\+::data}
 
-\mbox{\Hypertarget{struct_socket_buffer__t_a9d1797895cf9d1f403bd8cb010d66f66}\label{struct_socket_buffer__t_a9d1797895cf9d1f403bd8cb010d66f66}} 
+\mbox{\Hypertarget{struct_socket_buffer__t_abfc98335cb2161aea80e8087210e9d9c}\label{struct_socket_buffer__t_abfc98335cb2161aea80e8087210e9d9c}} 
 \index{SocketBuffer\_t@{SocketBuffer\_t}!end@{end}}
 \index{end@{end}!SocketBuffer\_t@{SocketBuffer\_t}}
 \doxysubsubsection{\texorpdfstring{end}{end}}
-{\footnotesize\ttfamily char$\ast$ Socket\+Buffer\+\_\+t\+::end}
+{\footnotesize\ttfamily void$\ast$ Socket\+Buffer\+\_\+t\+::end}
 
-\mbox{\Hypertarget{struct_socket_buffer__t_a5a7fe856ec0f9ce2fe1a16aedbc571a3}\label{struct_socket_buffer__t_a5a7fe856ec0f9ce2fe1a16aedbc571a3}} 
+\mbox{\Hypertarget{struct_socket_buffer__t_a789e37d4dae1a80715636958f5411204}\label{struct_socket_buffer__t_a789e37d4dae1a80715636958f5411204}} 
 \index{SocketBuffer\_t@{SocketBuffer\_t}!head@{head}}
 \index{head@{head}!SocketBuffer\_t@{SocketBuffer\_t}}
 \doxysubsubsection{\texorpdfstring{head}{head}}
-{\footnotesize\ttfamily char$\ast$ Socket\+Buffer\+\_\+t\+::head}
+{\footnotesize\ttfamily void$\ast$ Socket\+Buffer\+\_\+t\+::head}
 
 \mbox{\Hypertarget{struct_socket_buffer__t_a7da00896b9872abf0f21911477934752}\label{struct_socket_buffer__t_a7da00896b9872abf0f21911477934752}} 
 \index{SocketBuffer\_t@{SocketBuffer\_t}!len@{len}}
@@ -52,14 +62,14 @@ size\+\_\+t \mbox{\hyperlink{struct_socket_buffer__t_a7da00896b9872abf0f21911477
 \doxysubsubsection{\texorpdfstring{size}{size}}
 {\footnotesize\ttfamily size\+\_\+t Socket\+Buffer\+\_\+t\+::size}
 
-\mbox{\Hypertarget{struct_socket_buffer__t_a484de81b3018c6337d5e32ed90e22b00}\label{struct_socket_buffer__t_a484de81b3018c6337d5e32ed90e22b00}} 
+\mbox{\Hypertarget{struct_socket_buffer__t_a752632cbfefc616bdaef0850f77fde19}\label{struct_socket_buffer__t_a752632cbfefc616bdaef0850f77fde19}} 
 \index{SocketBuffer\_t@{SocketBuffer\_t}!tail@{tail}}
 \index{tail@{tail}!SocketBuffer\_t@{SocketBuffer\_t}}
 \doxysubsubsection{\texorpdfstring{tail}{tail}}
-{\footnotesize\ttfamily char$\ast$ Socket\+Buffer\+\_\+t\+::tail}
+{\footnotesize\ttfamily void$\ast$ Socket\+Buffer\+\_\+t\+::tail}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/common/\mbox{\hyperlink{skb_8h}{skb.\+h}}\end{DoxyCompactItemize}
+C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/\mbox{\hyperlink{skb_8h}{skb.\+h}}\end{DoxyCompactItemize}

@@ -1,45 +1,32 @@
-\hypertarget{automation_2api_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h File Reference}
-\label{automation_2api_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h}}
+\hypertarget{automation_2core_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/core.h File Reference}
+\label{automation_2core_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.h}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/cfg.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/header.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{automation_2api_8h_afff68ba3b3bf511f3af1f1230398a985}{init\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Automation\+System\+Cfg\+\_\+t $\ast$cfg)
+int \mbox{\hyperlink{automation_2core_8h_ab07b8ecb7e3c679e711c063bb00fd940}{automation\+\_\+system\+\_\+init}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} $\ast$cfg)
 \begin{DoxyCompactList}\small\item\em Initialise the system as an automation system. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{automation_2api_8h_a266f5278a8e73232ac003d3864c4f854}{step\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+int \mbox{\hyperlink{automation_2core_8h_a63b70470973d55cb6679373e92c242d0}{automation\+\_\+system\+\_\+step}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
 \begin{DoxyCompactList}\small\item\em Execute a simulation step for the system. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{automation_2api_8h_a0d679cce1de6c159cd2618f7631a3ea9}{get\+\_\+automation\+\_\+header}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
-\begin{DoxyCompactList}\small\item\em Return the automation system\textquotesingle{}s header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{automation_2core_8h_a6f4a0bc73549fa154bfef3c145b5731d}{automation\+\_\+system\+\_\+init\+\_\+cbk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Kernelg\+Cfg\+\_\+t $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em Callback to initialise the automation system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{automation_2api_8h_a0d679cce1de6c159cd2618f7631a3ea9}\label{automation_2api_8h_a0d679cce1de6c159cd2618f7631a3ea9}} 
-\index{api.h@{api.h}!get\_automation\_header@{get\_automation\_header}}
-\index{get\_automation\_header@{get\_automation\_header}!api.h@{api.h}}
-\doxysubsubsection{\texorpdfstring{get\_automation\_header()}{get\_automation\_header()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}}$\ast$ get\+\_\+automation\+\_\+header (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
-
-
-
-Return the automation system\textquotesingle{}s header. 
-
-\begin{DoxyReturn}{Returns}
-The automation header of the system. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{automation_2api_8h_afff68ba3b3bf511f3af1f1230398a985}\label{automation_2api_8h_afff68ba3b3bf511f3af1f1230398a985}} 
-\index{api.h@{api.h}!init\_automation\_system@{init\_automation\_system}}
-\index{init\_automation\_system@{init\_automation\_system}!api.h@{api.h}}
-\doxysubsubsection{\texorpdfstring{init\_automation\_system()}{init\_automation\_system()}}
-{\footnotesize\ttfamily int init\+\_\+automation\+\_\+system (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct Automation\+System\+Cfg\+\_\+t $\ast$}]{cfg }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{automation_2core_8h_ab07b8ecb7e3c679e711c063bb00fd940}\label{automation_2core_8h_ab07b8ecb7e3c679e711c063bb00fd940}} 
+\index{core.h@{core.h}!automation\_system\_init@{automation\_system\_init}}
+\index{automation\_system\_init@{automation\_system\_init}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_init()}{automation\_system\_init()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
 
 
 
 Initialise the system as an automation system. 
 
-Calls init\+\_\+common internally.
+Calls kernel\+\_\+init internally.
 
 
 \begin{DoxyParams}{Parameters}
@@ -51,11 +38,21 @@ Calls init\+\_\+common internally.
 \begin{DoxyReturn}{Returns}
 0 if no error occured, else $>$ 0 if an error occured. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{automation_2api_8h_a266f5278a8e73232ac003d3864c4f854}\label{automation_2api_8h_a266f5278a8e73232ac003d3864c4f854}} 
-\index{api.h@{api.h}!step\_automation\_system@{step\_automation\_system}}
-\index{step\_automation\_system@{step\_automation\_system}!api.h@{api.h}}
-\doxysubsubsection{\texorpdfstring{step\_automation\_system()}{step\_automation\_system()}}
-{\footnotesize\ttfamily int step\+\_\+automation\+\_\+system (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{automation_2core_8h_a6f4a0bc73549fa154bfef3c145b5731d}\label{automation_2core_8h_a6f4a0bc73549fa154bfef3c145b5731d}} 
+\index{core.h@{core.h}!automation\_system\_init\_cbk@{automation\_system\_init\_cbk}}
+\index{automation\_system\_init\_cbk@{automation\_system\_init\_cbk}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_init\_cbk()}{automation\_system\_init\_cbk()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+init\+\_\+cbk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct Kernelg\+Cfg\+\_\+t $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+Callback to initialise the automation system. 
+
+This works because cfg is the first attribute of \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}}, and because we ensure that the pointer is in fact a pointer to a full \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} value. \mbox{\Hypertarget{automation_2core_8h_a63b70470973d55cb6679373e92c242d0}\label{automation_2core_8h_a63b70470973d55cb6679373e92c242d0}} 
+\index{core.h@{core.h}!automation\_system\_step@{automation\_system\_step}}
+\index{automation\_system\_step@{automation\_system\_step}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_step()}{automation\_system\_step()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+step (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
 
 
 

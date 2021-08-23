@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['write_5ferror_194',['write_error',['../error_8h.html#ac6bd1941b17b2c9e97ae6ff7b5231daf',1,'error.h']]]
+  ['task_5flist_5finit_402',['task_list_init',['../task_8c.html#a93ae6ec2ffe7eb57465d2ef904375686',1,'task_list_init(struct AutomationTaskList_t *list):&#160;task.c'],['../task_8h.html#a93ae6ec2ffe7eb57465d2ef904375686',1,'task_list_init(struct AutomationTaskList_t *list):&#160;task.c']]],
+  ['task_5flist_5finit_5fit_403',['task_list_init_it',['../task_8c.html#ae1ce0ffc5abfd75199646ef6ac432071',1,'task_list_init_it(struct AutomationTaskList_t *list, struct AutomationTaskListIterator_t *it):&#160;task.c'],['../task_8h.html#ae1ce0ffc5abfd75199646ef6ac432071',1,'task_list_init_it(struct AutomationTaskList_t *list, struct AutomationTaskListIterator_t *it):&#160;task.c']]],
+  ['task_5flist_5fit_5fget_404',['task_list_it_get',['../task_8c.html#a52a098a8cd064a3c89b3066b80bc04eb',1,'task_list_it_get(struct AutomationTaskListIterator_t *it, struct AutomaationTask_t **out):&#160;task.c'],['../task_8h.html#a52a098a8cd064a3c89b3066b80bc04eb',1,'task_list_it_get(struct AutomationTaskListIterator_t *it, struct AutomaationTask_t **out):&#160;task.c']]],
+  ['task_5flist_5fit_5fnext_405',['task_list_it_next',['../task_8c.html#a378796000d2c90d1dea2ab42bd305b9c',1,'task_list_it_next(struct AutomationTaskListIterator_t *it):&#160;task.c'],['../task_8h.html#a378796000d2c90d1dea2ab42bd305b9c',1,'task_list_it_next(struct AutomationTaskListIterator_t *it):&#160;task.c']]],
+  ['task_5flist_5fiter_406',['task_list_iter',['../task_8c.html#a76108b422122040171da6be03680476f',1,'task_list_iter(struct AutomationTaskList_t *list):&#160;task.c'],['../task_8h.html#a76108b422122040171da6be03680476f',1,'task_list_iter(struct AutomationTaskList_t *list):&#160;task.c']]],
+  ['task_5fpush_407',['task_push',['../task_8c.html#ab8e2bd49dfe8c896f589b8a41a1d2349',1,'task_push(struct AutomationTaskList_t *list, void(*raw)(struct System_t *)):&#160;task.c'],['../task_8h.html#ab8e2bd49dfe8c896f589b8a41a1d2349',1,'task_push(struct AutomationTaskList_t *list, void(*raw)(struct System_t *)):&#160;task.c']]]
 ];

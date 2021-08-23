@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.h Source File</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,30 +66,36 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">api.h</div>  </div>
+<div class="title">core.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="automation_2api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="automation_2cfg_8h.html">src/model/automation/cfg.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="automation_2header_8h.html">src/model/automation/header.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">src/model/system.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">int</span> <a class="code" href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys, <span class="keyword">struct</span> AutomationSystemCfg_t* cfg);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Lower Level //</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">struct </span><a class="code" href="struct_automation_header__t.html">AutomationHeader_t</a>* <a class="code" href="automation_2api_8h.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys);</div>
-<div class="ttc" id="aautomation_2api_8h_html_a0d679cce1de6c159cd2618f7631a3ea9"><div class="ttname"><a href="automation_2api_8h.html#a0d679cce1de6c159cd2618f7631a3ea9">get_automation_header</a></div><div class="ttdeci">struct AutomationHeader_t * get_automation_header(struct System_t *sys)</div><div class="ttdoc">Return the automation system's header.</div><div class="ttdef"><b>Definition:</b> api.c:81</div></div>
-<div class="ttc" id="aautomation_2api_8h_html_a266f5278a8e73232ac003d3864c4f854"><div class="ttname"><a href="automation_2api_8h.html#a266f5278a8e73232ac003d3864c4f854">automation_system_step</a></div><div class="ttdeci">int automation_system_step(struct System_t *sys)</div><div class="ttdoc">Execute a simulation step for the system.</div><div class="ttdef"><b>Definition:</b> api.c:61</div></div>
-<div class="ttc" id="aautomation_2api_8h_html_afff68ba3b3bf511f3af1f1230398a985"><div class="ttname"><a href="automation_2api_8h.html#afff68ba3b3bf511f3af1f1230398a985">automation_system_init</a></div><div class="ttdeci">int automation_system_init(struct System_t *sys, struct AutomationSystemCfg_t *cfg)</div><div class="ttdoc">Initialise the system as an automation system.</div><div class="ttdef"><b>Definition:</b> api.c:12</div></div>
+<a href="automation_2core_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __AUTOMATION_API_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __AUTOMATION_API_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="automation_2cfg_8h.html">src/model/automation/cfg.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="header_8h.html">src/model/automation/header.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_2core_8h.html">src/model/system/core.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="automation_2core_8h.html#ab07b8ecb7e3c679e711c063bb00fd940">automation_system_init</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys, <span class="keyword">struct</span> <a class="code" href="struct_automation_cfg__t.html">AutomationCfg_t</a>* cfg);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">int</span> <a class="code" href="automation_2core_8h.html#a63b70470973d55cb6679373e92c242d0">automation_system_step</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Lower Level //</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">int</span> <a class="code" href="automation_2core_8h.html#a6f4a0bc73549fa154bfef3c145b5731d">automation_system_init</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys, <span class="keyword">struct</span> KernelgCfg_t* cfg);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aautomation_2core_8h_html_a63b70470973d55cb6679373e92c242d0"><div class="ttname"><a href="automation_2core_8h.html#a63b70470973d55cb6679373e92c242d0">automation_system_step</a></div><div class="ttdeci">int automation_system_step(struct System_t *sys)</div><div class="ttdoc">Execute a simulation step for the system.</div><div class="ttdef"><b>Definition:</b> core.c:77</div></div>
+<div class="ttc" id="aautomation_2core_8h_html_a6f4a0bc73549fa154bfef3c145b5731d"><div class="ttname"><a href="automation_2core_8h.html#a6f4a0bc73549fa154bfef3c145b5731d">automation_system_init</a></div><div class="ttdeci">int automation_system_init(struct System_t *sys, struct KernelgCfg_t *cfg)</div><div class="ttdoc">Callback to initialise the automation system.</div><div class="ttdef"><b>Definition:</b> core.c:103</div></div>
+<div class="ttc" id="aautomation_2core_8h_html_ab07b8ecb7e3c679e711c063bb00fd940"><div class="ttname"><a href="automation_2core_8h.html#ab07b8ecb7e3c679e711c063bb00fd940">automation_system_init</a></div><div class="ttdeci">int automation_system_init(struct System_t *sys, struct AutomationCfg_t *cfg)</div><div class="ttdoc">Initialise the system as an automation system.</div><div class="ttdef"><b>Definition:</b> core.c:13</div></div>
 <div class="ttc" id="aautomation_2cfg_8h_html"><div class="ttname"><a href="automation_2cfg_8h.html">cfg.h</a></div></div>
-<div class="ttc" id="aautomation_2header_8h_html"><div class="ttname"><a href="automation_2header_8h.html">header.h</a></div></div>
-<div class="ttc" id="astruct_automation_header__t_html"><div class="ttname"><a href="struct_automation_header__t.html">AutomationHeader_t</a></div><div class="ttdef"><b>Definition:</b> header.h:4</div></div>
-<div class="ttc" id="astruct_system__t_html"><div class="ttname"><a href="struct_system__t.html">System_t</a></div><div class="ttdoc">A handler to a simulated system.</div><div class="ttdef"><b>Definition:</b> system.h:26</div></div>
-<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div><div class="ttdoc">Contains the system representation, and its API.</div></div>
+<div class="ttc" id="aheader_8h_html"><div class="ttname"><a href="header_8h.html">header.h</a></div><div class="ttdoc">Contains the system kernel header.</div></div>
+<div class="ttc" id="astruct_automation_cfg__t_html"><div class="ttname"><a href="struct_automation_cfg__t.html">AutomationCfg_t</a></div><div class="ttdef"><b>Definition:</b> cfg.h:58</div></div>
+<div class="ttc" id="astruct_system__t_html"><div class="ttname"><a href="struct_system__t.html">System_t</a></div><div class="ttdoc">A handler to a simulated system.</div><div class="ttdef"><b>Definition:</b> core.h:33</div></div>
+<div class="ttc" id="asystem_2core_8h_html"><div class="ttname"><a href="system_2core_8h.html">core.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

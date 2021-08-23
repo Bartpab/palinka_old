@@ -1,29 +1,29 @@
-\hypertarget{api_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c File Reference}
-\label{api_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/api.c}}
+\hypertarget{core_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c File Reference}
+\label{core_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c}}
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}src/model/automation/api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/automation/core.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/cfg.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/header.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/automation/task.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/data.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/core.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/system.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{api_8c_afff68ba3b3bf511f3af1f1230398a985}{init\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Automation\+System\+Cfg\+\_\+t $\ast$cfg)
+int \mbox{\hyperlink{core_8c_afff68ba3b3bf511f3af1f1230398a985}{init\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Automation\+System\+Cfg\+\_\+t $\ast$cfg)
 \begin{DoxyCompactList}\small\item\em Initialise the system as an automation system. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{api_8c_a266f5278a8e73232ac003d3864c4f854}{step\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+int \mbox{\hyperlink{core_8c_a266f5278a8e73232ac003d3864c4f854}{step\+\_\+automation\+\_\+system}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
 \begin{DoxyCompactList}\small\item\em Execute a simulation step for the system. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{api_8c_a0d679cce1de6c159cd2618f7631a3ea9}{get\+\_\+automation\+\_\+header}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}} $\ast$ \mbox{\hyperlink{core_8c_a0d679cce1de6c159cd2618f7631a3ea9}{get\+\_\+automation\+\_\+header}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
 \begin{DoxyCompactList}\small\item\em Return the automation system\textquotesingle{}s header. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{api_8c_a0d679cce1de6c159cd2618f7631a3ea9}\label{api_8c_a0d679cce1de6c159cd2618f7631a3ea9}} 
-\index{api.c@{api.c}!get\_automation\_header@{get\_automation\_header}}
-\index{get\_automation\_header@{get\_automation\_header}!api.c@{api.c}}
+\mbox{\Hypertarget{core_8c_a0d679cce1de6c159cd2618f7631a3ea9}\label{core_8c_a0d679cce1de6c159cd2618f7631a3ea9}} 
+\index{core.c@{core.c}!get\_automation\_header@{get\_automation\_header}}
+\index{get\_automation\_header@{get\_automation\_header}!core.c@{core.c}}
 \doxysubsubsection{\texorpdfstring{get\_automation\_header()}{get\_automation\_header()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{struct_automation_header__t}{Automation\+Header\+\_\+t}}$\ast$ get\+\_\+automation\+\_\+header (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
 
@@ -34,9 +34,9 @@ Return the automation system\textquotesingle{}s header.
 \begin{DoxyReturn}{Returns}
 The automation header of the system. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{api_8c_afff68ba3b3bf511f3af1f1230398a985}\label{api_8c_afff68ba3b3bf511f3af1f1230398a985}} 
-\index{api.c@{api.c}!init\_automation\_system@{init\_automation\_system}}
-\index{init\_automation\_system@{init\_automation\_system}!api.c@{api.c}}
+\mbox{\Hypertarget{core_8c_afff68ba3b3bf511f3af1f1230398a985}\label{core_8c_afff68ba3b3bf511f3af1f1230398a985}} 
+\index{core.c@{core.c}!init\_automation\_system@{init\_automation\_system}}
+\index{init\_automation\_system@{init\_automation\_system}!core.c@{core.c}}
 \doxysubsubsection{\texorpdfstring{init\_automation\_system()}{init\_automation\_system()}}
 {\footnotesize\ttfamily int init\+\_\+automation\+\_\+system (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct Automation\+System\+Cfg\+\_\+t $\ast$}]{cfg }\end{DoxyParamCaption})}
 
@@ -44,7 +44,7 @@ The automation header of the system.
 
 Initialise the system as an automation system. 
 
-Calls init\+\_\+common internally.
+Calls init\+\_\+kernel internally.
 
 
 \begin{DoxyParams}{Parameters}
@@ -56,9 +56,9 @@ Calls init\+\_\+common internally.
 \begin{DoxyReturn}{Returns}
 0 if no error occured, else $>$ 0 if an error occured. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{api_8c_a266f5278a8e73232ac003d3864c4f854}\label{api_8c_a266f5278a8e73232ac003d3864c4f854}} 
-\index{api.c@{api.c}!step\_automation\_system@{step\_automation\_system}}
-\index{step\_automation\_system@{step\_automation\_system}!api.c@{api.c}}
+\mbox{\Hypertarget{core_8c_a266f5278a8e73232ac003d3864c4f854}\label{core_8c_a266f5278a8e73232ac003d3864c4f854}} 
+\index{core.c@{core.c}!step\_automation\_system@{step\_automation\_system}}
+\index{step\_automation\_system@{step\_automation\_system}!core.c@{core.c}}
 \doxysubsubsection{\texorpdfstring{step\_automation\_system()}{step\_automation\_system()}}
 {\footnotesize\ttfamily int step\+\_\+automation\+\_\+system (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
 

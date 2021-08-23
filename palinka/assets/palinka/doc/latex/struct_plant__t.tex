@@ -7,16 +7,16 @@ A handler to the simulated plant.
 
 
 
-{\ttfamily \#include $<$plant.\+h$>$}
+{\ttfamily \#include $<$core.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 char $\ast$ \mbox{\hyperlink{struct_plant__t_ad91953778a25e4609da396424454e211}{base}}
 \item 
-unsigned int \mbox{\hyperlink{struct_plant__t_ada873cf0efe8f1094a842358bcb03e92}{nb\+\_\+systems}}
+struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} \mbox{\hyperlink{struct_plant__t_a9a5ed74911a1679267ba3ea1e6177385}{systems}}
 \item 
-\mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$ \mbox{\hyperlink{struct_plant__t_a2ec0e87242cda365ea65dbcbfedbc7d0}{systems}}
+struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} \mbox{\hyperlink{struct_plant__t_aa3abe6d48ffef8f7a98a44e324e2ea6b}{err}}
 \end{DoxyCompactItemize}
 
 
@@ -30,20 +30,20 @@ A handler to the simulated plant.
 \doxysubsubsection{\texorpdfstring{base}{base}}
 {\footnotesize\ttfamily char$\ast$ Plant\+\_\+t\+::base}
 
-Memory base of the plant \mbox{\Hypertarget{struct_plant__t_ada873cf0efe8f1094a842358bcb03e92}\label{struct_plant__t_ada873cf0efe8f1094a842358bcb03e92}} 
-\index{Plant\_t@{Plant\_t}!nb\_systems@{nb\_systems}}
-\index{nb\_systems@{nb\_systems}!Plant\_t@{Plant\_t}}
-\doxysubsubsection{\texorpdfstring{nb\_systems}{nb\_systems}}
-{\footnotesize\ttfamily unsigned int Plant\+\_\+t\+::nb\+\_\+systems}
+Memory base of the plant \mbox{\Hypertarget{struct_plant__t_aa3abe6d48ffef8f7a98a44e324e2ea6b}\label{struct_plant__t_aa3abe6d48ffef8f7a98a44e324e2ea6b}} 
+\index{Plant\_t@{Plant\_t}!err@{err}}
+\index{err@{err}!Plant\_t@{Plant\_t}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} Plant\+\_\+t\+::err}
 
-\mbox{\Hypertarget{struct_plant__t_a2ec0e87242cda365ea65dbcbfedbc7d0}\label{struct_plant__t_a2ec0e87242cda365ea65dbcbfedbc7d0}} 
+\mbox{\Hypertarget{struct_plant__t_a9a5ed74911a1679267ba3ea1e6177385}\label{struct_plant__t_a9a5ed74911a1679267ba3ea1e6177385}} 
 \index{Plant\_t@{Plant\_t}!systems@{systems}}
 \index{systems@{systems}!Plant\_t@{Plant\_t}}
 \doxysubsubsection{\texorpdfstring{systems}{systems}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_system__t}{System\+\_\+t}}$\ast$ Plant\+\_\+t\+::systems}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} Plant\+\_\+t\+::systems}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/\mbox{\hyperlink{plant_8h}{plant.\+h}}\end{DoxyCompactItemize}
+C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/plant/\mbox{\hyperlink{plant_2core_8h}{core.\+h}}\end{DoxyCompactItemize}

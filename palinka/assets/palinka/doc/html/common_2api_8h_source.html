@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/api.h Source File</title>
+<title>palinka: C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,71 +61,31 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li><li class="navelem"><a class="el" href="dir_b098c754a28b5a15e22df9525627bf7b.html">common</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li><li class="navelem"><a class="el" href="dir_b098c754a28b5a15e22df9525627bf7b.html">kernel</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">api.h</div>  </div>
+<div class="title">core.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="common_2api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="kernel_2core_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __COMMON_INIT__</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __COMMON_INIT__</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2cfg_8h.html">src/model/common/cfg.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_2header_8h.html">src/model/common/data.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="error_8h.html">src/model/error.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">* \brief Initialise common data for the system</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">* This function must be called before any other init operations !</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">* struct System_t* sys: The system</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">* struct CommonCfg_t* cfg: The common configuration</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">* size_t reserved: The number of octets to reserve for system-specific header, next will point to the next entry after the common header.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="common_2api_8h.html#a06e63d746d1de3353fcf34225f8b3a92">   26</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="common_2api_8h.html#a06e63d746d1de3353fcf34225f8b3a92">common_init</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys, <span class="keyword">struct</span> <a class="code" href="struct_common_cfg__t.html">CommonCfg_t</a>* common, <span class="keywordtype">size_t</span> reserved) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_common_header__t.html">CommonHeader_t</a>* header;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">size_t</span> total_header_size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="struct_common_header__t.html">CommonHeader_t</a>) + reserved;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Not enough memory size...</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (total_header_size &gt;= sys-&gt;<a class="code" href="struct_system__t.html#a2d2868d60a81fe9e1b17175afcd34b02">memory_size</a>) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">char</span> err_msg[256];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        snprintf(err_msg, 256, <span class="stringliteral">&quot;Not enough memory to init system common, required: %d and got only %d&quot;</span>, total_header_size, sys-&gt;<a class="code" href="struct_system__t.html#a2d2868d60a81fe9e1b17175afcd34b02">memory_size</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="system_8c.html#aa67b56de8d0f22c9078686313f187c94">sys_push_error</a>(sys, <a class="code" href="error_8h.html#ac667bb1f74ae533e9a850d7b09f0d85d">ERR_NOT_ENOUGH_MEMORY_SPACE</a>, err_msg);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="error_8h.html#ac667bb1f74ae533e9a850d7b09f0d85d">ERR_NOT_ENOUGH_MEMORY_SPACE</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    header = (<span class="keyword">struct </span><a class="code" href="struct_common_header__t.html">CommonHeader_t</a>*) sys-&gt;<a class="code" href="struct_system__t.html#a04eb5025fcf26ae5b3be397f3c30e264">base</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">char</span>* heap_base = sys-&gt;<a class="code" href="struct_system__t.html#a04eb5025fcf26ae5b3be397f3c30e264">base</a>[total_header_size];</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">size_t</span> heap_max_size = sys-&gt;<a class="code" href="struct_system__t.html#a2d2868d60a81fe9e1b17175afcd34b02">memory_size</a> - total_header_size;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// We need to init the MMU</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="mmu_8c.html#a0cdcade82ef8523129ec13a5ae2ae567">mmu_init</a>(&amp;header-&gt;<a class="code" href="struct_common_header__t.html#ae66485fe2cf025963f79fb1e9048b171">mmu</a>, heap_base, heap_max_size);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    header-&gt;<a class="code" href="struct_common_header__t.html#a88da63b2f86a157143c4b90aee2011b8">next</a> = (<span class="keywordtype">char</span>*) header + 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="acommon_2api_8h_html_a06e63d746d1de3353fcf34225f8b3a92"><div class="ttname"><a href="common_2api_8h.html#a06e63d746d1de3353fcf34225f8b3a92">common_init</a></div><div class="ttdeci">int common_init(struct System_t *sys, struct CommonCfg_t *common, size_t reserved)</div><div class="ttdef"><b>Definition:</b> api.h:26</div></div>
-<div class="ttc" id="acommon_2cfg_8h_html"><div class="ttname"><a href="common_2cfg_8h.html">cfg.h</a></div></div>
-<div class="ttc" id="acommon_2header_8h_html"><div class="ttname"><a href="common_2header_8h.html">header.h</a></div><div class="ttdoc">Contains the system common header.</div></div>
-<div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
-<div class="ttc" id="aerror_8h_html_ac667bb1f74ae533e9a850d7b09f0d85d"><div class="ttname"><a href="error_8h.html#ac667bb1f74ae533e9a850d7b09f0d85d">ERR_NOT_ENOUGH_MEMORY_SPACE</a></div><div class="ttdeci">const int ERR_NOT_ENOUGH_MEMORY_SPACE</div><div class="ttdef"><b>Definition:</b> error.h:14</div></div>
-<div class="ttc" id="ammu_8c_html_a0cdcade82ef8523129ec13a5ae2ae567"><div class="ttname"><a href="mmu_8c.html#a0cdcade82ef8523129ec13a5ae2ae567">mmu_init</a></div><div class="ttdeci">void mmu_init(struct MemoryManagementUnit_t *mmu, char *base_heap, size_t free_space_size)</div><div class="ttdoc">Initialise the MMU.</div><div class="ttdef"><b>Definition:</b> mmu.c:8</div></div>
-<div class="ttc" id="astruct_common_cfg__t_html"><div class="ttname"><a href="struct_common_cfg__t.html">CommonCfg_t</a></div><div class="ttdef"><b>Definition:</b> cfg.h:1</div></div>
-<div class="ttc" id="astruct_common_header__t_html"><div class="ttname"><a href="struct_common_header__t.html">CommonHeader_t</a></div><div class="ttdoc">Contains the common data to manage common routines.</div><div class="ttdef"><b>Definition:</b> header.h:22</div></div>
-<div class="ttc" id="astruct_common_header__t_html_a88da63b2f86a157143c4b90aee2011b8"><div class="ttname"><a href="struct_common_header__t.html#a88da63b2f86a157143c4b90aee2011b8">CommonHeader_t::next</a></div><div class="ttdeci">char * next</div><div class="ttdef"><b>Definition:</b> header.h:24</div></div>
-<div class="ttc" id="astruct_common_header__t_html_ae66485fe2cf025963f79fb1e9048b171"><div class="ttname"><a href="struct_common_header__t.html#ae66485fe2cf025963f79fb1e9048b171">CommonHeader_t::mmu</a></div><div class="ttdeci">struct MemoryManagementUnit_t mmu</div><div class="ttdef"><b>Definition:</b> header.h:23</div></div>
-<div class="ttc" id="astruct_system__t_html"><div class="ttname"><a href="struct_system__t.html">System_t</a></div><div class="ttdoc">A handler to a simulated system.</div><div class="ttdef"><b>Definition:</b> system.h:26</div></div>
-<div class="ttc" id="astruct_system__t_html_a04eb5025fcf26ae5b3be397f3c30e264"><div class="ttname"><a href="struct_system__t.html#a04eb5025fcf26ae5b3be397f3c30e264">System_t::base</a></div><div class="ttdeci">char * base</div><div class="ttdef"><b>Definition:</b> system.h:28</div></div>
-<div class="ttc" id="astruct_system__t_html_a2d2868d60a81fe9e1b17175afcd34b02"><div class="ttname"><a href="struct_system__t.html#a2d2868d60a81fe9e1b17175afcd34b02">System_t::memory_size</a></div><div class="ttdeci">size_t memory_size</div><div class="ttdef"><b>Definition:</b> system.h:30</div></div>
-<div class="ttc" id="asystem_8c_html_aa67b56de8d0f22c9078686313f187c94"><div class="ttname"><a href="system_8c.html#aa67b56de8d0f22c9078686313f187c94">sys_push_error</a></div><div class="ttdeci">void sys_push_error(struct System_t *sys, const int code, const char *msg)</div><div class="ttdoc">Push an error.</div><div class="ttdef"><b>Definition:</b> system.c:4</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_2core_8h.html">src/model/system/core.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kernel_2cfg_8h.html">src/model/kernel/cfg.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="kernel_2core_8h.html#a5ae0d0c4e06a3b25a404781afb50821e">kernel_init</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys, <span class="keyword">struct</span> <a class="code" href="struct_kernel_cfg__t.html">KernelCfg_t</a>* kernel, <span class="keywordtype">size_t</span> reserved);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="kernel_2core_8h.html#ab393d7fd0aec6473b341b976cb7a6808">kernel_delete</a>(<span class="keyword">struct</span> <a class="code" href="struct_system__t.html">System_t</a>* sys);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="akernel_2core_8h_html_a5ae0d0c4e06a3b25a404781afb50821e"><div class="ttname"><a href="kernel_2core_8h.html#a5ae0d0c4e06a3b25a404781afb50821e">kernel_init</a></div><div class="ttdeci">int kernel_init(struct System_t *sys, struct KernelCfg_t *kernel, size_t reserved)</div><div class="ttdoc">Initialise system's kernel.</div><div class="ttdef"><b>Definition:</b> core.c:12</div></div>
+<div class="ttc" id="akernel_2core_8h_html_ab393d7fd0aec6473b341b976cb7a6808"><div class="ttname"><a href="kernel_2core_8h.html#ab393d7fd0aec6473b341b976cb7a6808">kernel_delete</a></div><div class="ttdeci">void kernel_delete(struct System_t *sys)</div><div class="ttdoc">Delete kernel header.</div><div class="ttdef"><b>Definition:</b> core.c:52</div></div>
+<div class="ttc" id="akernel_2cfg_8h_html"><div class="ttname"><a href="kernel_2cfg_8h.html">cfg.h</a></div></div>
+<div class="ttc" id="astruct_kernel_cfg__t_html"><div class="ttname"><a href="struct_kernel_cfg__t.html">KernelCfg_t</a></div><div class="ttdoc">System Kernel Configuration.</div><div class="ttdef"><b>Definition:</b> cfg.h:10</div></div>
+<div class="ttc" id="astruct_system__t_html"><div class="ttname"><a href="struct_system__t.html">System_t</a></div><div class="ttdoc">A handler to a simulated system.</div><div class="ttdef"><b>Definition:</b> core.h:33</div></div>
+<div class="ttc" id="asystem_2core_8h_html"><div class="ttname"><a href="system_2core_8h.html">core.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

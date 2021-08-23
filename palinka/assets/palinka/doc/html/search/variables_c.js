@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tail_230',['tail',['../struct_memory_management_unit__t.html#a1aaec01fee602d6a359a97a0a6bdc967',1,'MemoryManagementUnit_t::tail()'],['../struct_socket_buffer_queue__t.html#af64f947a69d25a95ebf2ce27916cd5c9',1,'SocketBufferQueue_t::tail()'],['../struct_socket_buffer__t.html#a484de81b3018c6337d5e32ed90e22b00',1,'SocketBuffer_t::tail()']]],
-  ['tasks_231',['tasks',['../struct_automation_cfg__t.html#a9570a3a341bb8c5f92fe19349d1d8632',1,'AutomationCfg_t::tasks()'],['../struct_automation_header__t.html#a8c1044d740083364317c2cd82f45f600',1,'AutomationHeader_t::tasks()']]]
+  ['phy_5fdev_5faccessor_5fdirect_460',['PHY_DEV_ACCESSOR_DIRECT',['../kernel_2device_2phy_2accessor_8h.html#aa739b76e3bdf0c0ceef947d26f0b0ba9',1,'accessor.h']]],
+  ['phy_5fdev_5facessor_5fby_5fplan_461',['PHY_DEV_ACESSOR_BY_PLAN',['../kernel_2device_2phy_2accessor_8h.html#a3e6c2d6018db66ccdc419d11085b4f98',1,'accessor.h']]],
+  ['phy_5fdev_5facessor_5fby_5fsys_462',['PHY_DEV_ACESSOR_BY_SYS',['../kernel_2device_2phy_2accessor_8h.html#a8e46f833ccd7b78d7a6deea7e4e5a68f',1,'accessor.h']]],
+  ['plant_463',['plant',['../struct_physical_device_accessor__t.html#a0583ab3aaf3450e7e91702f8b90d8bfd',1,'PhysicalDeviceAccessor_t']]]
 ];

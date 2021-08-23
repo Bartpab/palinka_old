@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>palinka: CommonHeader_t Struct Reference</title>
+<title>palinka: KernelHeader_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,50 +63,36 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_common_header__t-members.html">List of all members</a>  </div>
+<a href="struct_kernel_header__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CommonHeader_t Struct Reference</div>  </div>
+<div class="title">KernelHeader_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the common data to manage common routines.  
- <a href="struct_common_header__t.html#details">More...</a></p>
+<p>Contains the kernel data to manage kernel routines.  
+ <a href="struct_kernel_header__t.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="common_2header_8h_source.html">header.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae66485fe2cf025963f79fb1e9048b171"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_common_header__t.html#ae66485fe2cf025963f79fb1e9048b171">mmu</a></td></tr>
+<tr class="memitem:ae66485fe2cf025963f79fb1e9048b171"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_kernel_header__t.html#ae66485fe2cf025963f79fb1e9048b171">mmu</a></td></tr>
 <tr class="separator:ae66485fe2cf025963f79fb1e9048b171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88da63b2f86a157143c4b90aee2011b8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_common_header__t.html#a88da63b2f86a157143c4b90aee2011b8">next</a></td></tr>
-<tr class="separator:a88da63b2f86a157143c4b90aee2011b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e37b9fd27a9cf3825f578280ddb97f2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_interrupt_request_table__t.html">InterruptRequestTable_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_kernel_header__t.html#a8e37b9fd27a9cf3825f578280ddb97f2">irq</a></td></tr>
+<tr class="separator:a8e37b9fd27a9cf3825f578280ddb97f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the common data to manage common routines. </p>
-<p>Common routines include: Memory Management Unit [MMU], Device Management [DEV], ... </p>
+<div class="textblock"><p>Contains the kernel data to manage kernel routines. </p>
+<p>Kernel routines include: Memory Management Unit [MMU], Device Management [DEV], ... </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae66485fe2cf025963f79fb1e9048b171"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66485fe2cf025963f79fb1e9048b171">&#9670;&nbsp;</a></span>mmu</h2>
+<a id="a8e37b9fd27a9cf3825f578280ddb97f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e37b9fd27a9cf3825f578280ddb97f2">&#9670;&nbsp;</a></span>irq</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> CommonHeader_t::mmu</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a88da63b2f86a157143c4b90aee2011b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88da63b2f86a157143c4b90aee2011b8">&#9670;&nbsp;</a></span>next</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* CommonHeader_t::next</td>
+          <td class="memname">struct <a class="el" href="struct_interrupt_request_table__t.html">InterruptRequestTable_t</a> KernelHeader_t::irq</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -114,8 +100,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae66485fe2cf025963f79fb1e9048b171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66485fe2cf025963f79fb1e9048b171">&#9670;&nbsp;</a></span>mmu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_memory_management_unit__t.html">MemoryManagementUnit_t</a> KernelHeader_t::mmu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/<a class="el" href="common_2header_8h_source.html">header.h</a></li>
+<li>C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/<a class="el" href="data_8h_source.html">data.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

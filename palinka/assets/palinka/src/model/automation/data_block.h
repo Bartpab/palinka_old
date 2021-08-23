@@ -11,9 +11,9 @@
 #define __DATA_BLOCK_H__
 
 #include <stddef.h>
-#include "src/model/system/api.h"
+#include "src/model/system/core.h"
 
-#include "src/model/automation/api.h"
+#include "src/model/automation/core.h"
 
 #define MAX_NUMBER_OF_DATA_BLOCKS 256
 

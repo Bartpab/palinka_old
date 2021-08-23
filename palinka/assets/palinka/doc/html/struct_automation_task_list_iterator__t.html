@@ -78,10 +78,12 @@ $(function() {
 Public Attributes</h2></td></tr>
 <tr class="memitem:afa9eec7dbe1a86e15ba6dac2fed504ef"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_list_iterator__t.html#afa9eec7dbe1a86e15ba6dac2fed504ef">curr</a></td></tr>
 <tr class="separator:afa9eec7dbe1a86e15ba6dac2fed504ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeac11a347898bb7ca0dc1edcef9bb7cf"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_list_iterator__t.html#aeac11a347898bb7ca0dc1edcef9bb7cf">limit</a></td></tr>
-<tr class="separator:aeac11a347898bb7ca0dc1edcef9bb7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef38a30e6e7af5b8705759f87003a572"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_list_iterator__t.html#aef38a30e6e7af5b8705759f87003a572">list</a></td></tr>
+<tr class="separator:aef38a30e6e7af5b8705759f87003a572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a753a53c0e93438e63d20ebb0a9b03875"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_list_iterator__t.html#a753a53c0e93438e63d20ebb0a9b03875">next</a> )(struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *it)</td></tr>
 <tr class="separator:a753a53c0e93438e63d20ebb0a9b03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4cd9bb7229abf109bc33180bc8179fd"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_list_iterator__t.html#ac4cd9bb7229abf109bc33180bc8179fd">get</a> )(struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *, struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a> **)</td></tr>
+<tr class="separator:ac4cd9bb7229abf109bc33180bc8179fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An iterator for an automation task list. </p>
@@ -100,14 +102,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aeac11a347898bb7ca0dc1edcef9bb7cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeac11a347898bb7ca0dc1edcef9bb7cf">&#9670;&nbsp;</a></span>limit</h2>
+<a id="ac4cd9bb7229abf109bc33180bc8179fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4cd9bb7229abf109bc33180bc8179fd">&#9670;&nbsp;</a></span>get</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a>* AutomationTaskListIterator_t::limit</td>
+          <td class="memname">int(* AutomationTaskListIterator_t::get) (struct <a class="el" href="struct_automation_task_list_iterator__t.html">AutomationTaskListIterator_t</a> *, struct <a class="el" href="struct_automation_task__t.html">AutomationTask_t</a> **)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef38a30e6e7af5b8705759f87003a572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef38a30e6e7af5b8705759f87003a572">&#9670;&nbsp;</a></span>list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_automation_task_list__t.html">AutomationTaskList_t</a>* AutomationTaskListIterator_t::list</td>
         </tr>
       </table>
 </div><div class="memdoc">

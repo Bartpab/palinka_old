@@ -74,8 +74,7 @@ $(function() {
 <div class="title">error.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
-</div>
+
 <p><a href="error_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -90,8 +89,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a04f71466e7b7c33f778b9689924be410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a04f71466e7b7c33f778b9689924be410">error_init</a> (struct <a class="el" href="struct_error__t.html">Error_t</a> *err)</td></tr>
+<tr class="separator:a04f71466e7b7c33f778b9689924be410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6bd1941b17b2c9e97ae6ff7b5231daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ac6bd1941b17b2c9e97ae6ff7b5231daf">write_error</a> (struct <a class="el" href="struct_error__t.html">Error_t</a> *err, const int code, const char *msg)</td></tr>
 <tr class="separator:ac6bd1941b17b2c9e97ae6ff7b5231daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4d7f1445f1f03068b6e764c3f5a2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#afd4d7f1445f1f03068b6e764c3f5a2ef">copy_error</a> (struct <a class="el" href="struct_error__t.html">Error_t</a> *dest, const struct <a class="el" href="struct_error__t.html">Error_t</a> *src)</td></tr>
+<tr class="separator:afd4d7f1445f1f03068b6e764c3f5a2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -101,10 +104,14 @@ Variables</h2></td></tr>
 <tr class="separator:ae0eff340519d460f6a01a79fd9859003"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82dafe4f97177e85ea962d9121512791"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a82dafe4f97177e85ea962d9121512791">ERR_REACHED_AUTOMATION_DATA_BLOCK_LIMIT</a> = 0x03</td></tr>
 <tr class="separator:a82dafe4f97177e85ea962d9121512791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae394f89be2acc108db824b244798eb83"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ae394f89be2acc108db824b244798eb83">ERR_UNALLOCATED_DATA_BLOCK</a> = 0x03</td></tr>
+<tr class="memitem:ae394f89be2acc108db824b244798eb83"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ae394f89be2acc108db824b244798eb83">ERR_UNALLOCATED_DATA_BLOCK</a> = 0x04</td></tr>
 <tr class="separator:ae394f89be2acc108db824b244798eb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e052972a0462102e69ad7e9360fef5f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a2e052972a0462102e69ad7e9360fef5f">ERR_FREED_DATA_BLOCK</a> = 0x03</td></tr>
+<tr class="memitem:a2e052972a0462102e69ad7e9360fef5f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a2e052972a0462102e69ad7e9360fef5f">ERR_FREED_DATA_BLOCK</a> = 0x05</td></tr>
 <tr class="separator:a2e052972a0462102e69ad7e9360fef5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1a575267ee17920e19be3960f67d89"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a9d1a575267ee17920e19be3960f67d89">ERR_REACHED_SYSTEMS_LIMIT</a> = 0x06</td></tr>
+<tr class="separator:a9d1a575267ee17920e19be3960f67d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ee1c93c95258106465e9e77a1097ce"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a49ee1c93c95258106465e9e77a1097ce">ERR_SYSTEM_UNAVAILABLE</a> = 0x07</td></tr>
+<tr class="separator:a49ee1c93c95258106465e9e77a1097ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a739aafe0806cdf9b9aff09b3d690ddb8"></a>
@@ -122,6 +129,52 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afd4d7f1445f1f03068b6e764c3f5a2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4d7f1445f1f03068b6e764c3f5a2ef">&#9670;&nbsp;</a></span>copy_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copy_error </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_error__t.html">Error_t</a> *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="struct_error__t.html">Error_t</a> *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04f71466e7b7c33f778b9689924be410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f71466e7b7c33f778b9689924be410">&#9670;&nbsp;</a></span>error_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void error_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_error__t.html">Error_t</a> *&#160;</td>
+          <td class="paramname"><em>err</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac6bd1941b17b2c9e97ae6ff7b5231daf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6bd1941b17b2c9e97ae6ff7b5231daf">&#9670;&nbsp;</a></span>write_error()</h2>
 
@@ -164,7 +217,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int ERR_FREED_DATA_BLOCK = 0x03</td>
+          <td class="memname">const int ERR_FREED_DATA_BLOCK = 0x05</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,6 +266,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9d1a575267ee17920e19be3960f67d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1a575267ee17920e19be3960f67d89">&#9670;&nbsp;</a></span>ERR_REACHED_SYSTEMS_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ERR_REACHED_SYSTEMS_LIMIT = 0x06</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49ee1c93c95258106465e9e77a1097ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ee1c93c95258106465e9e77a1097ce">&#9670;&nbsp;</a></span>ERR_SYSTEM_UNAVAILABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ERR_SYSTEM_UNAVAILABLE = 0x07</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae394f89be2acc108db824b244798eb83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae394f89be2acc108db824b244798eb83">&#9670;&nbsp;</a></span>ERR_UNALLOCATED_DATA_BLOCK</h2>
 
@@ -220,7 +301,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int ERR_UNALLOCATED_DATA_BLOCK = 0x03</td>
+          <td class="memname">const int ERR_UNALLOCATED_DATA_BLOCK = 0x04</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -66,12 +66,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cfg.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="kernel_2cfg_8h_source.html">src/model/kernel/cfg.h</a>&quot;</code><br />
 </div>
 <p><a href="automation_2cfg_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -79,11 +81,203 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_cfg__t.html">AutomationTaskCfg_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_data_block_cfg__t.html">AutomationDataBlockCfg_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_automation_cfg__t.html">AutomationCfg_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a14c85d0e22d8d99054e2a97987481bc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#a14c85d0e22d8d99054e2a97987481bc2">automation_task_cfg_it_init</a> (struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *it, struct <a class="el" href="struct_automation_task_cfg__t.html">AutomationTaskCfg_t</a> *cfg)</td></tr>
+<tr class="separator:a14c85d0e22d8d99054e2a97987481bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382de304c9f1a32584735b1c502e4811"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#a382de304c9f1a32584735b1c502e4811">automation_task_cfg_it_next</a> (struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *it)</td></tr>
+<tr class="separator:a382de304c9f1a32584735b1c502e4811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763c935ed0bcf9c85905b978a9d4b509"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#a763c935ed0bcf9c85905b978a9d4b509">automation_task_cfg_it_get</a> (struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *it, void(**out)(struct <a class="el" href="struct_system__t.html">System_t</a> *))</td></tr>
+<tr class="separator:a763c935ed0bcf9c85905b978a9d4b509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af760457f1b2dcd4f7f81e7837619f995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#af760457f1b2dcd4f7f81e7837619f995">automation_data_block_cfg_it_init</a> (struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *it, struct <a class="el" href="struct_automation_data_block_cfg__t.html">AutomationDataBlockCfg_t</a> *cfg)</td></tr>
+<tr class="memdesc:af760457f1b2dcd4f7f81e7837619f995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an iterator over the list of data block configurations.  <a href="automation_2cfg_8h.html#af760457f1b2dcd4f7f81e7837619f995">More...</a><br /></td></tr>
+<tr class="separator:af760457f1b2dcd4f7f81e7837619f995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2718be7ef99e069586d884effd47d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#abd2718be7ef99e069586d884effd47d2">automation_data_block_cfg_it_next</a> (struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *it)</td></tr>
+<tr class="memdesc:abd2718be7ef99e069586d884effd47d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the next element in the list.  <a href="automation_2cfg_8h.html#abd2718be7ef99e069586d884effd47d2">More...</a><br /></td></tr>
+<tr class="separator:abd2718be7ef99e069586d884effd47d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529de482466fcd24d2e5c845185507f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="automation_2cfg_8h.html#a529de482466fcd24d2e5c845185507f7">automation_data_block_cfg_it_get</a> (struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *it, size_t **out)</td></tr>
+<tr class="memdesc:a529de482466fcd24d2e5c845185507f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the element behind the current iterator state.  <a href="automation_2cfg_8h.html#a529de482466fcd24d2e5c845185507f7">More...</a><br /></td></tr>
+<tr class="separator:a529de482466fcd24d2e5c845185507f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a529de482466fcd24d2e5c845185507f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529de482466fcd24d2e5c845185507f7">&#9670;&nbsp;</a></span>automation_data_block_cfg_it_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automation_data_block_cfg_it_get </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t **&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the element behind the current iterator state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The iterator </td></tr>
+    <tr><td class="paramname">out</td><td>The output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if an element exists, 0 else. </dd></dl>
+
+</div>
+</div>
+<a id="af760457f1b2dcd4f7f81e7837619f995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af760457f1b2dcd4f7f81e7837619f995">&#9670;&nbsp;</a></span>automation_data_block_cfg_it_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void automation_data_block_cfg_it_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_data_block_cfg__t.html">AutomationDataBlockCfg_t</a> *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise an iterator over the list of data block configurations. </p>
+
+</div>
+</div>
+<a id="abd2718be7ef99e069586d884effd47d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2718be7ef99e069586d884effd47d2">&#9670;&nbsp;</a></span>automation_data_block_cfg_it_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automation_data_block_cfg_it_next </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_data_block_cfg_iterator__t.html">AutomationDataBlockCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetch the next element in the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The iterator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if another element was fetched, 0 else. </dd></dl>
+
+</div>
+</div>
+<a id="a763c935ed0bcf9c85905b978a9d4b509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763c935ed0bcf9c85905b978a9d4b509">&#9670;&nbsp;</a></span>automation_task_cfg_it_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automation_task_cfg_it_get </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(**)(struct <a class="el" href="struct_system__t.html">System_t</a> *)&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14c85d0e22d8d99054e2a97987481bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c85d0e22d8d99054e2a97987481bc2">&#9670;&nbsp;</a></span>automation_task_cfg_it_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void automation_task_cfg_it_init </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_cfg__t.html">AutomationTaskCfg_t</a> *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a382de304c9f1a32584735b1c502e4811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382de304c9f1a32584735b1c502e4811">&#9670;&nbsp;</a></span>automation_task_cfg_it_next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int automation_task_cfg_it_next </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="struct_automation_task_cfg_iterator__t.html">AutomationTaskCfgIterator_t</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

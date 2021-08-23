@@ -1,0 +1,74 @@
+\hypertarget{automation_2core_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c File Reference}
+\label{automation_2core_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/automation/core.c}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}src/model/automation/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/automation/cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/automation/header.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/automation/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{automation_2core_8c_ab07b8ecb7e3c679e711c063bb00fd940}{automation\+\_\+system\+\_\+init}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em Initialise the system as an automation system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{automation_2core_8c_a63b70470973d55cb6679373e92c242d0}{automation\+\_\+system\+\_\+step}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Execute a simulation step for the system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{automation_2core_8c_a6f4a0bc73549fa154bfef3c145b5731d}{automation\+\_\+system\+\_\+init\+\_\+cbk}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct Kernelg\+Cfg\+\_\+t $\ast$cfg)
+\begin{DoxyCompactList}\small\item\em Callback to initialise the automation system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{automation_2core_8c_ab07b8ecb7e3c679e711c063bb00fd940}\label{automation_2core_8c_ab07b8ecb7e3c679e711c063bb00fd940}} 
+\index{core.c@{core.c}!automation\_system\_init@{automation\_system\_init}}
+\index{automation\_system\_init@{automation\_system\_init}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_init()}{automation\_system\_init()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+Initialise the system as an automation system. 
+
+Calls kernel\+\_\+init internally.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The system to initialise as an automation system. \\
+\hline
+{\em cfg} & The automation system configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occured, else $>$ 0 if an error occured. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{automation_2core_8c_a6f4a0bc73549fa154bfef3c145b5731d}\label{automation_2core_8c_a6f4a0bc73549fa154bfef3c145b5731d}} 
+\index{core.c@{core.c}!automation\_system\_init\_cbk@{automation\_system\_init\_cbk}}
+\index{automation\_system\_init\_cbk@{automation\_system\_init\_cbk}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_init\_cbk()}{automation\_system\_init\_cbk()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+init\+\_\+cbk (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct Kernelg\+Cfg\+\_\+t $\ast$}]{cfg }\end{DoxyParamCaption})}
+
+
+
+Callback to initialise the automation system. 
+
+This works because cfg is the first attribute of \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}}, and because we ensure that the pointer is in fact a pointer to a full \mbox{\hyperlink{struct_automation_cfg__t}{Automation\+Cfg\+\_\+t}} value. \mbox{\Hypertarget{automation_2core_8c_a63b70470973d55cb6679373e92c242d0}\label{automation_2core_8c_a63b70470973d55cb6679373e92c242d0}} 
+\index{core.c@{core.c}!automation\_system\_step@{automation\_system\_step}}
+\index{automation\_system\_step@{automation\_system\_step}!core.c@{core.c}}
+\doxysubsubsection{\texorpdfstring{automation\_system\_step()}{automation\_system\_step()}}
+{\footnotesize\ttfamily int automation\+\_\+system\+\_\+step (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+Execute a simulation step for the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sys} & The related system. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occured, else $>$ 0 if an error occured. 
+\end{DoxyReturn}

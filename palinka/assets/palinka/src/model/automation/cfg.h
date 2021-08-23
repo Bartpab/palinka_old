@@ -2,7 +2,7 @@
 #define __AUTOMATION_CFG_H__
 
 #include <stddef.h>
-#include "src/model/common/cfg.h"
+#include "src/model/kernel/cfg.h"
 
 struct AutomationTaskCfg_t {
     void (*raws)(struct System_t*);
@@ -56,7 +56,7 @@ int automation_data_block_cfg_it_next(struct AutomationDataBlockCfgIterator_t* i
 int automation_data_block_cfg_it_get(struct AutomationDataBlockCfgIterator_t* it, size_t** out);
 
 struct AutomationCfg_t {
-    struct CommonCfg_t common;
+    struct KernelCfg_t kernel;
     struct AutomationTaskCfg_t tasks;
     struct AutomationDataBlockCfg_t data_blocks;
 };

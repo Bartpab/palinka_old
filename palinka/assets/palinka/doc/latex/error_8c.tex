@@ -1,0 +1,34 @@
+\hypertarget{error_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/error.c File Reference}
+\label{error_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/error.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/error.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{error_8c_a04f71466e7b7c33f778b9689924be410}{error\+\_\+init}} (struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$err)
+\item 
+void \mbox{\hyperlink{error_8c_ac6bd1941b17b2c9e97ae6ff7b5231daf}{write\+\_\+error}} (struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$err, const int code, const char $\ast$msg)
+\item 
+void \mbox{\hyperlink{error_8c_afd4d7f1445f1f03068b6e764c3f5a2ef}{copy\+\_\+error}} (struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$dest, const struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$src)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{error_8c_afd4d7f1445f1f03068b6e764c3f5a2ef}\label{error_8c_afd4d7f1445f1f03068b6e764c3f5a2ef}} 
+\index{error.c@{error.c}!copy\_error@{copy\_error}}
+\index{copy\_error@{copy\_error}!error.c@{error.c}}
+\doxysubsubsection{\texorpdfstring{copy\_error()}{copy\_error()}}
+{\footnotesize\ttfamily void copy\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{dest,  }\item[{const struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{error_8c_a04f71466e7b7c33f778b9689924be410}\label{error_8c_a04f71466e7b7c33f778b9689924be410}} 
+\index{error.c@{error.c}!error\_init@{error\_init}}
+\index{error\_init@{error\_init}!error.c@{error.c}}
+\doxysubsubsection{\texorpdfstring{error\_init()}{error\_init()}}
+{\footnotesize\ttfamily void error\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{error_8c_ac6bd1941b17b2c9e97ae6ff7b5231daf}\label{error_8c_ac6bd1941b17b2c9e97ae6ff7b5231daf}} 
+\index{error.c@{error.c}!write\_error@{write\_error}}
+\index{write\_error@{write\_error}!error.c@{error.c}}
+\doxysubsubsection{\texorpdfstring{write\_error()}{write\_error()}}
+{\footnotesize\ttfamily void write\+\_\+error (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_error__t}{Error\+\_\+t}} $\ast$}]{err,  }\item[{const int}]{code,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+

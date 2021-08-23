@@ -1,23 +1,23 @@
-\hypertarget{common_2api_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/common/api.h File Reference}
-\label{common_2api_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/api.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/common/api.h}}
+\hypertarget{kernel_2core_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.h File Reference}
+\label{kernel_2core_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/kernel/core.h}}
 
 
-Contains the system common API (init\+\_\+common, ...)  
+Contains the system kernel API (kernel\+\_\+init, ...)  
 
 
-{\ttfamily \#include $<$cstdio$>$}\newline
-{\ttfamily \#include \char`\"{}src/model/common/cfg.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/common/data.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}src/model/error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/cfg.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{common_2api_8h_a06e63d746d1de3353fcf34225f8b3a92}{init\+\_\+common}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_common_cfg__t}{Common\+Cfg\+\_\+t}} $\ast$common, size\+\_\+t reserved)
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{kernel_2core_8h_a5ae0d0c4e06a3b25a404781afb50821e}{kernel\+\_\+init}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys, struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$kernel, size\+\_\+t reserved)
+\begin{DoxyCompactList}\small\item\em Initialise system\textquotesingle{}s kernel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_2core_8h_ab393d7fd0aec6473b341b976cb7a6808}{kernel\+\_\+delete}} (struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Delete kernel header. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Contains the system common API (init\+\_\+common, ...) 
+Contains the system kernel API (kernel\+\_\+init, ...) 
 
 \begin{DoxyAuthor}{Author}
 Gaël P. 
@@ -31,9 +31,26 @@ Gaël P.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{common_2api_8h_a06e63d746d1de3353fcf34225f8b3a92}\label{common_2api_8h_a06e63d746d1de3353fcf34225f8b3a92}} 
-\index{api.h@{api.h}!init\_common@{init\_common}}
-\index{init\_common@{init\_common}!api.h@{api.h}}
-\doxysubsubsection{\texorpdfstring{init\_common()}{init\_common()}}
-{\footnotesize\ttfamily int init\+\_\+common (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_common_cfg__t}{Common\+Cfg\+\_\+t}} $\ast$}]{common,  }\item[{size\+\_\+t}]{reserved }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{kernel_2core_8h_ab393d7fd0aec6473b341b976cb7a6808}\label{kernel_2core_8h_ab393d7fd0aec6473b341b976cb7a6808}} 
+\index{core.h@{core.h}!kernel\_delete@{kernel\_delete}}
+\index{kernel\_delete@{kernel\_delete}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{kernel\_delete()}{kernel\_delete()}}
+{\footnotesize\ttfamily void kernel\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
 
+
+
+Delete kernel header. 
+
+\mbox{\Hypertarget{kernel_2core_8h_a5ae0d0c4e06a3b25a404781afb50821e}\label{kernel_2core_8h_a5ae0d0c4e06a3b25a404781afb50821e}} 
+\index{core.h@{core.h}!kernel\_init@{kernel\_init}}
+\index{kernel\_init@{kernel\_init}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{kernel\_init()}{kernel\_init()}}
+{\footnotesize\ttfamily int kernel\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$}]{sys,  }\item[{struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$}]{kernel,  }\item[{size\+\_\+t}]{reserved }\end{DoxyParamCaption})}
+
+
+
+Initialise system\textquotesingle{}s kernel. 
+
+This function must be called before any other init operations !
+
+struct System\+\_\+t$\ast$ sys\+: The system struct Kernel\+Cfg\+\_\+t$\ast$ cfg\+: The kernel configuration size\+\_\+t reserved\+: The number of octets to reserve for system-\/specific header, next will point to the next entry after the kernel header. 

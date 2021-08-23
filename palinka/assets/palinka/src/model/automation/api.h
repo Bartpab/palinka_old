@@ -5,12 +5,12 @@
 
 #include "src/model/automation/cfg.h"
 #include "src/model/automation/header.h"
-#include "src/model/system/api.h"
+#include "src/model/system/core.h"
 
 /**
 * \brief Initialise the system as an automation system.
 *
-* Calls common_init internally.
+* Calls kernel_init internally.
 *
 * \param sys The system to initialise as an automation system.
 * \param cfg The automation system configuration
@@ -34,7 +34,7 @@ int automation_system_step(struct System_t* sys);
  * This works because cfg is the first attribute of AutomationCfg_t, and because
  * we ensure that the pointer is in fact a pointer to a full AutomationCfg_t value.
  */
-int automation_system_init_cbk(struct System_t* sys, struct CommongCfg_t* cfg);
+int automation_system_init(struct System_t* sys, struct KernelgCfg_t* cfg);
 
 
 #endif

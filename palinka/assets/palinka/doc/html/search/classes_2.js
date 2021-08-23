@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['device_5ft_130',['Device_t',['../struct_device__t.html',1,'']]]
+  ['error_5ft_261',['Error_t',['../struct_error__t.html',1,'']]]
 ];

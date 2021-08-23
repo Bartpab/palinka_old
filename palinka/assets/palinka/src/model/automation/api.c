@@ -1,13 +1,13 @@
 #include <stddef.h>
 #include <stdio.h>
 
-#include "src/model/automation/api.h"
+#include "src/model/automation/core.h"
 #include "src/model/automation/cfg.h"
 #include "src/model/automation/header.h"
 #include "src/model/automation/task.h"
-#include "src/model/common/data.h"
-#include "src/model/common/api.h"
-#include "src/model/system/api.h"
+#include "src/model/kernel/data.h"
+#include "src/model/kernel/core.h"
+#include "src/model/system/core.h"
 #include "src/model/error.h"
 
 int automation_system_init(struct System_t* sys, struct AutomationCfg_t* cfg) {
@@ -19,7 +19,7 @@ int automation_system_init(struct System_t* sys, struct AutomationCfg_t* cfg) {
     void (*raw_task_curr)(struct System_t*);
     size_t *db_size_curr;
 
-    code = common_init(sys, cfg, sizeof(struct AutomationHeader_t));
+    code = kernel_init(sys, cfg, sizeof(struct AutomationHeader_t));
 
     if(code)
         return code;
@@ -100,7 +100,7 @@ int automation_system_step(struct System_t* sys)
     return 0;
 }
 
-int automation_system_init_cbk(struct System_t* sys, struct CommongCfg_t* cfg) {
+int automation_system_init(struct System_t* sys, struct KernelgCfg_t* cfg) {
    return automation_system_init(sys, (struct AutomationCfg_t*) cfg);
 }
 

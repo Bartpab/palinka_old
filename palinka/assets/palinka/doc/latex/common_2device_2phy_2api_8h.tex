@@ -1,0 +1,92 @@
+\hypertarget{kernel_2device_2phy_2core_8h}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/device/core.h File Reference}
+\label{kernel_2device_2phy_2core_8h}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/core.h@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/device/core.h}}
+{\ttfamily \#include \char`\"{}src/model/kernel/skb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/system/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/model/kernel/mmu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/utils/memory/alloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/utils/math.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_physical_device_cfg__t}{Physical\+Device\+Cfg\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em List of physical devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2core_8h_a12495d7118e2762462d4fec9bb4c5a50}{phy\+\_\+dev\+\_\+list\+\_\+get}} (struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$list, unsigned char id, struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$$\ast$out)
+\begin{DoxyCompactList}\small\item\em Get the physical device based on its id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2core_8h_ab163a7e3462ee52e679b9a8e1d5a6414}{phy\+\_\+dev\+\_\+list\+\_\+add}} (struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$list, struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} dev)
+\begin{DoxyCompactList}\small\item\em Add a physical device to the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{kernel_2device_2phy_2core_8h_a4319691965604878340dc076e4f712f4}{phy\+\_\+dev\+\_\+list\+\_\+init}} (struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$list, size\+\_\+t capacity)
+\begin{DoxyCompactList}\small\item\em Initialise the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{kernel_2device_2phy_2core_8h_af6c7b751d242c091005acdb595b83ce1}{phy\+\_\+dev\+\_\+list\+\_\+delete}} (struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Delete the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{kernel_2device_2phy_2core_8h_acd5e43565c895ec0bc9607f0da705338}{NETWORK\+\_\+\+DEVICE}} = 0x1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel_2device_2phy_2core_8h_ab163a7e3462ee52e679b9a8e1d5a6414}\label{kernel_2device_2phy_2core_8h_ab163a7e3462ee52e679b9a8e1d5a6414}} 
+\index{core.h@{core.h}!phy\_dev\_list\_add@{phy\_dev\_list\_add}}
+\index{phy\_dev\_list\_add@{phy\_dev\_list\_add}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_list\_add()}{phy\_dev\_list\_add()}}
+{\footnotesize\ttfamily int phy\+\_\+dev\+\_\+list\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$}]{list,  }\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}}}]{dev }\end{DoxyParamCaption})}
+
+
+
+Add a physical device to the list. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 else (no more space) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel_2device_2phy_2core_8h_af6c7b751d242c091005acdb595b83ce1}\label{kernel_2device_2phy_2core_8h_af6c7b751d242c091005acdb595b83ce1}} 
+\index{core.h@{core.h}!phy\_dev\_list\_delete@{phy\_dev\_list\_delete}}
+\index{phy\_dev\_list\_delete@{phy\_dev\_list\_delete}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_list\_delete()}{phy\_dev\_list\_delete()}}
+{\footnotesize\ttfamily void phy\+\_\+dev\+\_\+list\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Delete the list. 
+
+\mbox{\Hypertarget{kernel_2device_2phy_2core_8h_a12495d7118e2762462d4fec9bb4c5a50}\label{kernel_2device_2phy_2core_8h_a12495d7118e2762462d4fec9bb4c5a50}} 
+\index{core.h@{core.h}!phy\_dev\_list\_get@{phy\_dev\_list\_get}}
+\index{phy\_dev\_list\_get@{phy\_dev\_list\_get}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_list\_get()}{phy\_dev\_list\_get()}}
+{\footnotesize\ttfamily int phy\+\_\+dev\+\_\+list\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$}]{list,  }\item[{unsigned char}]{id,  }\item[{struct \mbox{\hyperlink{struct_physical_device__t}{Physical\+Device\+\_\+t}} $\ast$$\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Get the physical device based on its id. 
+
+\begin{DoxyReturn}{Returns}
+1 if it exists, 0 if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel_2device_2phy_2core_8h_a4319691965604878340dc076e4f712f4}\label{kernel_2device_2phy_2core_8h_a4319691965604878340dc076e4f712f4}} 
+\index{core.h@{core.h}!phy\_dev\_list\_init@{phy\_dev\_list\_init}}
+\index{phy\_dev\_list\_init@{phy\_dev\_list\_init}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{phy\_dev\_list\_init()}{phy\_dev\_list\_init()}}
+{\footnotesize\ttfamily int phy\+\_\+dev\+\_\+list\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_physical_device_list__t}{Physical\+Device\+List\+\_\+t}} $\ast$}]{list,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Initialise the list. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kernel_2device_2phy_2core_8h_acd5e43565c895ec0bc9607f0da705338}\label{kernel_2device_2phy_2core_8h_acd5e43565c895ec0bc9607f0da705338}} 
+\index{core.h@{core.h}!NETWORK\_DEVICE@{NETWORK\_DEVICE}}
+\index{NETWORK\_DEVICE@{NETWORK\_DEVICE}!core.h@{core.h}}
+\doxysubsubsection{\texorpdfstring{NETWORK\_DEVICE}{NETWORK\_DEVICE}}
+{\footnotesize\ttfamily const char NETWORK\+\_\+\+DEVICE = 0x1}
+

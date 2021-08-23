@@ -1,0 +1,95 @@
+\hypertarget{system_2cfg_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/system/cfg.c File Reference}
+\label{system_2cfg_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/cfg.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/cfg.c}}
+{\ttfamily \#include \char`\"{}src/model/system/cfg.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system_2cfg_8c_ab40642e9978670051b09e67936f0c5a7}{sys\+\_\+cfg\+\_\+init}} (struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$sys\+\_\+cfg, const char $\ast$name, struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$cfg, size\+\_\+t cfg\+\_\+size, int($\ast$init\+\_\+cbk)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$, struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$), int($\ast$step\+\_\+cbk)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$))
+\item 
+void \mbox{\hyperlink{system_2cfg_8c_adbc36e2c4e1ae4b5ec27b73610594d13}{sys\+\_\+cfg\+\_\+delete}} (struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$sys\+\_\+cfg)
+\item 
+int \mbox{\hyperlink{system_2cfg_8c_ad5ee1a1752b4de9bb37ba84ef82b2184}{sys\+\_\+cfg\+\_\+list\+\_\+init}} (struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$list, size\+\_\+t capacity)
+\begin{DoxyCompactList}\small\item\em Initialise the list of system configurations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system_2cfg_8c_a63a43c711b0f3f25a250a03ab5230dee}{sys\+\_\+cfg\+\_\+list\+\_\+add}} (struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$list, struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} cfg)
+\item 
+void \mbox{\hyperlink{system_2cfg_8c_aa2372ddc090eb363fe30a116b1e7c7a1}{sys\+\_\+cfg\+\_\+list\+\_\+delete}} (struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$list)
+\item 
+void \mbox{\hyperlink{system_2cfg_8c_abf07e78d25a25168442dbd7b374865e0}{sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+init}} (struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Initialise the iterator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system_2cfg_8c_a11aa62aca5632b19a9dfe7c39c3610d1}{sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+next}} (struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$it)
+\begin{DoxyCompactList}\small\item\em Get the next element of the iterator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{system_2cfg_8c_a9e5021b6a43872b7dbdb12f46745f2fd}{sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+get}} (struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$$\ast$out)
+\begin{DoxyCompactList}\small\item\em Return the current element held by the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_2cfg_8c_adbc36e2c4e1ae4b5ec27b73610594d13}\label{system_2cfg_8c_adbc36e2c4e1ae4b5ec27b73610594d13}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_delete@{sys\_cfg\_delete}}
+\index{sys\_cfg\_delete@{sys\_cfg\_delete}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_delete()}{sys\_cfg\_delete()}}
+{\footnotesize\ttfamily void sys\+\_\+cfg\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$}]{sys\+\_\+cfg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_2cfg_8c_ab40642e9978670051b09e67936f0c5a7}\label{system_2cfg_8c_ab40642e9978670051b09e67936f0c5a7}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_init@{sys\_cfg\_init}}
+\index{sys\_cfg\_init@{sys\_cfg\_init}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_init()}{sys\_cfg\_init()}}
+{\footnotesize\ttfamily void sys\+\_\+cfg\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$}]{sys\+\_\+cfg,  }\item[{const char $\ast$}]{name,  }\item[{struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$}]{cfg,  }\item[{size\+\_\+t}]{cfg\+\_\+size,  }\item[{int($\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$, struct \mbox{\hyperlink{struct_kernel_cfg__t}{Kernel\+Cfg\+\_\+t}} $\ast$)}]{init\+\_\+cbk,  }\item[{int($\ast$)(struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} $\ast$)}]{step\+\_\+cbk }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_2cfg_8c_a63a43c711b0f3f25a250a03ab5230dee}\label{system_2cfg_8c_a63a43c711b0f3f25a250a03ab5230dee}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_add@{sys\_cfg\_list\_add}}
+\index{sys\_cfg\_list\_add@{sys\_cfg\_list\_add}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_add()}{sys\_cfg\_list\_add()}}
+{\footnotesize\ttfamily int sys\+\_\+cfg\+\_\+list\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$}]{list,  }\item[{struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}}}]{cfg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_2cfg_8c_aa2372ddc090eb363fe30a116b1e7c7a1}\label{system_2cfg_8c_aa2372ddc090eb363fe30a116b1e7c7a1}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_delete@{sys\_cfg\_list\_delete}}
+\index{sys\_cfg\_list\_delete@{sys\_cfg\_list\_delete}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_delete()}{sys\_cfg\_list\_delete()}}
+{\footnotesize\ttfamily void sys\+\_\+cfg\+\_\+list\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_2cfg_8c_ad5ee1a1752b4de9bb37ba84ef82b2184}\label{system_2cfg_8c_ad5ee1a1752b4de9bb37ba84ef82b2184}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_init@{sys\_cfg\_list\_init}}
+\index{sys\_cfg\_list\_init@{sys\_cfg\_list\_init}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_init()}{sys\_cfg\_list\_init()}}
+{\footnotesize\ttfamily int sys\+\_\+cfg\+\_\+list\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$}]{list,  }\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Initialise the list of system configurations. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_2cfg_8c_a9e5021b6a43872b7dbdb12f46745f2fd}\label{system_2cfg_8c_a9e5021b6a43872b7dbdb12f46745f2fd}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_it\_get@{sys\_cfg\_list\_it\_get}}
+\index{sys\_cfg\_list\_it\_get@{sys\_cfg\_list\_it\_get}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_it\_get()}{sys\_cfg\_list\_it\_get()}}
+{\footnotesize\ttfamily int sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_system_cfg__t}{System\+Cfg\+\_\+t}} $\ast$$\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Return the current element held by the iterator. 
+
+\mbox{\Hypertarget{system_2cfg_8c_abf07e78d25a25168442dbd7b374865e0}\label{system_2cfg_8c_abf07e78d25a25168442dbd7b374865e0}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_it\_init@{sys\_cfg\_list\_it\_init}}
+\index{sys\_cfg\_list\_it\_init@{sys\_cfg\_list\_it\_init}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_it\_init()}{sys\_cfg\_list\_it\_init()}}
+{\footnotesize\ttfamily void sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_system_cfg_list__t}{System\+Cfg\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Initialise the iterator. 
+
+\mbox{\Hypertarget{system_2cfg_8c_a11aa62aca5632b19a9dfe7c39c3610d1}\label{system_2cfg_8c_a11aa62aca5632b19a9dfe7c39c3610d1}} 
+\index{cfg.c@{cfg.c}!sys\_cfg\_list\_it\_next@{sys\_cfg\_list\_it\_next}}
+\index{sys\_cfg\_list\_it\_next@{sys\_cfg\_list\_it\_next}!cfg.c@{cfg.c}}
+\doxysubsubsection{\texorpdfstring{sys\_cfg\_list\_it\_next()}{sys\_cfg\_list\_it\_next()}}
+{\footnotesize\ttfamily int sys\+\_\+cfg\+\_\+list\+\_\+it\+\_\+next (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_list_cfg_iterator__t}{System\+List\+Cfg\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+
+
+
+Get the next element of the iterator. 
+

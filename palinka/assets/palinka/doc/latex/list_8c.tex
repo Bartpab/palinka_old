@@ -1,0 +1,85 @@
+\hypertarget{list_8c}{}\doxysection{C\+:/\+Users/gaelp/\+One\+Drive/\+Documents/\+Boulot/palinka/palinka/assets/palinka/src/model/system/list.c File Reference}
+\label{list_8c}\index{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/list.c@{C:/Users/gaelp/OneDrive/Documents/Boulot/palinka/palinka/assets/palinka/src/model/system/list.c}}
+{\ttfamily \#include \char`\"{}src/model/system/list.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{list_8c_a60c04e4cf151dd0a6b801c3ffbf93e0f}{sys\+\_\+list\+\_\+create}} (struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$list, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{list_8c_aead3569ad6ede4e3e1db8489cae74403}{sys\+\_\+list\+\_\+delete}} (struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Delete the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8c_a2c93be1b588c66c97ce23d99aba00a02}{sys\+\_\+list\+\_\+add}} (struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$list, struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}} sys)
+\begin{DoxyCompactList}\small\item\em Add a system to the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8c_a5271ae000c59d226e08afd3167851091}{sys\+\_\+list\+\_\+get}} (struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$list, unsigned char sys\+\_\+id, struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$sys)
+\begin{DoxyCompactList}\small\item\em Get the system in the system by its id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8c_a0075307aaf99419007769be06abb844b}{sys\+\_\+list\+\_\+it\+\_\+init}} (struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$list)
+\item 
+int \mbox{\hyperlink{list_8c_addb92e7482f5cdc901c0d5103d37d866}{sys\+\_\+list\+\_\+it\+\_\+next}} (struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$it)
+\item 
+int \mbox{\hyperlink{list_8c_ab35976cbf4cab6f9824efb6f8355f06b}{sys\+\_\+list\+\_\+it\+\_\+get}} (struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$it, struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$out)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{list_8c_a2c93be1b588c66c97ce23d99aba00a02}\label{list_8c_a2c93be1b588c66c97ce23d99aba00a02}} 
+\index{list.c@{list.c}!sys\_list\_add@{sys\_list\_add}}
+\index{sys\_list\_add@{sys\_list\_add}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_add()}{sys\_list\_add()}}
+{\footnotesize\ttfamily int sys\+\_\+list\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$}]{list,  }\item[{struct \mbox{\hyperlink{struct_system__t}{System\+\_\+t}}}]{sys }\end{DoxyParamCaption})}
+
+
+
+Add a system to the list. 
+
+\begin{DoxyReturn}{Returns}
+1 if succeeded, 0 if failed (no more space) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_a60c04e4cf151dd0a6b801c3ffbf93e0f}\label{list_8c_a60c04e4cf151dd0a6b801c3ffbf93e0f}} 
+\index{list.c@{list.c}!sys\_list\_create@{sys\_list\_create}}
+\index{sys\_list\_create@{sys\_list\_create}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_create()}{sys\_list\_create()}}
+{\footnotesize\ttfamily int sys\+\_\+list\+\_\+create (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$}]{list,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{list_8c_aead3569ad6ede4e3e1db8489cae74403}\label{list_8c_aead3569ad6ede4e3e1db8489cae74403}} 
+\index{list.c@{list.c}!sys\_list\_delete@{sys\_list\_delete}}
+\index{sys\_list\_delete@{sys\_list\_delete}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_delete()}{sys\_list\_delete()}}
+{\footnotesize\ttfamily void sys\+\_\+list\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Delete the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_a5271ae000c59d226e08afd3167851091}\label{list_8c_a5271ae000c59d226e08afd3167851091}} 
+\index{list.c@{list.c}!sys\_list\_get@{sys\_list\_get}}
+\index{sys\_list\_get@{sys\_list\_get}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_get()}{sys\_list\_get()}}
+{\footnotesize\ttfamily int sys\+\_\+list\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$}]{list,  }\item[{unsigned char}]{sys\+\_\+id,  }\item[{struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$}]{sys }\end{DoxyParamCaption})}
+
+
+
+Get the system in the system by its id. 
+
+\textbackslash{}eturn 1 if succeeded \mbox{\Hypertarget{list_8c_ab35976cbf4cab6f9824efb6f8355f06b}\label{list_8c_ab35976cbf4cab6f9824efb6f8355f06b}} 
+\index{list.c@{list.c}!sys\_list\_it\_get@{sys\_list\_it\_get}}
+\index{sys\_list\_it\_get@{sys\_list\_it\_get}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_it\_get()}{sys\_list\_it\_get()}}
+{\footnotesize\ttfamily int sys\+\_\+list\+\_\+it\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_system_accessor__t}{System\+Accessor\+\_\+t}} $\ast$}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{list_8c_a0075307aaf99419007769be06abb844b}\label{list_8c_a0075307aaf99419007769be06abb844b}} 
+\index{list.c@{list.c}!sys\_list\_it\_init@{sys\_list\_it\_init}}
+\index{sys\_list\_it\_init@{sys\_list\_it\_init}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_it\_init()}{sys\_list\_it\_init()}}
+{\footnotesize\ttfamily void sys\+\_\+list\+\_\+it\+\_\+init (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$}]{it,  }\item[{struct \mbox{\hyperlink{struct_system_container_list__t}{System\+Container\+List\+\_\+t}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{list_8c_addb92e7482f5cdc901c0d5103d37d866}\label{list_8c_addb92e7482f5cdc901c0d5103d37d866}} 
+\index{list.c@{list.c}!sys\_list\_it\_next@{sys\_list\_it\_next}}
+\index{sys\_list\_it\_next@{sys\_list\_it\_next}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{sys\_list\_it\_next()}{sys\_list\_it\_next()}}
+{\footnotesize\ttfamily int sys\+\_\+list\+\_\+it\+\_\+next (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_system_container_list_iterator__t}{System\+Container\+List\+Iterator\+\_\+t}} $\ast$}]{it }\end{DoxyParamCaption})}
+
